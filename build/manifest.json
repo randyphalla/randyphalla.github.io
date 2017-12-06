@@ -1,6 +1,6 @@
 {
-  "short_name": "rphalla porfolio",
-  "name": "Randy Phalla Portfolio",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
