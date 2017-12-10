@@ -5,11 +5,7 @@ import './header.component.css';
 import logo from '../../images/logo.png';
 
 class HeaderComponent extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
+    
     // TODO: Create Toggle Function
     toggleMenu() {
         console.log('ES6');

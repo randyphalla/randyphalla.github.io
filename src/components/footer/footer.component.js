@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import SocialItemComponent from '../social-item/social-item.component';
 
 import './footer.component.css';
@@ -48,7 +47,10 @@ class FooterComponent extends Component {
                                     this.socialItems.map((props, index) => {
                                         return (
                                             <li>
-                                                <SocialItemComponent key={`item-${index}`} {...props} />
+                                                <SocialItemComponent 
+                                                    key={index} 
+                                                    {...props} 
+                                                />
                                             </li>
                                         )
                                     })
