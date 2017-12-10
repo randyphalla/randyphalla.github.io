@@ -1,0 +1,6 @@
+#footer {
+  background-color: red; }
+  #footer .copyright {
+    text-align: center; }
+    #footer .copyright p {
+      color: #ffffff; }
