@@ -1,11 +1,39 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import SocialItemComponent from '../social-item/social-item.component';
+
 import './footer.component.css';
 
 class FooterComponent extends Component {
     
+    socialItems;
+
     constructor(props) {
         super(props);
+
+        this.socialItems = [
+            {
+                link: 'https://www.behance.net/',
+                myClass: 'fab fa-behance-square'
+            },
+            {
+                link: 'https://www.behance.net/',
+                myClass: 'fab fa-github'
+            },
+            {
+                link: 'https://www.behance.net/',
+                myClass: 'fab fa-dribbble'
+            },
+            {
+                link: 'https://www.behance.net/',
+                myClass: 'fab fa-twitter'
+            },
+            {
+                link: 'https://www.behance.net/',
+                myClass: 'fas fa-at'
+            }
+        ];
+
     }
 
     render() {
@@ -16,36 +44,19 @@ class FooterComponent extends Component {
                     <div className="row">
                         <div className="col-xs-12 col-md-6 social-links">
                             <ul>
-                                <li>
-                                    <Link to="https://www.behance.net/">
-                                        <i className="fab fa-behance-square"></i>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="https://www.behance.net/">
-                                        <i className="fab fa-github"></i>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="https://www.behance.net/">
-                                        <i className="fab fa-dribbble"></i>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="https://www.behance.net/">
-                                        <i className="fab fa-twitter"></i>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="https://www.behance.net/">
-                                        <i className="fas fa-at"></i>
-                                    </Link>
-                                </li>
-
+                                {
+                                    this.socialItems.map((props, index) => {
+                                        return (
+                                            <li>
+                                                <SocialItemComponent key={`item-${index}`} {...props} />
+                                            </li>
+                                        )
+                                    })
+                                }
                             </ul>
                         </div>
                         <div className="col-xs-12 col-md-6 copyright">
-                            <p>Randy Phalla Design</p>
+                            <p>Randy Phalla Design &copy; 2017</p>
                         </div>
                     </div>
                 </div>
