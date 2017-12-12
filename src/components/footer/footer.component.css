@@ -16,7 +16,8 @@
           height: 30px;
           width: 30px; }
         #footer .social-links ul li a svg:hover {
-          color: rgba(0, 0, 0, 0.5); }
+          color: rgba(0, 0, 0, 0.5);
+          transform: translateY(-1px); }
   #footer .copyright {
     text-align: center; }
     #footer .copyright p {

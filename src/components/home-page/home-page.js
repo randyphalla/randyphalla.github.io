@@ -54,16 +54,46 @@ class HomePage extends Component {
                             </div>
 
                             <div className="col-12 col-md-6 portfolio-item">
-                                1
+                                2
                             </div>
 
+                            <div className="col-12 col-md-6 portfolio-item">
+                                3
+                            </div>
+
+                            <div className="col-12 col-md-6 portfolio-item">
+                                4
+                            </div>
+
+                            <div className="col-12 col-md-6 portfolio-item">
+                                5
+                            </div>
+
+                            <div className="col-12 col-md-6 portfolio-item">
+                                6
+                            </div>
+
+                            <div className="col-12 col-md-6 portfolio-item">
+                                7
+                            </div>
+
+                            <div className="col-12 col-md-6 portfolio-item">
+                                8
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section id="services">
-
-                </section>
+                {/* <section id="services">
+                    <h2 className="hidden">Services</h2>
+                    <div className="container">
+                        <div className="row">
+                            <div>
+                                <h3>Services</h3>   
+                            </div>
+                        </div>
+                    </div>
+                </section> */}
 
             </div>
         );
