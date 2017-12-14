@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SkillItemComponent from '../skill-item/skill-item.component';
 
 
-import adobeLogo from '../../images/programming-logos/adobecc.png';
+import adobeLogo from '../../images/programming-logos/adobecc1.png';
 import angularLogo from '../../images/programming-logos/angular.png';
 import bootstrapLogo from '../../images/programming-logos/bootstrap.png';
 import css3Logo from '../../images/programming-logos/css3.png';
@@ -14,7 +14,8 @@ import javascriptLogo from '../../images/programming-logos/javascript.png';
 import reactjsLogo from '../../images/programming-logos/reactjs.png';
 import sketch3Logo from '../../images/programming-logos/sketch3.png';
 import sourceTreeLogo from '../../images/programming-logos/Sourcetree-blue.png';
-
+import sassLogo from '../../images/programming-logos/sass.png';
+import typescriptLogo from '../../images/programming-logos/typescript.png';
 
 import './about-page.css';
 
@@ -43,6 +44,10 @@ class AboutPage extends Component {
                 imageUrl: css3Logo
             },
             {
+                imageTitle: 'Sass',
+                imageUrl: sassLogo
+            },
+            {
                 imageTitle: 'Foundation 6',
                 imageUrl: foundation6Logo
             },
@@ -53,6 +58,10 @@ class AboutPage extends Component {
             {
                 imageTitle: 'JavaScript',
                 imageUrl: javascriptLogo
+            },
+            {
+                imageTitle: 'TypescriptScript',
+                imageUrl: typescriptLogo
             },
             {
                 imageTitle: 'Angular',
@@ -97,8 +106,8 @@ class AboutPage extends Component {
                     <h2 className="hidden">Intro Section</h2>
                     <div className="container">
                         <div className="row">
-                            <div className="col-12 col-md-4"></div>
-                            <div className="col-12 col-md-8 intro-card"> 
+                            <div className="col-12 col-md-2 col-lg-4"></div>
+                            <div className="col-12 col-md-10 col-lg-8 intro-card"> 
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
                             </div>  
                         </div>

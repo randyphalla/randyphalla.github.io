@@ -1,25 +1,72 @@
-#about h3 {
-  padding-top: 50px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 25px;
-  font-weight: 600;
-  text-align: center;
-  color: #FF1C0E; }
+#about {
+  height: 300px;
+  background-color: #FBFAFD; }
+  #about h3 {
+    padding-top: 75px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #FF1C0E; }
+  #about .under-line {
+    width: 150px;
+    margin: 0 auto;
+    border: 2px solid #222222; }
 
-#about .under-line {
-  width: 150px;
-  margin: 0 auto;
-  border: 2px solid red; }
+#intro {
+  margin-top: -110px;
+  margin-left: 16px;
+  margin-right: 16px; }
+  #intro .intro-card {
+    padding: 16px;
+    box-shadow: 0 1px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff; }
+    #intro .intro-card p {
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      font-weight: 400; }
 
-#intro .intro-card p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 400; }
+#skills {
+  padding-top: 30px; }
+  #skills h3 {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: #222222; }
 
-#skills h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  color: #FF1C0E;
-  text-transform: uppercase; }
+@media screen and (min-width: 590px) {
+  #about {
+    height: 350px; }
+    #about h3 {
+      padding-top: 95px;
+      font-size: 30px; }
+    #about .under-line {
+      width: 170px; }
+  #skills h3 {
+    font-size: 25px; } }
+
+@media screen and (min-width: 768px) {
+  #about {
+    height: 370px; }
+    #about h3 {
+      padding-top: 105px;
+      font-size: 40px; }
+    #about .under-line {
+      width: 200px; }
+  #intro {
+    margin-top: -110px; } }
+
+@media screen and (min-width: 1200px) {
+  #about {
+    height: 390px; }
+    #about h3 {
+      padding-top: 105px;
+      font-size: 45px; }
+    #about .under-line {
+      width: 210px; }
+  #intro {
+    margin-top: -90px; } }
