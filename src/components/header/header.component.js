@@ -20,7 +20,7 @@ class HeaderComponent extends Component {
                             <img src={logo} alt="Randy Phalla Logo"/>
                         </div>
                         <div className="col-6 mobile-menu">
-                            <button className="btn" onClick={this.toggleMenu}>
+                            <button className="btn"  aria-label="Toggle Menu" onClick={this.toggleMenu}>
                                 <i className="fas fa-bars 5x"></i>
                             </button>
                         </div>

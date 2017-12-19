@@ -45,14 +45,7 @@ class FooterComponent extends Component {
                             <ul>
                                 {
                                     this.socialItems.map((props, index) => {
-                                        return (
-                                            <li>
-                                                <SocialItemComponent 
-                                                    key={index} 
-                                                    {...props} 
-                                                />
-                                            </li>
-                                        )
+                                        return <SocialItemComponent key={index} {...props} />
                                     })
                                 }
                             </ul>

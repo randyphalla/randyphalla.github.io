@@ -28,8 +28,8 @@
       text-transform: uppercase; }
   @media screen and (min-width: 768px) {
     #footer {
-      padding-top: 10px;
-      padding-bottom: 10px; }
+      padding-top: 40px;
+      padding-bottom: 40px; }
       #footer .social-links ul {
         padding-bottom: 0; }
       #footer .copyright p {

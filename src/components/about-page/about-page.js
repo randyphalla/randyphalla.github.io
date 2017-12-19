@@ -125,7 +125,7 @@ class AboutPage extends Component {
                         <div className="row">
                             {
                                 this.skillItems.map((props, index) => {
-                                    return <SkillItemComponent key={index} {...props}/>
+                                    return <SkillItemComponent key={index} {...props} />
                                 })
                             }
                         </div>

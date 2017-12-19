@@ -6,9 +6,11 @@ import './social-item.component.css';
 class SocialItemComponent extends Component {
     render() {
         return (
-            <Link to={this.props.link} >
-                <i className={this.props.myClass}></i>
-            </Link>
+            <li>
+                <Link to={this.props.link} >
+                    <i className={this.props.myClass}></i>
+                </Link>
+            </li>
         );
     }
 }
