@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SkillItemComponent from '../skill-item/skill-item.component';
 
-
 import adobeLogo from '../../images/programming-logos/adobecc1.png';
 import angularLogo from '../../images/programming-logos/angular.png';
 import bootstrapLogo from '../../images/programming-logos/bootstrap.png';
@@ -111,6 +110,41 @@ class AboutPage extends Component {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
                             </div>  
                         </div>
+                    </div>
+                </section>
+
+                <section id="more-information">
+                    <h2 className="hidden">More Information</h2>
+                    <div className="container">
+
+                        <div className="row">
+                            <div className="col-12">
+                                <h3>Education</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-12">
+                                <h3>Work Experience</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-12">
+                                <h3>What I enjoy being a Designer / Developer</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-12">
+                                <h3>Hobbies</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 

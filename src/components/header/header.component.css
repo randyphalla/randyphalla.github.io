@@ -4,6 +4,8 @@
   background-color: #FF1C0E; }
   #header .logo img {
     width: 40px; }
+    #header .logo img:hover {
+      transform: translateY(-1px); }
   #header .mobile-menu {
     text-align: right; }
     #header .mobile-menu button {

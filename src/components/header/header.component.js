@@ -17,7 +17,9 @@ class HeaderComponent extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-6 col-md-4 logo">
-                            <img src={logo} alt="Randy Phalla Logo"/>
+                            <Link to="/">
+                                <img src={logo} alt="Randy Phalla Logo"/>
+                            </Link>
                         </div>
                         <div className="col-6 mobile-menu">
                             <button className="btn"  aria-label="Toggle Menu" onClick={this.toggleMenu}>
