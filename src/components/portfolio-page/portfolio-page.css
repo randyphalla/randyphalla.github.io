@@ -1,0 +1,34 @@
+#portfolio {
+  text-align: center; }
+  #portfolio .portfolio-name {
+    background-color: #FBFAFD; }
+    #portfolio .portfolio-name h3 {
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 18px;
+      font-weight: 600;
+      color: #FF1C0E; }
+    #portfolio .portfolio-name p {
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      font-weight: 300;
+      color: #FF1C0E; }
+  #portfolio .portfolio-info .portfolio-card {
+    padding: 16px;
+    box-shadow: 0 1px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    border-radius: 8px; }
+    #portfolio .portfolio-info .portfolio-card h3 {
+      margin-bottom: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #FF1C0E; }
+    #portfolio .portfolio-info .portfolio-card p {
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px; }
