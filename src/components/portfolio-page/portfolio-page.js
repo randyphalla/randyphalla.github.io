@@ -34,6 +34,12 @@ class PortfolioPage extends Component {
                 </div>
 
                 <div class="portfolio-pieces">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12 col-xs-6 col-md-4 portfolio-piece">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </section>

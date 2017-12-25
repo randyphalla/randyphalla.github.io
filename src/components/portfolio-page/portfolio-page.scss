@@ -2,11 +2,13 @@
     text-align: center;
     
     .portfolio-name {
+        padding: {
+            top: 25px;
+            bottom: 70px;
+        }
         background-color: #FBFAFD;
-
+        
         h3 {
-            margin-bottom: 0;
-            
             font: {
                 family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
                 size: 18px;
@@ -15,9 +17,7 @@
             color: #FF1C0E;
         }
     
-        p {
-            margin-bottom: 0;
-    
+        p {    
             font: {
                 family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
                 size: 16px;
@@ -28,19 +28,22 @@
     }
 
     .portfolio-info {
+        margin: {
+            top: -60px;
+            left: 16px;
+            right: 16px;
+        }
+
         .portfolio-card {
-            
             padding: 16px;
             box-shadow: 0 1px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
             background-color: #ffffff;
             border-radius: 8px;
 
             h3 {
-                margin-bottom: 10px;
-
                 font: {
                     family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-                    size: 16px;
+                    size: 18px;
                     weight: 600;
                 }
                 text-transform: uppercase;
@@ -48,20 +51,78 @@
             }
 
             p {
-                margin-bottom: 0;
-
                 font: {
                     family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
                     size: 16px;
                     weight: 400;
                 }
                 line-height: 25px;
+                text-align: left;
             }
         }
     }
 
     .portfolio-pieces {
-
     }
-
 }   
+
+@media screen and (min-width: 590px) {
+    #portfolio {
+        .portfolio-name {
+            padding: {
+                top: 50px;
+                bottom: 100px;
+            }
+
+            h3 {
+                font: {
+                    size: 25px;
+                }
+            }
+        }
+        
+        .portfolio-info {
+            margin: {
+                top: -70px;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #portfolio {
+        .portfolio-name {
+            padding: {
+                top: 100px;
+                bottom: 150px;
+            }
+
+            h3 {
+                font: {
+                    size: 40px;
+                }
+            }
+        }
+        
+        .portfolio-info {
+            .portfolio-card {
+                padding: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+   
+    #portfolio {
+        .portfolio-name {
+            h3 {
+                font: {
+                    size: 45px;
+                }
+            }
+        }
+    }
+}
