@@ -1,0 +1,25 @@
+#contact {
+  background-color: #FBFAFD; }
+  #contact .contact-info {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center; }
+    #contact .contact-info h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 18px;
+      font-weight: 600;
+      color: #FF1C0E; }
+    #contact .contact-info .under-line {
+      width: 80px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      border: 2px solid #222222; }
+    #contact .contact-info a {
+      padding-top: 50px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      font-weight: 400;
+      color: #222222;
+      text-decoration: underline; }
+      #contact .contact-info a:hover {
+        color: #000000; }

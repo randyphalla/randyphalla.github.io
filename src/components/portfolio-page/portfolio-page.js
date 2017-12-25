@@ -11,7 +11,7 @@ class PortfolioPage extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-12"> 
-                                <h3>PROJECT NAME</h3>
+                                <h3>Project Name</h3>
                                 <p>Graphic, Web, UI &  Editoral Design and Illustration</p>
                             </div>
                         </div>
