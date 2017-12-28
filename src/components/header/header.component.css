@@ -35,11 +35,9 @@
             display: inline;
             margin-left: 15px; }
             #header .menu-links ul li a {
-              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-              font-weight: 400;
+              font-family: 'acherus_grotesquemedium', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
               font-size: 14px;
               color: #ffffff;
-              text-transform: uppercase;
               text-decoration: none; }
               #header .menu-links ul li a:hover {
                 color: #222222; } }

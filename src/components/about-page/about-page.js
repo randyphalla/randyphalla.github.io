@@ -88,7 +88,7 @@ class AboutPage extends Component {
     
     render() {
         return (
-            <div>
+            <div id="main-content">
                 <section id="about">
                     <h2 className="hidden">About Section</h2>
                     <div className="container">
@@ -165,7 +165,6 @@ class AboutPage extends Component {
                         </div>
                     </div>
                 </section>
-
 
             </div>
         );

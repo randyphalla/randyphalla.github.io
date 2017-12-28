@@ -3,13 +3,12 @@
   background-color: #FBFAFD; }
   #banner h3 {
     padding-top: 75px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'acherus_grotesquelight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 25px;
-    font-weight: 300;
     text-align: center;
     color: #FF1C0E; }
   #banner .bold-text {
-    font-weight: 600; }
+    font-family: 'acherus_grotesqueblack', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
   @media screen and (min-width: 768px) {
     #banner {
       height: 400px; }
@@ -38,9 +37,8 @@
   #portfolio-pieces .feature-work {
     padding-top: 20px; }
     #portfolio-pieces .feature-work h3 {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: 'acherus_grotesquebold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: 18px;
-      font-weight: 400;
       text-align: center; }
     #portfolio-pieces .feature-work .under-line {
       width: 90px;

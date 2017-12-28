@@ -28,7 +28,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
+            <div id="main-content">
                 <section id="banner">
                     <h2 className="hidden">Banner Section</h2>
                     <div className="container">

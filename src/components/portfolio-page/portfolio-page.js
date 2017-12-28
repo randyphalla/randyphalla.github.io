@@ -18,7 +18,7 @@ class PortfolioPage extends Component {
                     </div>
                 </div>
 
-                <div class="portfolio-info">
+                <div className="portfolio-info">
                     <div className="container">
                         <div className="row portfolio-card">
                             <div className="col-12 col-md-6">
@@ -33,7 +33,7 @@ class PortfolioPage extends Component {
                     </div>
                 </div>
 
-                <div class="portfolio-pieces">
+                <div className="portfolio-pieces">
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-xs-6 col-md-4 portfolio-piece">
