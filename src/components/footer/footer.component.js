@@ -12,23 +12,23 @@ class FooterComponent extends Component {
 
         this.socialItems = [
             {
-                link: 'https://www.behance.net/',
+                link: 'https://www.behance.net/randyphalla',
                 myClass: 'fab fa-behance-square'
             },
             {
-                link: 'https://www.behance.net/',
+                link: 'https://github.com/randyphalla',
                 myClass: 'fab fa-github'
             },
             {
-                link: 'https://www.behance.net/',
+                link: 'https://dribbble.com/randyphalla',
                 myClass: 'fab fa-dribbble'
             },
+            // {
+            //     link: 'https://twitter.com/randyphalla',
+            //     myClass: 'fab fa-twitter'
+            // },
             {
-                link: 'https://www.behance.net/',
-                myClass: 'fab fa-twitter'
-            },
-            {
-                link: 'https://www.behance.net/',
+                link: 'mailto:randyphalla@gmail.com',
                 myClass: 'fas fa-at'
             }
         ];

@@ -7,7 +7,7 @@ class SocialItemComponent extends Component {
     render() {
         return (
             <li>
-                <Link to={this.props.link} >
+                <Link to={this.props.link} target="_blank">
                     <i className={this.props.myClass}></i>
                 </Link>
             </li>

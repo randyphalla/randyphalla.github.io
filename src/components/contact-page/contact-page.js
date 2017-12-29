@@ -11,11 +11,11 @@ class ContactPage extends Component {
                 <div className="container">
                     <div className="row justify-content-md-center justify-content-lg-center">
                     <div className="col-12 col-md-10 col-lg-8">
-                        <h3>Let's Connect</h3>
+                        <h3>Interested in connecting</h3>
                         <div className="under-line"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                        <p>Whenever you wanna connect, collaborate or hire me.</p>
                         <Link to="mailto:randyphalla@gmail.com" target="_blank">
-                            randyphalla@gmail.com
+                            Send me an email
                         </Link>
                     </div>
                     </div>
