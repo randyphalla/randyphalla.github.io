@@ -7,11 +7,17 @@
     #portfolio .portfolio-name h3 {
       font-family: 'acherus_grotesquebold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: 25px;
-      color: #FF1C0E; }
+      color: #FF1C0E;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
     #portfolio .portfolio-name p {
       font-family: 'acherus_grotesquelight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: 16px;
-      color: #FF1C0E; }
+      color: #FF1C0E;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
   #portfolio .portfolio-info {
     margin-top: -60px;
     margin-left: 16px;
@@ -26,13 +32,19 @@
         font-family: 'acherus_grotesquebold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-size: 18px;
         text-transform: uppercase;
-        color: #FF1C0E; }
+        color: #FF1C0E;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
       #portfolio .portfolio-info .portfolio-card p {
         margin-bottom: 0;
         font-family: 'acherus_grotesquelight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-size: 16px;
         line-height: 25px;
-        text-align: left; }
+        text-align: left;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
 
 @media screen and (min-width: 590px) {
   #portfolio .portfolio-name {

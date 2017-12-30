@@ -14,6 +14,9 @@
                 size: 25px;
             }
             color: #FF1C0E;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     
         p {    
@@ -22,6 +25,9 @@
                 size: 16px;
             }
             color: #FF1C0E;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     }
 
@@ -46,6 +52,9 @@
                 }
                 text-transform: uppercase;
                 color: #FF1C0E;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
             }
 
             p {
@@ -57,6 +66,9 @@
                 }
                 line-height: 25px;
                 text-align: left;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
             }
         }
     }

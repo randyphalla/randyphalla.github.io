@@ -14,7 +14,7 @@ class ContactPage extends Component {
                         <h3>Interested in connecting</h3>
                         <div className="under-line"></div>
                         <p>Whenever you wanna connect, collaborate or hire me.</p>
-                        <Link to="mailto:randyphalla@gmail.com" target="_blank">
+                        <Link to="mailto:randyphalla@gmail.com" target="_blank" rel="noopener">
                             Send me an email
                         </Link>
                     </div>

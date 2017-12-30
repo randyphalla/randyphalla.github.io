@@ -13,6 +13,9 @@
                 size: 40px;
             }
             color: #FF1C0E;    
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .under-line {
@@ -26,7 +29,10 @@
             font: {
                 family: 'acherus_grotesquelight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
                 size: 16px;
-            }            
+            }       
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;     
         }
         
         a {
@@ -38,9 +44,12 @@
             }    
             color: #222222;
             text-decoration: underline;        
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
 
             &:hover {
-                color: #000000;
+                color: rgba(0, 0, 0, 0.5);
             }
         }
     }

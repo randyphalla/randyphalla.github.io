@@ -47,6 +47,9 @@
             }
             color: #222222;
             text-transform: uppercase;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     }
 
