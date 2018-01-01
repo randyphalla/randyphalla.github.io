@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './home-page.css';
 
 class HomePage extends Component {
@@ -50,50 +52,28 @@ class HomePage extends Component {
                         <div className="row portfolio-items">
 
                             <div className="col-12 col-md-6 portfolio-item">
-                                1
+                                <Link to="/portfolio">1</Link>
                             </div>
 
                             <div className="col-12 col-md-6 portfolio-item">
-                                2
+                                <Link to="/portfolio">2</Link>
                             </div>
 
-                            <div className="col-12 col-md-6 portfolio-item">
-                                3
-                            </div>
-
-                            <div className="col-12 col-md-6 portfolio-item">
-                                4
-                            </div>
-
-                            <div className="col-12 col-md-6 portfolio-item">
-                                5
-                            </div>
-
-                            <div className="col-12 col-md-6 portfolio-item">
-                                6
-                            </div>
-
-                            <div className="col-12 col-md-6 portfolio-item">
-                                7
-                            </div>
-
-                            <div className="col-12 col-md-6 portfolio-item">
-                                8
-                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* <section id="services">
+                <section id="services">
                     <h2 className="hidden">Services</h2>
                     <div className="container">
                         <div className="row">
-                            <div>
+                            <div className="col-12">
                                 <h3>Services</h3>   
                             </div>
+                            {/* UI Design, Branding, and Web / App Development */}
                         </div>
                     </div>
-                </section> */}
+                </section>
 
             </div>
         );
