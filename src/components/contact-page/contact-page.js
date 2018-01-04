@@ -10,14 +10,14 @@ class ContactPage extends Component {
             <div className="contact-info">
                 <div className="container">
                     <div className="row justify-content-md-center justify-content-lg-center">
-                    <div className="col-12 col-md-10 col-lg-8">
-                        <h3>Interested in connecting</h3>
-                        <div className="under-line"></div>
-                        <p>Whenever you wanna connect, collaborate or hire me.</p>
-                        <Link to="mailto:randyphalla@gmail.com" target="_blank" rel="noopener">
-                            Send me an email
-                        </Link>
-                    </div>
+                        <div className="col-12 col-md-10 col-lg-12">
+                            <h3>Interested in connecting</h3>
+                            <div className="under-line"></div>
+                            <p>Whenever you wanna connect, collaborate or hire me.</p>
+                            <Link to="mailto:randyphalla@gmail.com" target="_blank" rel="noopener">
+                                Send me an email
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

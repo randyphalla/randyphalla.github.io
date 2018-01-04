@@ -28,6 +28,8 @@
       box-shadow: 0 1px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
       background-color: #ffffff;
       border-radius: 8px; }
+      #portfolio .portfolio-info .portfolio-card .objective {
+        margin-bottom: 30px; }
       #portfolio .portfolio-info .portfolio-card h3 {
         font-family: 'acherus_grotesquebold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-size: 18px;
@@ -64,7 +66,9 @@
     #portfolio .portfolio-name h3 {
       font-size: 40px; }
   #portfolio .portfolio-info .portfolio-card {
-    padding: 24px; } }
+    padding: 24px; }
+    #portfolio .portfolio-info .portfolio-card .objective {
+      margin-bottom: 0; } }
 
 @media screen and (min-width: 1200px) {
   #portfolio .portfolio-name h3 {

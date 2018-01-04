@@ -21,11 +21,11 @@ class PortfolioPage extends Component {
                 <div className="portfolio-info">
                     <div className="container">
                         <div className="row portfolio-card">
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 col-md-6 objective">
                                 <h3>Objective</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat orci ac tortor placerat, a fermentum odio tincidunt. Sed at enim tincidunt mi elementum vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ac sem porta, convallis lorem a, cursus nulla. In hac habitasse platea dictumst. </p>
                             </div>
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 col-md-6 mission">
                                 <h3>Mission</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat orci ac tortor placerat, a fermentum odio tincidunt. Sed at enim tincidunt mi elementum vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ac sem porta, convallis lorem a, cursus nulla. In hac habitasse platea dictumst. </p>
                             </div>
