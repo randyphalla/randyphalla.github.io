@@ -38,7 +38,7 @@ class HomePage extends Component {
                     </div>
                 </section>
                 
-                <section id="portfolio-pieces">
+                {/* <section id="portfolio-pieces">
                     <h2 className="hidden">Portfolio Pieces</h2>
                     <div className="container">
 
@@ -61,8 +61,8 @@ class HomePage extends Component {
 
                         </div>
                     </div>
-                </section>
-
+                </section> */}
+                
                 <section id="services">
                     <h2 className="hidden">Services</h2>
                     <div className="container">

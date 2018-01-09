@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import SkillItemComponent from '../skill-item/skill-item.component';
 
 import adobeLogo from '../../images/programming-logos/adobecc1.png';
@@ -107,7 +109,7 @@ class AboutPage extends Component {
                         <div className="row">
                             <div className="col-12 col-md-2 col-lg-4"></div>
                             <div className="col-12 col-md-10 col-lg-8 intro-card"> 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                                <p>About me intro</p>
                             </div>  
                         </div>
                     </div>
@@ -120,28 +122,42 @@ class AboutPage extends Component {
                         <div className="row">
                             <div className="col-12">
                                 <h3>Education</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+
+                                <p>Fanshawe College 2015 - 2016</p>
+                                <h4>Interactive Media Specialist</h4>
+                                
+                                <p>Fanshawe College 2011 - 2014</p>
+                                <h4>Graphic Design</h4>
+
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-12">
                                 <h3>Work Experience</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+
+                                <p>Devlift Media 2016 - Present</p>
+                                <h4>Front-End Developer</h4>
+                                <Link to="https://www.devlift.io" target="_blank" rel="noopener">www.devlift.io/</Link>
+
+                                <p>Buzz PR Aug 2016 - Sept 2016</p>
+                                <h4>Graphic Design Intern</h4>
+                                <Link to="http://www.buzzpr.ca" target="_blank" rel="noopener">www.buzzpr.ca</Link>
+
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-12">
                                 <h3>What I enjoy being a Designer / Developer</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                                <p>I enjoy being designer & developer...</p>
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-12">
                                 <h3>Hobbies</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa, quis gravida purus dictum ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin maximus arcu, vitae imperdiet sapien. Nam scelerisque gravida massa.</p>
+                                <p>My hobbies are...</p>
                             </div>
                         </div>
 

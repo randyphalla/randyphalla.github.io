@@ -24,6 +24,7 @@ class HeaderComponent extends Component {
         const { isActive } = this.state;
 
         return (
+            // TODO: Use Bootstrap menu
             <div>
                 <header id="header">
                     <div className="container">
@@ -42,7 +43,7 @@ class HeaderComponent extends Component {
                                 <ul>
                                     <li><Link to="/">Home</Link></li>
                                     <li><Link to="/about">About</Link></li>
-                                    <li><Link to="/portfolio">Portfolio</Link></li>
+                                    {/* <li><Link to="/portfolio">Portfolio</Link></li> */}
                                     <li><Link to="/contact">Contact</Link></li>
                                 </ul>
                             </div>
@@ -56,7 +57,7 @@ class HeaderComponent extends Component {
                             <ul>
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/about">About</Link></li>
-                                <li><Link to="/portfolio">Portfolio</Link></li>
+                                {/* <li><Link to="/portfolio">Portfolio</Link></li> */}
                                 <li><Link to="/contact">Contact</Link></li>
                             </ul>
                         </div>
