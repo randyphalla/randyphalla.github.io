@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
+import './assets/css/bootstrap.min.css';
+import './assets/css/font.css';
 import './App.css';
 
 import HeaderComponent from './components/header/header.component';
@@ -26,3 +28,4 @@ class App extends Component {
 }
 
 export default App;
+

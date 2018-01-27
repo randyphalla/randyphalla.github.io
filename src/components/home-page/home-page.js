@@ -69,8 +69,23 @@ class HomePage extends Component {
                         <div className="row">
                             <div className="col-12">
                                 <h3>Services</h3>   
+                                <div className="under-line"></div>
                             </div>
                             {/* UI Design, Branding, and Web / App Development */}
+                        </div>
+                        <div className="row">
+                            <div className="col-12 col-md-4">
+                                <img src="" alt="Branding Icon"/>
+                                <h4>Branding</h4>
+                            </div>
+                            <div className="col-12 col-md-4">
+                                <img src="" alt="UI Design Icon"/>
+                                <h4>Web / UI Design</h4>
+                            </div>
+                            <div className="col-12 col-md-4">
+                                <img src="" alt="Web/App Icon"/>
+                                <h4>Web / App Development</h4>
+                            </div>
                         </div>
                     </div>
                 </section>
