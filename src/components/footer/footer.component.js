@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SocialItemComponent from '../social-item/social-item.component';
-
 import './footer.component.css';
 
 class FooterComponent extends Component {
@@ -12,27 +11,26 @@ class FooterComponent extends Component {
 
         this.socialItems = [
             {
-                link: 'https://www.behance.net/randyphalla',
-                myClass: 'fab fa-behance-square'
+                link: 'https://www.linkedin.com/in/randyphalla/',
+                myClass: 'fab fa-linkedin-in'   
             },
             {
                 link: 'https://github.com/randyphalla',
                 myClass: 'fab fa-github'
             },
             {
+                link: 'https://www.behance.net/randyphalla',
+                myClass: 'fab fa-behance-square'
+            },
+            {
                 link: 'https://dribbble.com/randyphalla',
                 myClass: 'fab fa-dribbble'
             },
-            // {
-            //     link: 'https://twitter.com/randyphalla',
-            //     myClass: 'fab fa-twitter'
-            // },
             {
                 link: 'mailto:randyphalla@gmail.com',
                 myClass: 'fas fa-at'
             }
         ];
-
     }
 
     render() {

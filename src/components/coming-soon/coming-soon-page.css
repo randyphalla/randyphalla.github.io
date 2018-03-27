@@ -1,0 +1,91 @@
+#coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(90deg, #222222, #1A1A1A); }
+  #coming-soon .logo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center; }
+    #coming-soon .logo img {
+      width: 100px; }
+    #coming-soon .logo h3 {
+      margin-top: 20px;
+      font-family: 'acherus_grotesquelight', Helvetica, Arial, sans-serif;
+      font-size: 26px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.05em; }
+      #coming-soon .logo h3 span {
+        font-family: 'acherus_grotesqueblack', Helvetica, Arial, sans-serif;
+        white-space: pre-wrap; }
+    @media screen and (min-width: 768px) {
+      #coming-soon .logo h3 br {
+        display: none; } }
+  #coming-soon .description {
+    margin-top: 16px;
+    margin-bottom: 16px; }
+    #coming-soon .description p {
+      margin-bottom: 0;
+      font-family: 'acherus_grotesquelight', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.05em; }
+      #coming-soon .description p span {
+        font-family: 'acherus_grotesquebold', Helvetica, Arial, sans-serif; }
+      #coming-soon .description p a {
+        font-family: 'acherus_grotesquebold', Helvetica, Arial, sans-serif;
+        color: #fff;
+        text-decoration: none; }
+        #coming-soon .description p a:hover {
+          color: #6ac9c8;
+          transition: all 300ms ease; }
+    @media screen and (min-width: 768px) {
+      #coming-soon .description p {
+        font-size: 18px; } }
+  #coming-soon .coming-soon-message {
+    margin-top: 40px;
+    margin-bottom: 40px; }
+    #coming-soon .coming-soon-message h3 {
+      font-family: 'acherus_grotesqueblack', Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.01em; }
+    @media screen and (min-width: 768px) {
+      #coming-soon .coming-soon-message h3 {
+        font-size: 28px; } }
+    @media screen and (min-width: 992px) {
+      #coming-soon .coming-soon-message h3 {
+        font-size: 36px; } }
+  #coming-soon .social-media-links ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: center; }
+    #coming-soon .social-media-links ul li {
+      display: inline;
+      padding: 0 10px; }
+      #coming-soon .social-media-links ul li a svg {
+        color: #fff; }
+        #coming-soon .social-media-links ul li a svg.svg-inline--fa {
+          height: 16px;
+          width: 16px; }
+      #coming-soon .social-media-links ul li a:hover svg {
+        color: #F04B4B;
+        transform: translateY(-2px);
+        transition: all 300ms ease; }
+  @media screen and (min-width: 480px) {
+    #coming-soon .social-media-links ul li {
+      padding: 0 13px; }
+      #coming-soon .social-media-links ul li a svg.svg-inline--fa {
+        height: 25px;
+        width: 25px; } }
+  @media screen and (min-width: 768px) {
+    #coming-soon .social-media-links ul li {
+      padding: 0 16px; }
+      #coming-soon .social-media-links ul li a svg.svg-inline--fa {
+        height: 30px;
+        width: 30px; } }
