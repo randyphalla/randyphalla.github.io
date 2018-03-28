@@ -52,7 +52,7 @@ class ComingSoonPage extends Component {
                     <div className="row justify-content-center description">
                         <div className="col-12 col-sm-10 col-md-8">
                             <p><span>Front-End Developer</span> & <span>Graphic Designer</span> from <span>London, Ontario.</span></p>
-                            <p>Currently working at <Link to="https://devlift.io" rel="noopener">Devlift Media</Link> as a <span>Front End Developer.</span></p>
+                            <p>Currently working at <Link to="https://devlift.io" rel="noopener" target="_blank">Devlift Media</Link> as a <span>Front End Developer.</span></p>
                         </div>
                     </div>
 
