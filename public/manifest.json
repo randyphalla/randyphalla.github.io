@@ -7,8 +7,8 @@
             "type": "image/png"
         },
         {
-            "src": "24x24.png",
-            "sizes": "24x24",
+            "src": "32x32.png",
+            "sizes": "32x32",
             "type": "image/png"
         },
         {
@@ -24,6 +24,6 @@
     ],
     "start_url": "./index.html",
     "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+    "theme_color": "#ffffff",
+    "background_color": "#222222"
 }
