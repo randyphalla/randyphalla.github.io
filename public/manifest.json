@@ -1,0 +1,29 @@
+{
+    "short_name": "rp portfolio",
+    "name": "Randy Phalla Portfolio",
+    "icons": [{
+            "src": "16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "64x64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "512x512.png",
+            "sizes": "512x512",
+            "type": "image/x-icon"
+        }
+    ],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#222222"
+}
