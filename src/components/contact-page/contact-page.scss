@@ -1,0 +1,103 @@
+#contact {
+    height: calc(100vh - 172.66px);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #FBFAFD;
+
+    .contact-info {
+        text-align: center;
+
+        h3 {
+            font: {
+                family: 'acherus_grotesquebold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                size: 40px;
+            }
+            color: #FF1C0E;    
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .under-line {
+            width: 100px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            border: 2px solid #222222;
+        }
+
+        p {
+            font: {
+                family: 'acherus_grotesquelight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                size: 16px;
+            }       
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;     
+        }
+        
+        a {
+            padding-top: 50px;
+
+            font: {
+                family: 'acherus_grotesquemedium', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                size: 16px;
+            }    
+            color: #222222;
+            text-decoration: underline;        
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            &:hover {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 511px) {
+    #contact {
+        .contact-info {
+            .under-line {
+                width: 250px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #contact {
+        height: calc(100vh - 181.66px);
+
+        .contact-info {
+
+            h3 {
+                font: {
+                    size: 45px;
+                }
+            }
+    
+            .under-line {
+                width: 300px;
+                margin-bottom: 30px;
+            }
+    
+            p {
+                font: {
+                    size: 18px;
+                }            
+            }
+            
+            a {
+                font: {
+                    size: 18px;
+                }        
+            }
+        }
+    }
+}
