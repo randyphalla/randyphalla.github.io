@@ -1,5 +1,0 @@
-# randyphalla.github.io
-
-##
-
-###
