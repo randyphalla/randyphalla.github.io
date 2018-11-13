@@ -47,13 +47,11 @@ class ComingSoonPage extends Component {
 	}
 
     googleTrack(name) {
-
-        ReactGA.event({
-            category: 'Social Media',
-            action: 'Click',
-            label: 'Link'
-        });
-
+        // ReactGA.event({
+        //     category: 'Social Media',
+        //     action: 'Click',
+        //     label: 'Link'
+        // });
         ReactGA.outboundLink({
             label: name
         }, () => {
