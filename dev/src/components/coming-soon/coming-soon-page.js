@@ -40,8 +40,25 @@ class ComingSoonPage extends Component {
 		// Add your tracking ID created from https://analytics.google.com/analytics/web/#home/
 		ReactGA.initialize('UA-111702075-1');
 		// This just needs to be called once since we have no routes in this case.
-    	ReactGA.pageview(window.location.pathname);
+        ReactGA.pageview(window.location.pathname);
+        
+        this.googleTrack = this.googleTrack.bind(this);
+
 	}
+
+    googleTrack(name) {
+
+        ReactGA.event({
+            category: 'Social Media',
+            action: 'Click',
+            label: 'Link'
+        });
+
+        ReactGA.outboundLink({
+            label: name
+        }, () => {
+        });
+    }
 
 	render() {
 		return (
@@ -59,7 +76,7 @@ class ComingSoonPage extends Component {
 					<div className="row justify-content-center description">
 						<div className="col-12 col-sm-10 col-md-8">
 							<p><span>Front-End Developer</span> & <span>Graphic Designer</span> from <span>London, Ontario.</span></p>
-							<p>Currently working at <Link to="https://devlift.io" rel="noopener" target="_blank">Devlift Media</Link> as a <span>Front End Developer.</span></p>
+							<p>Currently working at <Link to="https://devlift.io" rel="noopener" target="_blank" onClick={() => this.googleTrack('https://devlift.io')}>Devlift Media</Link> as a <span>Front End Developer.</span></p>
 						</div>
 					</div>
 
@@ -73,7 +90,7 @@ class ComingSoonPage extends Component {
 						<div className="col-12">
 							<ul>
 								{this.socialItems.map((props, index) => {
-									return <SocialItemComponent key={index} {...props} />;
+									return <SocialItemComponent key={index} {...props} googleTrack={() => this.googleTrack(props.name)} />;
 								})}
 							</ul>
 						</div>
