@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import SocialItemComponent from '../social-item/social-item.component';
 import ReactGA from 'react-ga';
 import './coming-soon-page.css';
@@ -74,7 +74,7 @@ class ComingSoonPage extends Component {
 					<div className="row justify-content-center description">
 						<div className="col-12 col-sm-10 col-md-8">
 							<p><span>Front-End Developer</span> & <span>Graphic Designer</span> from <span>London, Ontario.</span></p>
-							<p>Currently working at <Link to="https://devlift.io" rel="noopener" target="_blank" onClick={() => this.googleTrack('https://devlift.io')}>Devlift Media</Link> as a <span>Front End Developer.</span></p>
+							<p>Currently working at <a href="https://devlift.io" rel="noopener" target="_blank" onClick={() => this.googleTrack('https://devlift.io')}>Devlift Media</a> as a <span>Front End Developer.</span></p>
 						</div>
 					</div>
 
