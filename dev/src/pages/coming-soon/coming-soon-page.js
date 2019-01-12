@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import SocialItemComponent from '../social-item/social-item.component';
+import SocialItemComponent from '../../components/social-item/social-item.component';
 import ReactGA from 'react-ga';
 import './coming-soon-page.css';
 import logo from '../../images/logo.png';
@@ -37,11 +37,9 @@ class ComingSoonPage extends Component {
 			},
 		];
 
-		// Add your tracking ID created from https://analytics.google.com/analytics/web/#home/
 		ReactGA.initialize('UA-111702075-1');
-		// This just needs to be called once since we have no routes in this case.
         ReactGA.pageview(window.location.pathname);
-        
+
         this.googleTrack = this.googleTrack.bind(this);
 
 	}
@@ -73,8 +71,8 @@ class ComingSoonPage extends Component {
 
 					<div className="row justify-content-center description">
 						<div className="col-12 col-sm-10 col-md-8">
-							<p><span>Front-End Developer</span> & <span>Graphic Designer</span> from <span>London, Ontario.</span></p>
-							<p>Currently working at <a href="https://devlift.io" rel="noopener" target="_blank" onClick={() => this.googleTrack('https://devlift.io')}>Devlift Media</a> as a <span>Front End Developer.</span></p>
+							<p><span>Front-End Web Developer</span> & <span>Graphic Designer</span> from <span>London, Ontario.</span></p>
+							<p>Currently working at <a href="https://devlift.io" rel="noopener noreferrer" target="_blank" onClick={() => this.googleTrack('https://devlift.io')}>Devlift Media</a> as a <span>Web Developer.</span></p>
 						</div>
 					</div>
 
