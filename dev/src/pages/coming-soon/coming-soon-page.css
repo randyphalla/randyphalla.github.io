@@ -38,10 +38,10 @@
       #coming-soon .description p a {
         font-family: 'acherus_grotesquebold',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         color: #fff;
-        text-decoration: none; }
+        text-decoration: none;
+        transition: all 300ms ease; }
         #coming-soon .description p a:hover {
-          color: #6ac9c8;
-          transition: all 300ms ease; }
+          color: #6ac9c8; }
     @media screen and (min-width: 768px) {
       #coming-soon .description p {
         font-size: 18px; } }
@@ -69,14 +69,14 @@
       display: inline;
       padding: 0 10px; }
       #coming-soon .social-media-links ul li a svg {
-        color: #fff; }
+        color: #fff;
+        transition: all 300ms ease; }
         #coming-soon .social-media-links ul li a svg.svg-inline--fa {
           height: 16px;
           width: 16px; }
       #coming-soon .social-media-links ul li a:hover svg {
         color: #f04b4b;
-        transform: translateY(-2px);
-        transition: all 300ms ease; }
+        transform: translateY(-2px); }
   @media screen and (min-width: 480px) {
     #coming-soon .social-media-links ul li {
       padding: 0 13px; }

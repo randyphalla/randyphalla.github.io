@@ -1,17 +1,7 @@
-// @flow
 import React, { Component } from 'react';
 import './social-item.component.css';
 
-export type SocialItemProps = {
-    link: string,
-    googleTrack: Function,
-    name: string,
-    myClass: string
-}
-
-export type SocialItemState = {}
-
-class SocialItemComponent extends Component<SocialItemProps, SocialItemState> {
+class SocialItemComponent extends Component {
 	render() {
 		return (
 			<li>
