@@ -3,7 +3,8 @@
 	justify-content: center;
 	align-items: center;
 
-	height: 100vh;
+	min-height: 100vh;
+    overflow: auto;
 
 	background: linear-gradient(90deg, #222222, #1a1a1a);
 
@@ -104,6 +105,8 @@
 	}
 
 	.social-media-links {
+        padding-bottom: 20px;
+
 		ul {
 			list-style-type: none;
 			padding-left: 0;
