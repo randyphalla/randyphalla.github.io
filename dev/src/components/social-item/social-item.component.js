@@ -1,9 +1,17 @@
+// @flow
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-
 import './social-item.component.css';
 
-class SocialItemComponent extends Component {
+export type SocialItemProps = {
+    link: string,
+    googleTrack: Function,
+    name: string,
+    myClass: string
+}
+
+export type SocialItemState = {}
+
+class SocialItemComponent extends Component<SocialItemProps, SocialItemState> {
 	render() {
 		return (
 			<li>

@@ -1,11 +1,20 @@
+// @flow
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import SocialItemComponent from '../../components/social-item/social-item.component';
 import ReactGA from 'react-ga';
+
 import './coming-soon-page.css';
 import logo from '../../images/logo.png';
 
-class ComingSoonPage extends Component {
+export type ComingSoonProps = {
+
+}
+
+export type ComingSoonState = {
+    socialItems: Array<Object>
+}
+
+class ComingSoonPage extends Component<ComingSoonProps, ComingSoonState> {
 	constructor(props) {
 		super(props);
 
