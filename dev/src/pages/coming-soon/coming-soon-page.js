@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SocialItemComponent from '../../components/social-item/social-item.component';
 import ReactGA from 'react-ga';
 
@@ -7,35 +7,65 @@ import logo from '../../images/logo.png';
 
 function ComingSoonPage() {
 
-    const socialItems = [
-        {
-            link: 'https://www.linkedin.com/in/randyphalla/',
-            myClass: 'fab fa-linkedin-in',
-            name: 'linkedin',
-        },
-        {
-            link: 'https://github.com/randyphalla',
-            myClass: 'fab fa-github',
-            name: 'github',
-        },
-        {
-            link: 'https://www.behance.net/randyphalla',
-            myClass: 'fab fa-behance-square',
-            name: 'behance',
-        },
-        {
-            link: 'https://dribbble.com/randyphalla',
-            myClass: 'fab fa-dribbble',
-            name: 'dribbble',
-        },
-        {
-            link: 'mailto:randyphalla@gmail.com',
-            myClass: 'fas fa-at',
-            name: 'mail',
-        },
-    ];
+    // const socialItems = [
+    //     {
+    //         link: 'https://www.linkedin.com/in/randyphalla/',
+    //         myClass: 'fab fa-linkedin-in',
+    //         name: 'linkedin',
+    //     },
+    //     {
+    //         link: 'https://github.com/randyphalla',
+    //         myClass: 'fab fa-github',
+    //         name: 'github',
+    //     },
+    //     {
+    //         link: 'https://www.behance.net/randyphalla',
+    //         myClass: 'fab fa-behance-square',
+    //         name: 'behance',
+    //     },
+    //     {
+    //         link: 'https://dribbble.com/randyphalla',
+    //         myClass: 'fab fa-dribbble',
+    //         name: 'dribbble',
+    //     },
+    //     {
+    //         link: 'mailto:randyphalla@gmail.com',
+    //         myClass: 'fas fa-at',
+    //         name: 'mail',
+    //     },
+    // ];
 
-    const [socials, setSocials] = useState(socialItems);
+    const [socials, setSocials] = useState([]);
+
+    useEffect(() => {
+        setSocials([
+            {
+                link: 'https://www.linkedin.com/in/randyphalla/',
+                myClass: 'fab fa-linkedin-in',
+                name: 'linkedin',
+            },
+            {
+                link: 'https://github.com/randyphalla',
+                myClass: 'fab fa-github',
+                name: 'github',
+            },
+            {
+                link: 'https://www.behance.net/randyphalla',
+                myClass: 'fab fa-behance-square',
+                name: 'behance',
+            },
+            {
+                link: 'https://dribbble.com/randyphalla',
+                myClass: 'fab fa-dribbble',
+                name: 'dribbble',
+            },
+            {
+                link: 'mailto:randyphalla@gmail.com',
+                myClass: 'fas fa-at',
+                name: 'mail',
+            },
+        ]);
+    }, []);
 
     ReactGA.initialize('UA-111702075-1');
     ReactGA.pageview(window.location.pathname);
