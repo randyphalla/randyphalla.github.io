@@ -1,10 +1,9 @@
-import React from "react"
-// import { Link } from "gatsby"
+import React from "react";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-class IndexPage extends React.Component {
+class ContactPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,12 +14,11 @@ class IndexPage extends React.Component {
     render() {
         return (
             <Layout>
-                <SEO title="Home" keywords={[]} />
-                <h3>Portfolio</h3>
+                <SEO title="Contact" keywords={[]} />
             </Layout>
         )
     }
 
 }
 
-export default IndexPage
+export default ContactPage
