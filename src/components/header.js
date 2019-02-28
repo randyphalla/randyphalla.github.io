@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import './header.scss';
 import Logo from '../assets/images/logo.svg';
 
@@ -25,16 +25,16 @@ class Header extends React.Component {
                     <div className="desktop-menu">
                         <ul className="desktop-menu-links">
                             <li className="desktop-menu-links__item">
-                                <a className="desktop-menu-links__item-link" href="#">Home</a>
+                                <Link className="desktop-menu-links__item-link" to="/">Home</Link>
                             </li>
                             <li className="desktop-menu-links__item">
-                                <a className="desktop-menu-links__item-link" href="#">About</a>
+                                <Link className="desktop-menu-links__item-link" to="/about">About</Link>
                             </li>
                             <li className="desktop-menu-links__item">
-                                <a className="desktop-menu-links__item-link" href="#">Portfolio</a>
+                                <Link className="desktop-menu-links__item-link" to="/portfolio">Portfolio</Link>
                             </li>            
                             <li className="desktop-menu-links__item">
-                                <a className="desktop-menu-links__item-link" href="#">Contact</a>
+                                <Link className="desktop-menu-links__item-link" to="/contact">Contact</Link>
                             </li>
                         </ul>
                     </div>

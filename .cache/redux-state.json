@@ -1056,14 +1056,12 @@
       },
       "port": "8000",
       "host": "localhost",
-      "pathPrefix": "",
-      "polyfill": true,
       "buildTime": "2019-02-28T01:54:48.715Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "b4e49f12f4e130b1df6322620fc92f90",
+        "contentDigest": "b59ba7d2ea318cab9b6337ecac6f942e",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1323,26 +1321,6 @@
         "type": "SitePage",
         "contentDigest": "e90d7170f246965597118062f2b1461e",
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /404.html": {
-      "jsonName": "404-html-516",
-      "internalComponentName": "Component404Html",
-      "path": "/404.html",
-      "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
-      "componentChunkName": "component---src-pages-404-js",
-      "context": {},
-      "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
-      "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
-      "id": "SitePage /404.html",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "c1c1116f3ef9cb27d7d84745ad72a4c3",
-        "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
         "owner": "internal-data-bridge"
       }
     }
