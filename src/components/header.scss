@@ -1,0 +1,49 @@
+@import '../assets/scss/app';
+
+.header {
+    background-color: $primary-color;
+}
+
+.logo {
+    .logo__avatar {
+        width: 37px;
+    }
+}
+
+.container {
+    padding: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desktop-menu {
+
+    .desktop-menu-links {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        display: flex;
+        justify-content: flex-end;
+
+        .desktop-menu-links__item {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .desktop-menu-links__item-link {
+                color: $white-color;
+            }
+        }
+    }
+}
