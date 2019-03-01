@@ -2,6 +2,13 @@
 
 .header {
     background-color: $primary-color;
+
+    .container {
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .logo {
@@ -11,11 +18,9 @@
 }
 
 .container {
-    padding: 16px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // padding: 16px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .desktop-menu {

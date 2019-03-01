@@ -1,13 +1,6 @@
 import React from "react";
 
 class Banner extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isTrue: true
-        }
-    }
-
     render() {
         return (
             <section className="banner">
@@ -19,7 +12,6 @@ class Banner extends React.Component {
             </section>
         )
     }
-
 }
 
 export default Banner

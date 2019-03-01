@@ -4,13 +4,6 @@ import './header.scss';
 import Logo from '../assets/images/logo.svg';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isTrue: true
-        }
-    }
-
     render() {
         return (
             <header className="header">
@@ -44,7 +37,6 @@ class Header extends React.Component {
             </header>
         )
     }
-
 }
 
 export default Header

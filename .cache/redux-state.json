@@ -844,11 +844,337 @@
         "owner": "internal-data-bridge"
       }
     },
+    "23ddf214-f103-54f5-9ff9-e77790886fe6": {
+      "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
+      "id": "23ddf214-f103-54f5-9ff9-e77790886fe6",
+      "name": "gatsby-plugin-prefetch-google-fonts",
+      "version": "1.4.0",
+      "pluginOptions": {
+        "plugins": [],
+        "fonts": [
+          {
+            "family": "Montserrat",
+            "variants": [
+              "300",
+              "700"
+            ]
+          },
+          {
+            "family": "Raleway",
+            "variants": [
+              "500",
+              "600",
+              "700"
+            ]
+          }
+        ]
+      },
+      "nodeAPIs": [
+        "onPreBootstrap"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
+      "packageJson": {
+        "name": "gatsby-plugin-prefetch-google-fonts",
+        "description": "A Gatsby plugin to download and prefetch [Google Fonts](https://fonts.google.com/). Can increase performance as opposed to loading webfonts from Google's external stylesheet.",
+        "version": "1.4.0",
+        "main": "gatsby-ssr.js",
+        "keywords": [
+          "gatsby-plugin",
+          "gatsby",
+          "plugin",
+          "web",
+          "font",
+          "loader",
+          "google",
+          "webfont",
+          "webfontloader",
+          "prefetch",
+          "download",
+          "downloader",
+          "local"
+        ],
+        "author": {
+          "name": "Kennedy Rose",
+          "email": "krose@escaladesports.com"
+        },
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.2.0"
+          },
+          {
+            "name": "clean-css",
+            "version": "^4.2.1"
+          },
+          {
+            "name": "download",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "get-urls",
+            "version": "^8.0.0"
+          },
+          {
+            "name": "globby",
+            "version": "^8.0.1"
+          },
+          {
+            "name": "google-fonts-plugin",
+            "version": "2.0.2"
+          },
+          {
+            "name": "object-hash",
+            "version": "^1.3.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.1.2"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.1.2"
+          },
+          {
+            "name": "@babel/plugin-proposal-class-properties",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-decorators",
+            "version": "^7.1.2"
+          },
+          {
+            "name": "@babel/plugin-proposal-do-expressions",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-export-default-from",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-export-namespace-from",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-function-bind",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-function-sent",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-json-strings",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-logical-assignment-operators",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-numeric-separator",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-optional-chaining",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-pipeline-operator",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-proposal-throw-expressions",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-syntax-dynamic-import",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-syntax-import-meta",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/plugin-syntax-jsx",
+            "version": "^7.2.0"
+          },
+          {
+            "name": "@babel/plugin-transform-runtime",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "@babel/preset-env",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "@babel/preset-react",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "child-process-async",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "child-process-promise",
+            "version": "^2.2.1"
+          },
+          {
+            "name": "emotion",
+            "version": "^9.2.6"
+          },
+          {
+            "name": "emotion-server",
+            "version": "^9.2.6"
+          },
+          {
+            "name": "enzyme",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "enzyme-adapter-react-16",
+            "version": "^1.3.0"
+          },
+          {
+            "name": "eslint",
+            "version": "^5.2.0"
+          },
+          {
+            "name": "eslint-config-escalade-sports",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "gatsby",
+            "version": "^2.0.19"
+          },
+          {
+            "name": "gatsby-plugin-emotion",
+            "version": "2.0.5"
+          },
+          {
+            "name": "husky",
+            "version": "^0.14.3"
+          },
+          {
+            "name": "identity-obj-proxy",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "isomorphic-fetch",
+            "version": "^2.2.1"
+          },
+          {
+            "name": "jest",
+            "version": "^23.4.2"
+          },
+          {
+            "name": "jest-dom",
+            "version": "^1.12.0"
+          },
+          {
+            "name": "lint-staged",
+            "version": "^7.2.0"
+          },
+          {
+            "name": "netlify-cms",
+            "version": "^1.9.3"
+          },
+          {
+            "name": "netlify-lambda",
+            "version": "^0.4.0"
+          },
+          {
+            "name": "npm-run-all",
+            "version": "^4.1.3"
+          },
+          {
+            "name": "opn-cli",
+            "version": "^3.1.0"
+          },
+          {
+            "name": "react",
+            "version": "^16.4.0"
+          },
+          {
+            "name": "react-dom",
+            "version": "^16.4.0"
+          },
+          {
+            "name": "react-helmet",
+            "version": "^5.2.0"
+          },
+          {
+            "name": "react-netlify-form",
+            "version": "^2.0.7"
+          },
+          {
+            "name": "react-no-ssr",
+            "version": "^1.1.0"
+          },
+          {
+            "name": "react-test-renderer",
+            "version": "^16.4.2"
+          },
+          {
+            "name": "react-testing-library",
+            "version": "^4.1.7"
+          },
+          {
+            "name": "request",
+            "version": "^2.87.0"
+          },
+          {
+            "name": "statable",
+            "version": "^0.3.2"
+          },
+          {
+            "name": "static-server",
+            "version": "^2.2.1"
+          },
+          {
+            "name": "strip-html-comments",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "toml",
+            "version": "^2.3.3"
+          },
+          {
+            "name": "wt-cli",
+            "version": "^10.0.3"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "03ec60beb7ccab3d586c2daad735b126",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
     "7374ebf2-d961-52ee-92a2-c25e7cb387a9": {
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io",
       "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
       "name": "default-site-plugin",
-      "version": "11d403070edabf1912471c52dd560a79",
+      "version": "b8a41311300b1fda7420af89e7c4d75c",
       "pluginOptions": {
         "plugins": []
       },
@@ -881,6 +1207,10 @@
           {
             "name": "gatsby-plugin-offline",
             "version": "^2.0.24"
+          },
+          {
+            "name": "gatsby-plugin-prefetch-google-fonts",
+            "version": "^1.4.0"
           },
           {
             "name": "gatsby-plugin-react-helmet",
@@ -940,7 +1270,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "a46b3f5190ec7b776b10e468824c5951",
+        "contentDigest": "b76e405c0fc46e441e3d28d253d8ad0a",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1056,12 +1386,14 @@
       },
       "port": "8000",
       "host": "localhost",
-      "buildTime": "2019-02-28T01:54:48.715Z",
+      "pathPrefix": "",
+      "polyfill": true,
+      "buildTime": "2019-03-01T02:10:15.697Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "b59ba7d2ea318cab9b6337ecac6f942e",
+        "contentDigest": "af1aa1507b7b7bdda4758fa698d1dbe6",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1071,7 +1403,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "1967907cd4c5243897b05ba94644b49a",
+        "contentDigest": "b3f518502e0b5b3124eff239620513c6",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1083,7 +1415,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-02-28T01:54:51.767Z",
+      "accessTime": "2019-03-01T02:10:20.937Z",
       "changeTime": "2019-02-24T23:58:23.464Z",
       "birthTime": "2019-02-24T23:56:49.071Z",
       "root": "/",
@@ -1101,11 +1433,11 @@
       "blksize": 4096,
       "ino": 8670386450,
       "blocks": 0,
-      "atimeMs": 1551318891767.3772,
+      "atimeMs": 1551406220937.1824,
       "mtimeMs": 1551052609071.6653,
       "ctimeMs": 1551052703463.5383,
       "birthtimeMs": 1551052609070.5586,
-      "atime": "2019-02-28T01:54:51.767Z",
+      "atime": "2019-03-01T02:10:20.937Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.464Z",
       "birthtime": "2019-02-24T23:56:49.071Z"
@@ -1130,7 +1462,7 @@
       "size": 21212,
       "prettySize": "21.2 kB",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-02-28T01:41:55.174Z",
+      "accessTime": "2019-02-28T23:33:42.310Z",
       "changeTime": "2019-02-24T23:58:23.463Z",
       "birthTime": "2019-02-24T23:56:49.072Z",
       "root": "/",
@@ -1148,11 +1480,11 @@
       "blksize": 4096,
       "ino": 8670386452,
       "blocks": 48,
-      "atimeMs": 1551318115174.462,
+      "atimeMs": 1551396822310.3794,
       "mtimeMs": 1551052609071.9097,
       "ctimeMs": 1551052703463.427,
       "birthtimeMs": 1551052609071.658,
-      "atime": "2019-02-28T01:41:55.174Z",
+      "atime": "2019-02-28T23:33:42.310Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.463Z",
       "birthtime": "2019-02-24T23:56:49.072Z"
@@ -1187,7 +1519,7 @@
       "size": 167273,
       "prettySize": "167 kB",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-02-28T01:52:08.517Z",
+      "accessTime": "2019-03-01T02:06:45.239Z",
       "changeTime": "2019-02-24T23:58:23.462Z",
       "birthTime": "2019-02-24T23:56:49.071Z",
       "root": "/",
@@ -1205,11 +1537,11 @@
       "blksize": 4096,
       "ino": 8670386451,
       "blocks": 328,
-      "atimeMs": 1551318728517.048,
+      "atimeMs": 1551406005239.411,
       "mtimeMs": 1551052609071.535,
       "ctimeMs": 1551052703461.9697,
       "birthtimeMs": 1551052609070.6494,
-      "atime": "2019-02-28T01:52:08.517Z",
+      "atime": "2019-03-01T02:06:45.239Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.462Z",
       "birthtime": "2019-02-24T23:56:49.071Z"
@@ -1323,11 +1655,31 @@
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
         "owner": "internal-data-bridge"
       }
+    },
+    "SitePage /404.html": {
+      "jsonName": "404-html-516",
+      "internalComponentName": "Component404Html",
+      "path": "/404.html",
+      "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
+      "id": "SitePage /404.html",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "c1c1116f3ef9cb27d7d84745ad72a4c3",
+        "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+        "owner": "internal-data-bridge"
+      }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "c36eaad7d9caae5e6a6b8d98da29c943"
+    "PLUGINS_HASH": "c364ca3628fb95749008e85e57967af9"
   },
   "componentDataDependencies": {
     "nodes": {
