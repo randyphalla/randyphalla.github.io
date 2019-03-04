@@ -1,0 +1,58 @@
+@import '../assets/scss/app';
+
+.about-me {
+   padding: 60px 0;
+}
+
+.about-me__logo-avatar {
+    height: 280px;
+    width: 280px;
+    background-color: #D8D8D8;
+    border-radius: 10px;
+}
+
+.about-me__title,
+.about-me__body  {
+    margin: 0;
+}
+
+.about-me__title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $black-color;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.about-me__body {
+    color: $black-color;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .about-me {
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            align-items: center;
+
+            .about-me__logo,
+            .about-me__paragraph  {
+                padding: 16px;
+            }
+
+            .about-me__title  {
+                margin-top: 0;
+            }
+        }
+    }
+}
