@@ -48,7 +48,8 @@ class Footer extends React.Component {
         
                     <div className="lets-get-in-touch">
                         <h3 className="footer-title">Let's Get In Touch</h3>
-                        <p className="footer-text">hello@randyphalla.ca</p>
+                        {/* <p className="footer-text">hello@randyphalla.ca</p> */}
+                        <a className="footer-text footer-text-link" href="mailTo:randyphalla@gmail.com">randyphalla@gmail.com</a>
                     </div>
                 </div>
             </div>
