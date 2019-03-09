@@ -235,7 +235,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-react-helmet",
       "id": "1943ff2f-9c0c-558d-8d0c-006603e8106a",
       "name": "gatsby-plugin-react-helmet",
-      "version": "3.0.6",
+      "version": "3.0.8",
       "pluginOptions": {
         "plugins": []
       },
@@ -248,7 +248,7 @@
       "packageJson": {
         "name": "gatsby-plugin-react-helmet",
         "description": "Manage document head data with react-helmet. Provides drop-in server rendering support for Gatsby.",
-        "version": "3.0.6",
+        "version": "3.0.8",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -266,10 +266,7 @@
           "noscript",
           "style"
         ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "matthews.kyle@gmail.com"
-        },
+        "author": "Kyle Mathews <matthews.kyle@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -311,7 +308,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "2575216f6b738ba91807588ffaa8276f",
+        "contentDigest": "88f326845116894432a94e28dee910fe",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -320,7 +317,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-source-filesystem",
       "id": "3d2081ad-728e-5303-8d30-d0c8fab8d07a",
       "name": "gatsby-source-filesystem",
-      "version": "2.0.22",
+      "version": "2.0.23",
       "pluginOptions": {
         "plugins": [],
         "name": "images",
@@ -336,15 +333,12 @@
       "packageJson": {
         "name": "gatsby-source-filesystem",
         "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
-        "version": "2.0.22",
+        "version": "2.0.23",
         "keywords": [
           "gatsby",
           "gatsby-plugin"
         ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -438,7 +432,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "9d15f6c164b73dcd7c062ead167d366a",
+        "contentDigest": "4c985135823fc11e1b9ee136c4f95446",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -447,7 +441,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-transformer-sharp",
       "id": "da3d06eb-685e-5c77-ae1d-750eb6a2e4a9",
       "name": "gatsby-transformer-sharp",
-      "version": "2.1.14",
+      "version": "2.1.15",
       "pluginOptions": {
         "plugins": []
       },
@@ -462,17 +456,14 @@
       "packageJson": {
         "name": "gatsby-transformer-sharp",
         "description": "Gatsby transformer plugin for images using Sharp",
-        "version": "2.1.14",
+        "version": "2.1.15",
         "keywords": [
           "gatsby",
           "gatsby-plugin",
           "image",
           "sharp"
         ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -485,7 +476,7 @@
           },
           {
             "name": "fs-extra",
-            "version": "^4.0.2"
+            "version": "^7.0.0"
           },
           {
             "name": "potrace",
@@ -534,7 +525,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "03b2593374feebd74c030d6f5e97b282",
+        "contentDigest": "7ad39469907323d4b19daf2878344a33",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -543,7 +534,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-sharp",
       "id": "84d6154d-4241-556c-a679-cc8339cac100",
       "name": "gatsby-plugin-sharp",
-      "version": "2.0.22",
+      "version": "2.0.25",
       "pluginOptions": {
         "plugins": []
       },
@@ -556,7 +547,7 @@
       "packageJson": {
         "name": "gatsby-plugin-sharp",
         "description": "Wrapper of the Sharp image manipulation library for Gatsby plugins",
-        "version": "2.0.22",
+        "version": "2.0.25",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -564,10 +555,7 @@
           "image",
           "sharp"
         ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -665,7 +653,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "1c7e8e8f91b5a0f95f1de2b415434ec9",
+        "contentDigest": "8d8f99d3aa8001029309589273ecee0e",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -699,10 +687,7 @@
           "sass",
           "scss"
         ],
-        "author": {
-          "name": "Daniel Farrell",
-          "email": "daniel@mobelux.com"
-        },
+        "author": "Daniel Farrell <daniel@mobelux.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -757,7 +742,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-manifest",
       "id": "112c12f8-b222-509b-abe0-dfe93a905df9",
       "name": "gatsby-plugin-manifest",
-      "version": "2.0.19",
+      "version": "2.0.22",
       "pluginOptions": {
         "plugins": [],
         "name": "gatsby-starter-default",
@@ -779,7 +764,7 @@
       "packageJson": {
         "name": "gatsby-plugin-manifest",
         "description": "Gatsby plugin which adds a manifest.webmanifest to make sites progressive web apps",
-        "version": "2.0.19",
+        "version": "2.0.22",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -790,10 +775,7 @@
           "progressive-web-app",
           "pwa"
         ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -839,14 +821,14 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "82d5ecb27e86e83bcee5ce80d7c10af3",
+        "contentDigest": "2d5de4592ffb0a449d2ffda8ef0b8c8b",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
-    "23ddf214-f103-54f5-9ff9-e77790886fe6": {
+    "b60f8cfb-2ec0-5452-ae08-5d2146c9dddc": {
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
-      "id": "23ddf214-f103-54f5-9ff9-e77790886fe6",
+      "id": "b60f8cfb-2ec0-5452-ae08-5d2146c9dddc",
       "name": "gatsby-plugin-prefetch-google-fonts",
       "version": "1.4.0",
       "pluginOptions": {
@@ -856,6 +838,7 @@
             "family": "Montserrat",
             "variants": [
               "300",
+              "600",
               "700"
             ]
           },
@@ -879,7 +862,6 @@
       "pluginFilepath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
       "packageJson": {
         "name": "gatsby-plugin-prefetch-google-fonts",
-        "description": "A Gatsby plugin to download and prefetch [Google Fonts](https://fonts.google.com/). Can increase performance as opposed to loading webfonts from Google's external stylesheet.",
         "version": "1.4.0",
         "main": "gatsby-ssr.js",
         "keywords": [
@@ -897,10 +879,7 @@
           "downloader",
           "local"
         ],
-        "author": {
-          "name": "Kennedy Rose",
-          "email": "krose@escaladesports.com"
-        },
+        "author": "Kennedy Rose <krose@escaladesports.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -1165,7 +1144,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "03ec60beb7ccab3d586c2daad735b126",
+        "contentDigest": "a7a042aea8c6f246fc2f41d8e57eb7ba",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1174,7 +1153,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io",
       "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
       "name": "default-site-plugin",
-      "version": "b8a41311300b1fda7420af89e7c4d75c",
+      "version": "b5b0c15422b25aa2811f8112832d6c0b",
       "pluginOptions": {
         "plugins": []
       },
@@ -1194,15 +1173,15 @@
         "dependencies": [
           {
             "name": "gatsby",
-            "version": "^2.1.17"
+            "version": "^2.1.23"
           },
           {
             "name": "gatsby-image",
-            "version": "^2.0.29"
+            "version": "^2.0.31"
           },
           {
             "name": "gatsby-plugin-manifest",
-            "version": "^2.0.19"
+            "version": "^2.0.22"
           },
           {
             "name": "gatsby-plugin-offline",
@@ -1214,7 +1193,7 @@
           },
           {
             "name": "gatsby-plugin-react-helmet",
-            "version": "^3.0.6"
+            "version": "^3.0.8"
           },
           {
             "name": "gatsby-plugin-sass",
@@ -1222,15 +1201,15 @@
           },
           {
             "name": "gatsby-plugin-sharp",
-            "version": "^2.0.22"
+            "version": "^2.0.25"
           },
           {
             "name": "gatsby-source-filesystem",
-            "version": "^2.0.22"
+            "version": "^2.0.23"
           },
           {
             "name": "gatsby-transformer-sharp",
-            "version": "^2.1.14"
+            "version": "^2.1.15"
           },
           {
             "name": "node-sass",
@@ -1242,11 +1221,11 @@
           },
           {
             "name": "react",
-            "version": "^16.8.3"
+            "version": "^16.8.4"
           },
           {
             "name": "react-dom",
-            "version": "^16.8.3"
+            "version": "^16.8.4"
           },
           {
             "name": "react-helmet",
@@ -1270,7 +1249,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "b76e405c0fc46e441e3d28d253d8ad0a",
+        "contentDigest": "3034f1eeab1de545a910ac32dc378a3e",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1279,7 +1258,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-page-creator",
       "id": "2cce34b6-f031-5cef-8637-f11a0674c13d",
       "name": "gatsby-plugin-page-creator",
-      "version": "2.0.8",
+      "version": "2.0.9",
       "pluginOptions": {
         "plugins": [],
         "path": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages",
@@ -1294,16 +1273,13 @@
       "packageJson": {
         "name": "gatsby-plugin-page-creator",
         "description": "Gatsby plugin that automatically creates pages from React components in specified directories",
-        "version": "2.0.8",
+        "version": "2.0.9",
         "main": "index.js",
         "keywords": [
           "gatsby",
           "gatsby-plugin"
         ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -1373,7 +1349,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "5c08b0c91cb0b3d9488cb565e012527f",
+        "contentDigest": "6ec0e0140d22805ebd900ad8fd8cb672",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1386,12 +1362,14 @@
       },
       "port": "8000",
       "host": "localhost",
-      "buildTime": "2019-03-05T03:16:53.993Z",
+      "pathPrefix": "",
+      "polyfill": true,
+      "buildTime": "2019-03-09T18:01:35.202Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "60bc7376d1c94638cfb63cea70089f83",
+        "contentDigest": "320c7299cbde65a902cb6dcea13607cf",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1401,7 +1379,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "fb95780561310b730a09062fd967b5cb",
+        "contentDigest": "fb751a638abcd18d14c8fcd46ac2944b",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1413,7 +1391,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-05T03:16:56.554Z",
+      "accessTime": "2019-03-09T18:01:40.178Z",
       "changeTime": "2019-02-24T23:58:23.464Z",
       "birthTime": "2019-02-24T23:56:49.071Z",
       "root": "/",
@@ -1431,11 +1409,11 @@
       "blksize": 4096,
       "ino": 8670386450,
       "blocks": 0,
-      "atimeMs": 1551755816554.0942,
+      "atimeMs": 1552154500178.1025,
       "mtimeMs": 1551052609071.6653,
       "ctimeMs": 1551052703463.5383,
       "birthtimeMs": 1551052609070.5586,
-      "atime": "2019-03-05T03:16:56.554Z",
+      "atime": "2019-03-09T18:01:40.178Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.464Z",
       "birthtime": "2019-02-24T23:56:49.071Z"
@@ -1460,7 +1438,7 @@
       "size": 21212,
       "prettySize": "21.2 kB",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-02-28T23:33:42.310Z",
+      "accessTime": "2019-03-07T00:40:12.843Z",
       "changeTime": "2019-02-24T23:58:23.463Z",
       "birthTime": "2019-02-24T23:56:49.072Z",
       "root": "/",
@@ -1478,11 +1456,11 @@
       "blksize": 4096,
       "ino": 8670386452,
       "blocks": 48,
-      "atimeMs": 1551396822310.3794,
+      "atimeMs": 1551919212843.054,
       "mtimeMs": 1551052609071.9097,
       "ctimeMs": 1551052703463.427,
       "birthtimeMs": 1551052609071.658,
-      "atime": "2019-02-28T23:33:42.310Z",
+      "atime": "2019-03-07T00:40:12.843Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.463Z",
       "birthtime": "2019-02-24T23:56:49.072Z"
@@ -1517,7 +1495,7 @@
       "size": 167273,
       "prettySize": "167 kB",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-01T02:06:45.239Z",
+      "accessTime": "2019-03-07T00:43:48.234Z",
       "changeTime": "2019-02-24T23:58:23.462Z",
       "birthTime": "2019-02-24T23:56:49.071Z",
       "root": "/",
@@ -1535,11 +1513,11 @@
       "blksize": 4096,
       "ino": 8670386451,
       "blocks": 328,
-      "atimeMs": 1551406005239.411,
+      "atimeMs": 1551919428234.4026,
       "mtimeMs": 1551052609071.535,
       "ctimeMs": 1551052703461.9697,
       "birthtimeMs": 1551052609070.6494,
-      "atime": "2019-03-01T02:06:45.239Z",
+      "atime": "2019-03-07T00:43:48.234Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.462Z",
       "birthtime": "2019-02-24T23:56:49.071Z"
@@ -1653,11 +1631,31 @@
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
         "owner": "internal-data-bridge"
       }
+    },
+    "SitePage /404.html": {
+      "jsonName": "404-html-516",
+      "internalComponentName": "Component404Html",
+      "path": "/404.html",
+      "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
+      "id": "SitePage /404.html",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "c1c1116f3ef9cb27d7d84745ad72a4c3",
+        "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+        "owner": "internal-data-bridge"
+      }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "c364ca3628fb95749008e85e57967af9"
+    "PLUGINS_HASH": "69cdb058499ec61e8a0f4b5f347cf68a"
   },
   "componentDataDependencies": {
     "nodes": {
@@ -1676,8 +1674,8 @@
   },
   "jsonDataPaths": {
     "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
-    "sq--src-components-seo-js": 1025518380,
     "sq--src-components-layout-js": 755544856,
+    "sq--src-components-seo-js": 1025518380,
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
     "about-f34": "125/path---about-f-34-4c2-NZuapzHg3X9TaN1iIixfv1W23E",
     "contact-26a": "686/path---contact-26-a-cd9-NZuapzHg3X9TaN1iIixfv1W23E",
