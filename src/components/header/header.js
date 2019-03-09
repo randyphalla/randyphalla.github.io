@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import './header.scss';
-import Logo from '../assets/images/logo.svg';
+import Logo from '../../assets/images/logo.svg';
 
 class Header extends React.Component {
     render() {

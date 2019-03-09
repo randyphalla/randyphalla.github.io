@@ -1364,12 +1364,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-03-09T18:01:35.202Z",
+      "buildTime": "2019-03-09T19:09:26.387Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "320c7299cbde65a902cb6dcea13607cf",
+        "contentDigest": "2a6a09767362e64ea4756779b39d021a",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1379,7 +1379,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "fb751a638abcd18d14c8fcd46ac2944b",
+        "contentDigest": "dfefb9497762d5f4baa06a9768fe3263",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1391,7 +1391,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-09T18:01:40.178Z",
+      "accessTime": "2019-03-09T19:09:28.833Z",
       "changeTime": "2019-02-24T23:58:23.464Z",
       "birthTime": "2019-02-24T23:56:49.071Z",
       "root": "/",
@@ -1409,11 +1409,11 @@
       "blksize": 4096,
       "ino": 8670386450,
       "blocks": 0,
-      "atimeMs": 1552154500178.1025,
+      "atimeMs": 1552158568833.471,
       "mtimeMs": 1551052609071.6653,
       "ctimeMs": 1551052703463.5383,
       "birthtimeMs": 1551052609070.5586,
-      "atime": "2019-03-09T18:01:40.178Z",
+      "atime": "2019-03-09T19:09:28.833Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.464Z",
       "birthtime": "2019-02-24T23:56:49.071Z"
@@ -1660,7 +1660,7 @@
   "componentDataDependencies": {
     "nodes": {
       "Site": [
-        "sq--src-components-layout-js",
+        "sq--src-components-layout-layout-js",
         "sq--src-components-seo-js"
       ],
       "ae05fd28-40c5-5df7-86f1-dab73e90e5d8": [
@@ -1682,7 +1682,8 @@
     "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
     "portfolio-964": "107/path---portfolio-964-7f6-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
-    "sq--src-components-image-js": 2011440971
+    "sq--src-components-image-js": 2011440971,
+    "sq--src-components-layout-layout-js": 755544856
   },
   "components": {
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js": {
@@ -1711,14 +1712,6 @@
     }
   },
   "staticQueryComponents": {
-    "sq--src-components-layout-js": {
-      "name": "SiteTitleQuery",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/layout.js",
-      "id": "sq--src-components-layout-js",
-      "jsonName": "sq--src-components-layout-js",
-      "query": "query SiteTitleQuery {\n  site {\n    siteMetadata {\n      title\n    }\n  }\n}\n",
-      "hash": 755544856
-    },
     "sq--src-components-seo-js": {
       "name": "DefaultSEOQuery",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/seo.js",
@@ -1734,6 +1727,14 @@
       "jsonName": "sq--src-components-image-js",
       "query": "query usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971 {\n  placeholderImage: file(relativePath: {eq: \"gatsby-astronaut.png\"}) {\n    childImageSharp {\n      fluid(maxWidth: 300) {\n        ...GatsbyImageSharpFluid\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid on ImageSharpFluid {\n  base64\n  aspectRatio\n  src\n  srcSet\n  sizes\n}\n",
       "hash": 2011440971
+    },
+    "sq--src-components-layout-layout-js": {
+      "name": "SiteTitleQuery",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/layout/layout.js",
+      "id": "sq--src-components-layout-layout-js",
+      "jsonName": "sq--src-components-layout-layout-js",
+      "query": "query SiteTitleQuery {\n  site {\n    siteMetadata {\n      title\n    }\n  }\n}\n",
+      "hash": 755544856
     }
   }
 }

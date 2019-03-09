@@ -2,11 +2,11 @@ import React from "react";
 
 import './footer.scss';
 
-import LogoRed from '../assets/images/logo-red.svg';
-import GitHubLogo from '../assets/images/logo-github.svg';
-import BehanceLogo from '../assets/images/logo-behance.svg'; 
-import DribbbleLogo from '../assets/images/logo-dribbble.svg';
-import LinkedinLogo from '../assets/images/logo-linkedin.svg';
+import LogoRed from '../../assets/images/logo-red.svg';
+import GitHubLogo from '../../assets/images/logo-github.svg';
+import BehanceLogo from '../../assets/images/logo-behance.svg'; 
+import DribbbleLogo from '../../assets/images/logo-dribbble.svg';
+import LinkedinLogo from '../../assets/images/logo-linkedin.svg';
 
 class Footer extends React.Component {
     render() {
