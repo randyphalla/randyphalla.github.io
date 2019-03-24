@@ -59,14 +59,13 @@
 
 .projects__item {
     padding-top: 16px;
-    padding-left: 0;
-    padding-right: 16px;
     padding-bottom: 16px;
+    width: 100%;
 }
 
 .projects__item-avatar {
     height: 280px;
-    width: 280px;
+    width: 100%;
     background-color: #D8D8D8;
     border-radius: 10px;
 }
@@ -112,6 +111,10 @@
         padding: 16px;
     }
 
+    .projects__item {
+        width: calc((100% / 2) - 16px);
+    }
+
     .featured-projects_title {
         padding-left: 16px;
     }
@@ -119,6 +122,15 @@
     .rp-btn {
         margin-left: 16px;
         width: initial !important;;
+    }
+    
+}
+
+
+@media screen and (min-width: 992px) {
+
+    .projects__item {
+        width: calc((100% / 3) - 16px);
     }
     
 }

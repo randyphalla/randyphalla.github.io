@@ -2,6 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
+import Banner from '../components/banner/banner';
 
 class ContactPage extends React.Component {
     constructor(props) {
@@ -14,7 +15,17 @@ class ContactPage extends React.Component {
     render() {
         return (
             <Layout>
-                <SEO title="Contact" keywords={[]} />
+
+                <SEO 
+                    title="Contact" 
+                    keywords={[]} 
+                />
+
+                <Banner 
+                    title="Contact" 
+                    description=""
+                />
+
             </Layout>
         )
     }

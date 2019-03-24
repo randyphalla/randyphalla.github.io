@@ -17,8 +17,16 @@ class IndexPage extends React.Component {
     render() {
         return (
             <Layout>
-                <SEO title="Home" keywords={[]} />
-                <Banner />
+                
+                <SEO 
+                    title="Home" 
+                    keywords={[]}
+                />
+
+                <Banner 
+                    title="Randy Phalla" 
+                    description="I am a web developer and designer that specialize in front end development and user interface design." 
+                />
                 
                 <section className="about-me">
                     <h2 className="hidden">About me Section</h2>

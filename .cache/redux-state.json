@@ -266,7 +266,10 @@
           "noscript",
           "style"
         ],
-        "author": "Kyle Mathews <matthews.kyle@gmail.com>",
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "matthews.kyle@gmail.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -338,7 +341,10 @@
           "gatsby",
           "gatsby-plugin"
         ],
-        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -463,7 +469,10 @@
           "image",
           "sharp"
         ],
-        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -555,7 +564,10 @@
           "image",
           "sharp"
         ],
-        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -687,7 +699,10 @@
           "sass",
           "scss"
         ],
-        "author": "Daniel Farrell <daniel@mobelux.com>",
+        "author": {
+          "name": "Daniel Farrell",
+          "email": "daniel@mobelux.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -775,7 +790,10 @@
           "progressive-web-app",
           "pwa"
         ],
-        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -862,6 +880,7 @@
       "pluginFilepath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
       "packageJson": {
         "name": "gatsby-plugin-prefetch-google-fonts",
+        "description": "A Gatsby plugin to download and prefetch [Google Fonts](https://fonts.google.com/). Can increase performance as opposed to loading webfonts from Google's external stylesheet.",
         "version": "1.4.0",
         "main": "gatsby-ssr.js",
         "keywords": [
@@ -879,7 +898,10 @@
           "downloader",
           "local"
         ],
-        "author": "Kennedy Rose <krose@escaladesports.com>",
+        "author": {
+          "name": "Kennedy Rose",
+          "email": "krose@escaladesports.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -1279,7 +1301,10 @@
           "gatsby",
           "gatsby-plugin"
         ],
-        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
         "license": "MIT",
         "dependencies": [
           {
@@ -1364,12 +1389,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-03-09T19:09:26.387Z",
+      "buildTime": "2019-03-24T23:09:19.369Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "2a6a09767362e64ea4756779b39d021a",
+        "contentDigest": "b72a00667b7422637d1c3a3f05ec97cb",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1379,7 +1404,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "dfefb9497762d5f4baa06a9768fe3263",
+        "contentDigest": "f8cd691e854e2a7c354a704739937b1a",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1391,7 +1416,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-09T19:09:28.833Z",
+      "accessTime": "2019-03-24T23:09:24.768Z",
       "changeTime": "2019-02-24T23:58:23.464Z",
       "birthTime": "2019-02-24T23:56:49.071Z",
       "root": "/",
@@ -1409,11 +1434,11 @@
       "blksize": 4096,
       "ino": 8670386450,
       "blocks": 0,
-      "atimeMs": 1552158568833.471,
+      "atimeMs": 1553468964768.1018,
       "mtimeMs": 1551052609071.6653,
       "ctimeMs": 1551052703463.5383,
       "birthtimeMs": 1551052609070.5586,
-      "atime": "2019-03-09T19:09:28.833Z",
+      "atime": "2019-03-24T23:09:24.768Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.464Z",
       "birthtime": "2019-02-24T23:56:49.071Z"
@@ -1438,7 +1463,7 @@
       "size": 21212,
       "prettySize": "21.2 kB",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-07T00:40:12.843Z",
+      "accessTime": "2019-03-24T23:08:57.610Z",
       "changeTime": "2019-02-24T23:58:23.463Z",
       "birthTime": "2019-02-24T23:56:49.072Z",
       "root": "/",
@@ -1456,11 +1481,11 @@
       "blksize": 4096,
       "ino": 8670386452,
       "blocks": 48,
-      "atimeMs": 1551919212843.054,
+      "atimeMs": 1553468937609.9778,
       "mtimeMs": 1551052609071.9097,
       "ctimeMs": 1551052703463.427,
       "birthtimeMs": 1551052609071.658,
-      "atime": "2019-03-07T00:40:12.843Z",
+      "atime": "2019-03-24T23:08:57.610Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.463Z",
       "birthtime": "2019-02-24T23:56:49.072Z"
@@ -1495,7 +1520,7 @@
       "size": 167273,
       "prettySize": "167 kB",
       "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-07T00:43:48.234Z",
+      "accessTime": "2019-03-24T23:08:57.610Z",
       "changeTime": "2019-02-24T23:58:23.462Z",
       "birthTime": "2019-02-24T23:56:49.071Z",
       "root": "/",
@@ -1513,11 +1538,11 @@
       "blksize": 4096,
       "ino": 8670386451,
       "blocks": 328,
-      "atimeMs": 1551919428234.4026,
+      "atimeMs": 1553468937609.974,
       "mtimeMs": 1551052609071.535,
       "ctimeMs": 1551052703461.9697,
       "birthtimeMs": 1551052609070.6494,
-      "atime": "2019-03-07T00:43:48.234Z",
+      "atime": "2019-03-24T23:08:57.610Z",
       "mtime": "2019-02-24T23:56:49.072Z",
       "ctime": "2019-02-24T23:58:23.462Z",
       "birthtime": "2019-02-24T23:56:49.071Z"
@@ -1660,8 +1685,8 @@
   "componentDataDependencies": {
     "nodes": {
       "Site": [
-        "sq--src-components-layout-layout-js",
-        "sq--src-components-seo-js"
+        "sq--src-components-seo-js",
+        "sq--src-components-layout-layout-js"
       ],
       "ae05fd28-40c5-5df7-86f1-dab73e90e5d8": [
         "sq--src-components-image-js"
@@ -1712,14 +1737,6 @@
     }
   },
   "staticQueryComponents": {
-    "sq--src-components-seo-js": {
-      "name": "DefaultSEOQuery",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/seo.js",
-      "id": "sq--src-components-seo-js",
-      "jsonName": "sq--src-components-seo-js",
-      "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
-      "hash": 1025518380
-    },
     "sq--src-components-image-js": {
       "name": "usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/image.js",
@@ -1735,6 +1752,14 @@
       "jsonName": "sq--src-components-layout-layout-js",
       "query": "query SiteTitleQuery {\n  site {\n    siteMetadata {\n      title\n    }\n  }\n}\n",
       "hash": 755544856
+    },
+    "sq--src-components-seo-js": {
+      "name": "DefaultSEOQuery",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/seo.js",
+      "id": "sq--src-components-seo-js",
+      "jsonName": "sq--src-components-seo-js",
+      "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
+      "hash": 1025518380
     }
   }
 }

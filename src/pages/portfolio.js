@@ -2,12 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-
-// const PortfolioPage = () => (
-//   <Layout>
-//     <SEO title="Portfolio" keywords={[]} />
-//   </Layout>
-// )
+import Banner from '../components/banner/banner';
 
 class PortfolioPage extends React.Component {
     constructor(props) {
@@ -20,14 +15,22 @@ class PortfolioPage extends React.Component {
     render() {
         return (
             <Layout>
-                <SEO title="Portfolio" keywords={[]} />
-                <h3>Portfolio</h3>
+
+                <SEO 
+                    title="Portfolio" 
+                    keywords={[]} 
+                />
+
+                <Banner 
+                    title="Portfolio" 
+                    description=""
+                />
+
             </Layout>
         )
     }
 
 }
-
 
 export default PortfolioPage
  

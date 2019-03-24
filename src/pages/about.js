@@ -2,6 +2,8 @@ import React from "react";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
+import Banner from '../components/banner/banner';
+import './about.scss';
 
 class AboutPage extends React.Component {
     constructor(props) {
@@ -14,7 +16,17 @@ class AboutPage extends React.Component {
     render() {
         return (
             <Layout>
-                <SEO title="About" keywords={[]} />
+
+                <SEO 
+                    title="About" 
+                    keywords={[]} 
+                />
+
+                <Banner 
+                    title="About" 
+                    description=""
+                />
+                
             </Layout>
         )
     }
