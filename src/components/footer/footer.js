@@ -34,7 +34,7 @@ class Footer extends React.Component {
                                     </a>
                                 </li>
                                 <li className="social-media__list-item">
-                                    <a href="https://github.com/randyphalla">
+                                    <a href="https://dribbble.com/randyphalla">
                                         <img src={DribbbleLogo} alt="Dribbble" />
                                     </a>
                                 </li>

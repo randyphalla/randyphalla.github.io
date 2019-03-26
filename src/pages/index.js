@@ -47,6 +47,7 @@ class IndexPage extends React.Component {
                     <div className="container">
                                                 
                         <h3 className="featured-projects_title">What I do</h3>  
+                        
                         {/* 
                             HTML
                             CSS 
@@ -68,7 +69,6 @@ class IndexPage extends React.Component {
                             Invision
                             Adobe Photoshop, InDesign and Illustrator
                         */}
-
 
                     </div>
 
