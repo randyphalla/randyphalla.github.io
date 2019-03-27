@@ -1,6 +1,6 @@
 {
-    "short_name": "RP Portfolio",
-    "name": "Randy Phalla Portfolio",
+    "short_name": "Randy Phalla",
+    "name": "Randy Phalla",
     "icons": [{
             "src": "16x16.png",
             "sizes": "16x16",
@@ -27,7 +27,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "./index.html",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#ffffff",
     "background_color": "#222222"
