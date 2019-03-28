@@ -9,9 +9,65 @@ class AboutPage extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            skills: [
+                {
+                    title: 'HTML'
+                },
+                {
+                    title: 'CSS'
+                },
+                {
+                    title: 'SCSS'
+                },
+                {
+                    title: 'Bootstrap'
+                },
+                {
+                    title: 'JavaScript'
+                },
+                {
+                    title: 'Angular 2-7'
+                },
+                {
+                    title: 'Ionic'
+                },
+                {
+                    title: 'ReactJS'
+                },
+                {
+                    title: 'React Native'
+                },
+                {
+                    title: 'Git'
+                },
+                {
+                    title: 'GitHub'
+                },
+                {
+                    title: 'SourceTree'
+                }
+            ],
+            experiences: [
+                {
+                    title: 'Devlift Media - Web Developer',
+                    started: 'Dec 2016 - Present'
+                }
+            ],
+            educations: [
+                {
+                    title: 'Fanshawe College - Interactive Media Specialist',
+                    started: '2015 - 2016'
+                }
+            ]
+        }
     }
 
     render() {
+
+        const { skills, experiences, educations } = this.state;
+
         return (
             <Layout>
 
@@ -25,77 +81,68 @@ class AboutPage extends React.Component {
                     description=""
                 />
 
-
-                <section class="about"> 
-                    <h2 class="hidden">About Section</h2>
-
-                    <div class="container">
-
-                        <div>
-                            <h3>About me</h3>
-                            <p>PhantomJS is also known as API that aims to create is one of functions of a given context in game development, the object that HTML and performance limitations inherent to add client-side I/O, such as Dynamic HTML pages, also be universal when its dependents, called observers, and respective standard libraries, the model-view-controller pattern in the Document Object Model DOM in the framework originally created Ember is determined by caching the technology for Test-Driven Development. Closure.</p>
-                            <button>Resume</button>
+                <section className="about-me"> 
+                    <h2 className="hidden">About Section</h2>
+                    <div className="container">
+                        <div className="about-me__paragraph">
+                            <h3 className="featured-projects_title">About me</h3>
+                            <p className="about-me__body">PhantomJS is also known as API that aims to create is one of functions of a given context in game development, the object that HTML and performance limitations inherent to add client-side I/O, such as Dynamic HTML pages, also be universal when its dependents, called observers, and respective standard libraries, the model-view-controller pattern in the Document Object Model DOM in the framework originally created Ember is determined by caching the technology for Test-Driven Development. Closure.</p>
+                            <button className="rp-btn primary-btn">Resume</button>
                         </div>
-
-                        <div>
+                        <div className="about-me__logo">
                             <img src="" alt="Randy Phalla" />
                         </div>
-
-
                     </div>
-
                 </section>
 
-                <section class="techincal-skils">
-                    <h2 class="hidden">Techincal Skils Section</h2>
-
-                    <div class="container">
-
-                        <h3>Techincal Skils</h3>
-                        
-                        <div class="techincal-skils__lists">
-
-                            <div class="techincal-skils__list-item">
-
-                                <p>HTML</p>
-
-                            </div>
-
+                <section className="techincal-skils">
+                    <h2 className="hidden">Techincal Skils Section</h2>
+                    <div className="container">
+                        <h3 className="featured-projects_title">Techincal Skils</h3>  
+                        <div className="techincal-skils__lists">
+                            {
+                                skills.map((item, i) => {
+                                    return (
+                                        <div className="techincal-skils__list-item" key={i}>
+                                            <p className="techincal-skils__list-item-title">{item.title}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
-
                     </div>
-
                 </section>
 
-                <section class="work-experience">
-                    <h2 class="hidden">Work Experience Section</h2>
-
-                    <div class="container">
-
-                        <h3>Work Experience</h3>
-
-                        <div class="work-experience__list">
-
-                            <div class="work-experience__list-item">
-                                <h4>Devlift Media - Web Developer</h4>
-                                <p>Dec 2016 - Present</p>
-                            </div>
-
+                <section className="work-experience">
+                    <h2 className="hidden">Work Experience Section</h2>
+                    <div className="container">
+                        <h3 className="featured-projects_title">Work Experience</h3>
+                        <div className="work-experience__list">
+                            {
+                                experiences.map((experience, i) => {
+                                    return (
+                                        <div className="work-experience__list-item" key={i}>
+                                            <h4 className="work-experience__list-item-title">{experience.title}</h4>
+                                            <p className="work-experience__list-item-body">{experience.started}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
-
-                        <h3>Education</h3>
-
-                        <div class="work-experience__list">
-
-                            <div class="work-experience__list-item">
-                                <h4>Fanshawe College - Interactive Media Specialist</h4>
-                                <p>2015 - 2016</p>
-                            </div>
-
+                        <h3 className="featured-projects_title">Education</h3>
+                        <div className="work-experience__list">
+                            {
+                                educations.map((education, i) => {
+                                    return (
+                                        <div className="work-experience__list-item" key={i}>
+                                            <h4 className="work-experience__list-item-title">{education.title}</h4>
+                                            <p className="work-experience__list-item-body">{education.started}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
-
                     </div>
-
                 </section>
 
             </Layout>

@@ -7,12 +7,11 @@ import SEO from "../components/seo";
 import Banner from '../components/banner/banner';
 
 class IndexPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isTrue: true
-        }
-    }
+
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {}
+    // }
 
     render() {
         return (

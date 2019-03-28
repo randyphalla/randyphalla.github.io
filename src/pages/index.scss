@@ -52,7 +52,7 @@
 .featured-projects_title {
     margin-bottom: 22px;
     color: $primary-color;
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
@@ -95,16 +95,16 @@
             flex-direction: row;
             justify-items: center;
             align-items: center;
-
-            .about-me__logo,
-            .about-me__paragraph  {
-                padding: 16px;
-            }
-
-            .about-me__title  {
-                margin-top: 0;
-            }
         }
+    }
+
+    .about-me__logo,
+    .about-me__paragraph  {
+        padding: 16px;
+    }
+
+    .about-me__title  {
+        margin-top: 0;
     }
 
     .projects  {
