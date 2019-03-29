@@ -53,12 +53,20 @@ class AboutPage extends React.Component {
                 {
                     title: 'Devlift Media - Web Developer',
                     started: 'Dec 2016 - Present'
+                },
+                {
+                    title: 'BuzzPR - Graphic Design Intern',
+                    started: 'Aug 2016 - Sept 2016'
                 }
             ],
             educations: [
                 {
                     title: 'Fanshawe College - Interactive Media Specialist',
                     started: '2015 - 2016'
+                },
+                {
+                    title: 'Fanshawe College - Graphic Design',
+                    started: '2011 - 2014'
                 }
             ]
         }
@@ -81,11 +89,11 @@ class AboutPage extends React.Component {
                     description=""
                 />
 
-                <section className="about-me"> 
+                <section className="about-me about-me-1"> 
                     <h2 className="hidden">About Section</h2>
                     <div className="container">
                         <div className="about-me__paragraph">
-                            <h3 className="featured-projects_title">About me</h3>
+                            <h3 className="title-1">About me</h3>
                             <p className="about-me__body">PhantomJS is also known as API that aims to create is one of functions of a given context in game development, the object that HTML and performance limitations inherent to add client-side I/O, such as Dynamic HTML pages, also be universal when its dependents, called observers, and respective standard libraries, the model-view-controller pattern in the Document Object Model DOM in the framework originally created Ember is determined by caching the technology for Test-Driven Development. Closure.</p>
                             <button className="rp-btn primary-btn">Resume</button>
                         </div>
@@ -98,7 +106,7 @@ class AboutPage extends React.Component {
                 <section className="techincal-skils">
                     <h2 className="hidden">Techincal Skils Section</h2>
                     <div className="container">
-                        <h3 className="featured-projects_title">Techincal Skils</h3>  
+                        <h3 className="title-1">Techincal Skils</h3>  
                         <div className="techincal-skils__lists">
                             {
                                 skills.map((item, i) => {
@@ -116,7 +124,7 @@ class AboutPage extends React.Component {
                 <section className="work-experience">
                     <h2 className="hidden">Work Experience Section</h2>
                     <div className="container">
-                        <h3 className="featured-projects_title">Work Experience</h3>
+                        <h3 className="title-1">Work Experience</h3>
                         <div className="work-experience__list">
                             {
                                 experiences.map((experience, i) => {
@@ -129,7 +137,13 @@ class AboutPage extends React.Component {
                                 })
                             }
                         </div>
-                        <h3 className="featured-projects_title">Education</h3>
+                    </div>
+                </section>
+
+                <section className="work-experience">
+                    <h2 className="hidden">Work Experience Section</h2>
+                    <div className="container">
+                    <h3 className="title-1">Education</h3>
                         <div className="work-experience__list">
                             {
                                 educations.map((education, i) => {

@@ -2,6 +2,16 @@
 @import 'mixins';
 @import 'theme';
 
+
+.title-1 {
+    margin-bottom: 22px;
+    
+    color: $primary-color;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;

@@ -39,7 +39,7 @@ module.exports = {
           fonts: [
             {
               family: `Montserrat`,
-              variants: [`300`, `600`, `700`]
+              variants: [`600`, `700`]
             },
             {
                 family: `Raleway`,

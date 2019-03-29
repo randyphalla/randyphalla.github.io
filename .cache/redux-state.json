@@ -844,9 +844,9 @@
         "owner": "internal-data-bridge"
       }
     },
-    "b60f8cfb-2ec0-5452-ae08-5d2146c9dddc": {
+    "516045d8-fbcc-569b-8193-71d15709cd30": {
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
-      "id": "b60f8cfb-2ec0-5452-ae08-5d2146c9dddc",
+      "id": "516045d8-fbcc-569b-8193-71d15709cd30",
       "name": "gatsby-plugin-prefetch-google-fonts",
       "version": "1.4.0",
       "pluginOptions": {
@@ -863,6 +863,7 @@
           {
             "family": "Raleway",
             "variants": [
+              "200",
               "500",
               "600",
               "700"
@@ -1166,7 +1167,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "a7a042aea8c6f246fc2f41d8e57eb7ba",
+        "contentDigest": "8adce9f32dd97b5c8834f9b3ea11ac07",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1175,7 +1176,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io",
       "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
       "name": "default-site-plugin",
-      "version": "b5b0c15422b25aa2811f8112832d6c0b",
+      "version": "3fcb5d379895e25ebbbdd6ca071d0e5f",
       "pluginOptions": {
         "plugins": []
       },
@@ -1271,7 +1272,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "3034f1eeab1de545a910ac32dc378a3e",
+        "contentDigest": "67267a3c15c922c94c629e5177de6323",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1387,14 +1388,12 @@
       },
       "port": "8000",
       "host": "localhost",
-      "pathPrefix": "",
-      "polyfill": true,
-      "buildTime": "2019-03-25T02:43:31.414Z",
+      "buildTime": "2019-03-29T02:03:22.457Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "2fe63c9844b68105d49f0da5009119e5",
+        "contentDigest": "a8c2b62d3b9b41c0b699a129aef433b9",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1404,7 +1403,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "db7acbe86c80df0d96df3121d4d6847f",
+        "contentDigest": "d67ca10a419b666c33804c9c246e5508",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1415,10 +1414,10 @@
       "extension": "",
       "size": 128,
       "prettySize": "128 B",
-      "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-25T02:43:35.342Z",
-      "changeTime": "2019-02-24T23:58:23.464Z",
-      "birthTime": "2019-02-24T23:56:49.071Z",
+      "modifiedTime": "2019-03-27T23:20:05.745Z",
+      "accessTime": "2019-03-29T02:03:25.154Z",
+      "changeTime": "2019-03-27T23:20:05.745Z",
+      "birthTime": "2019-03-27T23:20:05.743Z",
       "root": "/",
       "dir": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src",
       "base": "images",
@@ -1432,16 +1431,16 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4096,
-      "ino": 8670386450,
+      "ino": 8674178453,
       "blocks": 0,
-      "atimeMs": 1553481815342.431,
-      "mtimeMs": 1551052609071.6653,
-      "ctimeMs": 1551052703463.5383,
-      "birthtimeMs": 1551052609070.5586,
-      "atime": "2019-03-25T02:43:35.342Z",
-      "mtime": "2019-02-24T23:56:49.072Z",
-      "ctime": "2019-02-24T23:58:23.464Z",
-      "birthtime": "2019-02-24T23:56:49.071Z"
+      "atimeMs": 1553825005154.293,
+      "mtimeMs": 1553728805745.1824,
+      "ctimeMs": 1553728805745.1824,
+      "birthtimeMs": 1553728805742.8247,
+      "atime": "2019-03-29T02:03:25.154Z",
+      "mtime": "2019-03-27T23:20:05.745Z",
+      "ctime": "2019-03-27T23:20:05.745Z",
+      "birthtime": "2019-03-27T23:20:05.743Z"
     },
     "21c655d1-3d5f-568e-be0e-0641a14fcc4d": {
       "id": "21c655d1-3d5f-568e-be0e-0641a14fcc4d",
@@ -1462,10 +1461,10 @@
       "extension": "png",
       "size": 21212,
       "prettySize": "21.2 kB",
-      "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-24T23:08:57.610Z",
-      "changeTime": "2019-02-24T23:58:23.463Z",
-      "birthTime": "2019-02-24T23:56:49.072Z",
+      "modifiedTime": "2019-03-27T23:20:05.746Z",
+      "accessTime": "2019-03-27T23:20:07.567Z",
+      "changeTime": "2019-03-27T23:20:05.746Z",
+      "birthTime": "2019-03-27T23:20:05.745Z",
       "root": "/",
       "dir": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/images",
       "base": "gatsby-icon.png",
@@ -1479,16 +1478,16 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4096,
-      "ino": 8670386452,
+      "ino": 8674178455,
       "blocks": 48,
-      "atimeMs": 1553468937609.9778,
-      "mtimeMs": 1551052609071.9097,
-      "ctimeMs": 1551052703463.427,
-      "birthtimeMs": 1551052609071.658,
-      "atime": "2019-03-24T23:08:57.610Z",
-      "mtime": "2019-02-24T23:56:49.072Z",
-      "ctime": "2019-02-24T23:58:23.463Z",
-      "birthtime": "2019-02-24T23:56:49.072Z"
+      "atimeMs": 1553728807566.9634,
+      "mtimeMs": 1553728805745.8506,
+      "ctimeMs": 1553728805745.8506,
+      "birthtimeMs": 1553728805745.1707,
+      "atime": "2019-03-27T23:20:07.567Z",
+      "mtime": "2019-03-27T23:20:05.746Z",
+      "ctime": "2019-03-27T23:20:05.746Z",
+      "birthtime": "2019-03-27T23:20:05.745Z"
     },
     "64a019e5-5277-5091-816d-9d4cdd53b186": {
       "id": "64a019e5-5277-5091-816d-9d4cdd53b186",
@@ -1519,10 +1518,10 @@
       "extension": "png",
       "size": 167273,
       "prettySize": "167 kB",
-      "modifiedTime": "2019-02-24T23:56:49.072Z",
-      "accessTime": "2019-03-24T23:08:57.610Z",
-      "changeTime": "2019-02-24T23:58:23.462Z",
-      "birthTime": "2019-02-24T23:56:49.071Z",
+      "modifiedTime": "2019-03-27T23:20:05.745Z",
+      "accessTime": "2019-03-28T01:22:30.839Z",
+      "changeTime": "2019-03-27T23:20:05.745Z",
+      "birthTime": "2019-03-27T23:20:05.743Z",
       "root": "/",
       "dir": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/images",
       "base": "gatsby-astronaut.png",
@@ -1536,16 +1535,16 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4096,
-      "ino": 8670386451,
+      "ino": 8674178454,
       "blocks": 328,
-      "atimeMs": 1553468937609.974,
-      "mtimeMs": 1551052609071.535,
-      "ctimeMs": 1551052703461.9697,
-      "birthtimeMs": 1551052609070.6494,
-      "atime": "2019-03-24T23:08:57.610Z",
-      "mtime": "2019-02-24T23:56:49.072Z",
-      "ctime": "2019-02-24T23:58:23.462Z",
-      "birthtime": "2019-02-24T23:56:49.071Z"
+      "atimeMs": 1553736150839.146,
+      "mtimeMs": 1553728805745.0178,
+      "ctimeMs": 1553728805745.0178,
+      "birthtimeMs": 1553728805742.8909,
+      "atime": "2019-03-28T01:22:30.839Z",
+      "mtime": "2019-03-27T23:20:05.745Z",
+      "ctime": "2019-03-27T23:20:05.745Z",
+      "birthtime": "2019-03-27T23:20:05.743Z"
     },
     "f5f75236-7143-53cd-a1ba-5536ea77f15c": {
       "id": "f5f75236-7143-53cd-a1ba-5536ea77f15c",
@@ -1680,7 +1679,7 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "69cdb058499ec61e8a0f4b5f347cf68a"
+    "PLUGINS_HASH": "86c490bf10f2e2a400f53102e7cb6028"
   },
   "componentDataDependencies": {
     "nodes": {
@@ -1711,10 +1710,6 @@
     "sq--src-components-layout-layout-js": 755544856
   },
   "components": {
-    "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js": {
-      "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js"
-    },
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js": {
       "query": "",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js"
@@ -1734,17 +1729,13 @@
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js": {
       "query": "",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js"
+    },
+    "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js": {
+      "query": "",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js"
     }
   },
   "staticQueryComponents": {
-    "sq--src-components-image-js": {
-      "name": "usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/image.js",
-      "id": "sq--src-components-image-js",
-      "jsonName": "sq--src-components-image-js",
-      "query": "query usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971 {\n  placeholderImage: file(relativePath: {eq: \"gatsby-astronaut.png\"}) {\n    childImageSharp {\n      fluid(maxWidth: 300) {\n        ...GatsbyImageSharpFluid\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid on ImageSharpFluid {\n  base64\n  aspectRatio\n  src\n  srcSet\n  sizes\n}\n",
-      "hash": 2011440971
-    },
     "sq--src-components-layout-layout-js": {
       "name": "SiteTitleQuery",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/layout/layout.js",
@@ -1760,6 +1751,14 @@
       "jsonName": "sq--src-components-seo-js",
       "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
       "hash": 1025518380
+    },
+    "sq--src-components-image-js": {
+      "name": "usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/image.js",
+      "id": "sq--src-components-image-js",
+      "jsonName": "sq--src-components-image-js",
+      "query": "query usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971 {\n  placeholderImage: file(relativePath: {eq: \"gatsby-astronaut.png\"}) {\n    childImageSharp {\n      fluid(maxWidth: 300) {\n        ...GatsbyImageSharpFluid\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid on ImageSharpFluid {\n  base64\n  aspectRatio\n  src\n  srcSet\n  sizes\n}\n",
+      "hash": 2011440971
     }
   }
 }

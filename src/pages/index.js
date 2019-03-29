@@ -40,45 +40,12 @@ class IndexPage extends React.Component {
                     </div>
                 </section>
 
-                <section className="technologies">
-                    <h2 className="hidden">Technologies Section</h2>
-
-                    <div className="container">
-                                                
-                        <h3 className="featured-projects_title">What I do</h3>  
-                        
-                        {/* 
-                            HTML
-                            CSS 
-                            SCSS
-
-                            Bootstrap
-                    
-                            JavaScript (ES5 & ES6)
-                            Angular 2-6
-                            React
-                            Ionic 
-                            React Native
-
-                            Git
-                            GitHub
-                            SourceTree
-
-                            Sketch
-                            Invision
-                            Adobe Photoshop, InDesign and Illustrator
-                        */}
-
-                    </div>
-
-                </section>
-
                 <section className="featured-projects">
                     <h2 className="hidden">Featured Projects Section</h2>
 
                     <div className="container">
                                                 
-                        <h3 className="featured-projects_title">Featured Projects</h3>  
+                        <h3 className="title-1">Featured Projects</h3>  
 
                         <div className="projects">
                             <div className="projects__item">
