@@ -2,11 +2,15 @@
 @import 'mixins';
 @import 'theme';
 
+.mb-35 {
+    margin-bottom: 35px;
+}
 
 .title-1 {
     margin-bottom: 22px;
     
-    color: $primary-color;
+    // color: $primary-color;
+    color: $black-color;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;

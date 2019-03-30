@@ -16,10 +16,7 @@ class AboutPage extends React.Component {
                     title: 'HTML'
                 },
                 {
-                    title: 'CSS'
-                },
-                {
-                    title: 'SCSS'
+                    title: 'CSS / SCSS'
                 },
                 {
                     title: 'Bootstrap'
@@ -43,10 +40,10 @@ class AboutPage extends React.Component {
                     title: 'Git'
                 },
                 {
-                    title: 'GitHub'
+                    title: 'Sketch'
                 },
                 {
-                    title: 'SourceTree'
+                    title: 'Adobe PhotoShop & Illustrator'
                 }
             ],
             experiences: [
@@ -94,7 +91,7 @@ class AboutPage extends React.Component {
                     <div className="container">
                         <div className="about-me__paragraph">
                             <h3 className="title-1">About me</h3>
-                            <p className="about-me__body">PhantomJS is also known as API that aims to create is one of functions of a given context in game development, the object that HTML and performance limitations inherent to add client-side I/O, such as Dynamic HTML pages, also be universal when its dependents, called observers, and respective standard libraries, the model-view-controller pattern in the Document Object Model DOM in the framework originally created Ember is determined by caching the technology for Test-Driven Development. Closure.</p>
+                            <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps.</p>
                             <button className="rp-btn primary-btn">Resume</button>
                         </div>
                         <div className="about-me__logo">
@@ -129,7 +126,7 @@ class AboutPage extends React.Component {
                             {
                                 experiences.map((experience, i) => {
                                     return (
-                                        <div className="work-experience__list-item" key={i}>
+                                        <div className="work-experience__list-item mb-35" key={i}>
                                             <h4 className="work-experience__list-item-title">{experience.title}</h4>
                                             <p className="work-experience__list-item-body">{experience.started}</p>
                                         </div>
@@ -148,7 +145,7 @@ class AboutPage extends React.Component {
                             {
                                 educations.map((education, i) => {
                                     return (
-                                        <div className="work-experience__list-item" key={i}>
+                                        <div className="work-experience__list-item mb-35" key={i}>
                                             <h4 className="work-experience__list-item-title">{education.title}</h4>
                                             <p className="work-experience__list-item-body">{education.started}</p>
                                         </div>

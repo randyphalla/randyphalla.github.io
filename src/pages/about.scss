@@ -7,7 +7,7 @@
 
 .techincal-skils,
 .work-experience {
-    margin-bottom: 120px;
+    margin-bottom: 60px;
 
     .title-1 {
         margin-bottom: 50px;
@@ -47,7 +47,7 @@
 }
 
 .work-experience__list-item-body {
-    margin-top: 15px;
+    margin-top: 10px;
 
     font-size: 16px;
     font-weight: 200;
@@ -85,6 +85,8 @@
 
     .techincal-skils,
     .work-experience  {
+        padding: 0 16px;
+
         .title-1 {
             padding-left: 0;
         }

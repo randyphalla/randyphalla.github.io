@@ -844,9 +844,9 @@
         "owner": "internal-data-bridge"
       }
     },
-    "516045d8-fbcc-569b-8193-71d15709cd30": {
+    "85b0d20d-d20b-5ebb-9609-951b47f8f842": {
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
-      "id": "516045d8-fbcc-569b-8193-71d15709cd30",
+      "id": "85b0d20d-d20b-5ebb-9609-951b47f8f842",
       "name": "gatsby-plugin-prefetch-google-fonts",
       "version": "1.4.0",
       "pluginOptions": {
@@ -855,7 +855,6 @@
           {
             "family": "Montserrat",
             "variants": [
-              "300",
               "600",
               "700"
             ]
@@ -1167,7 +1166,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "8adce9f32dd97b5c8834f9b3ea11ac07",
+        "contentDigest": "011f44c53a3b2328aaa0a682cabb00b2",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1176,7 +1175,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io",
       "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
       "name": "default-site-plugin",
-      "version": "3fcb5d379895e25ebbbdd6ca071d0e5f",
+      "version": "c75014c77109909d4be444f49eded352",
       "pluginOptions": {
         "plugins": []
       },
@@ -1272,7 +1271,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "67267a3c15c922c94c629e5177de6323",
+        "contentDigest": "5a42ad4334c0b55deabbdc743b40ac87",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1388,12 +1387,14 @@
       },
       "port": "8000",
       "host": "localhost",
-      "buildTime": "2019-03-29T02:03:22.457Z",
+      "pathPrefix": "",
+      "polyfill": true,
+      "buildTime": "2019-03-30T21:25:07.832Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "a8c2b62d3b9b41c0b699a129aef433b9",
+        "contentDigest": "2b4c871c23bdf1db201ca1859dea5713",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1403,7 +1404,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "d67ca10a419b666c33804c9c246e5508",
+        "contentDigest": "86f9fc7943455a760455cdeec3aa2abe",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1415,7 +1416,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-03-27T23:20:05.745Z",
-      "accessTime": "2019-03-29T02:03:25.154Z",
+      "accessTime": "2019-03-30T21:25:13.980Z",
       "changeTime": "2019-03-27T23:20:05.745Z",
       "birthTime": "2019-03-27T23:20:05.743Z",
       "root": "/",
@@ -1433,11 +1434,11 @@
       "blksize": 4096,
       "ino": 8674178453,
       "blocks": 0,
-      "atimeMs": 1553825005154.293,
+      "atimeMs": 1553981113979.8804,
       "mtimeMs": 1553728805745.1824,
       "ctimeMs": 1553728805745.1824,
       "birthtimeMs": 1553728805742.8247,
-      "atime": "2019-03-29T02:03:25.154Z",
+      "atime": "2019-03-30T21:25:13.980Z",
       "mtime": "2019-03-27T23:20:05.745Z",
       "ctime": "2019-03-27T23:20:05.745Z",
       "birthtime": "2019-03-27T23:20:05.743Z"
@@ -1679,7 +1680,7 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "86c490bf10f2e2a400f53102e7cb6028"
+    "PLUGINS_HASH": "0c83a479341b8784b129f440629d9630"
   },
   "componentDataDependencies": {
     "nodes": {
@@ -1710,6 +1711,10 @@
     "sq--src-components-layout-layout-js": 755544856
   },
   "components": {
+    "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js": {
+      "query": "",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js"
+    },
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js": {
       "query": "",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js"
@@ -1729,10 +1734,6 @@
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js": {
       "query": "",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js"
-    },
-    "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js": {
-      "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js"
     }
   },
   "staticQueryComponents": {
@@ -1744,14 +1745,6 @@
       "query": "query SiteTitleQuery {\n  site {\n    siteMetadata {\n      title\n    }\n  }\n}\n",
       "hash": 755544856
     },
-    "sq--src-components-seo-js": {
-      "name": "DefaultSEOQuery",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/seo.js",
-      "id": "sq--src-components-seo-js",
-      "jsonName": "sq--src-components-seo-js",
-      "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
-      "hash": 1025518380
-    },
     "sq--src-components-image-js": {
       "name": "usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/image.js",
@@ -1759,6 +1752,14 @@
       "jsonName": "sq--src-components-image-js",
       "query": "query usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971 {\n  placeholderImage: file(relativePath: {eq: \"gatsby-astronaut.png\"}) {\n    childImageSharp {\n      fluid(maxWidth: 300) {\n        ...GatsbyImageSharpFluid\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid on ImageSharpFluid {\n  base64\n  aspectRatio\n  src\n  srcSet\n  sizes\n}\n",
       "hash": 2011440971
+    },
+    "sq--src-components-seo-js": {
+      "name": "DefaultSEOQuery",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/seo.js",
+      "id": "sq--src-components-seo-js",
+      "jsonName": "sq--src-components-seo-js",
+      "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
+      "hash": 1025518380
     }
   }
 }
