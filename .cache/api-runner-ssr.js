@@ -7,6 +7,9 @@ var plugins = [{
     },{
       plugin: require('/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
       options: {"plugins":[],"fonts":[{"family":"Montserrat","variants":["600","700"]},{"family":"Raleway","variants":["200","500","600","700"]}]},
+    },{
+      plugin: require('/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[],"displayName":false},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
