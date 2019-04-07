@@ -1,13 +1,22 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
+      "jsonName": "dev-404-page-5f9",
+      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
+      "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js",
+      "componentChunkName": "component---cache-dev-404-page-js",
+      "context": {},
+      "pluginCreator___NODE": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+      "pluginCreatorId": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": null,
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
+        "contentDigest": "717845bebd7f2b151e6e7fa4bb44f3f1",
+        "description": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
         "owner": "internal-data-bridge"
       }
     },
@@ -1470,14 +1479,16 @@
         "description": "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
         "author": "@gatsbyjs"
       },
+      "port": "8000",
+      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-04-01T03:54:39.552Z",
+      "buildTime": "2019-04-07T19:46:57.956Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "f38dff58db9bba717bddc17cc3032ad3",
+        "contentDigest": "38d57a837ddf0f95f785d1a4afc8a0f1",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1487,7 +1498,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "0ced5bb1e6231f9b478cc99e322c4630",
+        "contentDigest": "d33fb411c5350954277b3a30db1abf5e",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1499,7 +1510,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-03-27T23:20:05.745Z",
-      "accessTime": "2019-04-01T03:54:42.114Z",
+      "accessTime": "2019-04-07T19:47:01.247Z",
       "changeTime": "2019-03-27T23:20:05.745Z",
       "birthTime": "2019-03-27T23:20:05.743Z",
       "root": "/",
@@ -1508,7 +1519,7 @@
       "ext": "",
       "name": "images",
       "relativeDirectory": "..",
-      "dev": 16777223,
+      "dev": 16777221,
       "mode": 16877,
       "nlink": 4,
       "uid": 501,
@@ -1517,11 +1528,11 @@
       "blksize": 4096,
       "ino": 8674178453,
       "blocks": 0,
-      "atimeMs": 1554090882114.1174,
+      "atimeMs": 1554666421246.6257,
       "mtimeMs": 1553728805745.1824,
       "ctimeMs": 1553728805745.1824,
       "birthtimeMs": 1553728805742.8247,
-      "atime": "2019-04-01T03:54:42.114Z",
+      "atime": "2019-04-07T19:47:01.247Z",
       "mtime": "2019-03-27T23:20:05.745Z",
       "ctime": "2019-03-27T23:20:05.745Z",
       "birthtime": "2019-03-27T23:20:05.743Z"
@@ -1813,6 +1824,10 @@
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js": {
       "query": "",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js"
+    },
+    "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js": {
+      "query": "",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js"
     }
   },
   "staticQueryComponents": {
