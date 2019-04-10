@@ -1,22 +1,13 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
-      "jsonName": "dev-404-page-5f9",
-      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
-      "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js",
-      "componentChunkName": "component---cache-dev-404-page-js",
-      "context": {},
-      "pluginCreator___NODE": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
-      "pluginCreatorId": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": null,
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "717845bebd7f2b151e6e7fa4bb44f3f1",
-        "description": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
         "owner": "internal-data-bridge"
       }
     },
@@ -161,41 +152,6 @@
         "owner": "internal-data-bridge"
       }
     },
-    "84dad27f-1d44-51fc-ac56-4db2e5222995": {
-      "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby/dist/internal-plugins/query-runner",
-      "id": "84dad27f-1d44-51fc-ac56-4db2e5222995",
-      "name": "query-runner",
-      "version": "1.0.0",
-      "pluginOptions": {
-        "plugins": []
-      },
-      "nodeAPIs": [
-        "onCreatePage"
-      ],
-      "browserAPIs": [],
-      "ssrAPIs": [],
-      "pluginFilepath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby/dist/internal-plugins/query-runner",
-      "packageJson": {
-        "name": "query-runner",
-        "description": "Internal plugin for running queries",
-        "version": "1.0.0",
-        "main": "index.js",
-        "author": "",
-        "license": "MIT",
-        "dependencies": [],
-        "devDependencies": [],
-        "peerDependencies": [],
-        "optionalDependecies": [],
-        "bundledDependecies": []
-      },
-      "parent": null,
-      "children": [],
-      "internal": {
-        "contentDigest": "1d0b16c7a4eb83b15a7144791f3130a5",
-        "type": "SitePlugin",
-        "owner": "internal-data-bridge"
-      }
-    },
     "6f4b2fa9-66b5-5205-a03f-140005a2cfe5": {
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby/dist/internal-plugins/webpack-theme-component-shadowing",
       "id": "6f4b2fa9-66b5-5205-a03f-140005a2cfe5",
@@ -235,7 +191,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-react-helmet",
       "id": "1943ff2f-9c0c-558d-8d0c-006603e8106a",
       "name": "gatsby-plugin-react-helmet",
-      "version": "3.0.8",
+      "version": "3.0.12",
       "pluginOptions": {
         "plugins": []
       },
@@ -248,7 +204,7 @@
       "packageJson": {
         "name": "gatsby-plugin-react-helmet",
         "description": "Manage document head data with react-helmet. Provides drop-in server rendering support for Gatsby.",
-        "version": "3.0.8",
+        "version": "3.0.12",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -288,7 +244,7 @@
           },
           {
             "name": "babel-preset-gatsby-package",
-            "version": "^0.1.3"
+            "version": "^0.1.4"
           },
           {
             "name": "cross-env",
@@ -311,7 +267,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "88f326845116894432a94e28dee910fe",
+        "contentDigest": "de2ba0aa0bfb7e1f124f76434f13ec6d",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -320,7 +276,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-source-filesystem",
       "id": "3d2081ad-728e-5303-8d30-d0c8fab8d07a",
       "name": "gatsby-source-filesystem",
-      "version": "2.0.23",
+      "version": "2.0.29",
       "pluginOptions": {
         "plugins": [],
         "name": "images",
@@ -336,7 +292,7 @@
       "packageJson": {
         "name": "gatsby-source-filesystem",
         "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
-        "version": "2.0.23",
+        "version": "2.0.29",
         "keywords": [
           "gatsby",
           "gatsby-plugin"
@@ -361,7 +317,7 @@
           },
           {
             "name": "chokidar",
-            "version": "^2.1.2"
+            "version": "2.1.2"
           },
           {
             "name": "file-type",
@@ -419,7 +375,7 @@
           },
           {
             "name": "babel-preset-gatsby-package",
-            "version": "^0.1.3"
+            "version": "^0.1.4"
           },
           {
             "name": "cross-env",
@@ -438,7 +394,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "4c985135823fc11e1b9ee136c4f95446",
+        "contentDigest": "83def26cf6eea1f110d36ebc8896bb0c",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -447,7 +403,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-transformer-sharp",
       "id": "da3d06eb-685e-5c77-ae1d-750eb6a2e4a9",
       "name": "gatsby-transformer-sharp",
-      "version": "2.1.15",
+      "version": "2.1.17",
       "pluginOptions": {
         "plugins": []
       },
@@ -462,7 +418,7 @@
       "packageJson": {
         "name": "gatsby-transformer-sharp",
         "description": "Gatsby transformer plugin for images using Sharp",
-        "version": "2.1.15",
+        "version": "2.1.17",
         "keywords": [
           "gatsby",
           "gatsby-plugin",
@@ -511,7 +467,7 @@
           },
           {
             "name": "babel-preset-gatsby-package",
-            "version": "^0.1.3"
+            "version": "^0.1.4"
           },
           {
             "name": "cross-env",
@@ -534,7 +490,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "7ad39469907323d4b19daf2878344a33",
+        "contentDigest": "81dda7e30c9ba5c173aa69f7c0530295",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -543,12 +499,12 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-sharp",
       "id": "84d6154d-4241-556c-a679-cc8339cac100",
       "name": "gatsby-plugin-sharp",
-      "version": "2.0.25",
+      "version": "2.0.32",
       "pluginOptions": {
         "plugins": []
       },
       "nodeAPIs": [
-        "onPreInit"
+        "onPreBootstrap"
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
@@ -556,7 +512,7 @@
       "packageJson": {
         "name": "gatsby-plugin-sharp",
         "description": "Wrapper of the Sharp image manipulation library for Gatsby plugins",
-        "version": "2.0.25",
+        "version": "2.0.32",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -581,10 +537,6 @@
           {
             "name": "bluebird",
             "version": "^3.5.0"
-          },
-          {
-            "name": "fs-exists-cached",
-            "version": "^1.0.0"
           },
           {
             "name": "fs-extra",
@@ -632,7 +584,7 @@
           },
           {
             "name": "svgo",
-            "version": "^0.7.2"
+            "version": "^1.2.0"
           }
         ],
         "devDependencies": [
@@ -646,7 +598,7 @@
           },
           {
             "name": "babel-preset-gatsby-package",
-            "version": "^0.1.3"
+            "version": "^0.1.4"
           },
           {
             "name": "cross-env",
@@ -665,20 +617,20 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "8d8f99d3aa8001029309589273ecee0e",
+        "contentDigest": "b2f02c2093aab94230f74fcf2aa6c3b3",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
-    "2513aa23-4bad-5f44-b0fc-fc6e87a81f91": {
+    "54be16b8-9aff-5530-b5e4-ffe4b09471b4": {
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-sass",
-      "id": "2513aa23-4bad-5f44-b0fc-fc6e87a81f91",
+      "id": "54be16b8-9aff-5530-b5e4-ffe4b09471b4",
       "name": "gatsby-plugin-sass",
-      "version": "2.0.10",
+      "version": "2.0.11",
       "pluginOptions": {
         "plugins": [],
         "implementation": {
-          "info": "dart-sass\t1.17.2\t(Sass Compiler)\t[Dart]\ndart2js\t2.1.1\t(Dart Compiler)\t[Dart]",
+          "info": "dart-sass\t1.18.0\t(Sass Compiler)\t[Dart]\ndart2js\t2.2.0\t(Dart Compiler)\t[Dart]",
           "types": {}
         }
       },
@@ -691,7 +643,7 @@
       "packageJson": {
         "name": "gatsby-plugin-sass",
         "description": "Gatsby plugin to handle scss/sass files",
-        "version": "2.0.10",
+        "version": "2.0.11",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -725,7 +677,7 @@
           },
           {
             "name": "babel-preset-gatsby-package",
-            "version": "^0.1.3"
+            "version": "^0.1.4"
           },
           {
             "name": "cross-env",
@@ -748,7 +700,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "7eaf3d402ee4eef7e7e67e88a40b40f5",
+        "contentDigest": "0954aea530bf23c291c390f7d92247ce",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -757,7 +709,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-manifest",
       "id": "112c12f8-b222-509b-abe0-dfe93a905df9",
       "name": "gatsby-plugin-manifest",
-      "version": "2.0.22",
+      "version": "2.0.28",
       "pluginOptions": {
         "plugins": [],
         "name": "gatsby-starter-default",
@@ -768,9 +720,7 @@
         "display": "minimal-ui",
         "icon": "src/images/gatsby-icon.png"
       },
-      "nodeAPIs": [
-        "onPostBootstrap"
-      ],
+      "nodeAPIs": [],
       "browserAPIs": [],
       "ssrAPIs": [
         "onRenderBody"
@@ -779,7 +729,7 @@
       "packageJson": {
         "name": "gatsby-plugin-manifest",
         "description": "Gatsby plugin which adds a manifest.webmanifest to make sites progressive web apps",
-        "version": "2.0.22",
+        "version": "2.0.28",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -801,12 +751,8 @@
             "version": "^7.0.0"
           },
           {
-            "name": "bluebird",
-            "version": "^3.5.0"
-          },
-          {
             "name": "sharp",
-            "version": "^0.21.3"
+            "version": "^0.22.0"
           }
         ],
         "devDependencies": [
@@ -820,7 +766,7 @@
           },
           {
             "name": "babel-preset-gatsby-package",
-            "version": "^0.1.3"
+            "version": "^0.1.4"
           },
           {
             "name": "cross-env",
@@ -830,7 +776,7 @@
         "peerDependencies": [
           {
             "name": "gatsby",
-            "version": "^2.0.0"
+            "version": "^2.0.15"
           }
         ],
         "optionalDependecies": [],
@@ -839,7 +785,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "2d5de4592ffb0a449d2ffda8ef0b8c8b",
+        "contentDigest": "d6f29d07695d8648bfdbd7665faaac28",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -848,7 +794,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts",
       "id": "85b0d20d-d20b-5ebb-9609-951b47f8f842",
       "name": "gatsby-plugin-prefetch-google-fonts",
-      "version": "1.4.0",
+      "version": "1.4.2",
       "pluginOptions": {
         "plugins": [],
         "fonts": [
@@ -881,7 +827,7 @@
       "packageJson": {
         "name": "gatsby-plugin-prefetch-google-fonts",
         "description": "A Gatsby plugin to download and prefetch [Google Fonts](https://fonts.google.com/). Can increase performance as opposed to loading webfonts from Google's external stylesheet.",
-        "version": "1.4.0",
+        "version": "1.4.2",
         "main": "gatsby-ssr.js",
         "keywords": [
           "gatsby-plugin",
@@ -1166,7 +1112,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "011f44c53a3b2328aaa0a682cabb00b2",
+        "contentDigest": "cecc4da84917b635383b2a2492a41a1b",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1281,35 +1227,35 @@
           },
           {
             "name": "gatsby",
-            "version": "^2.1.23"
+            "version": "^2.3.16"
           },
           {
             "name": "gatsby-image",
-            "version": "^2.0.31"
+            "version": "^2.0.37"
           },
           {
             "name": "gatsby-plugin-manifest",
-            "version": "^2.0.22"
+            "version": "^2.0.28"
           },
           {
             "name": "gatsby-plugin-offline",
-            "version": "^2.0.24"
+            "version": "^2.0.25"
           },
           {
             "name": "gatsby-plugin-prefetch-google-fonts",
-            "version": "^1.4.0"
+            "version": "^1.4.2"
           },
           {
             "name": "gatsby-plugin-react-helmet",
-            "version": "^3.0.8"
+            "version": "^3.0.12"
           },
           {
             "name": "gatsby-plugin-sass",
-            "version": "^2.0.10"
+            "version": "^2.0.11"
           },
           {
             "name": "gatsby-plugin-sharp",
-            "version": "^2.0.25"
+            "version": "^2.0.32"
           },
           {
             "name": "gatsby-plugin-styled-components",
@@ -1317,11 +1263,11 @@
           },
           {
             "name": "gatsby-source-filesystem",
-            "version": "^2.0.23"
+            "version": "^2.0.29"
           },
           {
             "name": "gatsby-transformer-sharp",
-            "version": "^2.1.15"
+            "version": "^2.1.17"
           },
           {
             "name": "node-sass",
@@ -1333,11 +1279,11 @@
           },
           {
             "name": "react",
-            "version": "^16.8.4"
+            "version": "^16.8.6"
           },
           {
             "name": "react-dom",
-            "version": "^16.8.4"
+            "version": "^16.8.6"
           },
           {
             "name": "react-helmet",
@@ -1355,7 +1301,7 @@
           },
           {
             "name": "sass",
-            "version": "^1.17.2"
+            "version": "^1.18.0"
           }
         ],
         "peerDependencies": [],
@@ -1374,7 +1320,7 @@
       "resolve": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-page-creator",
       "id": "2cce34b6-f031-5cef-8637-f11a0674c13d",
       "name": "gatsby-plugin-page-creator",
-      "version": "2.0.9",
+      "version": "2.0.12",
       "pluginOptions": {
         "plugins": [],
         "path": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages",
@@ -1389,7 +1335,7 @@
       "packageJson": {
         "name": "gatsby-plugin-page-creator",
         "description": "Gatsby plugin that automatically creates pages from React components in specified directories",
-        "version": "2.0.9",
+        "version": "2.0.12",
         "main": "index.js",
         "keywords": [
           "gatsby",
@@ -1411,7 +1357,7 @@
           },
           {
             "name": "chokidar",
-            "version": "^2.1.2"
+            "version": "2.1.2"
           },
           {
             "name": "fs-exists-cached",
@@ -1449,7 +1395,7 @@
           },
           {
             "name": "babel-preset-gatsby-package",
-            "version": "^0.1.3"
+            "version": "^0.1.4"
           },
           {
             "name": "cross-env",
@@ -1468,7 +1414,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "6ec0e0140d22805ebd900ad8fd8cb672",
+        "contentDigest": "fda7c37b55d0bdda57e890cdd478c325",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1479,16 +1425,14 @@
         "description": "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
         "author": "@gatsbyjs"
       },
-      "port": "8000",
-      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-04-07T19:46:57.956Z",
+      "buildTime": "2019-04-09T20:52:31.322Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "38d57a837ddf0f95f785d1a4afc8a0f1",
+        "contentDigest": "188bdf0b48cb6e18985a66aa044e8988",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1498,7 +1442,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "d33fb411c5350954277b3a30db1abf5e",
+        "contentDigest": "c8b62cf438a2cad0839b0d96b501e308",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1510,7 +1454,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-03-27T23:20:05.745Z",
-      "accessTime": "2019-04-07T19:47:01.247Z",
+      "accessTime": "2019-04-09T20:52:35.199Z",
       "changeTime": "2019-03-27T23:20:05.745Z",
       "birthTime": "2019-03-27T23:20:05.743Z",
       "root": "/",
@@ -1528,11 +1472,11 @@
       "blksize": 4096,
       "ino": 8674178453,
       "blocks": 0,
-      "atimeMs": 1554666421246.6257,
+      "atimeMs": 1554843155199.2817,
       "mtimeMs": 1553728805745.1824,
       "ctimeMs": 1553728805745.1824,
       "birthtimeMs": 1553728805742.8247,
-      "atime": "2019-04-07T19:47:01.247Z",
+      "atime": "2019-04-09T20:52:35.199Z",
       "mtime": "2019-03-27T23:20:05.745Z",
       "ctime": "2019-03-27T23:20:05.745Z",
       "birthtime": "2019-03-27T23:20:05.743Z"
@@ -1557,7 +1501,7 @@
       "size": 21212,
       "prettySize": "21.2 kB",
       "modifiedTime": "2019-03-27T23:20:05.746Z",
-      "accessTime": "2019-04-01T03:13:17.550Z",
+      "accessTime": "2019-03-27T23:20:07.567Z",
       "changeTime": "2019-03-27T23:20:05.746Z",
       "birthTime": "2019-03-27T23:20:05.745Z",
       "root": "/",
@@ -1566,7 +1510,7 @@
       "ext": ".png",
       "name": "gatsby-icon",
       "relativeDirectory": "",
-      "dev": 16777223,
+      "dev": 16777221,
       "mode": 33188,
       "nlink": 1,
       "uid": 501,
@@ -1575,11 +1519,11 @@
       "blksize": 4096,
       "ino": 8674178455,
       "blocks": 48,
-      "atimeMs": 1554088397549.925,
+      "atimeMs": 1553728807566.9634,
       "mtimeMs": 1553728805745.8506,
       "ctimeMs": 1553728805745.8506,
       "birthtimeMs": 1553728805745.1707,
-      "atime": "2019-04-01T03:13:17.550Z",
+      "atime": "2019-03-27T23:20:07.567Z",
       "mtime": "2019-03-27T23:20:05.746Z",
       "ctime": "2019-03-27T23:20:05.746Z",
       "birthtime": "2019-03-27T23:20:05.745Z"
@@ -1614,7 +1558,7 @@
       "size": 167273,
       "prettySize": "167 kB",
       "modifiedTime": "2019-03-27T23:20:05.745Z",
-      "accessTime": "2019-04-01T03:13:14.532Z",
+      "accessTime": "2019-03-28T01:22:30.839Z",
       "changeTime": "2019-03-27T23:20:05.745Z",
       "birthTime": "2019-03-27T23:20:05.743Z",
       "root": "/",
@@ -1623,7 +1567,7 @@
       "ext": ".png",
       "name": "gatsby-astronaut",
       "relativeDirectory": "",
-      "dev": 16777223,
+      "dev": 16777221,
       "mode": 33188,
       "nlink": 1,
       "uid": 501,
@@ -1632,11 +1576,11 @@
       "blksize": 4096,
       "ino": 8674178454,
       "blocks": 328,
-      "atimeMs": 1554088394531.823,
+      "atimeMs": 1553736150839.146,
       "mtimeMs": 1553728805745.0178,
       "ctimeMs": 1553728805745.0178,
       "birthtimeMs": 1553728805742.8909,
-      "atime": "2019-04-01T03:13:14.532Z",
+      "atime": "2019-03-28T01:22:30.839Z",
       "mtime": "2019-03-27T23:20:05.745Z",
       "ctime": "2019-03-27T23:20:05.745Z",
       "birthtime": "2019-03-27T23:20:05.743Z"
@@ -1657,6 +1601,7 @@
       "path": "/404/",
       "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
       "componentChunkName": "component---src-pages-404-js",
+      "isCreatedByStatefulCreatePages": true,
       "context": {},
       "pluginCreator___NODE": "2cce34b6-f031-5cef-8637-f11a0674c13d",
       "pluginCreatorId": "2cce34b6-f031-5cef-8637-f11a0674c13d",
@@ -1666,7 +1611,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "d1447dd741b537163e405f30c10ec59a",
+        "contentDigest": "c7c37aef663c1e8ec115a3922ed16349",
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
         "owner": "internal-data-bridge"
       }
@@ -1677,6 +1622,7 @@
       "path": "/about/",
       "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/about.js",
       "componentChunkName": "component---src-pages-about-js",
+      "isCreatedByStatefulCreatePages": true,
       "context": {},
       "pluginCreator___NODE": "2cce34b6-f031-5cef-8637-f11a0674c13d",
       "pluginCreatorId": "2cce34b6-f031-5cef-8637-f11a0674c13d",
@@ -1686,7 +1632,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "c689bb801a6b2f922c2919ca8483d427",
+        "contentDigest": "176ea1651c099a13646e6f57f3a518dd",
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
         "owner": "internal-data-bridge"
       }
@@ -1697,6 +1643,7 @@
       "path": "/contact/",
       "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/contact.js",
       "componentChunkName": "component---src-pages-contact-js",
+      "isCreatedByStatefulCreatePages": true,
       "context": {},
       "pluginCreator___NODE": "2cce34b6-f031-5cef-8637-f11a0674c13d",
       "pluginCreatorId": "2cce34b6-f031-5cef-8637-f11a0674c13d",
@@ -1706,7 +1653,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "70f82ab6d99b0a225b51ba0a2045234a",
+        "contentDigest": "400bed91b338c607cb1f944aa8c7a947",
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
         "owner": "internal-data-bridge"
       }
@@ -1717,6 +1664,7 @@
       "path": "/",
       "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/index.js",
       "componentChunkName": "component---src-pages-index-js",
+      "isCreatedByStatefulCreatePages": true,
       "context": {},
       "pluginCreator___NODE": "2cce34b6-f031-5cef-8637-f11a0674c13d",
       "pluginCreatorId": "2cce34b6-f031-5cef-8637-f11a0674c13d",
@@ -1726,7 +1674,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "cb8b2d87dce02571c9f6d5e5dd32016b",
+        "contentDigest": "6a8259b3079cab76bdbf86beccbd1989",
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
         "owner": "internal-data-bridge"
       }
@@ -1737,6 +1685,7 @@
       "path": "/portfolio/",
       "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js",
       "componentChunkName": "component---src-pages-portfolio-js",
+      "isCreatedByStatefulCreatePages": true,
       "context": {},
       "pluginCreator___NODE": "2cce34b6-f031-5cef-8637-f11a0674c13d",
       "pluginCreatorId": "2cce34b6-f031-5cef-8637-f11a0674c13d",
@@ -1746,7 +1695,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "e90d7170f246965597118062f2b1461e",
+        "contentDigest": "6ad667bca27b11d737ca098ab072d59d",
         "description": "2cce34b6-f031-5cef-8637-f11a0674c13d",
         "owner": "internal-data-bridge"
       }
@@ -1757,6 +1706,7 @@
       "path": "/404.html",
       "component": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
       "componentChunkName": "component---src-pages-404-js",
+      "isCreatedByStatefulCreatePages": true,
       "context": {},
       "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
       "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
@@ -1766,7 +1716,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "c1c1116f3ef9cb27d7d84745ad72a4c3",
+        "contentDigest": "292c92f0dd0d6992967af406b02f4f0b",
         "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
         "owner": "internal-data-bridge"
       }
@@ -1774,13 +1724,13 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "93c70c8019613c9f207f6caf3e31774e"
+    "PLUGINS_HASH": "5bd44e7e088c16ae616481a2beaf7dbc"
   },
   "componentDataDependencies": {
     "nodes": {
       "Site": [
-        "sq--src-components-layout-layout-js",
-        "sq--src-components-seo-js"
+        "sq--src-components-seo-js",
+        "sq--src-components-layout-layout-js"
       ],
       "ae05fd28-40c5-5df7-86f1-dab73e90e5d8": [
         "sq--src-components-image-js"
@@ -1792,42 +1742,59 @@
     "connections": {}
   },
   "jsonDataPaths": {
-    "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
+    "dev-404-page-5f9": "386/path---dev-404-page-5-f-9-fab-0SUcWyAf8ecbYDsMhQkEfPzV8",
     "sq--src-components-layout-js": 755544856,
     "sq--src-components-seo-js": 1025518380,
-    "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
-    "about-f34": "125/path---about-f-34-4c2-NZuapzHg3X9TaN1iIixfv1W23E",
-    "contact-26a": "686/path---contact-26-a-cd9-NZuapzHg3X9TaN1iIixfv1W23E",
-    "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
-    "portfolio-964": "107/path---portfolio-964-7f6-NZuapzHg3X9TaN1iIixfv1W23E",
-    "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
+    "404-22d": "820/path---404-22-d-bce-0SUcWyAf8ecbYDsMhQkEfPzV8",
+    "about-f34": "708/path---about-f-34-4c2-0SUcWyAf8ecbYDsMhQkEfPzV8",
+    "contact-26a": "279/path---contact-26-a-cd9-0SUcWyAf8ecbYDsMhQkEfPzV8",
+    "index": "140/path---index-6a9-0SUcWyAf8ecbYDsMhQkEfPzV8",
+    "portfolio-964": "203/path---portfolio-964-7f6-0SUcWyAf8ecbYDsMhQkEfPzV8",
+    "404-html-516": "285/path---404-html-516-62a-0SUcWyAf8ecbYDsMhQkEfPzV8",
     "sq--src-components-image-js": 2011440971,
     "sq--src-components-layout-layout-js": 755544856
   },
   "components": {
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js": {
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js",
       "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/404.js"
+      "pages": [
+        "/404/",
+        "/404.html"
+      ],
+      "isInBootstrap": true
     },
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/about.js": {
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/about.js",
       "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/about.js"
+      "pages": [
+        "/about/"
+      ],
+      "isInBootstrap": true
     },
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/contact.js": {
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/contact.js",
       "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/contact.js"
+      "pages": [
+        "/contact/"
+      ],
+      "isInBootstrap": true
     },
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/index.js": {
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/index.js",
       "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/index.js"
+      "pages": [
+        "/"
+      ],
+      "isInBootstrap": true
     },
     "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js": {
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js",
       "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js"
-    },
-    "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js": {
-      "query": "",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/dev-404-page.js"
+      "pages": [
+        "/portfolio/"
+      ],
+      "isInBootstrap": true
     }
   },
   "staticQueryComponents": {
@@ -1839,14 +1806,6 @@
       "query": "query usersRandyphalllaDocumentsGitHubRandyphallaGithubIoSrcComponentsImageJs2011440971 {\n  placeholderImage: file(relativePath: {eq: \"gatsby-astronaut.png\"}) {\n    childImageSharp {\n      fluid(maxWidth: 300) {\n        ...GatsbyImageSharpFluid\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid on ImageSharpFluid {\n  base64\n  aspectRatio\n  src\n  srcSet\n  sizes\n}\n",
       "hash": 2011440971
     },
-    "sq--src-components-seo-js": {
-      "name": "DefaultSEOQuery",
-      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/seo.js",
-      "id": "sq--src-components-seo-js",
-      "jsonName": "sq--src-components-seo-js",
-      "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
-      "hash": 1025518380
-    },
     "sq--src-components-layout-layout-js": {
       "name": "SiteTitleQuery",
       "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/layout/layout.js",
@@ -1854,6 +1813,14 @@
       "jsonName": "sq--src-components-layout-layout-js",
       "query": "query SiteTitleQuery {\n  site {\n    siteMetadata {\n      title\n    }\n  }\n}\n",
       "hash": 755544856
+    },
+    "sq--src-components-seo-js": {
+      "name": "DefaultSEOQuery",
+      "componentPath": "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/components/seo.js",
+      "id": "sq--src-components-seo-js",
+      "jsonName": "sq--src-components-seo-js",
+      "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
+      "hash": 1025518380
     }
   }
 }
