@@ -71,7 +71,7 @@ window.___emitter = _emitter.default;
 
   _loader.default.addDevRequires(_syncRequires.default);
 
-  _loader.default.getResourcesForPathname(window.location.pathname).then(() => {
+  Promise.all([_loader.default.getResourcesForPathname(`/dev-404-page/`), _loader.default.getResourcesForPathname(`/404.html`), _loader.default.getResourcesForPathname(window.location.pathname)]).then(() => {
     const preferDefault = m => m && m.default || m;
 
     let Root = preferDefault(require(`./root`));

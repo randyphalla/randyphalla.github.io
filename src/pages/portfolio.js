@@ -92,7 +92,8 @@ class PortfolioPage extends React.Component {
                 />
 
                 <section class="portfolio">
-
+                    <h2 class="hidden">Portfolio Section</h2>
+                    
                     <div class="container">
 
                         <div class="projects mt-60">
