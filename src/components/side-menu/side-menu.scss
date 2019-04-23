@@ -1,0 +1,59 @@
+@import '../../assets/scss/app';
+
+.side-menu {
+    position: absolute;  
+    top: 0;  
+    width: 220px;
+    height: 100%;
+
+    background-color: $black-color;
+    transition: all 350ms ease-in-out;
+}
+
+.side-menu--is-active {
+    left: 0;
+}
+
+.side-menu--is-not-active {
+    left: -220px;
+}
+
+.side-menu__logo {
+    display: flex;
+    padding: 32px;
+
+    .side-menu__logo-avatar {
+        width: 37px;
+    }
+}
+
+.side-menu__lists {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+
+    .side-menu__lists__item {
+        padding: 16px 32px;
+        
+        &:hover {
+            background-color: rgba(124, 132, 134, 0.15);
+        }
+
+        a {
+            color: $white-color;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    
+    .side-menu {
+        display: none;
+    }
+
+}
