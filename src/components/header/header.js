@@ -40,7 +40,7 @@ class Header extends React.Component {
                         </div>
 
                         <div className="mobile-menu">
-                            <button className={"mobile-menu__button " + ( this.state.isToggle ? "mobile-menu__button--is-active" : "mobile-menu__button--is-not-active" ) + " hello-world"}
+                            <button className={"mobile-menu__button " + ( this.state.isToggle ? "mobile-menu__button--is-active" : "mobile-menu__button--is-not-active" )}
                                 onClick={ () => this.toggleMenu() }>    
                                 <FaBars />
                             </button>

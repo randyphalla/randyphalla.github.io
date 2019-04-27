@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
@@ -13,16 +14,16 @@ class AboutPage extends React.Component {
         this.state = {
             skills: [
                 {
-                    title: 'HTML'
+                    title: 'HTML5'
                 },
                 {
-                    title: 'CSS / SCSS'
+                    title: 'CSS3 (SCSS)'
                 },
                 {
                     title: 'Bootstrap'
                 },
                 {
-                    title: 'JavaScript'
+                    title: 'JavaScript (ES6)'
                 },
                 {
                     title: 'Angular 2-7'
@@ -38,6 +39,12 @@ class AboutPage extends React.Component {
                 },
                 {
                     title: 'Git'
+                },
+                {
+                    title: 'Bitbucket'
+                },
+                {
+                    title: 'GitHub'
                 },
                 {
                     title: 'Sketch'
@@ -92,7 +99,9 @@ class AboutPage extends React.Component {
                         <div className="about-me__paragraph">
                             <h3 className="title-1">About me</h3>
                             <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps.</p>
-                            <button className="rp-btn primary-btn">Resume</button>
+                            <a href="../assets/files/Randy Phalla's Resume.pdf" download>
+                                <button className="rp-btn primary-btn">Resume</button>                  
+                            </a>
                         </div>
                         <div className="about-me__logo">
                             <img src="" alt="Randy Phalla" />

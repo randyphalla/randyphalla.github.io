@@ -5,14 +5,9 @@ import './side-menu.scss';
 import Logo from '../../assets/images/logo.svg';
 
 class SideMenu extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <section className={"side-menu " + (this.props.isToggle ? "side-menu--is-active" : "side-menu--is-not-active") + " hello-world"}>
+            <section className={"side-menu " + (this.props.isToggle ? "side-menu--is-active" : "side-menu--is-not-active")}>
                 <h2 className="hidden">Side Menu</h2>
                 
                 <div className="side-menu__logo">

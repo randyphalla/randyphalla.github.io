@@ -1,21 +1,21 @@
 @import '../../assets/scss/app';
 
 .side-menu {
-    position: absolute;  
+    position: fixed;  
     top: 0;  
     width: 220px;
     height: 100%;
 
     background-color: $black-color;
     transition: all 350ms ease-in-out;
-}
 
-.side-menu--is-active {
-    left: 0;
-}
-
-.side-menu--is-not-active {
-    left: -220px;
+    &.side-menu--is-active {
+        left: 0;
+    }
+    
+    &.side-menu--is-not-active {
+        left: -220px;
+    }
 }
 
 .side-menu__logo {

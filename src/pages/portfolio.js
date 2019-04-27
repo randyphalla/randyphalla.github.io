@@ -91,12 +91,12 @@ class PortfolioPage extends React.Component {
                     description=""
                 />
 
-                <section class="portfolio">
-                    <h2 class="hidden">Portfolio Section</h2>
+                <section className="portfolio">
+                    <h2 className="hidden">Portfolio Section</h2>
                     
-                    <div class="container">
+                    <div className="container">
 
-                        <div class="projects mt-60">
+                        <div className="projects mt-60">
 
                             {
                                 projects.map((project, i) => {
