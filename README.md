@@ -20,5 +20,5 @@
 4) Update Banner (DONE)
 5) Create Mobile Menu (DONE)
 6) Profile Image
-7) Resume Link
+7) Resume Link (DONE)
 8) Get Portfolio items

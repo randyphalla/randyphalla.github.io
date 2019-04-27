@@ -2,6 +2,33 @@
 
 .header {
     background-color: $primary-color;
+    border-bottom: 1px solid rgba($white-color, 0.5);
+    transition: all 300ms linear;
+
+    &.header--is-active {
+        position: fixed;
+        width: 100%;
+        
+        background-color: $white-color;
+        box-shadow: 0 0 10px 1px rgba($black-color, 0.3);
+
+        .mobile-menu__button {
+            background-color: $primary-color;
+
+            svg {
+                fill: $white-color;
+            }
+        }
+
+        .desktop-menu-links__item-link {
+            color: $primary-color;
+        }
+    }
+
+    &.header--is-not-active {
+        background-color: $primary-color;
+        border-bottom: 1px solid rgba($white-color, 0.5);
+    }
 
     .container {
         // padding: 16px;
@@ -123,5 +150,4 @@
             }
         }
     }
-
 }

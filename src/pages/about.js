@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
@@ -104,7 +103,7 @@ class AboutPage extends React.Component {
                             </a>
                         </div>
                         <div className="about-me__logo">
-                            <img src="" alt="Randy Phalla" />
+                            <div className="about-me__logo-avatar"></div>
                         </div>
                     </div>
                 </section>

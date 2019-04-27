@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import './header.scss';
 import Logo from '../../assets/images/logo.svg';
+import LogoRed from '../../assets/images/logo-red.svg';
 
 import { FaBars } from "react-icons/fa";
 import SideMenu from '../side-menu/side-menu';
@@ -12,11 +13,13 @@ class Header extends React.Component {
         super(props);
 
         this.state = {
-            isToggle: false
+            isToggle: false,
+            isScrolling: false,
         }
 
         this.toggleMenu = this.toggleMenu.bind(this);
 
+        this.scrollingHeader();
     }
 
     toggleMenu() {
@@ -25,18 +28,30 @@ class Header extends React.Component {
         }));
     }
 
+    scrollingHeader() {
+        window.addEventListener('scroll', () => {
+            if (document.documentElement.scrollTop > 10) {
+                console.log('Header is Fixed');
+                this.setState({isScrolling: true})
+
+            } else {
+                console.log('Header is Normal');
+                this.setState({isScrolling: false})
+            }
+        });
+    }
+
     render() {
-        
         return (
             <div>
 
-                <header className="header">
+                <header className={"header " + ( this.state.isScrolling ? "header--is-active" : "header--is-not-active" )}>
                     <h2 className="hidden">Header Section</h2>
 
                     <div className="container">
 
                         <div className="logo">
-                            <img className="logo__avatar" src={Logo} alt="Logo" />
+                            <img className="logo__avatar" src={this.state.isScrolling ? LogoRed : Logo} alt="Logo" />
                         </div>
 
                         <div className="mobile-menu">
