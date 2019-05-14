@@ -18,8 +18,6 @@ class Header extends React.Component {
         }
 
         this.toggleMenu = this.toggleMenu.bind(this);
-
-        this.scrollingHeader();
     }
 
     toggleMenu() {
@@ -29,16 +27,20 @@ class Header extends React.Component {
     }
 
     scrollingHeader() {
-        window.addEventListener('scroll', () => {
-            if (document.documentElement.scrollTop > 10) {
-                console.log('Header is Fixed');
-                this.setState({isScrolling: true})
+        if (window) {
+            window.addEventListener('scroll', () => {
+                if (document.documentElement.scrollTop > 10) {
+                    this.setState({isScrolling: true})
+    
+                } else {
+                    this.setState({isScrolling: false})
+                }
+            });
+        }
+    }
 
-            } else {
-                console.log('Header is Normal');
-                this.setState({isScrolling: false})
-            }
-        });
+    componentDidMount() {
+        this.scrollingHeader();
     }
 
     render() {
