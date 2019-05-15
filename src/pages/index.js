@@ -24,8 +24,15 @@ const ProjectsItem = styled.div `
 const ProjectsItemAvatar = styled.img `
     height: 280px;
     width: 100%;
+    
     background-color: #D8D8D8;
     border-radius: 8px;
+
+    transition: all 200ms linear;
+    
+    &:hover {
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2); 
+    }
 `
 
 const ProjectsItemTitle = styled.h4 `

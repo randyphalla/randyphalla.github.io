@@ -31,7 +31,6 @@
     }
 
     .container {
-        // padding: 16px;
         padding: 16px 0;
         display: flex;
         justify-content: space-between;
@@ -111,7 +110,7 @@
 
     .header {
         .container {
-            padding: 16px;
+            padding: 0 16px;
         }
     }
 
@@ -124,18 +123,25 @@
         display: block;
 
         .desktop-menu-links {
-            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+
+            height: 85px;
             padding-left: 0;
             margin-top: 0;
             margin-bottom: 0;
     
-            display: flex;
-            justify-content: flex-end;
+            list-style: none;
     
             .desktop-menu-links__item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
                 margin-left: 10px;
                 margin-right: 10px;
-         
+                
                 &:first-child {
                     margin-left: 0;
                 }
@@ -143,11 +149,57 @@
                 &:last-child {
                     margin-right: 0;
                 }
-    
+                
+                &::after {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    content: "";
+
+                    width: 100%;
+                    height: 4px;
+
+                    background-color: $white-color;
+                    opacity: 0;
+
+                    transition: all 300ms ease;
+                }
+
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+
                 .desktop-menu-links__item-link {                      
                     padding: 0;
+
+                    &:hover {
+                        color: $white-color;
+                    }
                 }
             }
         }
     }
+
+    .header--is-active {
+        border-bottom: none;
+
+        .desktop-menu {
+            .desktop-menu-links {
+                .desktop-menu-links__item {
+                    &:hover {
+                        &::after {
+                            background-color: $primary-color;
+                        }
+                        
+                        .desktop-menu-links__item-link  {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
