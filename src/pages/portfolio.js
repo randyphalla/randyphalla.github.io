@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
@@ -102,7 +103,9 @@ class PortfolioPage extends React.Component {
                                 projects.map((project, i) => {
                                     return (
                                         <ProjectsItem key={i}>
-                                            <ProjectsItemAvatar></ProjectsItemAvatar>
+                                            <Link to="/portfolio-details">
+                                                <ProjectsItemAvatar></ProjectsItemAvatar>
+                                            </Link>
                                             <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
                                             <ProjectsItemDescription>{project.description}</ProjectsItemDescription>
                                         </ProjectsItem>

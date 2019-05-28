@@ -10,6 +10,7 @@ exports.components = {
   "component---src-pages-about-js": hot(preferDefault(require("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/about.js"))),
   "component---src-pages-contact-js": hot(preferDefault(require("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/contact.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/index.js"))),
+  "component---src-pages-portfolio-details-js": hot(preferDefault(require("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio-details.js"))),
   "component---src-pages-portfolio-js": hot(preferDefault(require("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js")))
 }
 

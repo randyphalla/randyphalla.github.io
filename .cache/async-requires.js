@@ -7,6 +7,7 @@ exports.components = {
   "component---src-pages-about-js": () => import("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/about.js" /* webpackChunkName: "component---src-pages-about-js" */),
   "component---src-pages-contact-js": () => import("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
   "component---src-pages-index-js": () => import("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
+  "component---src-pages-portfolio-details-js": () => import("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio-details.js" /* webpackChunkName: "component---src-pages-portfolio-details-js" */),
   "component---src-pages-portfolio-js": () => import("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js" /* webpackChunkName: "component---src-pages-portfolio-js" */)
 }
 

@@ -30,6 +30,11 @@
         "path": "/dev-404-page/"
     },
     {
+        "componentChunkName": "component---src-pages-portfolio-details-js",
+        "jsonName": "portfolio-details-7f2",
+        "path": "/portfolio-details/"
+    },
+    {
         "componentChunkName": "component---src-pages-portfolio-js",
         "jsonName": "portfolio-964",
         "path": "/portfolio/"
