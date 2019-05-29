@@ -91,7 +91,7 @@ class RouteHandler extends _react.default.Component {
 }
 
 const Root = () => (0, _react.createElement)(_router.Router, {
-  basepath: __PATH_PREFIX__
+  basepath: __BASE_PATH__
 }, (0, _react.createElement)(RouteHandler, {
   path: `/*`
 })); // Let site, plugins wrap the site e.g. for Redux.
