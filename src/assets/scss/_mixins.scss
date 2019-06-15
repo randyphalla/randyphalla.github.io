@@ -1,0 +1,29 @@
+@mixin primaryBtn($color, $backgroundColor) {
+    color: $color;
+    background-color: $backgroundColor;
+
+    &:hover {
+        color: $backgroundColor;
+        background-color: $color;
+    }
+}
+
+@mixin secondaryBtn($color, $backgroundColor) {
+    color: $color;
+    background-color: $backgroundColor;
+
+    &:hover {
+        color: $backgroundColor;
+        background-color: $color;
+    }
+}
+
+@mixin tertiaryBtn($color, $backgroundColor) {
+    color: $color;
+    background-color: $backgroundColor;
+
+    &:hover {
+        color: $backgroundColor;
+        background-color: $color;
+    }
+}

@@ -3,6 +3,13 @@
 @import 'buttons';
 @import 'theme';
 
+:root {
+    --red-color: #FF001F;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --transparent: transparent;
+}
+
 .mt-60 {
     margin-top: 60px;
 }

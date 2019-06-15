@@ -137,7 +137,7 @@ class IndexPage extends React.Component {
 
                         </div>
 
-                        <button className="rp-btn primary-btn">View All Projects</button>
+                        <button className="default-btn primary-btn">View All Projects</button>
 
                     </div>
 
