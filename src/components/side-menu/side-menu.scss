@@ -61,9 +61,8 @@
         }
 
         a {
+            @include MontserratFont(600);
             color: $white-color;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
             font-size: 14px;
             text-decoration: none;
         }

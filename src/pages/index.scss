@@ -18,20 +18,19 @@
 }
 
 .about-me__title {
+    @include MontserratFont(700);
+    
     margin-top: 20px;
     margin-bottom: 20px;
     color: $black-color;
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
     letter-spacing: 0.5px;
 }
 
 .about-me__body {
+    @include RalewayFont(500);
     color: $black-color;
     font-size: 16px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
     letter-spacing: 0.5px;
     line-height: 30px;
 }

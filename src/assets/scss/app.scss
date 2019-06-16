@@ -19,13 +19,10 @@
 }
 
 .title-1 {
+    @include MontserratFont(700);
     margin-bottom: 22px;
-    
-    // color: $primary-color;
     color: $black-color;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
 }
 
 .container {

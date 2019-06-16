@@ -85,20 +85,18 @@
 }
 
 .footer-title {
+    @include MontserratFont(700);
     margin-bottom: 10px;
 
     color: $black-color;
     font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
     text-align: center;
 }
 
 .footer-text {
+    @include RalewayFont(500);
     color: $black-color;
     font-size: 12px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
     letter-spacing: 0.5px;
 }  
 
@@ -118,10 +116,9 @@
 }
 
 .copyright__title {
+    @include RalewayFont(300);
     color: $black-color;
     font-size: 10px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
 }
 
 @media screen and (min-width: 768px) {
