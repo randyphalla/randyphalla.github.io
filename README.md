@@ -22,3 +22,4 @@
 - Create Mobile Menu (DONE)
 - Profile Image
 - Resume Link (DONE)
+- Clean up UI pages

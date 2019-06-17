@@ -7,14 +7,44 @@ import Banner from '../components/banner/banner';
 import './portfolio-details.scss';
 
 class PortfolioDetailsPage extends React.Component {
-
+    
     constructor(props) {
         super(props);
 
-        this.state = {}
+        this.state = {
+            about: '1',
+            role: '2',
+            items: [
+                {
+                    id: 1,
+                    thumbnail: '1',
+                    name: '1',
+                    altTag: '2',
+                },
+                {
+                    id: 2,
+                    thumbnail: '1',
+                    name: '1',
+                    altTag: '2',
+                },
+                {
+                    id: 3,
+                    thumbnail: '1',
+                    name: '1',
+                    altTag: '2',
+                },
+                {
+                    id: 4,
+                    thumbnail: '1',
+                    name: '1',
+                    altTag: '2',
+                }
+            ]
+        }
     }
 
     render() {
+        const { about, role, items } = this.state;
 
         return (
             <Layout>
@@ -29,32 +59,37 @@ class PortfolioDetailsPage extends React.Component {
                     description="UI/UX Design"
                 />
 
-                <section class="portfolio-details">
-                    <h2 class="hidden">Portfolio Details</h2>
-                    
-                    <div class="container"> 
-
-                        <div class="portfolio-details__about">
-                            <h3 class="portfolio-title">About</h3>
-                            <p class="portfolio-paragraph">PhantomJS is also known as API that aims to create is one of functions of a given context in game development, the object that HTML and performance limitations inherent to add client-side I/O, such as Dynamic HTML pages, also be universal when its dependents, called observers, and respective standard libraries.</p>  
+                <section className="portfolio-details">
+                    <h2 className="hidden">Portfolio Details</h2>           
+                    <div className="container"> 
+                        <div className="portfolio-details__about">
+                            <h3 className="portfolio-title">About</h3>
+                            <p className="portfolio-paragraph">{about}</p>  
+                        </div>                       
+                        <div className="portfolio-details__project-role">
+                            <h3 className="portfolio-title">Project Role</h3>
+                            <p className="portfolio-paragraph">{role}</p>  
                         </div>
-                        
-                        <div class="portfolio-details__project-role">
-                            <h3 class="portfolio-title">Project Role</h3>
-                            <p class="portfolio-paragraph">Developer and Designer</p>  
-                        </div>
-
-                    </div>
-                    
+                    </div>                  
                 </section>
 
-                <section class="portfolio-items">
-                    <h2 class="hidden">Portfolio Items</h2>
+                <section className="portfolio-items">
+                    <h2 className="hidden">Portfolio Items</h2>
+                    <div className="container">
+                        <div className="portfolio-items__items">
 
-                    <div class="container">
-
+                            {
+                                items.map((item, index) => {
+                                    return (
+                                        <div className="portfolio-item" key={index}>
+                                            <div className="portfolio-item__image"></div>
+                                            <p className="portfolio-item__title" key={index}>{item.name}</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
-
                 </section>
 
             </Layout>
