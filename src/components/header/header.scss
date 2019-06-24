@@ -83,13 +83,9 @@
     }
 }
 
-.mobile-menu__button--is-active {
-    transform: rotate(90deg);
-}
+.mobile-menu__button--is-active { transform: rotate(90deg); }
 
-.mobile-menu__button--is-not-active {
-    transform: rotate(0);
-}
+.mobile-menu__button--is-not-active { transform: rotate(0); }
 
 .mobile-menus__links {
     display: flex;
@@ -116,22 +112,16 @@
     }
 }
 
-.desktop-menu {
-    display: none;
-}
+.desktop-menu { display: none; }
 
 @media screen and (min-width: 768px) {
 
     .header {
-        .container {
-            padding: 0 16px;
-        }
+        .container { padding: 0 16px; }
     }
 
     .mobile-menu,
-    .mobile-menus {
-        display: none;
-    }
+    .mobile-menus { display: none; }
 
     .desktop-menu {
         display: block;
@@ -156,13 +146,9 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 
-                &:first-child {
-                    margin-left: 0;
-                }
+                &:first-child { margin-left: 0; }
     
-                &:last-child {
-                    margin-right: 0;
-                }
+                &:last-child { margin-right: 0; }
                 
                 &::after {
                     position: absolute;
@@ -180,17 +166,13 @@
                 }
 
                 &:hover {
-                    &::after {
-                        opacity: 1;
-                    }
+                    &::after { opacity: 1; }
                 }
 
                 .desktop-menu-links__item-link {                      
                     padding: 0;
 
-                    &:hover {
-                        color: $white-color;
-                    }
+                    &:hover { color: $white-color; }
                 }
             }
         }
@@ -203,13 +185,9 @@
             .desktop-menu-links {
                 .desktop-menu-links__item {
                     &:hover {
-                        &::after {
-                            background-color: $primary-color;
-                        }
-                        
-                        .desktop-menu-links__item-link  {
-                            color: $primary-color;
-                        }
+                        &::after { background-color: $primary-color; }
+
+                        .desktop-menu-links__item-link { color: $primary-color; }
                     }
                 }
             }

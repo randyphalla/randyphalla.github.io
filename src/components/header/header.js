@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import './header.scss';
 import Logo from '../../assets/images/logo.svg';
@@ -7,6 +7,93 @@ import LogoRed from '../../assets/images/logo-red.svg';
 import { FaBars } from "react-icons/fa";
 import SideMenu from '../side-menu/side-menu';
 
+    
+    const [toggle, setToggle] = useState(false);
+    const [scrolling, setScrolling] = useState(false);
+
+    useEffect(() => {
+        if (window) {
+            window.addEventListener('scroll', () => {
+                if (document.documentElement.scrollTop > 10) {
+                    setScrolling(true);
+                } else {
+                    setScrolling(false);
+                }
+            });
+        } else {
+            console.warn('window is not available');
+        }
+    }, []);
+
+    return (
+        <div>
+            <header className={"header " + ( scrolling ? "header--is-active" : "header--is-not-active" )}>
+                <h2 className="hidden">Header Section</h2>
+
+                <div className="container">
+
+                    <div className="logo">
+                        <img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
+                    </div>
+
+                    <div className="mobile-menu">
+                        <button 
+                            className={"mobile-menu__button " + ( toggle ? "mobile-menu__button--is-active" : "mobile-menu__button--is-not-active" )}
+                            onClick={() => setToggle(!toggle)}>    
+                            <FaBars />
+                        </button>
+                    </div>
+
+                    <div className="desktop-menu">
+                        <ul className="desktop-menu-links">
+                            <li className="desktop-menu-links__item">
+                                <Link 
+                                    className="desktop-menu-links__item-link" 
+                                    to="/" 
+                                    activeClassName="current-page">
+                                    Home
+                                </Link>
+                            </li>
+                            <li className="desktop-menu-links__item">
+                                <Link 
+                                    className="desktop-menu-links__item-link" 
+                                    to="/about" 
+                                    activeClassName="current-page">
+                                    About
+                                </Link>
+                            </li>
+                            <li className="desktop-menu-links__item">
+                                <Link 
+                                    className="desktop-menu-links__item-link" 
+                                    to="/portfolio" 
+                                    activeClassName="current-page">
+                                    Portfolio
+                                </Link>
+                            </li>            
+                            <li className="desktop-menu-links__item">
+                                <Link 
+                                    className="desktop-menu-links__item-link" 
+                                    to="/contact" 
+                                    activeClassName="current-page">
+                                    Contact
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            
+            </header>
+
+            <SideMenu isToggle={ toggle } />
+            
+        </div>
+    )
+}
+
+export default Header
+
+/*
 class Header extends React.Component {
 
     constructor(props) {
@@ -66,16 +153,16 @@ class Header extends React.Component {
                         <div className="desktop-menu">
                             <ul className="desktop-menu-links">
                                 <li className="desktop-menu-links__item">
-                                    <Link className="desktop-menu-links__item-link" to="/">Home</Link>
+                                    <Link className="desktop-menu-links__item-link" to="/" activeClassName="current-page">Home</Link>
                                 </li>
                                 <li className="desktop-menu-links__item">
-                                    <Link className="desktop-menu-links__item-link" to="/about">About</Link>
+                                    <Link className="desktop-menu-links__item-link" to="/about" activeClassName="current-page">About</Link>
                                 </li>
                                 <li className="desktop-menu-links__item">
-                                    <Link className="desktop-menu-links__item-link" to="/portfolio">Portfolio</Link>
+                                    <Link className="desktop-menu-links__item-link" to="/portfolio" activeClassName="current-page">Portfolio</Link>
                                 </li>            
                                 <li className="desktop-menu-links__item">
-                                    <Link className="desktop-menu-links__item-link" to="/contact">Contact</Link>
+                                    <Link className="desktop-menu-links__item-link" to="/contact" activeClassName="current-page">Contact</Link>
                                 </li>
                             </ul>
                         </div>
@@ -92,3 +179,4 @@ class Header extends React.Component {
 }
 
 export default Header
+*/
