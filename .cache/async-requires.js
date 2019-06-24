@@ -11,5 +11,3 @@ exports.components = {
   "component---src-pages-portfolio-js": () => import("/Users/randyphallla/Documents/GitHub/randyphalla.github.io/src/pages/portfolio.js" /* webpackChunkName: "component---src-pages-portfolio-js" */)
 }
 
-exports.data = () => import(/* webpackChunkName: "pages-manifest" */ "/Users/randyphallla/Documents/GitHub/randyphalla.github.io/.cache/data.json")
-

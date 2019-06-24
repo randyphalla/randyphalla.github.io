@@ -31,13 +31,30 @@ const StaticQueryContext = _react.default.createContext({});
 
 exports.StaticQueryContext = StaticQueryContext;
 
-const StaticQuery = props => _react.default.createElement(StaticQueryContext.Consumer, null, staticQueryData => {
-  if (props.data || staticQueryData[props.query] && staticQueryData[props.query].data) {
-    return (props.render || props.children)(props.data ? props.data.data : staticQueryData[props.query].data);
-  } else {
-    return _react.default.createElement("div", null, "Loading (StaticQuery)");
-  }
-});
+function StaticQueryDataRenderer({
+  staticQueryData,
+  data,
+  query,
+  render
+}) {
+  const finalData = data ? data.data : staticQueryData[query] && staticQueryData[query].data;
+  return _react.default.createElement(_react.default.Fragment, null, finalData && render(finalData), !finalData && _react.default.createElement("div", null, "Loading (StaticQuery)"));
+}
+
+const StaticQuery = props => {
+  const {
+    data,
+    query,
+    render,
+    children
+  } = props;
+  return _react.default.createElement(StaticQueryContext.Consumer, null, staticQueryData => _react.default.createElement(StaticQueryDataRenderer, {
+    data: data,
+    query: query,
+    render: render || children,
+    staticQueryData: staticQueryData
+  }));
+};
 
 exports.StaticQuery = StaticQuery;
 

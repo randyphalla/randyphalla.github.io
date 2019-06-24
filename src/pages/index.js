@@ -136,8 +136,10 @@ class IndexPage extends React.Component {
                             }
 
                         </div>
-
-                        <button className="default-btn primary-btn">View All Projects</button>
+                        
+                        <Link to="/portfolio">
+                            <button className="default-btn primary-btn">View All Projects</button>
+                        </Link>
 
                     </div>
 

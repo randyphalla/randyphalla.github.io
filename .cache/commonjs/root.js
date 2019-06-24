@@ -51,12 +51,11 @@ if (window.__webpack_hot_middleware_reporter__ !== undefined) {
 
 class RouteHandler extends _react.default.Component {
   render() {
-    let location = this.props.location; // check if page exists - in dev pages are sync loaded, it's safe to use
-    // loader.getPage
+    let {
+      location
+    } = this.props;
 
-    let page = _loader.default.getPage(location.pathname);
-
-    if (page) {
+    if (!_loader.default.isPageNotFound(location.pathname)) {
       return _react.default.createElement(_ensureResources.default, {
         location: location
       }, locationAndPageResources => _react.default.createElement(_navigation.RouteUpdates, {
@@ -65,27 +64,27 @@ class RouteHandler extends _react.default.Component {
         location: location,
         shouldUpdateScroll: _navigation.shouldUpdateScroll
       }, _react.default.createElement(_jsonStore.default, (0, _extends2.default)({}, this.props, locationAndPageResources)))));
-    } else {
-      const dev404PageResources = _loader.default.getResourcesForPathnameSync(`/dev-404-page/`);
+    }
 
-      const real404PageResources = _loader.default.getResourcesForPathnameSync(`/404.html`);
+    const dev404PageResources = _loader.default.loadPageSync(`/dev-404-page`);
 
-      let custom404;
+    const real404PageResources = _loader.default.loadPageSync(`/404.html`);
 
-      if (real404PageResources) {
-        custom404 = _react.default.createElement(_jsonStore.default, (0, _extends2.default)({}, this.props, {
-          pageResources: real404PageResources
-        }));
-      }
+    let custom404;
 
-      return _react.default.createElement(_navigation.RouteUpdates, {
-        location: location
-      }, _react.default.createElement(_jsonStore.default, {
-        location: location,
-        pageResources: dev404PageResources,
-        custom404: custom404
+    if (real404PageResources) {
+      custom404 = _react.default.createElement(_jsonStore.default, (0, _extends2.default)({}, this.props, {
+        pageResources: real404PageResources
       }));
     }
+
+    return _react.default.createElement(_navigation.RouteUpdates, {
+      location: location
+    }, _react.default.createElement(_jsonStore.default, {
+      location: location,
+      pageResources: dev404PageResources,
+      custom404: custom404
+    }));
   }
 
 }
