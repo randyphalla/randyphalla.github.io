@@ -7,6 +7,7 @@ import LogoRed from '../../assets/images/logo-red.svg';
 import { FaBars } from "react-icons/fa";
 import SideMenu from '../side-menu/side-menu';
 
+const Header = () => {
     
     const [toggle, setToggle] = useState(false);
     const [scrolling, setScrolling] = useState(false);
