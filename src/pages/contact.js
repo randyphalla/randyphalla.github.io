@@ -21,6 +21,16 @@ const ContactPage = () => {
                 description=""
             />
 
+            {/* <section className="new-banner">
+                <h2 className="hidden">New Banner</h2>
+                <div className="container"> 
+                    <div className="new-banner__cont">
+                        <h3 className="new-banner__title">Contact</h3>
+                        <p className="new-banner__paragraph">Let's Get In Touch</p>
+                    </div>
+                </div>
+            </section> */}
+
             <section className="contact">
                 <h2 className="hidden">Contact Section</h2>
 

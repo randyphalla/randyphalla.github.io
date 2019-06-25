@@ -64,11 +64,21 @@ class PortfolioDetailsPage extends React.Component {
                     description="UI/UX Design"
                 />
 
+                {/* <section className="new-banner">
+                    <h2 className="hidden">New Banner</h2>
+                    <div className="container"> 
+                        <div className="new-banner__cont">
+                            <h3 className="new-banner__title">About</h3>
+                            <p className="new-banner__paragraph">Web Developer and Designer based London, Ontario Canada.</p>
+                        </div>
+                    </div>
+                </section> */}
+
                 <section className="portfolio-details">
                     <h2 className="hidden">Portfolio Details</h2>           
                     <div className="container"> 
                         <div className="portfolio-details__about">
-                            <h3 className="portfolio-title">About</h3>
+                            <h3 className="portfolio-title">Project Overview</h3>
                             <p className="portfolio-paragraph">{about}</p>  
                         </div>                       
                         <div className="portfolio-details__project-role">

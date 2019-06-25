@@ -14,6 +14,8 @@
 
 ## TODO
 
+- Header
+- Body copy
 - Get Portfolio items
 - Portfolio
 - Portfolio Details

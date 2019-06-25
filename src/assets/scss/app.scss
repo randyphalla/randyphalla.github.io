@@ -8,7 +8,10 @@
     --white-color: #ffffff;
     --black-color: #000000;
     --transparent: transparent;
+    --light-grey-color: #fcfcfc;
 }
+
+// body { background-color: var(--light-grey-color); }
 
 h1,
 h2,
@@ -16,17 +19,11 @@ h3,
 h4, 
 h5,
 h6,
-p {
-    margin: 0;
-}
+p { margin: 0; }
 
-.mt-60 {
-    margin-top: 60px;
-}
+.mt-60 { margin-top: 60px; }
 
-.mb-35 {
-    margin-bottom: 35px;
-}
+.mb-35 { margin-bottom: 35px; }
 
 .title-1 {
     @include MontserratFont(700);
@@ -49,5 +46,27 @@ p {
 
     @media screen and (min-width: 1200px) {
         width: 70%;
+    }
+}
+
+.new-banner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .new-banner__cont {
+        padding: 16px;
+    }
+
+    .new-banner__title {
+        @include MontserratFont(800);
+        font-size: 40px;
+        color: $primary-color;
+    }
+
+    .new-banner__paragraph {
+        @include RalewayFont(500);
+        margin-top: 16px;
+        font-size: 16px;
+        color: $primary-color;
     }
 }

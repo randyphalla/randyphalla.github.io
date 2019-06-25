@@ -53,14 +53,23 @@ class PortfolioPage extends React.Component {
                 <Banner 
                     title="Portfolio" 
                     description=""
-                />
+                /> 
+
+                {/* <section className="new-banner">
+                    <h2 className="hidden">New Banner</h2>
+                    <div className="container"> 
+                        <div className="new-banner__cont">
+                            <h3 className="new-banner__title">Portfolio</h3>
+                        </div>
+                    </div>
+                </section> */}
 
                 <section className="portfolio">
                     <h2 className="hidden">Portfolio Section</h2>
                     
                     <div className="container">
-
-                        <div className="projects mt-60">
+                        {/* mt-60 */}
+                        <div className="projects">
 
                             {
                                 projects.map((project, i) => {
