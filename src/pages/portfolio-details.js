@@ -10,7 +10,12 @@ class PortfolioDetailsPage extends React.Component {
     
     constructor(props) {
         super(props);
-
+        
+        // Gatsby Link
+        // https://www.gatsbyjs.org/docs/gatsby-link/
+        // https://www.terencelucasyap.com/gatsbyjs-build-user-listing-web-app-part-3/
+        // console.log(this.props.location.state.project);
+        
         this.state = {
             about: '1',
             role: '2',

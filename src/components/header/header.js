@@ -16,13 +16,11 @@ const Header = () => {
         if (window) {
             window.addEventListener('scroll', () => {
                 if (document.documentElement.scrollTop > 10) {
-                    setScrolling(true);
+                    return setScrolling(true);
                 } else {
-                    setScrolling(false);
+                    return setScrolling(false);
                 }
             });
-        } else {
-            console.warn('window is not available');
         }
     }, []);
 
