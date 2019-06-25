@@ -13,17 +13,23 @@ const Header = () => {
     const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
-        if (window) {
-            window.addEventListener('scroll', () => {
-                if (document.documentElement.scrollTop > 10) {
-                    return setScrolling(true);
-                } else {
-                    return setScrolling(false);
-                }
-            });
-        }
-    }, []);
 
+        const headerScrolling = () => {
+            if (document.documentElement.scrollTop > 10) {
+                return setScrolling(true);
+            } else {
+                return setScrolling(false);
+            }
+        }
+
+        window.addEventListener('scroll', headerScrolling);
+
+        return () => {
+            window.removeEventListener('scroll', headerScrolling);
+        };
+        
+    }, []);
+    
     return (
         <div>
             <header className={"header " + ( scrolling ? "header--is-active" : "header--is-not-active" )}>
