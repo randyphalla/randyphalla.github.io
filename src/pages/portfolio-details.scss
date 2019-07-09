@@ -58,12 +58,30 @@
 
 @media screen and (min-width: 768px) {
 
+    .portfolio-details {
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+    }
+
     .portfolio-details__about,
-    .portfolio-details__project-role { padding: 16px; }
+    .portfolio-details__project-role { 
+        padding-top: 16px; 
+        padding-left: 0; 
+        padding-right: 16px; 
+        padding-bottom: 16px;
+    }
 
-    .portfolio-details__about { width: 70%; }
+    .portfolio-details__about { 
+        width: calc((100% - 30%) - 16px);
+        // background-color: red;
+    }
 
-    .portfolio-details__project-role { width: 30%; }
+    .portfolio-details__project-role { 
+        width: calc((100% - 70%) - 16px);
+        // background-color: blue;
+    }
 
     .portfolio-title { margin-top: 0; }
 

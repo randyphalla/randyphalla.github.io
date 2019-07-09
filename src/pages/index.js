@@ -28,11 +28,23 @@ class IndexPage extends React.Component {
                     id: 3,
                     title: 'Project 3',
                     description: 'UI Design'
+                }
+            ],
+            specializes: [
+                {
+                    id: 1,
+                    title: 'Web Development',
+                    description: ''
                 },
                 {
-                    id: 4,
-                    title: 'Project 4',
-                    description: 'UI Design'
+                    id: 2,
+                    title: 'Prototyping',
+                    description: ''
+                },
+                {
+                    id: 3,
+                    title: 'UI Design',
+                    description: ''
                 }
             ]
         }
@@ -64,6 +76,36 @@ class IndexPage extends React.Component {
                         <div className="about-me__paragraph">
                             <h3 className="about-me__title">Randy Phalla</h3>
                             <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps. </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="featured-projects">
+                    <h2 className="hidden">Featured Projects Section</h2>
+                    <div className="container">                                        
+                        <h3 className="title-1">Specializes In</h3>                 
+                        <div class="specializes">                           
+                            <div class="specializes__item">
+                                {/* 
+                                    Icon    
+                                    Title
+                                    Description
+                                */}
+                            </div>
+                            <div class="specializes__item">
+                                {/* 
+                                    Icon    
+                                    Title
+                                    Description
+                                */}
+                            </div>
+                            <div class="specializes__item">
+                                {/* 
+                                    Icon    
+                                    Title
+                                    Description
+                                */}
+                            </div>
                         </div>
                     </div>
                 </section>
