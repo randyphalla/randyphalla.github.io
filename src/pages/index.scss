@@ -8,7 +8,7 @@
     height: 280px;
     // width: 280px;
     width: 100%;
-    background-color: $grey-color;
+    background-color: var(--grey-color);
     border-radius: 10px;
 }
 
@@ -22,14 +22,14 @@
     
     margin-top: 20px;
     margin-bottom: 20px;
-    color: $black-color;
+    color: var(--black-color);
     font-size: 20px;
     letter-spacing: 0.5px;
 }
 
 .about-me__body {
     @include RalewayFont(500);
-    color: $black-color;
+    color: var(--black-color);
     font-size: 16px;
     letter-spacing: 0.5px;
     line-height: 30px;
@@ -61,9 +61,8 @@
         width: 100%;
         margin-bottom: 30px;
 
-        background-color: $grey-color;
+        background-color: var(--grey-color);
         border-radius: 8px;
-        // box-shadow: 4px 6px 8px 3px rgba($black-color, 0.3);
     }
 }
 

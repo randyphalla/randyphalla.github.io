@@ -37,7 +37,6 @@ const ProjectsItemDescription = styled.p `
     font-weight: 300;
 `;
 
-
 export { 
     ProjectsItem, 
     ProjectsItemAvatar, 

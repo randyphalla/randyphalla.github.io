@@ -1,7 +1,7 @@
 @import '../../assets/scss/app';
 
 .footer {
-    background-color: $white-color;
+    background-color: var(--white-color);
 
     .container {
         display: flex;
@@ -13,8 +13,8 @@
 }
 
 .border-container {
-    border-top: 1px solid rgba($black-color, 0.3);
-    border-bottom: 1px solid rgba($black-color, 0.3);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .footer-logo,
@@ -47,12 +47,12 @@
             svg {
                 width: 30px;
                 height: 30px;
-                fill: $black-color;
+                fill: var(--black-color);
                 
                 transition: all 300ms linear;
 
                 &:hover {
-                    fill: $primary-color !important;
+                    fill: var(--red-color) !important;
                 }
             }
 
@@ -88,14 +88,14 @@
     @include MontserratFont(700);
     margin-bottom: 10px;
 
-    color: $black-color;
+    color: var(--black-color);
     font-size: 12px;
     text-align: center;
 }
 
 .footer-text {
     @include RalewayFont(500);
-    color: $black-color;
+    color: var(--black-color);
     font-size: 12px;
     letter-spacing: 0.5px;
 }  
@@ -105,7 +105,7 @@
     transition: all 300ms ease;
 
     &:hover {
-        color: $primary-color;
+        color: var(--red-color);
     }
 }
 
@@ -117,7 +117,7 @@
 
 .copyright__title {
     @include RalewayFont(300);
-    color: $black-color;
+    color: var(--black-color);
     font-size: 10px;
 }
 

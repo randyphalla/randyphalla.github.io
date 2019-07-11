@@ -15,10 +15,10 @@ const AboutPage = () => {
 
         setSkills([
             {
-                title: 'HTML5'
+                title: 'HTML / CSS'
             },
             {
-                title: 'CSS3 (SCSS)'
+                title: 'SCSS'
             },
             {
                 title: 'Bootstrap'
@@ -38,11 +38,26 @@ const AboutPage = () => {
             {
                 title: 'React Native'
             },
+            {
+                title: 'NextJS'
+            },
+            {
+                title: 'GatsbyJS'
+            },
             // {
             //     title: 'VueJS'
             // },
+            {
+                title: 'Firebase'
+            },
             // {
-            //     title: 'Firebase'
+            //     title: 'WordPress'
+            // },
+            // {
+            //     title: 'Shopify'
+            // },
+            // {
+            //     title: 'Nopcommerce'
             // },
             {
                 title: 'Git'

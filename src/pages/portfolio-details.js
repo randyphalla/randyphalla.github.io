@@ -92,7 +92,6 @@ class PortfolioDetailsPage extends React.Component {
                     <h2 className="hidden">Portfolio Items</h2>
                     <div className="container">
                         <div className="portfolio-items__items">
-
                             {
                                 items.map((item, index) => {
                                     return (

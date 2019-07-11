@@ -8,6 +8,7 @@
     --white-color: #ffffff;
     --black-color: #000000;
     --transparent: transparent;
+    --grey-color: #D8D8D8;
     --light-grey-color: #fcfcfc;
 }
 
@@ -28,7 +29,7 @@ p { margin: 0; }
 .title-1 {
     @include MontserratFont(700);
     margin-bottom: 22px;
-    color: $black-color;
+    color: var(--black-color);
     font-size: 16px;
 }
 
@@ -60,13 +61,13 @@ p { margin: 0; }
     .new-banner__title {
         @include MontserratFont(800);
         font-size: 40px;
-        color: $primary-color;
+        color: var(--red-color);
     }
 
     .new-banner__paragraph {
         @include RalewayFont(500);
         margin-top: 16px;
         font-size: 16px;
-        color: $primary-color;
+        color: var(--red-color);
     }
 }
