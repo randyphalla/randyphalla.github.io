@@ -6,7 +6,7 @@
 
 ### Development
 
-`npm start`
+`yarn start`
 
 ### Building
 
@@ -14,14 +14,15 @@
 
 ## TODO
 
+- Create Icons (Web Development, Prototyping, and UI Design )
 - Header
 - Body copy
 - Get Portfolio items
-- Portfolio
-- Portfolio Details
+- Clean up UI pages
+- Portfolio (DONE)
+- Portfolio Details (DONE)
 - Contact (DONE)
 - Update Banner (DONE)
 - Create Mobile Menu (DONE)
 - Profile Image
 - Resume Link (DONE)
-- Clean up UI pages

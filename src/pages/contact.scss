@@ -55,9 +55,14 @@
 
 @media screen and (min-width: 576px) {
 
-    .contact__social-media-lists { flex-direction: row; }
+    .contact__social-media-lists { 
+        flex-direction: row; 
+        justify-content: center;
+    }
     
     .contact__social-media-lists__item {
+        margin-left: 10px;
+        margin-right: 10px;
         svg {
             width: 2em;
             height: 2em;

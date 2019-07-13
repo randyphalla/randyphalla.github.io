@@ -11,23 +11,213 @@ exports.createPages = async ({ actions: { createPage } }) => {
     const projects = [
         {
             id: 1,
-            title: 'Project 1',
-            description: 'UI Design'
+            title: 'Smart Cart',
+            description: 'UI Design',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
         },
         {
             id: 2,
-            title: 'Project 2',
-            description: 'UI Design'
+            title: 'British Airways',
+            description: 'UI Design',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
         },
         {
             id: 3,
-            title: 'Project 3',
-            description: 'UI Design'
+            title: 'Ford Fusion - Car Dashboard',
+            description: 'UI Design',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
         },
         {
             id: 4,
-            title: 'Project 4',
-            description: 'UI Design'
+            title: 'Zane Barles',
+            description: 'Branding',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
+        },
+        {
+            id: 5,
+            title: 'Cadillac Live',
+            description: 'Branding',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
+        },
+        {
+            id: 6,
+            title: 'M&Ms Best Mix',
+            description: 'Branding',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
+        },
+        {
+            id: 7,
+            title: 'Alliance Pharmacy Group',
+            description: 'Branding',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
+        },
+        {
+            id: 8,
+            title: 'iLookAbout',
+            description: 'Branding',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
+        },
+        {
+            id: 9,
+            title: 'Smart Appetite',
+            description: 'Branding',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
+        },
+        {
+            id: 10,
+            title: 'Skins Tour',
+            description: 'Branding',
+            about: 'Stuff',
+            role: 'Designer and Developer',
+            items: [
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                },
+                {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    alt: ''
+                }
+            ]
         }
     ];
 

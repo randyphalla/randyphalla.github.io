@@ -101,12 +101,11 @@ const AboutPage = () => {
             }  
         ]);
 
-        // return () => {
-        //     console.log('Just Cleaning up');
-        //     setSkills([]);
-        //     setExperiences([]);
-        //     setEducations([]);
-        // };
+        return () => {
+            setSkills([]);
+            setExperiences([]);
+            setEducations([]);
+        };
 
     }, []);
 
@@ -122,16 +121,6 @@ const AboutPage = () => {
                 title="About" 
                 description=""
             />
-
-            {/* <section className="new-banner">
-                <h2 className="hidden">New Banner</h2>
-                <div className="container"> 
-                    <div className="new-banner__cont">
-                        <h3 className="new-banner__title">About</h3>
-                        <p className="new-banner__paragraph">Web Developer and Designer based London, Ontario Canada.</p>
-                    </div>
-                </div>
-            </section> */}
 
             <section className="about-me about-me-1"> 
                 <h2 className="hidden">About Section</h2>

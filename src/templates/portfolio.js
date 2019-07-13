@@ -14,11 +14,10 @@ import './portfolio.scss';
 
 
 const PortfolioPage = ({
-    pageContext: { projects }
+    pageContext: { 
+        projects 
+    }
 }) => { 
-    
-    console.log(projects);
-
     return (
         <Layout>
 

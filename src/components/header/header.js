@@ -38,7 +38,9 @@ const Header = () => {
                 <div className="container">
 
                     <div className="logo">
-                        <img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
+                        <Link to="/">
+                            <img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
+                        </Link>
                     </div>
 
                     <div className="mobile-menu">

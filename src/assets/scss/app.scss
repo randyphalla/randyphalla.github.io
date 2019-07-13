@@ -49,25 +49,3 @@ p { margin: 0; }
         width: 70%;
     }
 }
-
-.new-banner {
-    padding-top: 50px;
-    padding-bottom: 50px;
-
-    .new-banner__cont {
-        padding: 16px;
-    }
-
-    .new-banner__title {
-        @include MontserratFont(800);
-        font-size: 40px;
-        color: var(--red-color);
-    }
-
-    .new-banner__paragraph {
-        @include RalewayFont(500);
-        margin-top: 16px;
-        font-size: 16px;
-        color: var(--red-color);
-    }
-}

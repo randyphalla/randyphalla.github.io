@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const BannerContainer = styled.div `
+    position: relative;
     height: 585px;
     display: flex;
 
@@ -32,8 +33,40 @@ const BannerDescription = styled.p `
     line-height: 24px;
 `;
 
+const BannerBottomBackground = styled.div`
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: inherit;
+    width: 100%;
+    
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    @media (min-width: 576px) {
+
+        img {
+            height: 150px;
+        }
+
+    }
+
+    @media (min-width: 768px) {
+
+        img {
+            height: 200px;
+        }
+
+    }
+`
+
 export { 
     BannerContainer,
     BannerTitle,
-    BannerDescription
+    BannerDescription,
+    BannerBottomBackground
 };
