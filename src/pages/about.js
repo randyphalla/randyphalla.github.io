@@ -38,12 +38,12 @@ const AboutPage = () => {
             {
                 title: 'React Native'
             },
-            {
-                title: 'NextJS'
-            },
-            {
-                title: 'GatsbyJS'
-            },
+            // {
+            //     title: 'NextJS'
+            // },
+            // {
+            //     title: 'GatsbyJS'
+            // },
             // {
             //     title: 'VueJS'
             // },
@@ -59,6 +59,9 @@ const AboutPage = () => {
             // {
             //     title: 'Nopcommerce'
             // },
+            // {
+            //     title: 'PHP & MySQL'
+            // },
             {
                 title: 'Git'
             },
@@ -72,7 +75,7 @@ const AboutPage = () => {
                 title: 'Sketch'
             },
             {
-                title: 'Adobe PhotoShop & Illustrator'
+                title: 'Adobe PhotoShop, Illustrator and InDesign'
             }
         ]);
 
@@ -97,6 +100,13 @@ const AboutPage = () => {
                 started: '2011 - 2014'
             }  
         ]);
+
+        // return () => {
+        //     console.log('Just Cleaning up');
+        //     setSkills([]);
+        //     setExperiences([]);
+        //     setEducations([]);
+        // };
 
     }, []);
 

@@ -3,8 +3,10 @@ import styled from "styled-components";
 const BannerContainer = styled.div `
     height: 585px;
     display: flex;
+
     align-items: center;
     text-align: center;
+    
     background-color: var(--red-color);
 `;
 

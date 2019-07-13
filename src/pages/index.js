@@ -84,22 +84,22 @@ class IndexPage extends React.Component {
                     <h2 className="hidden">Featured Projects Section</h2>
                     <div className="container">                                        
                         <h3 className="title-1">Specializes In</h3>                 
-                        <div class="specializes">                           
-                            <div class="specializes__item">
+                        <div className="specializes">                           
+                            <div className="specializes__item">
                                 {/* 
                                     Icon    
                                     Title
                                     Description
                                 */}
                             </div>
-                            <div class="specializes__item">
+                            <div className="specializes__item">
                                 {/* 
                                     Icon    
                                     Title
                                     Description
                                 */}
                             </div>
-                            <div class="specializes__item">
+                            <div className="specializes__item">
                                 {/* 
                                     Icon    
                                     Title
