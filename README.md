@@ -14,11 +14,15 @@
 
 ## TODO
 
-- Create Icons (Web Development, Prototyping, and UI Design )
+- Add jQuery in Technical Skills
+- Fix scroll for safari
+- Add profile picture
 - Header
 - Body copy
 - Get Portfolio items
+- Get Portfolio body copy
 - Clean up UI pages
+
 - Portfolio (DONE)
 - Portfolio Details (DONE)
 - Contact (DONE)

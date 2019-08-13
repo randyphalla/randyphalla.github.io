@@ -1,17 +1,17 @@
 var plugins = [{
-      plugin: require('/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-offline/gatsby-ssr'),
+      plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-offline/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Randy Phalla's Portfolio Website","short_name":"RP Portfolio","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
+      plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      options: {"plugins":[],"name":"Randy Phalla's Portfolio Website","short_name":"RP Portfolio","start_url":"/","background_color":"#FFFFFF","theme_color":"#FF001F","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
     },{
-      plugin: require('/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
+      plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
       options: {"plugins":[],"fonts":[{"family":"Montserrat","variants":["600","700"]},{"family":"Raleway","variants":["200","500","600","700"]}]},
     },{
-      plugin: require('/Users/randyphallla/Documents/GitHub/randyphalla.github.io/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[],"displayName":false},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

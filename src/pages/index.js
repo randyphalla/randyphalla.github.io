@@ -5,7 +5,12 @@ import './index.scss';
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import Banner from '../components/banner/banner';
-import { ProjectsItem, ProjectsItemAvatar, ProjectsItemTitle, ProjectsItemDescription } from '../theme/card.style';
+import { 
+    ProjectsItem, 
+    ProjectsItemAvatar, 
+    ProjectsItemTitle, 
+    ProjectsItemDescription 
+} from '../theme/card.style';
 
 class IndexPage extends React.Component {
 
@@ -28,23 +33,6 @@ class IndexPage extends React.Component {
                     id: 3,
                     title: 'Project 3',
                     description: 'UI Design'
-                }
-            ],
-            specializes: [
-                {
-                    id: 1,
-                    title: 'Web Development',
-                    description: ''
-                },
-                {
-                    id: 2,
-                    title: 'Prototyping',
-                    description: ''
-                },
-                {
-                    id: 3,
-                    title: 'UI Design',
-                    description: ''
                 }
             ]
         }
@@ -82,43 +70,9 @@ class IndexPage extends React.Component {
 
                 <section className="featured-projects">
                     <h2 className="hidden">Featured Projects Section</h2>
-                    <div className="container">                                        
-                        <h3 className="title-1">Specializes In</h3>                 
-                        <div className="specializes">                           
-                            <div className="specializes__item">
-                                {/* 
-                                    Icon    
-                                    Title
-                                    Description
-                                */}
-                            </div>
-                            <div className="specializes__item">
-                                {/* 
-                                    Icon    
-                                    Title
-                                    Description
-                                */}
-                            </div>
-                            <div className="specializes__item">
-                                {/* 
-                                    Icon    
-                                    Title
-                                    Description
-                                */}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="featured-projects">
-                    <h2 className="hidden">Featured Projects Section</h2>
-
-                    <div className="container">
-                                                
+                    <div className="container">                                           
                         <h3 className="title-1">Featured Projects</h3>  
-
                         <div className="projects">
-
                             {
                                 projects.map((project, i) => {
                                     return (
@@ -132,15 +86,11 @@ class IndexPage extends React.Component {
                                     )
                                 })
                             }
-
-                        </div>
-                        
+                        </div>                    
                         <Link to="/portfolio">
                             <button className="default-btn primary-btn">View All Projects</button>
                         </Link>
-
                     </div>
-
                 </section>
 
             </Layout>

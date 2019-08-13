@@ -13,9 +13,14 @@ const BannerContainer = styled.div `
 
     @media screen and (min-width: 576px) {
         position: relative;
-        /* height: 585px; */
         padding-top: 200px;
         padding-bottom: 350px;
+    }
+
+    @media screen and (min-width: 768px) {
+        .container {
+            width: 650px;
+        }
     }
 `;
 
@@ -40,7 +45,7 @@ const BannerDescription = styled.p `
     color: var(--white-color);
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 0.5px;
     line-height: 24px;
 
@@ -71,11 +76,9 @@ const BannerBottomBackground = styled.div`
     }
 
     @media screen and (min-width: 768px) {
-
         img {
             height: 200px;
         }
-
     }
 `
 

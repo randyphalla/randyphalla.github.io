@@ -6,7 +6,6 @@ import Banner from '../components/banner/banner';
 
 import './portfolio-details.scss';
 
-
 const PortfolioDetailsPage = ({
     pageContext: { 
         project 

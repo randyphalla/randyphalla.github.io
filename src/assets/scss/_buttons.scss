@@ -32,8 +32,14 @@
     } 
 }
 
-.primary-btn { @include primaryBtn(var(--white-color), var(--red-color)); }
+.primary-btn { 
+    @include primaryBtn(var(--white-color), var(--red-color)); 
+}
 
-.secondary-btn { @include secondaryBtn(var(--red-color), var(--white-color)); }
+.secondary-btn { 
+    @include secondaryBtn(var(--red-color), var(--white-color)); 
+}
 
-.tertiary-btn { @include tertiaryBtn(var(--red-color), var(--transparent)); }
+.tertiary-btn { 
+    @include tertiaryBtn(var(--red-color), var(--transparent)); 
+}

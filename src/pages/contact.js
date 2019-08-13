@@ -1,5 +1,11 @@
 import React from "react";
-import { FaLinkedinIn, FaGithub, FaDribbble, FaBehance, FaRegEnvelope } from "react-icons/fa";
+import { 
+    FaLinkedinIn, 
+    FaGithub, 
+    FaDribbble, 
+    FaBehance, 
+    FaRegEnvelope 
+} from "react-icons/fa";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"

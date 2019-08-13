@@ -1,6 +1,12 @@
 import React from "react";
-import { BannerContainer, BannerTitle, BannerDescription, BannerBottomBackground } from '../../theme/banner.style';
+import { 
+    BannerContainer, 
+    BannerTitle, 
+    BannerDescription, 
+    BannerBottomBackground 
+} from '../../theme/banner.style';
 import BannerBottomBackgroundImage from '../../assets/images/bottom-background.png';
+
 const Banner = ({
     title,
     description,
