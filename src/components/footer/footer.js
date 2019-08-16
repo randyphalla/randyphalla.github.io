@@ -24,22 +24,22 @@ const Footer = () => {
                         <h3 className="footer-title">Social Media</h3>
                         <ul className="social-media__list">
                             <li className="social-media__list-item">
-                                <a href="https://www.linkedin.com/in/randyphalla/">
+                                <a href="https://www.linkedin.com/in/randyphalla/" aria-label="Linkedin Link">
                                     <FaLinkedinIn />
                                 </a>
                             </li>
                             <li className="social-media__list-item">
-                                <a href="https://github.com/randyphalla">
+                                <a href="https://github.com/randyphalla" aria-label="Github Link">
                                     <FaGithub />
                                 </a>
                             </li>
                             <li className="social-media__list-item">
-                                <a href="https://dribbble.com/randyphalla">
+                                <a href="https://dribbble.com/randyphalla" aria-label="Dribbble Link">
                                     <FaDribbble />
                                 </a>
                             </li>
                             <li className="social-media__list-item">
-                                <a href="https://www.behance.net/randyphalla">
+                                <a href="https://www.behance.net/randyphalla" aria-label="Behance Link">
                                     <FaBehance />
                                 </a>
                             </li>
@@ -48,7 +48,11 @@ const Footer = () => {
         
                     <div className="lets-get-in-touch">
                         <h3 className="footer-title">Let's Get In Touch</h3>
-                        <a className="footer-text footer-text-link" href="mailTo:randyphalla@gmail.com">randyphalla@gmail.com</a>
+                        <a className="footer-text footer-text-link" 
+                            href="mailTo:randyphalla@gmail.com" 
+                            aria-label="My email">
+                            randyphalla@gmail.com
+                        </a>
                     </div>
                 </div>
             </div>

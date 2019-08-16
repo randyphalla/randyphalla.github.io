@@ -9,7 +9,7 @@ var plugins = [{
       options: {"plugins":[],"name":"Randy Phalla's Portfolio Website","short_name":"RP Portfolio","start_url":"/","background_color":"#FFFFFF","theme_color":"#FF001F","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
     },{
       plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
-      options: {"plugins":[],"fonts":[{"family":"Montserrat","variants":["600","700"]},{"family":"Raleway","variants":["200","500","600","700"]}]},
+      options: {"plugins":[],"fonts":[{"family":"Montserrat","variants":["600","700"]},{"family":"Raleway","variants":["300","500","700"]}]},
     },{
       plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[],"displayName":false},

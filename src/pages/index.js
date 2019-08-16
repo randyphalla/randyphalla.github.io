@@ -77,7 +77,7 @@ class IndexPage extends React.Component {
                                 projects.map((project, i) => {
                                     return (
                                         <ProjectsItem key={i}>
-                                            <Link to="/portfolio-details">
+                                            <Link to="/portfolio-details" aria-label="Project link">
                                                 <ProjectsItemAvatar></ProjectsItemAvatar>
                                             </Link>
                                             <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
@@ -88,7 +88,7 @@ class IndexPage extends React.Component {
                             }
                         </div>                    
                         <Link to="/portfolio">
-                            <button className="default-btn primary-btn">View All Projects</button>
+                            <button className="default-btn primary-btn" type="button">View All Projects</button>
                         </Link>
                     </div>
                 </section>

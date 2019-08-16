@@ -14,7 +14,7 @@ const ProjectsItem = styled.div `
     }
 `;
 
-const ProjectsItemAvatar = styled.img `
+const ProjectsItemAvatar = styled.div `
     height: 280px;
     width: 100%;
     
