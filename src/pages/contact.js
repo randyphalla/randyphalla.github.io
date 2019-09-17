@@ -9,7 +9,8 @@ import {
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import Banner from '../components/banner/banner';
+// import Banner from '../components/banner/banner';
+import BannerAlt from '../components/banner-alt/banner-alt';
 
 import './contact.scss'
 
@@ -22,15 +23,18 @@ const ContactPage = () => {
                 keywords={[]} 
             />
 
-            <Banner 
+            {/* <Banner 
                 title="Contact" 
                 description=""
+            /> */}
+
+            <BannerAlt 
+                title="Contact" 
+                description="Let's Get in Touch"
             />
 
             <section className="contact">
                 <h2 className="hidden">Contact Section</h2>
-
-                <h3 className="contact__title">Let's Get In Touch</h3>
 
                 <div className="contact__social-media-lists">
 

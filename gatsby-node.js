@@ -234,7 +234,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
             path: `/portfolio/${project.id}`,
             component: require.resolve('./src/templates/portfolio-details.js'),
             context: { project }
-        })
-    })
+        });
+    });
 
 };

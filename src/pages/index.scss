@@ -6,7 +6,6 @@
 
 .about-me__logo-avatar {
     height: 280px;
-    // width: 280px;
     width: 100%;
     background-color: var(--grey-color);
     border-radius: 10px;
@@ -29,6 +28,7 @@
 
 .about-me__body {
     @include RalewayFont(500);
+
     color: var(--black-color);
     font-size: 16px;
     letter-spacing: 0.5px;
@@ -67,7 +67,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
     .about-me {
         .container {
             display: flex;
@@ -116,5 +115,4 @@
             margin-bottom: 0;
         }
     }
-
 }

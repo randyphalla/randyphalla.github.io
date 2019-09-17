@@ -14,7 +14,7 @@
 
 ## TODO
 
-- Add jQuery in Technical Skills
+- Add jQuery in Technical Skills (DONE)
 - Fix scroll for safari
 - Add profile picture
 - Header

@@ -3,7 +3,9 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import Banner from '../components/banner/banner';
+// import Banner from '../components/banner/banner';
+import BannerAlt from '../components/banner-alt/banner-alt';
+
 import { 
     ProjectsItem, 
     ProjectsItemAvatar, 
@@ -26,10 +28,15 @@ const PortfolioPage = ({
                 keywords={[]} 
             />
 
-            <Banner 
+            {/* <Banner 
                 title="Portfolio" 
                 description=""
-            /> 
+            />  */}
+
+            <BannerAlt 
+                title="Portfolio" 
+                description=""
+            />
 
             <section className="portfolio">
                 <h2 className="hidden">Portfolio Section</h2>

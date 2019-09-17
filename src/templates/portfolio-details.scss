@@ -41,7 +41,6 @@
 }
 
 @media screen and (min-width: 576px) {
-
     .portfolio-items__items {
         display: flex;
         flex-direction: row;
@@ -53,11 +52,9 @@
         width: calc((100% / 2) - 10px);
         margin-bottom: 16px;
     }
-
 }
 
 @media screen and (min-width: 768px) {
-
     .portfolio-details {
         .container {
             display: flex;
@@ -76,22 +73,17 @@
 
     .portfolio-details__about { 
         width: calc((100% - 30%) - 16px);
-        // background-color: red;
     }
 
     .portfolio-details__project-role { 
         width: calc((100% - 70%) - 16px);
-        // background-color: blue;
     }
 
     .portfolio-title { margin-top: 0; }
 
     .portfolio-item { width: calc((100% / 3) - 16px); }
-
 }
 
 @media screen and (min-width: 992px) {
-
     .portfolio-item { width: calc((100% / 4) - 16px); }
-
 }

@@ -77,7 +77,7 @@ class IndexPage extends React.Component {
                                 projects.map((project, i) => {
                                     return (
                                         <ProjectsItem key={i}>
-                                            <Link to="/portfolio-details" aria-label="Project link">
+                                            <Link to={`portfolio/${project.id}/`} aria-label="Project link">
                                                 <ProjectsItemAvatar></ProjectsItemAvatar>
                                             </Link>
                                             <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
