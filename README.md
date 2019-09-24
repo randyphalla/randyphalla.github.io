@@ -15,7 +15,7 @@
 ## TODO
 
 - Add jQuery in Technical Skills (DONE)
-- Fix scroll for safari
+- Fix scroll for safari (DONE)
 - Add profile picture
 - Header
 - Body copy
@@ -28,5 +28,4 @@
 - Contact (DONE)
 - Update Banner (DONE)
 - Create Mobile Menu (DONE)
-- Profile Image
 - Resume Link (DONE)

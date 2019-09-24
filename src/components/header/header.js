@@ -15,7 +15,7 @@ const Header = () => {
     useEffect(() => {
 
         const headerScrolling = () => {
-            if (document.documentElement.scrollTop > 10) {
+            if (document.documentElement.scrollTop > 10 || document.body.scrollTop > 10) {
                 return setScrolling(true);
             } else {
                 return setScrolling(false);
