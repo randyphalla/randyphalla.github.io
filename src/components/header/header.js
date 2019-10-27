@@ -47,7 +47,7 @@ const Header = () => {
                         <button
                             className={"mobile-menu__button " + ( toggle ? "mobile-menu__button--is-active" : "mobile-menu__button--is-not-active" )}
                             onClick={() => setToggle(!toggle)}
-                            type="button">    
+                            aria-label="Burger Menu">    
                             <FaBars />
                         </button>
                     </div>

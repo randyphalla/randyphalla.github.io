@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-// import Banner from '../components/banner/banner';
 import BannerAlt from '../components/banner-alt/banner-alt';
 import './about.scss';
 
@@ -17,16 +16,22 @@ const AboutPage = () => {
 
         setSkills([
             {
-                title: 'HTML5 / CSS3'
+                title: 'HTML5'
             },
             {
-                title: 'SASS / SCSS'
+                title: 'CSS3'
             },
             {
-                title: 'Bootstrap'
+                title: 'SCSS (SASS)'
             },
             {
-                title: 'JavaScript (ES6)'
+                title: 'Bootstrap 4'
+            },
+            {
+                title: 'Foundation 6'
+            },
+            {
+                title: 'JavaScript (ES5-6)'
             },
             {
                 title: 'jQuery'
@@ -41,6 +46,9 @@ const AboutPage = () => {
                 title: 'ReactJS'
             },
             {
+                title: 'GatsbyJS'
+            },
+            {
                 title: 'React Native'
             },
             {
@@ -49,15 +57,6 @@ const AboutPage = () => {
             {
                 title: 'Firebase'
             },
-            // {
-            //     title: 'VueJS'
-            // },
-            // {
-            //     title: 'Redux'
-            // },
-            // {
-            //     title: 'NGRX'
-            // },
             {
                 title: 'Git'
             },
@@ -75,9 +74,6 @@ const AboutPage = () => {
             },
             {
                 title: 'Adobe Illustrator'
-            },
-            {
-                title: 'Adobe InDesign'
             }
         ]);
 
@@ -137,11 +133,6 @@ const AboutPage = () => {
                 title="About" 
                 keywords={[]} 
             />
-
-            {/* <Banner 
-                title="About" 
-                description=""
-            /> */}
 
             <BannerAlt 
                 title="About" 

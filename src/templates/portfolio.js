@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-// import Banner from '../components/banner/banner';
 import BannerAlt from '../components/banner-alt/banner-alt';
 
 import { 
@@ -27,11 +26,6 @@ const PortfolioPage = ({
                 title="Portfolio" 
                 keywords={[]} 
             />
-
-            {/* <Banner 
-                title="Portfolio" 
-                description=""
-            />  */}
 
             <BannerAlt 
                 title="Portfolio" 

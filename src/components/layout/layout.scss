@@ -6,3 +6,24 @@ body {
 }
 
 .hidden { display: none; }
+
+.main {
+    margin-top: 100px;
+    opacity: 0;
+
+    animation-name: pageTransition;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes pageTransition {
+    from {
+        margin-top: 100px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}

@@ -24,7 +24,12 @@ const BannerAlt = ({
                     {   
                         isResume &&
                         <a href="../assets/files/Randy Phalla's Resume.pdf" download aria-label="Download my resume">
-                            <button className="default-btn default-btn--white" type="button">Resume</button>                  
+                            <button 
+                                className="default-btn default-btn--white" 
+                                aria-label="Resume" 
+                                type="button">
+                                Resume
+                            </button>                  
                         </a>
                     }
                 </BannerAltCont>

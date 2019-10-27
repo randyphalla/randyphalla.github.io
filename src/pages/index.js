@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect} from "react"
 import { Link } from "gatsby"
 import './index.scss';
 
@@ -12,91 +12,81 @@ import {
     ProjectsItemDescription 
 } from '../theme/card.style';
 
-class IndexPage extends React.Component {
+const IndexPage = () => {
 
-    constructor(props) {
-        super(props);
+    const [projects, setProjects] = useState([]);
 
-        this.state = {
-            projects: [
-                {
-                    id: 1,
-                    title: 'Project 1',
-                    description: 'UI Design'
-                },
-                {
-                    id: 2,
-                    title: 'Project 2',
-                    description: 'UI Design'
-                },
-                {
-                    id: 3,
-                    title: 'Project 3',
-                    description: 'UI Design'
-                }
-            ]
+    useEffect(() => {
+        setProjects([
+            {
+                id: 1,
+                title: 'Smart Cart',
+                description: 'UI Design'
+            }
+        ]);
+        return () => {
+            setProjects([]);
         }
-    }
+    }, []);
 
-    render() {
-
-        const { projects } = this.state;
-
-        return (
-            <Layout>
+    return (
+        <Layout>
                 
-                <SEO 
-                    title="Home" 
-                    keywords={[]}
-                />
+            <SEO 
+                title="Home" 
+                keywords={[]}
+            />
 
-                <Banner 
-                    title="Randy Phalla" 
-                    description="I am a web developer and designer that specialize in front end development and user interface design." 
-                />
-                
-                <section className="about-me">
-                    <h2 className="hidden">About me Section</h2>
-                    <div className="container">
-                        <div className="about-me__logo">
-                            <div className="about-me__logo-avatar"></div>
-                        </div>
-                        <div className="about-me__paragraph">
-                            <h3 className="about-me__title">Randy Phalla</h3>
-                            <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps. </p>
-                        </div>
+            <Banner 
+                title="Randy Phalla" 
+                description="I am a web developer and designer that specialize in front end development and user interface design." 
+            />
+            
+            <section className="about-me">
+                <h2 className="hidden">About me Section</h2>
+                <div className="container">
+                    <div className="about-me__logo">
+                        <div className="about-me__logo-avatar"></div>
                     </div>
-                </section>
-
-                <section className="featured-projects">
-                    <h2 className="hidden">Featured Projects Section</h2>
-                    <div className="container">                                           
-                        <h3 className="title-1">Featured Projects</h3>  
-                        <div className="projects">
-                            {
-                                projects.map((project, i) => {
-                                    return (
-                                        <ProjectsItem key={i}>
-                                            <Link to={`portfolio/${project.id}/`} aria-label="Project link">
-                                                <ProjectsItemAvatar></ProjectsItemAvatar>
-                                            </Link>
-                                            <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
-                                            <ProjectsItemDescription>{project.description}</ProjectsItemDescription>
-                                        </ProjectsItem>
-                                    )
-                                })
-                            }
-                        </div>                    
-                        <Link to="/portfolio">
-                            <button className="default-btn primary-btn" type="button">View All Projects</button>
-                        </Link>
+                    <div className="about-me__paragraph">
+                        <h3 className="about-me__title">Randy Phalla</h3>
+                        <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps. </p>
                     </div>
-                </section>
+                </div>
+            </section>
 
-            </Layout>
-        )
-    }
+            <section className="featured-projects">
+                <h2 className="hidden">Featured Projects Section</h2>
+                <div className="container">                                           
+                    <h3 className="title-1">Featured Projects</h3>  
+                    <div className="projects">
+                        {           
+                            projects.map((project, i) => {
+                                return (
+                                    <ProjectsItem key={i}>
+                                        <Link to={`portfolio/${project.id}/`} aria-label="Project link">
+                                            <ProjectsItemAvatar></ProjectsItemAvatar>
+                                        </Link>
+                                        <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
+                                        <ProjectsItemDescription>{project.description}</ProjectsItemDescription>
+                                    </ProjectsItem>
+                                )
+                            })
+                        }
+                    </div>                    
+                    <Link to="/portfolio">
+                        <button 
+                            className="default-btn primary-btn" 
+                            aria-label="View All Projects" 
+                            type="button">
+                            View All Projects
+                        </button>
+                    </Link>
+                </div>
+            </section>
 
+        </Layout>
+    )
 }
 
 export default IndexPage

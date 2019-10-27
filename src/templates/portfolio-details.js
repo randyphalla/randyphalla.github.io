@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
-// import Banner from '../components/banner/banner';
 import BannerAlt from '../components/banner-alt/banner-alt';
 
 import './portfolio-details.scss';
@@ -19,11 +18,6 @@ const PortfolioDetailsPage = ({
                 title={project.title} 
                 keywords={[]}
             />
-
-            {/* <Banner 
-                title={project.title} 
-                description={project.description} 
-            /> */}
 
             <BannerAlt 
                 title={project.title} 

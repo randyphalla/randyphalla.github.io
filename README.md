@@ -22,7 +22,9 @@
 - Get Portfolio items
 - Get Portfolio body copy
 - Clean up UI pages
-
+- What I do (Future)
+    - UI, Front-end, protyping
+    
 - Portfolio (DONE)
 - Portfolio Details (DONE)
 - Contact (DONE)
