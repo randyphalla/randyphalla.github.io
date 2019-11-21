@@ -19,19 +19,16 @@ const AboutPage = () => {
                 title: 'HTML5'
             },
             {
-                title: 'CSS3'
+                title: 'CSS3 (SCSS)'
             },
             {
-                title: 'SCSS (SASS)'
+                title: 'Bootstrap'
             },
             {
-                title: 'Bootstrap 4'
+                title: 'Foundation'
             },
             {
-                title: 'Foundation 6'
-            },
-            {
-                title: 'JavaScript (ES5-6)'
+                title: 'JavaScript (ES6)'
             },
             {
                 title: 'jQuery'
@@ -51,12 +48,12 @@ const AboutPage = () => {
             {
                 title: 'React Native'
             },
-            {
-                title: 'Expo'
-            },
-            {
-                title: 'Firebase'
-            },
+            // {
+            //     title: 'Expo'
+            // },
+            // {
+            //     title: 'Firebase'
+            // },
             {
                 title: 'Git'
             },
@@ -139,23 +136,7 @@ const AboutPage = () => {
                 description="I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps."
                 isResume={true}
             />
-
-            {/* <section className="about-me about-me-1"> 
-                <h2 className="hidden">About Section</h2>
-                <div className="container">
-                    <div className="about-me__paragraph">
-                        <h3 className="title-1">About me</h3>
-                        <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps.</p>
-                        <a href="../assets/files/Randy Phalla's Resume.pdf" download aria-label="Download my resume">
-                            <button className="default-btn primary-btn" type="button">Resume</button>                  
-                        </a>
-                    </div>
-                    <div className="about-me__logo">
-                        <div className="about-me__logo-avatar"></div>
-                    </div>
-                </div>
-            </section> */}
-
+            
             <section className="techincal-skils">
                 <h2 className="hidden">Technical Skils Section</h2>
                 <div className="container">
