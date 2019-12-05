@@ -35,9 +35,7 @@
     &:hover {
         background-color: transparent;
 
-        svg {
-            fill: #FF001F;
-        }
+        svg { fill: #FF001F; }
     }
 }
 
@@ -50,6 +48,7 @@
     .contact__social-media-lists__item {
         margin-left: 10px;
         margin-right: 10px;
+        
         svg {
             width: 2em;
             height: 2em;

@@ -1,8 +1,8 @@
 @import '../assets/scss/app';
 
-.about-me {
-   padding: 60px 0;
-}
+.about-me { padding: 60px 0; }
+
+.about-me__logo { display: none; }
 
 .about-me__logo-avatar {
     height: 280px;
@@ -12,9 +12,7 @@
 }
 
 .about-me__title,
-.about-me__body  {
-    margin: 0;
-}
+.about-me__body { margin: 0; }
 
 .about-me__title {
     @include MontserratFont(700);
@@ -76,35 +74,26 @@
         }
     }
 
+    .about-me__logo { display: block; }
+
     .about-me__logo,
     .about-me__paragraph,
     .projects,
-    .specializes {
-        padding: 16px;
-    }
+    .specializes { padding: 16px; }
 
-    .projects {
-        margin-bottom: 0;
-    }
+    .projects { margin-bottom: 0; }
 
-    .about-me__logo-avatar {
-        width: 280px;
-    }
+    .about-me__logo-avatar { width: 280px; }
 
-    .about-me__title  {
-        margin-top: 0;
-    }
+    .about-me__title { margin-top: 0; }
 
-    .title-1 {
-        padding-left: 16px;
-    }
+    .title-1 { padding-left: 16px; }
 
     .default-btn {
         margin-left: 16px;
         width: initial !important;;
     }
     
-
     .specializes {
         flex-direction: row;
         justify-content: space-between;

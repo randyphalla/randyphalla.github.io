@@ -19,9 +19,7 @@
 
 .footer-logo,
 .social-media,
-.lets-get-in-touch {
-    padding: 16px;
-}
+.lets-get-in-touch { padding: 16px; }
 
 .social-media {
     .social-media__list {
@@ -40,9 +38,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
 
-            &:last-child {
-                padding-bottom: 0;
-            }
+            &:last-child { padding-bottom: 0; }
 
             svg {
                 width: 30px;
@@ -51,34 +47,23 @@
                 
                 transition: all 300ms linear;
 
-                &:hover {
-                    fill: var(--red-color) !important;
-                }
+                &:hover { fill: var(--red-color) !important; }
             }
 
             &:first-child {
-                svg {
-                    fill: #0073b1;
-                }
+                svg { fill: #0073b1; }
             }
 
             &:nth-child(2) {
-                svg {
-                    fill: #24292e;
-                }
+                svg { fill: #24292e; }
             }
 
             &:nth-child(3) {
-                svg {
-                    fill: #ea4c89;
-                }
+                svg { fill: #ea4c89; }
             }
 
-
             &:last-child {
-                svg {
-                    fill: #0057ff;
-                }
+                svg { fill: #0057ff; }
             }
         }
     }
@@ -106,9 +91,7 @@
     text-decoration: none;
     transition: all 300ms ease;
 
-    &:hover {
-        color: var(--red-color);
-    }
+    &:hover { color: var(--red-color); }
 }
 
 .copyright {
@@ -140,9 +123,7 @@
                 svg {
                     margin-right: 10px;
 
-                    &:last-child {
-                        margin-left: 0;
-                    }
+                    &:last-child { margin-left: 0; }
                 }
             }
         }

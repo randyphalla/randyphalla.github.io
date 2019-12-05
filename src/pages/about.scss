@@ -11,9 +11,7 @@
 .work-experience {
     margin-bottom: 60px;
 
-    .title-1 {
-        margin-bottom: 50px;
-    }
+    .title-1 { margin-bottom: 50px; }
 }
 
 .techincal-skils__list-item {
@@ -63,16 +61,12 @@
         align-items: flex-start;
     }
 
-    .techincal-skils__list-item {
-        width: calc((100% / 2) - 32px);
-    }
+    .techincal-skils__list-item { width: calc((100% / 2) - 32px); }
 }
 
 @media screen and (min-width: 768px) {
     .about-me-1 {
-        .title-1 {
-            padding-left: 0;
-        }
+        .title-1 { padding-left: 0; }
 
         .default-btn.primary-btn {
             width: 180px !important;
@@ -84,26 +78,18 @@
     .work-experience  {
         padding: 0 16px;
 
-        .title-1 {
-            padding-left: 0;
-        }
+        .title-1 { padding-left: 0; }
     }
     
-    .techincal-skils__list-item {
-        width: calc((100% / 3) - 32px);
-    }
+    .techincal-skils__list-item { width: calc((100% / 3) - 32px); }
 }
 
 @media screen and (min-width: 992px) {
-    .techincal-skils__list-item {
-        width: calc((100% / 4) - 32px);
-    }
+    .techincal-skils__list-item { width: calc((100% / 4) - 32px); }
 }
 
 @media screen and (min-width: 1200px) {
-    .techincal-skils__lists {
-        justify-content: flex-start;
-    }
+    .techincal-skils__lists { justify-content: flex-start; }
 
     .techincal-skils__list-item {
         margin: 12px;

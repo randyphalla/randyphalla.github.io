@@ -10,14 +10,10 @@ export const BannerAltWrapper = styled.div`
 `;
 
 export const BannerAltCont = styled.div`
-    .default-btn {
-        margin-top: 10px;
-    }
+    .default-btn { margin-top: 10px; }
 
     @media screen and (min-width: 768px) {
-        .default-btn {
-            margin-left: 0;
-        }
+        .default-btn { margin-left: 0; }
     }
 `;
 
