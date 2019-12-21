@@ -13,7 +13,6 @@ const AboutPage = () => {
     const [ hobbies, setHobbies ] = useState([]);
 
     useEffect(() => {
-
         setSkills([
             {
                 title: 'HTML5'
@@ -48,12 +47,9 @@ const AboutPage = () => {
             {
                 title: 'React Native'
             },
-            // {
-            //     title: 'Expo'
-            // },
-            // {
-            //     title: 'Firebase'
-            // },
+            {
+                title: 'Firebase'
+            },
             {
                 title: 'Git'
             },
@@ -120,7 +116,6 @@ const AboutPage = () => {
             setEducations([]);
             setHobbies([]);
         };
-
     }, []);
 
     return (

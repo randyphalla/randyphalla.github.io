@@ -45,6 +45,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 .specializes {
@@ -78,10 +80,13 @@
 
     .about-me__logo,
     .about-me__paragraph,
-    .projects,
     .specializes { padding: 16px; }
 
-    .projects { margin-bottom: 0; }
+    .projects { 
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0; 
+    }
 
     .about-me__logo-avatar { width: 280px; }
 

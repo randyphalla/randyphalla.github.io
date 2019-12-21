@@ -13,7 +13,6 @@ const Header = () => {
     const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
-
         const headerScrolling = () => {
             if (document.documentElement.scrollTop > 10 || document.body.scrollTop > 10) {
                 return setScrolling(true);
@@ -27,7 +26,6 @@ const Header = () => {
         return () => {
             window.removeEventListener('scroll', headerScrolling);
         };
-        
     }, []);
     
     return (

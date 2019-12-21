@@ -1,16 +1,15 @@
 import styled from "styled-components";
 
 const ProjectsItem = styled.div `
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 16px;
     width: 100%;
 
     @media (min-width: 768px) {
-        width: calc((100% / 2) - 16px);
+        width: calc((100% / 2) - 32px);
     }
 
     @media (min-width: 992px) {
-        width: calc((100% / 3) - 16px);
+        width: calc((100% / 3) - 32px);
     }
 `;
 
