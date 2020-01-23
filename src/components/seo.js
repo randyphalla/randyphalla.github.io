@@ -26,8 +26,16 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: title,
               },
               {
+                property: `og:url`,
+                content: `https://randyphalla.github.io/`,
+              },
+              {
                 property: `og:description`,
                 content: metaDescription,
+              },
+              {
+                property: `og:image`,
+                content: `TODO: need add logo`,
               },
               {
                 property: `og:type`,
@@ -36,6 +44,10 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 name: `twitter:card`,
                 content: `summary`,
+              },
+              {
+                property: `twitter:url`,
+                content: `https://randyphalla.github.io/`,
               },
               {
                 name: `twitter:creator`,
@@ -48,6 +60,10 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 name: `twitter:description`,
                 content: metaDescription,
+              },
+              {
+                property: `twitter:image`,
+                content: `TODO: need add logo`,
               },
             ]
               .concat(

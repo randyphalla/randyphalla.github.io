@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect} from "react"
 import { Link } from "gatsby"
 
 import './side-menu.scss';
@@ -7,6 +7,36 @@ import Logo from '../../assets/images/logo.svg';
 const SideMenu = ({
     isToggle
 }) => {
+    const [links, setLinks] = useState([]);
+
+    useEffect(() => {
+        setLinks([
+            {
+                name: 'Home',
+                link: '/'
+            },
+            {
+                name: 'About',
+                link: '/about'
+            },
+            {
+                name: 'Portfolio',
+                link: '/portfolio'
+            },
+            {
+                name: 'Uses',
+                link: '/uses'
+            },
+            {
+                name: 'Contact',
+                link: '/contact'
+            }
+        ]);
+        return () => {
+            setLinks([]);
+        }
+    }, [])
+
     return (
         <section className={"side-menu " + (isToggle ? "side-menu--is-active" : "side-menu--is-not-active")}>
             <h2 className="hidden">Side Menu</h2>
@@ -16,18 +46,15 @@ const SideMenu = ({
             </div>
 
             <ul className="side-menu__lists">
-                <li className="side-menu__lists__item">
-                    <Link to="/">Home</Link>
-                </li>
-                <li className="side-menu__lists__item">
-                    <Link to="/about">About</Link>
-                </li>
-                <li className="side-menu__lists__item">
-                    <Link to="/portfolio">Portfolio</Link>
-                </li>
-                <li className="side-menu__lists__item">
-                    <Link to="/contact">Contact</Link>
-                </li>
+                {
+                    links.map((link, i) => {
+                        return (
+                            <li className="side-menu__lists__item" key={i}>
+                                <Link to={link.link}>{link.name}</Link>
+                            </li>
+                        )
+                    })
+                }
             </ul>
 
         </section>       

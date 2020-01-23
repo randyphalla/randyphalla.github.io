@@ -11,6 +11,7 @@ const Header = () => {
     
     const [toggle, setToggle] = useState(false);
     const [scrolling, setScrolling] = useState(false);
+    const [links, setLinks] = useState([]);
 
     useEffect(() => {
         const headerScrolling = () => {
@@ -21,10 +22,34 @@ const Header = () => {
             }
         }
 
+        setLinks([
+            {
+                name: 'Home',
+                link: '/'
+            },
+            {
+                name: 'About',
+                link: '/about'
+            },
+            {
+                name: 'Portfolio',
+                link: '/portfolio'
+            },
+            {
+                name: 'Uses',
+                link: '/uses'
+            },
+            {
+                name: 'Contact',
+                link: '/contact'
+            }
+        ]);
+
         window.addEventListener('scroll', headerScrolling);
 
         return () => {
             window.removeEventListener('scroll', headerScrolling);
+            setLinks([])
         };
     }, []);
     
@@ -52,38 +77,20 @@ const Header = () => {
 
                     <div className="desktop-menu">
                         <ul className="desktop-menu-links">
-                            <li className="desktop-menu-links__item">
-                                <Link 
-                                    className="desktop-menu-links__item-link" 
-                                    to="/" 
-                                    activeClassName="current-page">
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="desktop-menu-links__item">
-                                <Link 
-                                    className="desktop-menu-links__item-link" 
-                                    to="/about" 
-                                    activeClassName="current-page">
-                                    About
-                                </Link>
-                            </li>
-                            <li className="desktop-menu-links__item">
-                                <Link 
-                                    className="desktop-menu-links__item-link" 
-                                    to="/portfolio" 
-                                    activeClassName="current-page">
-                                    Portfolio
-                                </Link>
-                            </li>            
-                            <li className="desktop-menu-links__item">
-                                <Link 
-                                    className="desktop-menu-links__item-link" 
-                                    to="/contact" 
-                                    activeClassName="current-page">
-                                    Contact
-                                </Link>
-                            </li>
+                            {
+                                links.map((link, i) => {
+                                    return (
+                                        <li className="desktop-menu-links__item" key={i}>
+                                            <Link 
+                                                className="desktop-menu-links__item-link" 
+                                                to={link.link} 
+                                                activeClassName="current-page">
+                                                {link.name}
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
 

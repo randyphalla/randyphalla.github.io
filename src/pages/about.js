@@ -42,10 +42,10 @@ const AboutPage = () => {
                 title: 'ReactJS'
             },
             {
-                title: 'GatsbyJS'
+                title: 'React Native'
             },
             {
-                title: 'React Native'
+                title: 'GatsbyJS'
             },
             {
                 title: 'Firebase'

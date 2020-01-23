@@ -6,7 +6,7 @@
 
 ### Development
 
-`yarn start`
+`yarn start` and `http://localhost:8000/`
 
 ### Building
 
@@ -14,8 +14,6 @@
 
 ## TODO
 
-- Add jQuery in Technical Skills (DONE)
-- Fix scroll for safari (DONE)
 - Add profile picture
 - Header
 - Body copy
@@ -25,6 +23,8 @@
 - What I do (Future)
     - UI, Front-end, protyping
     
+- Add jQuery in Technical Skills (DONE)
+- Fix scroll for safari (DONE)
 - Portfolio (DONE)
 - Portfolio Details (DONE)
 - Contact (DONE)
