@@ -31,7 +31,7 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#FF001F`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/randyphalla-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -44,7 +44,7 @@ module.exports = {
             },
             {
                 family: `Raleway`,
-                variants: [`300`, `500`, `700`]
+                variants: [`300`, `400`, `500`, `700`]
               },
           ],
         },

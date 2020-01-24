@@ -13,8 +13,10 @@ const BannerContainer = styled.div `
 
     @media screen and (min-width: 576px) {
         position: relative;
-        padding-top: 200px;
-        padding-bottom: 350px;
+        /* padding-top: 200px;
+        padding-bottom: 350px; */
+        padding-top: 115px;
+        padding-bottom: 250px;
     }
 
     @media screen and (min-width: 768px) {

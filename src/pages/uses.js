@@ -34,6 +34,9 @@ const UsesPage = () => {
         name: 'Discord'
       },
       {
+        name: 'Spotify'
+      },
+      {
         name: 'Adobe Photoshop and Illustrator'
       }
     ]);
@@ -67,12 +70,16 @@ const UsesPage = () => {
 
     setOther([
       {
-        title: 'Eyewear',
+        title: 'Eyewear:',
         name: 'Gunnar Intercept'
       },
       {
-        title: 'Desk',
-        name: ' BEKANT from Ikea'
+        title: 'Desk:',
+        name: 'BEKANT from Ikea'
+      },
+      {
+        title: 'Chair',
+        name: 'Hyken Technical Mesh Task Chair from Staples'
       }
     ]);
 
@@ -91,16 +98,63 @@ const UsesPage = () => {
       />
       <BannerAlt 
         title="Uses" 
-        description=""
+        description="What I use"
       />
       <section className="uses">
         <h2 className="hidden">Uses Section</h2>
         <div className="container">
-          {/* Lists */}
-          <div> 
-            {/* Items */}
-            <div></div>
+
+          {/* Softwares */}
+          <div className="uses__header">
+            <h3 className="uses__title">Softwares</h3>
           </div>
+
+          <ul className="uses__list">
+          {
+            useSoftwares.map((software, i) => {
+              return (
+                <li className="uses__list-item" key={i}>
+                  <span className="uses__list-item__name">{software.name}</span>
+                </li>
+              )
+            }) 
+          }
+          </ul>
+
+          {/* Hardwares */}
+          <div className="uses__header">
+            <h3 className="uses__title">Hardware</h3>
+          </div>
+
+          <ul className="uses__list">
+          {
+            useHardware.map((hardware, i) => {
+              return (
+                <li className="uses__list-item" key={i}>
+                  <span className="uses__list-item__title">{hardware.title}</span> <span className="uses__list-item__name">{hardware.name}</span>
+                </li>
+              )
+            }) 
+          }
+          </ul>
+
+          {/* Others */}
+          <div className="uses__header">
+            <h3 className="uses__title">Others</h3>
+          </div>
+          
+          <ul className="uses__list">
+          {
+            useOther.map((other, i) => {
+              return (
+                <li className="uses__list-item" key={i}>
+                  <span className="uses__list-item__title">{other.title}</span> <span className="uses__list-item__name">{other.name}</span>
+                </li>
+              )
+            }) 
+          }
+          </ul>
+
         </div>
       </section>
     </Layout>
