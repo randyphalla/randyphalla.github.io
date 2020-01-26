@@ -30,90 +30,90 @@ exports.createPages = async ({ actions: { createPage } }) => {
                 }
             ]
         },
-        {
-            id: 2,
-            title: 'British Airways',
-            description: 'UI Design',
-            about: 'Stuff',
-            role: 'Designer and Developer',
-            items: [
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                },
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                }
-            ]
-        },
-        {
-            id: 3,
-            title: 'Ford Fusion - Car Dashboard',
-            description: 'UI Design',
-            about: 'Stuff',
-            role: 'Designer and Developer',
-            items: [
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                },
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                }
-            ]
-        },
-        {
-            id: 4,
-            title: 'Zane Barles',
-            description: 'Branding',
-            about: 'Stuff',
-            role: 'Designer and Developer',
-            items: [
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                },
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                }
-            ]
-        },
-        {
-            id: 5,
-            title: 'Musicbook',
-            description: 'Branding',
-            about: 'Stuff',
-            role: 'Designer and Developer',
-            items: [
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                },
-                {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    alt: ''
-                }
-            ]
-        }
+        // {
+        //     id: 2,
+        //     title: 'British Airways',
+        //     description: 'UI Design',
+        //     about: 'Stuff',
+        //     role: 'Designer and Developer',
+        //     items: [
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         },
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         }
+        //     ]
+        // },
+        // {
+        //     id: 3,
+        //     title: 'Ford Fusion - Car Dashboard',
+        //     description: 'UI Design',
+        //     about: 'Stuff',
+        //     role: 'Designer and Developer',
+        //     items: [
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         },
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         }
+        //     ]
+        // },
+        // {
+        //     id: 4,
+        //     title: 'Zane Barles',
+        //     description: 'Branding',
+        //     about: 'Stuff',
+        //     role: 'Designer and Developer',
+        //     items: [
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         },
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         }
+        //     ]
+        // },
+        // {
+        //     id: 5,
+        //     title: 'Musicbook',
+        //     description: 'Branding',
+        //     about: 'Stuff',
+        //     role: 'Designer and Developer',
+        //     items: [
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         },
+        //         {
+        //             thumbnail: '',
+        //             image: '',
+        //             title: '',
+        //             alt: ''
+        //         }
+        //     ]
+        // }
     ];
 
     // Create portfolio page

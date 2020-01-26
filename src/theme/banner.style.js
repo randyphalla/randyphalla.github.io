@@ -15,7 +15,7 @@ const BannerContainer = styled.div `
         position: relative;
         /* padding-top: 200px;
         padding-bottom: 350px; */
-        padding-top: 115px;
+        padding-top: 170px;
         padding-bottom: 250px;
     }
 

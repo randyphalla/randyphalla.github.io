@@ -43,15 +43,15 @@ const UsesPage = () => {
 
     setHardware([
       {
-        title: 'Laptop:',
+        title: 'Laptop: ',
         name: 'MacBook Pro (Retina, 15-inch, Mid 2015)'  
       },
       {
-        title: 'Keyboard:',
+        title: 'Keyboard: ',
         name: 'Logitech G810'  
       },
       {
-        title: 'Mouse:',
+        title: 'Mouse: ',
         name: 'Logitech G903'  
       },
       {
@@ -59,26 +59,26 @@ const UsesPage = () => {
         name: 'Two 27-inch Asus VP278H-P Gaming Monitor'  
       },
       {
-        title: 'Headset:',
+        title: 'Headset: ',
         name: 'Bose QuietComfort 25 Over-Ear Noise Cancelling Headphones'  
       },
       {
-        title: 'Phone:',
+        title: 'Phone: ',
         name: 'Samsung S7'  
       }
     ]);
 
     setOther([
       {
-        title: 'Eyewear:',
+        title: 'Eyewear: ',
         name: 'Gunnar Intercept'
       },
       {
-        title: 'Desk:',
+        title: 'Desk: ',
         name: 'BEKANT from Ikea'
       },
       {
-        title: 'Chair',
+        title: 'Chair ',
         name: 'Hyken Technical Mesh Task Chair from Staples'
       }
     ]);
@@ -131,7 +131,8 @@ const UsesPage = () => {
             useHardware.map((hardware, i) => {
               return (
                 <li className="uses__list-item" key={i}>
-                  <span className="uses__list-item__title">{hardware.title}</span> <span className="uses__list-item__name">{hardware.name}</span>
+                  <span className="uses__list-item__title">{hardware.title}</span> 
+                  <span className="uses__list-item__name">{hardware.name}</span>
                 </li>
               )
             }) 
@@ -148,7 +149,8 @@ const UsesPage = () => {
             useOther.map((other, i) => {
               return (
                 <li className="uses__list-item" key={i}>
-                  <span className="uses__list-item__title">{other.title}</span> <span className="uses__list-item__name">{other.name}</span>
+                  <span className="uses__list-item__title">{other.title}</span> 
+                  <span className="uses__list-item__name">{other.name}</span>
                 </li>
               )
             }) 

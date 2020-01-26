@@ -58,7 +58,7 @@ const Footer = () => {
             </div>
     
             <div className="copyright">
-                <p className="copyright__title">&copy; 2019 Randy Phalla. All Rights Reserved.</p>
+                <p className="copyright__title">&copy; 2020 Randy Phalla. All Rights Reserved.</p>
             </div>
 
         </footer>       
