@@ -17,7 +17,7 @@ const ProjectsItemAvatar = styled.div `
     height: 280px;
     width: 100%;
     
-    background-color: #D8D8D8;
+    background-color: var(--light-grey-color);
     border-radius: 8px;
 `;
 

@@ -1,13 +1,20 @@
 @import '../assets/scss/app';
 
-.about-me { padding: 60px 0; }
+.about-me { 
+    padding-top: 16px;
+    padding-bottom: 60px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 60px;
+    }
+}
 
 .about-me__logo { display: none; }
 
 .about-me__logo-avatar {
     height: 280px;
     width: 100%;
-    background-color: var(--grey-color);
+    background-color: var(--light-grey-color);
     border-radius: 10px;
 }
 
@@ -61,7 +68,7 @@
         width: 100%;
         margin-bottom: 30px;
 
-        background-color: var(--grey-color);
+        background-color: var(--light-grey-color);
         border-radius: 8px;
     }
 }

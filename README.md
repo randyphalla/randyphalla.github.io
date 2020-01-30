@@ -22,7 +22,8 @@
 - Clean up UI pages
 - What I do (Future)
     - UI, Front-end, protyping
-    
+
+
 - Add jQuery in Technical Skills (DONE)
 - Fix scroll for safari (DONE)
 - Portfolio (DONE)

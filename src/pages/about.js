@@ -24,9 +24,6 @@ const AboutPage = () => {
                 title: 'Bootstrap'
             },
             {
-                title: 'Foundation'
-            },
-            {
                 title: 'JavaScript (ES6)'
             },
             {

@@ -6,12 +6,65 @@ import {
     FaBehance, 
     FaRegEnvelope 
 } from "react-icons/fa";
-
+import styled from "styled-components";
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import BannerAlt from '../components/banner-alt/banner-alt';
+// import './contact.scss'
 
-import './contact.scss'
+const Contact = styled.section`
+    padding: 16px;
+    margin-bottom: 60px;
+`;
+
+const ContactSocialMediaList = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 576px) {
+        flex-direction: row; 
+        justify-content: center;
+    }
+`;
+
+const ContactSocialMediaListItem = styled.div`
+    padding: 16px;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: #FF001F;
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.1);
+
+    transition: all 300ms linear;
+
+    svg {
+        fill: white;
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    &:hover {
+        background-color: transparent;
+
+        svg { fill: #FF001F; }
+    }
+
+    @media screen and (min-width: 576px) {
+        margin-left: 10px;
+        margin-right: 10px;
+        
+        svg {
+            width: 2em;
+            height: 2em;
+        }
+    }
+`;
 
 const ContactPage = () => {
     return (
@@ -27,34 +80,34 @@ const ContactPage = () => {
                 description="Let's Get in Touch"
             />
 
-            <section className="contact">
+            <Contact>
                 <h2 className="hidden">Contact Section</h2>
 
-                <div className="contact__social-media-lists">
+                <ContactSocialMediaList>
 
-                    <div className="contact__social-media-lists__item">
+                    <ContactSocialMediaListItem>
                         <FaLinkedinIn />
-                    </div>
+                    </ContactSocialMediaListItem>
 
-                    <div className="contact__social-media-lists__item">
+                    <ContactSocialMediaListItem>
                         <FaGithub />
-                    </div>
+                    </ContactSocialMediaListItem>
 
-                    <div className="contact__social-media-lists__item">
+                    <ContactSocialMediaListItem>
                         <FaDribbble />
-                    </div>
+                    </ContactSocialMediaListItem>
 
-                    <div className="contact__social-media-lists__item">
+                    <ContactSocialMediaListItem>
                         <FaBehance />
-                    </div>
+                    </ContactSocialMediaListItem>
                     
-                    <div className="contact__social-media-lists__item">
+                    <ContactSocialMediaListItem>
                         <FaRegEnvelope />
-                    </div>
+                    </ContactSocialMediaListItem>
 
-                </div>
+                </ContactSocialMediaList>
 
-            </section>
+            </Contact>
 
         </Layout>        
     )

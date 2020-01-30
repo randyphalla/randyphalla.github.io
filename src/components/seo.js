@@ -65,6 +65,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 property: `twitter:image`,
                 content: `TODO: need add logo`,
               },
+              {
+                name: `google-site-verification`,
+                content: `UH8iq5Hr4Go8tC0DVlNsOPMYeRl9xZM6lrgCcF8BiH4`
+              }
             ]
               .concat(
                 keywords.length > 0

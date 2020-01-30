@@ -32,15 +32,9 @@ const IndexPage = () => {
     return (
         <Layout>
                 
-            <SEO 
-                title="Home" 
-                keywords={[]}
-            />
+            <SEO title="Home" keywords={[]} />
 
-            <Banner 
-                title="Randy Phalla" 
-                description="I am a web developer and designer that specialize in front end development and user interface design." 
-            />
+            <Banner />
             
             <section className="about-me">
                 <h2 className="hidden">About me Section</h2>
@@ -49,7 +43,7 @@ const IndexPage = () => {
                         <div className="about-me__logo-avatar"></div>
                     </div>
                     <div className="about-me__paragraph">
-                        <h3 className="about-me__title">Randy Phalla</h3>
+                        {/* <h3 className="about-me__title">Randy Phalla</h3> */}
                         <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps. </p>
                     </div>
                 </div>

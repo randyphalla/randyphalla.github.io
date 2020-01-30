@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Randy Phalla`,
     description: `I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps.`,
-    author: `randyphalla@gmail.com`,
+    author: `randyphalla@gmail.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
