@@ -6,10 +6,10 @@ var plugins = [{
       options: {"plugins":[]},
     },{
       plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Randy Phalla's Portfolio Website","short_name":"RP Portfolio","start_url":"/","background_color":"#FFFFFF","theme_color":"#FF001F","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
+      options: {"plugins":[],"name":"Randy Phalla's Portfolio Website","short_name":"RP Portfolio","start_url":"/","background_color":"#FFFFFF","theme_color":"#FF001F","display":"minimal-ui","icon":"src/images/randyphalla-icon.png"},
     },{
       plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
-      options: {"plugins":[],"fonts":[{"family":"Montserrat","variants":["600","700"]},{"family":"Raleway","variants":["300","500","700"]}]},
+      options: {"plugins":[],"fonts":[{"family":"Montserrat","variants":["600","700"]},{"family":"Raleway","variants":["300","400","500","700"]}]},
     },{
       plugin: require('/Users/randyphalla/Documents/Projects/randyphalla.github.io/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[],"displayName":false},
