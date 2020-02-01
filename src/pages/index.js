@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby"
+import styled from "styled-components";
 import './index.scss';
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
@@ -17,7 +18,22 @@ import {
     AboutMeProfileContainer,
     AboutMeProfileAvatar,
     AboueMeParagraphContainer,
-    AboueMeParagraph
+    AboueMeParagraph,
+    MySkillsSection,
+    Container,
+    MySkillsList,
+    MySkilsListItem,
+    DefaultTitle,
+    DefaultTitleSpan,
+    WorkEducationSection,
+    WorkEducationList,
+    WorkEducationListItem,
+    WorkEducationCompanyName,
+    WorkEducationDateStarted,
+    WorkEducationRole,
+    WorkEducationLink,
+    FeaturedProjectsSection,
+    FeaturedProjectsProjects
 } from '../theme/index.style';
 
 const IndexPage = () => {
@@ -30,83 +46,6 @@ const IndexPage = () => {
 
     useEffect(() => {
         setSkills([
-            // {
-            //     title: 'Web Development',
-            //     languages: [
-            //         {
-            //             name: 'HTML5'
-            //         },
-            //         {
-            //             name: 'SCSS'
-            //         },
-            //         {
-            //             name: 'Bootstrap'
-            //         }
-            //     ]
-            // },
-            // {
-            //     title: 'JavaScript',
-            //     languages: [
-            //         {
-            //             name: 'jQuery'
-            //         },
-            //         {
-            //             name: 'ES6'
-            //         },
-            //         {
-            //             name: 'TypeScript'
-            //         },
-            //         {
-            //             name: 'Angular 2-8'
-            //         },
-            //         {
-            //             name: 'Ionic'
-            //         },
-            //         {
-            //             name: 'ReactJS'
-            //         },
-            //         {
-            //             name: 'React Native'
-            //         },
-            //         {
-            //             name: 'GatsbyJS'
-            //         },
-            //         {
-            //             name: 'Firebase'
-            //         }
-            //     ]
-            // },
-            // {
-            //     title: 'Version Control',
-            //     languages: [
-            //         {
-            //             name: 'Git'
-            //         },
-            //         {
-            //             name: 'Sourcetree'
-            //         },
-            //         {
-            //             name: 'GitHub'
-            //         }
-            //     ]
-            // },
-            // {
-            //     title: 'Softwares',
-            //     languages: [
-            //         {
-            //             name: 'Adobe Photoshop & Illustrator'
-            //         },
-            //         {
-            //             name: 'Sketch'
-            //         },
-            //         {
-            //             name: 'Figma'
-            //         },
-            //         {
-            //             name: 'VSC (Visual Studio Code)'
-            //         }
-            //     ]
-            // }
             {
                 title: 'HTML5'
             },
@@ -167,29 +106,29 @@ const IndexPage = () => {
             {
                 company: 'Devlift Media',
                 started: 'Dec 2016 - Present',
-                siteLink: 'https://devlift.com/',
                 role: 'Front-End Web Developer',
+                siteLink: 'https://devlift.com/',
             },
             {
                 company: 'BuzzPR',
                 started: 'Aug 2016 - Sept 2016',
-                siteLink: 'http://www.buzzpr.ca/',
                 role: 'Graphic Design Intern',
+                siteLink: 'http://www.buzzpr.ca/',
             }
         ]);
 
         setEducations([
             {
                 school: 'Fanshawe College',
+                started: 'Sept 2015 - Apr 2016',
                 program: 'Interactive Media Specialist',
                 siteLink: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next',
-                started: 'Sept 2015 - Apr 2016'
             },
             {
                 school: 'Fanshawe College',
+                started: 'Sept 2011 - Apr 2014',
                 program: 'Graphic Design',
                 siteLink: 'https://www.fanshawec.ca/programs/grd1-graphic-design/next',
-                started: 'Sept 2011 - Apr 2014'
             }  
         ]);
 
@@ -246,125 +185,103 @@ const IndexPage = () => {
                     </AboueMeParagraphContainer>
                 </AboutMeContainer>
             </AboutMeSection>
-
-            {/* <section className="about-me">
-                <h2 className="hidden">About me Section</h2>
-                <div className="container">
-                    <div className="about-me__logo">
-                        <div className="about-me__logo-avatar"></div>
-                    </div>
-                    <div className="about-me__paragraph">
-                        <p className="about-me__body">I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps.</p>
-                    </div>
-                </div>
-            </section> */}
-
-            <section className="my-skills">
-                <h2 className="hidden">My Skills Section</h2>
-                <div className="container">
-                    <h3 className="work-education__title">
-                        <span className="work-education__title__span">Skills</span>
-                    </h3>  
-                    <ul className="my-skills__list">
+            
+            <MySkillsSection>
+                <Hidden>My Skills Section</Hidden>
+                <Container>
+                    <DefaultTitle>
+                        <DefaultTitleSpan>Skills</DefaultTitleSpan>
+                    </DefaultTitle>  
+                    <MySkillsList>
                         {
                             skills.map((skill, i) => {
                                 return (
-                                    <li className="my-skills__item" key={i}>
-                                        {skill.title}
-                                    </li>
+                                    <MySkilsListItem key={i}>{skill.title}</MySkilsListItem>
                                 )
                             })
                         }
-                    </ul>
-                </div>
-            </section>
+                    </MySkillsList>
+                </Container>
+            </MySkillsSection>
 
-            <section className="work-education">
-                <h2 className="hidden">My Work Experience Section</h2>
-                <div className="container">
-                    <h3 className="work-education__title">
-                        <span className="work-education__title__span">Work Experience</span>
-                    </h3>  
-                    <ul className="work-education__list">
+            <WorkEducationSection>
+                <Hidden>My Work Experience Section</Hidden>
+                <Container>
+                    <DefaultTitle>
+                        <DefaultTitleSpan>Work Experience</DefaultTitleSpan>
+                    </DefaultTitle>  
+                    <WorkEducationList>
                         {
                             experiences.map((experience, i) => {
                                 return (
-                                    <li className="work-education__item" key={i}>
-                                        <p className="work-education__item__company">
+                                    <WorkEducationListItem key={i}>
+                                        <WorkEducationCompanyName>
                                             {experience.company} -
-                                            <span className="work-education__item__started"> {experience.started}</span>
-                                        </p>
-                                        <p className="work-education__item__role">{experience.role}</p>
-                                        <a 
-                                            className="work-education__item__link" 
-                                            href={experience.siteLink}
-                                        >
+                                            <WorkEducationDateStarted> {experience.started}</WorkEducationDateStarted>
+                                        </WorkEducationCompanyName>
+                                        <WorkEducationRole>{experience.role}</WorkEducationRole>
+                                        <WorkEducationLink href={experience.siteLink}>
                                             {experience.siteLink}
-                                        </a>
-                                    </li>
+                                        </WorkEducationLink>
+                                    </WorkEducationListItem>
                                 )
                             })
                         }
-                    </ul>
-                </div>
-            </section>
+                    </WorkEducationList>
+                </Container>
+            </WorkEducationSection>
 
-            <section className="work-education">
-                <h2 className="hidden">My Education Section</h2>
-                <div className="container">
-                    <h3 className="work-education__title">
-                        <span className="work-education__title__span">Education</span>
-                    </h3>  
-                    <ul className="work-education__list">
+            <WorkEducationSection>
+                <Hidden>My Education Section</Hidden>
+                <Container>
+                    <DefaultTitle>
+                        <DefaultTitleSpan>Education</DefaultTitleSpan>
+                    </DefaultTitle>  
+                    <WorkEducationList>
                         {
                             educations.map((education, i) => {
                                 return (
-                                    <li className="work-education__item" key={i}>
-                                        <p className="work-education__item__company">
-                                            {education.school} - <span className="work-education__item__started"> {education.started}</span>
-                                        </p>
-                                        <p className="work-education__item__role">{education.program}</p>
-                                        <a 
-                                            className="work-education__item__link" 
-                                            href={education.siteLink}
-                                        >
+                                    <WorkEducationListItem key={i}>
+                                        <WorkEducationCompanyName>
+                                            {education.school} - <WorkEducationDateStarted> {education.started}</WorkEducationDateStarted>
+                                        </WorkEducationCompanyName>
+                                        <WorkEducationRole>{education.program}</WorkEducationRole>
+                                        <WorkEducationLink href={education.siteLink}>
                                             {education.siteLink}
-                                        </a>
-                                    </li>
+                                        </WorkEducationLink>
+                                    </WorkEducationListItem>
                                 )
                             })
                         }
-                    </ul>
-                </div>
-            </section>
+                    </WorkEducationList>
+                </Container>
+            </WorkEducationSection>
 
-            <section className="my-skills">
-                <h2 className="hidden">My Hobbies Section</h2>
-                <div className="container">
-                <h3 className="work-education__title">
-                        <span className="work-education__title__span">Hobbies</span>
-                    </h3>  
-                    <ul className="my-skills__list">
+            <MySkillsSection>
+                <Hidden>My Hobbies Section</Hidden>
+                <Container>  
+                    <DefaultTitle>
+                        <DefaultTitleSpan>Hobbies</DefaultTitleSpan>
+                    </DefaultTitle>  
+                    <MySkillsList>
                         {
                             hobbies.map((hobbie, i) => {
                                 return (
-                                    <li className="my-skills__item" key={i}>
-                                        {hobbie.name}
-                                    </li>
+                                    <MySkilsListItem key={i}> {hobbie.name}</MySkilsListItem>
                                 )
                             })
                         }
-                    </ul>
-                </div>
-            </section>
+                    </MySkillsList>
+                </Container>
+            </MySkillsSection>
 
-            <section className="featured-projects">
-                <h2 className="hidden">Featured Projects Section</h2>
-                <div className="container">                                           
-                    <h3 className="work-education__title">
-                        <span className="work-education__title__span">Featured Projects</span>
-                    </h3>  
-                    <div className="projects">
+            <FeaturedProjectsSection>
+                <Hidden>Featured Projects Section</Hidden>
+                <Container>                                           
+                    <DefaultTitle>
+                        <DefaultTitleSpan>Featured Projects</DefaultTitleSpan>
+                    </DefaultTitle>  
+                    <FeaturedProjectsProjects>
                         {           
                             projects.map((project, i) => {
                                 return (
@@ -378,7 +295,7 @@ const IndexPage = () => {
                                 )
                             })
                         }
-                    </div>                    
+                    </FeaturedProjectsProjects>                    
                     <Link to="/portfolio">
                         <button 
                             className="default-btn primary-btn" 
@@ -387,8 +304,8 @@ const IndexPage = () => {
                             View All Projects
                         </button>
                     </Link>
-                </div>
-            </section>
+                </Container>
+            </FeaturedProjectsSection>
 
         </Layout>
     )

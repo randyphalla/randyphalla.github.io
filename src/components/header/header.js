@@ -28,16 +28,8 @@ const Header = () => {
                 link: '/'
             },
             {
-                name: 'Portfolio',
-                link: '/portfolio'
-            },
-            {
                 name: 'Uses',
                 link: '/uses'
-            },
-            {
-                name: 'Contact',
-                link: '/contact'
             }
         ]);
 

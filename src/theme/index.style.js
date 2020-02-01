@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const AboutMeSection = styled.section `
+export const AboutMeSection = styled.section`
   padding-top: 16px;
   padding-bottom: 60px;
 
@@ -9,11 +9,11 @@ const AboutMeSection = styled.section `
   }
 `;
 
-const Hidden = styled.h2 `
+export const Hidden = styled.h2`
   display: none;
 `;
 
-const AboutMeContainer = styled.div`
+export const AboutMeContainer = styled.div`
   width: 80%;
   margin: 0 auto;
 
@@ -34,7 +34,7 @@ const AboutMeContainer = styled.div`
   }
 `;
 
-const AboutMeProfileContainer = styled.div `
+export const AboutMeProfileContainer = styled.div`
   display: none;
 
   @media screen and (min-width: 768px) {
@@ -43,7 +43,7 @@ const AboutMeProfileContainer = styled.div `
   }
 `;
 
-const AboutMeProfileAvatar = styled.div `
+export const AboutMeProfileAvatar = styled.div`
   height: 280px;
   width: 100%;
 
@@ -55,13 +55,13 @@ const AboutMeProfileAvatar = styled.div `
   }
 `;
 
-const AboueMeParagraphContainer = styled.div `
+export const AboueMeParagraphContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding: 16px;
   }
 `;
 
-const AboueMeParagraph = styled.p `
+export const AboueMeParagraph = styled.p`
   margin: 0;
 
   color: var(--black-color);
@@ -76,12 +76,234 @@ const AboueMeParagraph = styled.p `
   }
 `;
 
-export { 
-  AboutMeSection, 
-  Hidden, 
-  AboutMeContainer,
-  AboutMeProfileContainer,
-  AboutMeProfileAvatar,
-  AboueMeParagraphContainer,
-  AboueMeParagraph
-};
+
+export const MySkillsSection = styled.section`
+  margin-bottom: 16px;
+`;
+
+export const Container = styled.div`
+  width: 80%;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 85%;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 75%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 70%;
+  }
+`;
+
+export const MySkillsList = styled.ul`
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  display: flex;
+  justify-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+`;
+
+export const MySkilsListItem = styled.li`
+  position: relative;
+  padding-top: 16px;
+  padding-left: 44px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 16px;
+    
+    height: 10px;
+    width: 10px;
+
+    background-color: var(--red-color);
+    border-radius: 25px;
+    
+    opacity: 0.4;
+  }
+`;
+
+export const DefaultTitle = styled.h3`
+  position: relative;
+  
+  display: block;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+
+  background-color: var(--white-color);
+  
+  z-index: 3;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--red-color);
+
+    z-index: -1;
+    opacity: 0.5;
+  }
+`;
+
+export const DefaultTitleSpan = styled.span`
+  margin-left: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: var(--white-color);
+`;
+
+
+export const WorkEducationSection = styled.section`
+`;
+
+export const WorkEducationList = styled.ul`
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+`;
+
+export const WorkEducationListItem = styled.li`
+  margin-left: 16px;
+  margin-bottom: 32px;
+`;
+
+export const WorkEducationCompanyName = styled.p`
+  color: var(--black-color);
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+`;
+
+export const WorkEducationDateStarted = styled.span`
+  color: var(--black-color);
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+`;
+
+export const WorkEducationRole = styled.p`
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  color: var(--black-color);
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+`;
+
+export const WorkEducationLink = styled.a`
+  color: var(--red-color);
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+`;
+
+export const FeaturedProjectsSection = styled.section`
+  padding-top: 0;
+  padding-bottom: 60px;
+`;
+
+export const FeaturedProjectsProjects = styled.div`
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0; 
+  }
+`;
+
+// const Contact = styled.section`
+//     padding: 16px;
+//     margin-bottom: 60px;
+// `;
+
+// const ContactSocialMediaList = styled.div`
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     flex-wrap: wrap;
+
+//     @media screen and (min-width: 576px) {
+//         flex-direction: row; 
+//         justify-content: center;
+//     }
+// `;
+
+// const ContactSocialMediaListItem = styled.div`
+//     padding: 16px;
+//     margin: 10px;
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     border-radius: 50%;
+//     background-color: #FF001F;
+//     box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.1);
+
+//     transition: all 300ms linear;
+
+//     svg {
+//         fill: white;
+//         width: 1.5em;
+//         height: 1.5em;
+//     }
+
+//     &:hover {
+//         background-color: transparent;
+
+//         svg { fill: #FF001F; }
+//     }
+
+//     @media screen and (min-width: 576px) {
+//         margin-left: 10px;
+//         margin-right: 10px;
+
+//         svg {
+//             width: 2em;
+//             height: 2em;
+//         }
+//     }
+// `;
+
+// export { 
+//   AboutMeSection, 
+//   Hidden, 
+//   AboutMeContainer,
+//   AboutMeProfileContainer,
+//   AboutMeProfileAvatar,
+//   AboueMeParagraphContainer,
+//   AboueMeParagraph
+// };
+
