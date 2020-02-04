@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby"
-import styled from "styled-components";
 import './index.scss';
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
@@ -33,8 +32,10 @@ import {
     WorkEducationRole,
     WorkEducationLink,
     FeaturedProjectsSection,
-    FeaturedProjectsProjects
+    FeaturedProjectsProjects,
+    ButtonContainer
 } from '../theme/index.style';
+import { Button } from '../theme/button.style';
 
 const IndexPage = () => {
 
@@ -155,7 +156,27 @@ const IndexPage = () => {
                 id: 1,
                 title: 'Smart Cart',
                 description: 'UI Design'
-            }
+            },
+            {
+                id: 1,
+                title: 'Smart Cart',
+                description: 'UI Design'
+            },
+            {
+                id: 1,
+                title: 'Smart Cart',
+                description: 'UI Design'
+            },
+            {
+                id: 1,
+                title: 'Smart Cart',
+                description: 'UI Design'
+            },
+            {
+                id: 1,
+                title: 'Smart Cart',
+                description: 'UI Design'
+            },
         ]);
 
         return () => {
@@ -296,14 +317,16 @@ const IndexPage = () => {
                             })
                         }
                     </FeaturedProjectsProjects>                    
-                    <Link to="/portfolio">
-                        <button 
-                            className="default-btn primary-btn" 
-                            aria-label="View All Projects" 
-                            type="button">
-                            View All Projects
-                        </button>
-                    </Link>
+                    <ButtonContainer>
+                        <Link to="/portfolio">
+                            <Button 
+                                className="primary-btn" 
+                                aria-label="View All Projects"
+                            >
+                                View All Projects
+                            </Button>
+                        </Link>
+                    </ButtonContainer>
                 </Container>
             </FeaturedProjectsSection>
 

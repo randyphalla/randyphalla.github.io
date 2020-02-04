@@ -227,7 +227,6 @@ export const FeaturedProjectsSection = styled.section`
 `;
 
 export const FeaturedProjectsProjects = styled.div`
-  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -235,13 +234,21 @@ export const FeaturedProjectsProjects = styled.div`
   align-items: flex-start;
   margin-left: -15px;
   margin-right: -15px;
+  margin-bottom: 30px;
 
   @media screen and (min-width: 768px) {
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 0; 
+    justify-content: flex-start;
   }
 `;
+
+export const ButtonContainer = styled.div `
+  @media screen and (min-width: 768px) {
+    padding-left: 16px;
+  }
+`;
+
 
 // const Contact = styled.section`
 //     padding: 16px;

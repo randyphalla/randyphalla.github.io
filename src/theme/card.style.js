@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProjectsItem = styled.div `
+export const ProjectsItem = styled.div `
     padding: 16px;
     width: 100%;
 
@@ -13,7 +13,7 @@ const ProjectsItem = styled.div `
     }
 `;
 
-const ProjectsItemAvatar = styled.div `
+export const ProjectsItemAvatar = styled.div `
     height: 280px;
     width: 100%;
     
@@ -21,7 +21,7 @@ const ProjectsItemAvatar = styled.div `
     border-radius: 8px;
 `;
 
-const ProjectsItemTitle = styled.h4 `
+export const ProjectsItemTitle = styled.h4 `
     margin: 0;
     padding-top: 30px;
     padding-bottom: 10px;
@@ -31,17 +31,10 @@ const ProjectsItemTitle = styled.h4 `
     font-weight: 600;
 `;
 
-const ProjectsItemDescription = styled.p `
+export const ProjectsItemDescription = styled.p `
     margin: 0;
 
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
 `;
-
-export { 
-    ProjectsItem, 
-    ProjectsItemAvatar, 
-    ProjectsItemTitle,
-    ProjectsItemDescription 
-};
