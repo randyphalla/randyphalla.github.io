@@ -126,7 +126,7 @@ export const SocialMediaListItem = styled.li `
   }
 `;
 
-export const SocialMediaListItemLink = styled.li `
+export const SocialMediaListItemLink = styled.a `
 
 `;
 

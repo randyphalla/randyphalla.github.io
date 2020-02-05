@@ -107,6 +107,10 @@ export const MySkillsList = styled.ul`
   justify-items: center;
   align-items: flex-start;
   flex-wrap: wrap;
+
+  &.uses-list {
+    flex-direction: column;
+  }
 `;
 
 export const MySkilsListItem = styled.li`
@@ -134,6 +138,32 @@ export const MySkilsListItem = styled.li`
     
     opacity: 0.4;
   }
+
+  &.uses-list-item {
+    &::after {
+      top: 21px;
+    }
+  }
+
+  &.uses-list-item--hardware {
+    &::after {
+      top: 26px;
+    }
+  }
+`;
+
+export const MySkilsListItemTitle = styled.span `
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.8;
+`;
+
+export const MySkilsListItemName = styled.span `
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
 `;
 
 export const DefaultTitle = styled.h3`

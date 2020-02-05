@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby"
-import './index.scss';
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import Banner from '../components/banner/banner';
@@ -33,9 +32,9 @@ import {
     WorkEducationLink,
     FeaturedProjectsSection,
     FeaturedProjectsProjects,
-    ButtonContainer
+    // ButtonContainer
 } from '../theme/index.style';
-import { Button } from '../theme/button.style';
+// import { Button } from '../theme/button.style';
 
 const IndexPage = () => {
 
@@ -316,17 +315,7 @@ const IndexPage = () => {
                                 )
                             })
                         }
-                    </FeaturedProjectsProjects>                    
-                    <ButtonContainer>
-                        <Link to="/portfolio">
-                            <Button 
-                                className="primary-btn" 
-                                aria-label="View All Projects"
-                            >
-                                View All Projects
-                            </Button>
-                        </Link>
-                    </ButtonContainer>
+                    </FeaturedProjectsProjects>
                 </Container>
             </FeaturedProjectsSection>
 

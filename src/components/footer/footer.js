@@ -23,14 +23,13 @@ import {
     FooterCopyright,
     FooterCopyrightTitle
 } from './footer.style';
-import './footer.scss';
 import LogoRed from '../../assets/images/logo-red.svg';
 
 
 const Footer = () => {
     return (
         <FooterSection>
-        <Hidden>Footer Section</Hidden>
+            <Hidden>Footer Section</Hidden>
 
             <BorderContainer>
                 <FooterContainer>

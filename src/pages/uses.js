@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from "react";
-
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import BannerAlt from '../components/banner-alt/banner-alt';
-import './uses.scss';
+import { 
+  Hidden,
+  MySkillsSection,
+  Container,
+  MySkillsList,
+  MySkilsListItem,
+  MySkilsListItemTitle,
+  MySkilsListItemName,
+  DefaultTitle,
+  DefaultTitleSpan
+} from '../theme/index.style';
 
 const UsesPage = () => {
   const [useSoftwares, setSoftwares] = useState([]);
@@ -38,6 +47,15 @@ const UsesPage = () => {
       },
       {
         name: 'Adobe Photoshop and Illustrator'
+      },     
+      {
+        name: 'Sketch'
+      },
+      {
+        name: 'Xcode'
+      },
+      {
+        name: 'Android Studio'
       }
     ]);
 
@@ -55,7 +73,7 @@ const UsesPage = () => {
         name: 'Logitech G903'  
       },
       {
-        title: 'Monitors:',
+        title: 'Monitors: ',
         name: 'Two 27-inch Asus VP278H-P Gaming Monitor'  
       },
       {
@@ -78,7 +96,7 @@ const UsesPage = () => {
         name: 'BEKANT from Ikea'
       },
       {
-        title: 'Chair ',
+        title: 'Chair: ',
         name: 'Hyken Technical Mesh Task Chair from Staples'
       }
     ]);
@@ -92,73 +110,77 @@ const UsesPage = () => {
 
   return (
     <Layout>
+      
       <SEO 
         title="Uses" 
         keywords={[]} 
       />
+
       <BannerAlt 
         title="Uses" 
         description="What I use"
       />
-      <section className="uses">
-        <h2 className="hidden">Uses Section</h2>
-        <div className="container">
 
-          {/* Softwares */}
-          <div className="uses__header">
-            <h3 className="uses__title">Softwares</h3>
-          </div>
+      <MySkillsSection>
+        <Hidden>Softwares Section</Hidden>
+        <Container>
+          <DefaultTitle>
+            <DefaultTitleSpan>Softwares</DefaultTitleSpan>
+          </DefaultTitle>  
+          <MySkillsList className="uses-list">
+            {
+              useSoftwares.map((software, i) => {
+                return (
+                  <MySkilsListItem key={i}>{software.name}</MySkilsListItem>
+                )
+              })
+            }
+          </MySkillsList>
+        </Container>
+      </MySkillsSection>
 
-          <ul className="uses__list">
-          {
-            useSoftwares.map((software, i) => {
-              return (
-                <li className="uses__list-item" key={i}>
-                  <span className="uses__list-item__name">{software.name}</span>
-                </li>
-              )
-            }) 
-          }
-          </ul>
+      <MySkillsSection>
+        <Hidden>Hardware Section</Hidden>
+        <Container>
+          <DefaultTitle>
+            <DefaultTitleSpan>Hardware</DefaultTitleSpan>
+          </DefaultTitle>  
+          <MySkillsList className="uses-list">
+            {
+              useHardware.map((hardware, i) => {
+                return (
+                  <MySkilsListItem className="uses-list-item--hardware" key={i}>
+                    <MySkilsListItemTitle>{hardware.title}</MySkilsListItemTitle> 
+                    <MySkilsListItemName>{hardware.name}</MySkilsListItemName>
+                  </MySkilsListItem>
+                )
+              })
+            }
+          </MySkillsList>
+        </Container>
+      </MySkillsSection>
 
-          {/* Hardwares */}
-          <div className="uses__header">
-            <h3 className="uses__title">Hardware</h3>
-          </div>
-
-          <ul className="uses__list">
-          {
-            useHardware.map((hardware, i) => {
-              return (
-                <li className="uses__list-item" key={i}>
-                  <span className="uses__list-item__title">{hardware.title}</span> 
-                  <span className="uses__list-item__name">{hardware.name}</span>
-                </li>
-              )
-            }) 
-          }
-          </ul>
-
-          {/* Others */}
-          <div className="uses__header">
-            <h3 className="uses__title">Others</h3>
-          </div>
-          
-          <ul className="uses__list">
-          {
-            useOther.map((other, i) => {
-              return (
-                <li className="uses__list-item" key={i}>
-                  <span className="uses__list-item__title">{other.title}</span> 
-                  <span className="uses__list-item__name">{other.name}</span>
-                </li>
-              )
-            }) 
-          }
-          </ul>
-
-        </div>
-      </section>
+      <MySkillsSection>
+        <Hidden>Others Section</Hidden>
+        <Container>
+          <DefaultTitle>
+            <DefaultTitleSpan>Others</DefaultTitleSpan>
+          </DefaultTitle>  
+          <MySkillsList className="uses-list">
+            {
+              useOther.map((other, i) => {
+                return (
+                  <MySkilsListItem className="uses-list-item--hardware" key={i}>
+                    <MySkilsListItemTitle>{other.title}</MySkilsListItemTitle> 
+                    <MySkilsListItemName>{other.name}</MySkilsListItemName>
+                  </MySkilsListItem>
+                )
+              })
+            }
+          </MySkillsList>
+        </Container>
+      </MySkillsSection>
+      
     </Layout>
   )    
 }
