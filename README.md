@@ -22,7 +22,7 @@
 - Clean up UI pages
 - What I do (Future)
     - UI, Front-end, protyping
-
+- Add Google Analytics
 
 - Add jQuery in Technical Skills (DONE)
 - Fix scroll for safari (DONE)

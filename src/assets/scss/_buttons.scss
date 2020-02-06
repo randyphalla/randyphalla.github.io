@@ -1,56 +1,56 @@
 .default-btn {
-    @include RalewayFont(500);
-    
-    width: 100%;
-    padding: 5px 20px;
+	@include RalewayFont(500);
 
-    color: var(--black-color);
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    line-height: 30px;
-    text-transform: uppercase;
+	width: 100%;
+	padding: 5px 20px;
 
-    background-color: var(--white-color);
-    border-radius: 8px;
-    border: 2px solid transparent;
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+	color: var(--black-color);
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	line-height: 30px;
+	text-transform: uppercase;
 
-    transition: all 200ms linear;
+	background-color: var(--white-color);
+	border-radius: 8px;
+	border: 2px solid transparent;
+	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 
-    &:hover {
-        cursor: pointer;
-        border: 2px solid var(--black-color);
-    }
+	transition: all 200ms linear;
+
+	&:hover {
+		cursor: pointer;
+		border: 2px solid var(--black-color);
+	}
 }
 
 .primary-btn,
 .secondary-btn,
 .tertiary-btn {
-    &:hover {
-        border: 2px solid var(--red-color);
-    } 
+	&:hover {
+		border: 2px solid var(--red-color);
+	}
 }
 
-.primary-btn { 
-    @include primaryBtn(var(--white-color), var(--red-color)); 
+.primary-btn {
+	@include primaryBtn(var(--white-color), var(--red-color));
 }
 
-.secondary-btn { 
-    @include secondaryBtn(var(--red-color), var(--white-color)); 
+.secondary-btn {
+	@include secondaryBtn(var(--red-color), var(--white-color));
 }
 
-.tertiary-btn { 
-    @include tertiaryBtn(var(--red-color), var(--transparent)); 
+.tertiary-btn {
+	@include tertiaryBtn(var(--red-color), var(--transparent));
 }
 
 .default-btn--white {
-    color: var(--white-color);
-    background-color: transparent;
-    border: 2px solid var(--white-color);
+	color: var(--white-color);
+	background-color: transparent;
+	border: 2px solid var(--white-color);
 
-    &:hover {
-        color: var(--red-color);
-        background-color: var(--white-color);
-        border: 2px solid var(--white-color);
-    }
+	&:hover {
+		color: var(--red-color);
+		background-color: var(--white-color);
+		border: 2px solid var(--white-color);
+	}
 }

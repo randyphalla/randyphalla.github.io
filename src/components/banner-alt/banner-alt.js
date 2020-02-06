@@ -1,41 +1,48 @@
 import React from "react";
-import { 
-    BannerAltWrapper, 
-    BannerAltCont,
-    BannerAltTitle,
-    BannerAltDescription,
-    BannerAltContLeftBorder
+import {
+  Hidden,
+  BannerAltWrapper,
+  BannerAltContainer,
+  BannerAltCont,
+  BannerAltTitle,
+  BannerAltDescription,
+  BannerAltContLeftBorder
 } from './banner-alt.style';
+import { Button } from '../../theme/button.style';
 
 const BannerAlt = ({
-    title,
-    description,
-    isResume
+  title,
+  description,
+  isResume
 }) => {
-    return (
-        <BannerAltWrapper>
-            <h2 className="hidden">Banner Alt Section</h2>
-            <div className="container">
-                <BannerAltCont>
-                    <BannerAltTitle>{title}</BannerAltTitle>
-                    <BannerAltContLeftBorder>
-                        <BannerAltDescription>{description}</BannerAltDescription>
-                    </BannerAltContLeftBorder>
-                    {   
-                        isResume &&
-                        <a href="../assets/files/Randy Phalla's Resume.pdf" download aria-label="Download my resume">
-                            <button 
-                                className="default-btn default-btn--white" 
-                                aria-label="Resume" 
-                                type="button">
-                                Resume
-                            </button>                  
-                        </a>
-                    }
-                </BannerAltCont>
-            </div>
-        </BannerAltWrapper>
-    )    
+  return (
+    <BannerAltWrapper>
+      <Hidden>Banner Alt Section</Hidden>
+      <BannerAltContainer>
+        <BannerAltCont>
+          <BannerAltTitle>{title}</BannerAltTitle>
+          <BannerAltContLeftBorder>
+            <BannerAltDescription>{description}</BannerAltDescription>
+          </BannerAltContLeftBorder>
+          {
+            isResume &&
+            <a
+              href="../assets/files/Randy Phalla's Resume.pdf"
+              download
+              aria-label="Download my resume"
+            >
+              <Button
+                className="default-btn--white"
+                aria-label="Resume"
+                type="button">
+                Resume
+              </Button>
+            </a>
+          }
+        </BannerAltCont>
+      </BannerAltContainer>
+    </BannerAltWrapper>
+  )
 }
 
 export default BannerAlt

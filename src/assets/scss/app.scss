@@ -4,25 +4,31 @@
 @import 'theme';
 
 :root {
-    --red-color: #FF001F;
-    --white-color: #ffffff;
-    --black-color: #040303;
-    --transparent: transparent;
-    --grey-color: #D8D8D8;
-    --light-grey-color: #F6F7F9;
+	--red-color: #ff001f;
+	--white-color: #ffffff;
+	--black-color: #040303;
+	--transparent: transparent;
+	--grey-color: #d8d8d8;
+	--light-grey-color: #f6f7f9;
 }
 
 h1,
 h2,
 h3,
-h4, 
+h4,
 h5,
 h6,
-p { margin: 0; }
+p {
+	margin: 0;
+}
 
-.mt-60 { margin-top: 60px; }
+.mt-60 {
+	margin-top: 60px;
+}
 
-.mb-35 { margin-bottom: 35px; }
+.mb-35 {
+	margin-bottom: 35px;
+}
 
 // .title-1 {
 //     @include MontserratFont(700);
@@ -30,20 +36,20 @@ p { margin: 0; }
 //     color: var(--black-color);
 //     font-size: 16px;
 // }
- 
+
 .container {
-    width: 80%;
-    margin: 0 auto;
+	width: 80%;
+	margin: 0 auto;
 
-    @media screen and (min-width: 768px) {
-        width: 85%;
-    }
+	@media screen and (min-width: 768px) {
+		width: 85%;
+	}
 
-    @media screen and (min-width: 992px) {
-        width: 75%;
-    }
+	@media screen and (min-width: 992px) {
+		width: 75%;
+	}
 
-    @media screen and (min-width: 1200px) {
-        width: 70%;
-    }
+	@media screen and (min-width: 1200px) {
+		width: 70%;
+	}
 }
