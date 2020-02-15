@@ -19,8 +19,19 @@ import {
 	FooterCopyrightTitle,
 } from './footer.style';
 import LogoRed from '../../assets/images/logo-red.svg';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const Footer = () => {
+
+  function trackGA(cat, action , label, value) {
+    trackCustomEvent({
+      category: cat,
+      action: action,
+      label: label,
+      value: value
+    })
+  }
+
 	return (
 		<FooterSection>
 			<Hidden>Footer Section</Hidden>
@@ -35,22 +46,38 @@ const Footer = () => {
 						<SocialMediaTitle>Social Media</SocialMediaTitle>
 						<SocialMediaList>
 							<SocialMediaListItem>
-								<SocialMediaListItemLink href="https://www.linkedin.com/in/randyphalla/" aria-label="Linkedin Link">
+                <SocialMediaListItemLink
+                  href="https://www.linkedin.com/in/randyphalla/"
+                  aria-label="Linkedin Link"
+                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Linkedin')}
+                >
 									<FaLinkedinIn />
 								</SocialMediaListItemLink>
 							</SocialMediaListItem>
 							<SocialMediaListItem>
-								<SocialMediaListItemLink href="https://github.com/randyphalla" aria-label="Github Link">
+                <SocialMediaListItemLink
+                  href="https://github.com/randyphalla"
+                  aria-label="Github Link"
+                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Github')}
+                >
 									<FaGithub />
 								</SocialMediaListItemLink>
 							</SocialMediaListItem>
 							<SocialMediaListItem>
-								<SocialMediaListItemLink href="https://dribbble.com/randyphalla" aria-label="Dribbble Link">
+                <SocialMediaListItemLink
+                  href="https://dribbble.com/randyphalla"
+                  aria-label="Dribbble Link"
+                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Dribbble')}
+                >
 									<FaDribbble />
 								</SocialMediaListItemLink>
 							</SocialMediaListItem>
 							<SocialMediaListItem>
-								<SocialMediaListItemLink href="https://www.behance.net/randyphalla" aria-label="Behance Link">
+                <SocialMediaListItemLink
+                  href="https://www.behance.net/randyphalla"
+                  aria-label="Behance Link"
+                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Behance')}
+                >
 									<FaBehance />
 								</SocialMediaListItemLink>
 							</SocialMediaListItem>
@@ -59,7 +86,11 @@ const Footer = () => {
 
 					<LetGetInTouch>
 						<LetGetInTouchTitle>Let's Get In Touch</LetGetInTouchTitle>
-						<LetGetInTouchLink href="mailTo:randyphalla@gmail.com" aria-label="My email">
+            <LetGetInTouchLink
+              href="mailTo:randyphalla@gmail.com"
+              aria-label="My email"
+              onClick={trackGA('Footer - Links', 'Click', 'Lets Get In Touch', 'Email')}
+            >
 							randyphalla@gmail.com
 						</LetGetInTouchLink>
 					</LetGetInTouch>

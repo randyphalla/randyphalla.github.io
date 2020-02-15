@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import './header.scss';
 import Logo from '../../assets/images/logo.svg';
 import LogoRed from '../../assets/images/logo-red.svg';
-
 import { FaBars } from 'react-icons/fa';
 import SideMenu from '../side-menu/side-menu';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
@@ -40,6 +40,23 @@ const Header = () => {
 		};
 	}, []);
 
+  function trackGA(cat, action , label, value) {
+    trackCustomEvent({
+      category: cat,
+      action: action,
+      label: label,
+      value: value
+    })
+  }
+
+  function trackLogoMenu() {
+    trackGA('Menu', 'Click', 'Logo', '');
+  }
+
+  function trackMenuDesktopLinks(link) {
+    trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
+  }
+
 	return (
 		<div>
 			<header className={'header ' + (scrolling ? 'header--is-active' : 'header--is-not-active')}>
@@ -47,7 +64,7 @@ const Header = () => {
 
 				<div className="container">
 					<div className="logo">
-						<Link to="/">
+						<Link to="/" onClick={trackLogoMenu}>
 							<img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
 						</Link>
 					</div>
@@ -58,7 +75,10 @@ const Header = () => {
 								'mobile-menu__button ' +
 								(toggle ? 'mobile-menu__button--is-active' : 'mobile-menu__button--is-not-active')
 							}
-							onClick={() => setToggle(!toggle)}
+							onClick={() => {
+                setToggle(!toggle)
+                trackGA('Menu', 'Click', 'Mobile Menu', '')
+              }}
 							aria-label="Burger Menu"
 						>
 							<FaBars />
@@ -70,7 +90,12 @@ const Header = () => {
 							{links.map((link, i) => {
 								return (
 									<li className="desktop-menu-links__item" key={i}>
-										<Link className="desktop-menu-links__item-link" to={link.link} activeClassName="current-page">
+                    <Link
+                      className="desktop-menu-links__item-link"
+                      activeClassName="desktop-menu-links__item-link--current-page"
+                      to={link.link}
+                      onClick={trackMenuDesktopLinks(link)}
+                    >
 											{link.name}
 										</Link>
 									</li>

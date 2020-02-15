@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Randy Phalla`,
     description: `I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and prototype them into the web or mobile apps.`,
-    author: `randyphalla@gmail.com`
+    author: `randyphalla@gmail.com`,
+    siteUrl: `http://randyphalla.github.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -50,10 +51,32 @@ module.exports = {
         },
     },
     {
-        resolve: `gatsby-plugin-styled-components`,
-        options: {
-            displayName: false
-        },
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+          displayName: false
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'http://randyphalla.github.io/',
+        sitemap: 'http://randyphalla.github.io/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-111702075-1",
+        head: true,
+      },
     },
   ],
 }

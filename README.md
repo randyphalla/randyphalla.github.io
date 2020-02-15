@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+### Install
+
 `npm install` or `yarn`
 
 ### Development
@@ -15,14 +17,10 @@
 ## TODO
 
 - Add profile picture
-- Header
 - Body copy
 - Get Portfolio items
 - Get Portfolio body copy
-- Clean up UI pages
-- What I do (Future)
-    - UI, Front-end, protyping
-- Add Google Analytics
+- Add Google Analytics (WIP)
 
 - Add jQuery in Technical Skills (DONE)
 - Fix scroll for safari (DONE)
@@ -32,3 +30,5 @@
 - Update Banner (DONE)
 - Create Mobile Menu (DONE)
 - Resume Link (DONE)
+- Header (Done)
+- Clean up UI pages (Done)

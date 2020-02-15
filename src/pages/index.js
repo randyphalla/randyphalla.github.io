@@ -26,10 +26,9 @@ import {
 	WorkEducationRole,
 	WorkEducationLink,
 	FeaturedProjectsSection,
-	FeaturedProjectsProjects,
-	// ButtonContainer
+	FeaturedProjectsProjects
 } from '../theme/index.style';
-// import { Button } from '../theme/button.style';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const IndexPage = () => {
 	const [skills, setSkills] = useState([]);
@@ -116,13 +115,13 @@ const IndexPage = () => {
 				school: 'Fanshawe College',
 				started: 'Sept 2015 - Apr 2016',
 				program: 'Interactive Media Specialist',
-				siteLink: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next',
+				// siteLink: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next',
 			},
 			{
 				school: 'Fanshawe College',
 				started: 'Sept 2011 - Apr 2014',
 				program: 'Graphic Design',
-				siteLink: 'https://www.fanshawec.ca/programs/grd1-graphic-design/next',
+				// siteLink: 'https://www.fanshawec.ca/programs/grd1-graphic-design/next',
 			},
 		]);
 
@@ -145,31 +144,26 @@ const IndexPage = () => {
 		]);
 
 		setProjects([
-			{
-				id: 1,
-				title: 'Smart Cart',
-				description: 'UI Design',
-			},
-			{
-				id: 1,
-				title: 'Smart Cart',
-				description: 'UI Design',
-			},
-			{
-				id: 1,
-				title: 'Smart Cart',
-				description: 'UI Design',
-			},
-			{
-				id: 1,
-				title: 'Smart Cart',
-				description: 'UI Design',
-			},
-			{
-				id: 1,
-				title: 'Smart Cart',
-				description: 'UI Design',
-			},
+			// {
+			// 	id: 1,
+			// 	title: 'Smart Cart',
+			// 	description: 'UI Design',
+			// },
+			// {
+			// 	id: 2,
+			// 	title: 'British Airways',
+			// 	description: 'UI Design',
+			// },
+			// {
+			// 	id: 3,
+			// 	title: 'Car Dashboard',
+			// 	description: 'UI Design',
+			// },
+			// {
+			// 	id: 4,
+			// 	title: 'Zane Barles',
+			// 	description: 'UI Design',
+			// }
 		]);
 
 		return () => {
@@ -180,6 +174,27 @@ const IndexPage = () => {
 			setProjects([]);
 		};
 	}, []);
+
+  function trackGA(cat, action , label, value) {
+    trackCustomEvent({
+      category: cat,
+      action: action,
+      label: label,
+      value: value
+    })
+  }
+
+  function trackWorkExperiencesLink(id) {
+    trackGA("Work Experiences - Links", "Click", "Work Experience", id);
+  }
+
+  function trackEducationLink(id) {
+    trackGA("Educations - Links", "Click", "Education", id);
+  }
+
+  function trackFeaturedPropjectsLink(id) {
+    trackGA("Featured Projects - Links", "Click", "Featured Projects", id);
+  }
 
 	return (
 		<Layout>
@@ -211,7 +226,7 @@ const IndexPage = () => {
 						<DefaultTitleSpan>Skills</DefaultTitleSpan>
 					</DefaultTitle>
 					<MySkillsList>
-						{skills.map((skill, i) => {
+						{skills && skills.map((skill, i) => {
 							return <MySkilsListItem key={i}>{skill.title}</MySkilsListItem>;
 						})}
 					</MySkillsList>
@@ -225,14 +240,14 @@ const IndexPage = () => {
 						<DefaultTitleSpan>Work Experience</DefaultTitleSpan>
 					</DefaultTitle>
 					<WorkEducationList>
-						{experiences.map((experience, i) => {
+						{experiences && experiences.map((experience, i) => {
 							return (
 								<WorkEducationListItem key={i}>
 									<WorkEducationCompanyName>
 										{experience.company} -<WorkEducationDateStarted> {experience.started}</WorkEducationDateStarted>
 									</WorkEducationCompanyName>
 									<WorkEducationRole>{experience.role}</WorkEducationRole>
-									<WorkEducationLink href={experience.siteLink}>{experience.siteLink}</WorkEducationLink>
+									<WorkEducationLink href={experience.siteLink} onClick={trackWorkExperiencesLink(i)}>{experience.siteLink}</WorkEducationLink>
 								</WorkEducationListItem>
 							);
 						})}
@@ -247,14 +262,16 @@ const IndexPage = () => {
 						<DefaultTitleSpan>Education</DefaultTitleSpan>
 					</DefaultTitle>
 					<WorkEducationList>
-						{educations.map((education, i) => {
+						{educations && educations.map((education, i) => {
 							return (
 								<WorkEducationListItem key={i}>
 									<WorkEducationCompanyName>
 										{education.school} - <WorkEducationDateStarted> {education.started}</WorkEducationDateStarted>
 									</WorkEducationCompanyName>
 									<WorkEducationRole>{education.program}</WorkEducationRole>
-									<WorkEducationLink href={education.siteLink}>{education.siteLink}</WorkEducationLink>
+                  {
+                    education && education.siteLink ? <WorkEducationLink href={education.siteLink} onClick={trackEducationLink(i)}>{education.siteLink}</WorkEducationLink> : null
+                  }
 								</WorkEducationListItem>
 							);
 						})}
@@ -269,7 +286,7 @@ const IndexPage = () => {
 						<DefaultTitleSpan>Hobbies</DefaultTitleSpan>
 					</DefaultTitle>
 					<MySkillsList>
-						{hobbies.map((hobbie, i) => {
+						{hobbies && hobbies.map((hobbie, i) => {
 							return <MySkilsListItem key={i}> {hobbie.name}</MySkilsListItem>;
 						})}
 					</MySkillsList>
@@ -283,10 +300,10 @@ const IndexPage = () => {
 						<DefaultTitleSpan>Featured Projects</DefaultTitleSpan>
 					</DefaultTitle>
 					<FeaturedProjectsProjects>
-						{projects.map((project, i) => {
+						{projects && projects.map((project, i) => {
 							return (
 								<ProjectsItem key={i}>
-									<Link to={`portfolio/${project.id}/`} aria-label="Project link">
+									<Link to={`portfolio/${project.id}/`} aria-label="Project link" onClick={trackFeaturedPropjectsLink(i)}>
 										<ProjectsItemAvatar></ProjectsItemAvatar>
 									</Link>
 									<ProjectsItemTitle>{project.title}</ProjectsItemTitle>
@@ -294,6 +311,11 @@ const IndexPage = () => {
 								</ProjectsItem>
 							);
 						})}
+            {!projects.length && (
+              <div className="">
+                <p className="">Theres are currently no project unavailable at this time</p>
+              </div>
+            )}
 					</FeaturedProjectsProjects>
 				</Container>
 			</FeaturedProjectsSection>
