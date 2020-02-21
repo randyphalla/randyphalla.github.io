@@ -5,7 +5,7 @@ export const BannerAltWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   background-color: var(--red-color);
 `;
 
@@ -63,7 +63,7 @@ export const BannerAltDescription = styled.p`
 
 export const BannerAltContLeftBorder = styled.div`
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;

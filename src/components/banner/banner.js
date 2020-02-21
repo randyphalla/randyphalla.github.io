@@ -16,7 +16,7 @@ const Banner = () => {
 				<BannerHelloThere>Hello there, I'm</BannerHelloThere>
 				<BannerTitle>Randy Phalla</BannerTitle>
 				<BannerDescription>
-					I am a front end web developer and designer that specialize in front end development and user interface
+					I am a front end web developer and designer that specializes in front end development and user interface
 					design.
 				</BannerDescription>
 			</BannerContainer>

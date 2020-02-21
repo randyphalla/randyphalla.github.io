@@ -20,8 +20,8 @@
 - Body copy
 - Get Portfolio items
 - Get Portfolio body copy
-- Add Google Analytics (WIP)
 
+- Add Google Analytics (DONE)
 - Add jQuery in Technical Skills (DONE)
 - Fix scroll for safari (DONE)
 - Portfolio (DONE)

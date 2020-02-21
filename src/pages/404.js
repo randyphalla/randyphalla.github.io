@@ -52,7 +52,7 @@ const NotFoundSectionBody = styled.p`
 	color: var(--red-color);
 	font-size: 40px;
 	font-family: 'Raleway', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 `;
 
 const NotFoundButton = styled.button`
@@ -61,7 +61,7 @@ const NotFoundButton = styled.button`
 	color: var(--white-color);
 	font-size: 14px;
 	font-family: 'Raleway', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 	letter-spacing: 0.5px;
 	line-height: 30px;
 

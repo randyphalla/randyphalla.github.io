@@ -144,26 +144,26 @@ const IndexPage = () => {
 		]);
 
 		setProjects([
-			// {
-			// 	id: 1,
-			// 	title: 'Smart Cart',
-			// 	description: 'UI Design',
-			// },
-			// {
-			// 	id: 2,
-			// 	title: 'British Airways',
-			// 	description: 'UI Design',
-			// },
-			// {
-			// 	id: 3,
-			// 	title: 'Car Dashboard',
-			// 	description: 'UI Design',
-			// },
-			// {
-			// 	id: 4,
-			// 	title: 'Zane Barles',
-			// 	description: 'UI Design',
-			// }
+			{
+				id: 1,
+				title: 'Smart Cart',
+				description: 'UI Design',
+			},
+			{
+				id: 2,
+				title: 'British Airways',
+				description: 'UI Design',
+			},
+			{
+				id: 3,
+				title: 'Car Dashboard',
+				description: 'UI Design',
+			},
+			{
+				id: 4,
+				title: 'Zane Barles',
+				description: 'UI Design',
+			}
 		]);
 
 		return () => {

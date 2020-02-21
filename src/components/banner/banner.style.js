@@ -72,14 +72,14 @@ export const BannerDescription = styled.p`
 
 	color: var(--black-color);
 	font-size: 18px;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 500;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
 	letter-spacing: 0.5px;
-	line-height: 24px;
+	line-height: 30px;
 	text-align: left;
 
 	@media screen and (min-width: 576px) {
-		font-size: 18px;
-		line-height: 28px;
+		font-size: 26px;
+		line-height: 1.3;
 	}
 `;

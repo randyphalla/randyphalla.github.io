@@ -119,7 +119,7 @@ export const MySkilsListItem = styled.li`
   padding-left: 44px;
   padding-right: 16px;
   padding-bottom: 16px;
-  
+
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -129,13 +129,13 @@ export const MySkilsListItem = styled.li`
     position: absolute;
     top: 19px;
     left: 16px;
-    
+
     height: 10px;
     width: 10px;
 
     background-color: var(--red-color);
     border-radius: 25px;
-    
+
     opacity: 0.4;
   }
 
@@ -161,24 +161,24 @@ export const MySkilsListItemTitle = styled.span `
 
 export const MySkilsListItemName = styled.span `
   font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   line-height: 1.8;
 `;
 
 export const DefaultTitle = styled.h3`
   position: relative;
-  
+
   display: block;
   margin-top: 32px;
   margin-bottom: 32px;
-  
+
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 32px;
 
   background-color: var(--white-color);
-  
+
   z-index: 3;
 
   &::after {
@@ -222,7 +222,7 @@ export const WorkEducationListItem = styled.li`
 export const WorkEducationCompanyName = styled.p`
   color: var(--black-color);
   font-size: 14px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 `;
 
@@ -246,7 +246,7 @@ export const WorkEducationRole = styled.p`
 export const WorkEducationLink = styled.a`
   color: var(--red-color);
   font-size: 14px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-decoration: underline;
 `;
@@ -279,7 +279,6 @@ export const ButtonContainer = styled.div `
   }
 `;
 
-
 // const Contact = styled.section`
 //     padding: 16px;
 //     margin-bottom: 60px;
@@ -292,7 +291,7 @@ export const ButtonContainer = styled.div `
 //     flex-wrap: wrap;
 
 //     @media screen and (min-width: 576px) {
-//         flex-direction: row; 
+//         flex-direction: row;
 //         justify-content: center;
 //     }
 // `;
@@ -334,9 +333,9 @@ export const ButtonContainer = styled.div `
 //     }
 // `;
 
-// export { 
-//   AboutMeSection, 
-//   Hidden, 
+// export {
+//   AboutMeSection,
+//   Hidden,
 //   AboutMeContainer,
 //   AboutMeProfileContainer,
 //   AboutMeProfileAvatar,
