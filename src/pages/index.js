@@ -100,13 +100,13 @@ const IndexPage = () => {
 				company: 'Devlift Media',
 				started: 'Dec 2016 - Present',
 				role: 'Front-End Web Developer',
-				siteLink: 'https://devlift.com/',
+				siteLink: 'https://www.devlift.com/',
 			},
 			{
 				company: 'BuzzPR',
 				started: 'Aug 2016 - Sept 2016',
 				role: 'Graphic Design Intern',
-				siteLink: 'http://www.buzzpr.ca/',
+				siteLink: 'https://www.buzzpr.ca/',
 			},
 		]);
 
@@ -162,6 +162,11 @@ const IndexPage = () => {
 			{
 				id: 4,
 				title: 'Zane Barles',
+				description: 'UI Design',
+      },
+      {
+				id: 5,
+				title: 'Musicbook',
 				description: 'UI Design',
 			}
 		]);
