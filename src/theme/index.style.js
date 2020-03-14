@@ -244,10 +244,10 @@ export const WorkEducationRole = styled.p`
 `;
 
 export const WorkEducationLink = styled.a`
-  color: var(--red-color);
+  color: var(--black-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
   text-decoration: underline;
 `;
 

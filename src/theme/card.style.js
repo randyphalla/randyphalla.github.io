@@ -18,7 +18,12 @@ export const ProjectsItemAvatar = styled.div`
 	width: 100%;
 
 	background-color: var(--light-grey-color);
-	border-radius: 8px;
+  border-radius: 8px;
+  transition: all 300ms ease;
+
+  &:hover {
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.1);
+  }
 `;
 
 export const ProjectsItemTitle = styled.h4`
