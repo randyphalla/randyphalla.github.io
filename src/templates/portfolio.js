@@ -9,33 +9,33 @@ import { ProjectsItem, ProjectsItemAvatar, ProjectsItemTitle, ProjectsItemDescri
 import './portfolio.scss';
 
 const PortfolioPage = ({ pageContext: { projects } }) => {
-	return (
-		<Layout>
-			<SEO title="Portfolio" keywords={[]} />
+  return (
+    <Layout>
+      <SEO title="Portfolio" keywords={[]} />
 
-			<BannerAlt title="Portfolio" description="" />
+      <BannerAlt title="Portfolio" description="" />
 
-			<section className="portfolio">
-				<h2 className="hidden">Portfolio Section</h2>
+      <section className="portfolio">
+        <h2 className="hidden">Portfolio Section</h2>
 
-				<div className="container">
-					<div className="projects">
-						{projects.map((project, i) => {
-							return (
-								<ProjectsItem key={i}>
-									<Link to={`portfolio/${project.id}/`}>
-										<ProjectsItemAvatar></ProjectsItemAvatar>
-									</Link>
-									<ProjectsItemTitle>{project.title}</ProjectsItemTitle>
-									<ProjectsItemDescription>{project.description}</ProjectsItemDescription>
-								</ProjectsItem>
-							);
-						})}
-					</div>
-				</div>
-			</section>
-		</Layout>
-	);
+        <div className="container">
+          <div className="projects">
+            {projects.map((project, i) => {
+              return (
+                <ProjectsItem key={i}>
+                  <Link to={`portfolio/${project.id}/`}>
+                    <ProjectsItemAvatar></ProjectsItemAvatar>
+                  </Link>
+                  <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
+                  <ProjectsItemDescription>{project.description}</ProjectsItemDescription>
+                </ProjectsItem>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 };
 
 export default PortfolioPage;

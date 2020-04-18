@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AboutMeSection = styled.section`
   padding-top: 16px;
@@ -76,7 +76,6 @@ export const AboueMeParagraph = styled.p`
   }
 `;
 
-
 export const MySkillsSection = styled.section`
   margin-bottom: 16px;
 `;
@@ -152,14 +151,14 @@ export const MySkilsListItem = styled.li`
   }
 `;
 
-export const MySkilsListItemTitle = styled.span `
+export const MySkilsListItemTitle = styled.span`
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.8;
 `;
 
-export const MySkilsListItemName = styled.span `
+export const MySkilsListItemName = styled.span`
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -204,9 +203,7 @@ export const DefaultTitleSpan = styled.span`
   background-color: var(--white-color);
 `;
 
-
-export const WorkEducationSection = styled.section`
-`;
+export const WorkEducationSection = styled.section``;
 
 export const WorkEducationList = styled.ul`
   list-style: none;
@@ -273,7 +270,7 @@ export const FeaturedProjectsProjects = styled.div`
   }
 `;
 
-export const ButtonContainer = styled.div `
+export const ButtonContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding-left: 16px;
   }
@@ -342,4 +339,3 @@ export const ButtonContainer = styled.div `
 //   AboueMeParagraphContainer,
 //   AboueMeParagraph
 // };
-

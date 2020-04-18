@@ -7,27 +7,27 @@ import BannerAlt from '../components/banner-alt/banner-alt';
 import './portfolio-details.scss';
 
 const PortfolioDetailsPage = ({ pageContext: { project } }) => {
-	return (
-		<Layout>
-			<SEO title={project.title} keywords={[]} />
+  return (
+    <Layout>
+      <SEO title={project.title} keywords={[]} />
 
-			<BannerAlt title={project.title} description={project.description} />
+      <BannerAlt title={project.title} description={project.description} />
 
-			<section className="portfolio-details">
-				<h2 className="hidden">Portfolio Details</h2>
-				<div className="container">
-					<div className="portfolio-details__about">
-						<h3 className="portfolio-title">Project Overview</h3>
-						<p className="portfolio-paragraph">{project.about}</p>
-					</div>
-					<div className="portfolio-details__project-role">
-						<h3 className="portfolio-title">Project Role</h3>
-						<p className="portfolio-paragraph">{project.role}</p>
-					</div>
-				</div>
-			</section>
+      <section className="portfolio-details">
+        <h2 className="hidden">Portfolio Details</h2>
+        <div className="container">
+          <div className="portfolio-details__about">
+            <h3 className="portfolio-title">Project Overview</h3>
+            <p className="portfolio-paragraph">{project.about}</p>
+          </div>
+          <div className="portfolio-details__project-role">
+            <h3 className="portfolio-title">Project Role</h3>
+            <p className="portfolio-paragraph">{project.role}</p>
+          </div>
+        </div>
+      </section>
 
-			{/* <section className="portfolio-items">
+      {/* <section className="portfolio-items">
 				<h2 className="hidden">Portfolio Items</h2>
 				<div className="container">
 					<div className="portfolio-items__items">
@@ -44,8 +44,8 @@ const PortfolioDetailsPage = ({ pageContext: { project } }) => {
 					</div>
 				</div>
 			</section> */}
-		</Layout>
-	);
+    </Layout>
+  );
 };
 
 export default PortfolioDetailsPage;

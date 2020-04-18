@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Hidden,
   BannerAltWrapper,
@@ -6,15 +6,11 @@ import {
   BannerAltCont,
   BannerAltTitle,
   BannerAltDescription,
-  BannerAltContLeftBorder
+  BannerAltContLeftBorder,
 } from './banner-alt.style';
 import { Button } from '../../theme/button.style';
 
-const BannerAlt = ({
-  title,
-  description,
-  isResume
-}) => {
+const BannerAlt = ({ title, description, isResume }) => {
   return (
     <BannerAltWrapper>
       <Hidden>Banner Alt Section</Hidden>
@@ -24,25 +20,17 @@ const BannerAlt = ({
           <BannerAltContLeftBorder>
             <BannerAltDescription>{description}</BannerAltDescription>
           </BannerAltContLeftBorder>
-          {
-            isResume &&
-            <a
-              href="../assets/files/Randy Phalla's Resume.pdf"
-              download
-              aria-label="Download my resume"
-            >
-              <Button
-                className="default-btn--white"
-                aria-label="Resume"
-                type="button">
+          {isResume && (
+            <a href="../assets/files/Randy Phalla's Resume.pdf" download aria-label="Download my resume">
+              <Button className="default-btn--white" aria-label="Resume" type="button">
                 Resume
               </Button>
             </a>
-          }
+          )}
         </BannerAltCont>
       </BannerAltContainer>
     </BannerAltWrapper>
-  )
-}
+  );
+};
 
-export default BannerAlt
+export default BannerAlt;

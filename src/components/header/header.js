@@ -8,45 +8,45 @@ import SideMenu from '../side-menu/side-menu';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const Header = () => {
-	const [toggle, setToggle] = useState(false);
-	const [scrolling, setScrolling] = useState(false);
-	const [links, setLinks] = useState([]);
+  const [toggle, setToggle] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+  const [links, setLinks] = useState([]);
 
-	useEffect(() => {
-		const headerScrolling = () => {
-			if (document.documentElement.scrollTop > 10 || document.body.scrollTop > 10) {
-				return setScrolling(true);
-			} else {
-				return setScrolling(false);
-			}
-		};
+  useEffect(() => {
+    const headerScrolling = () => {
+      if (document.documentElement.scrollTop > 10 || document.body.scrollTop > 10) {
+        return setScrolling(true);
+      } else {
+        return setScrolling(false);
+      }
+    };
 
-		setLinks([
-			{
-				name: 'Home',
-				link: '/',
-			},
-			{
-				name: 'Uses',
-				link: '/uses',
-			},
-		]);
+    setLinks([
+      {
+        name: 'Home',
+        link: '/',
+      },
+      {
+        name: 'Uses',
+        link: '/uses',
+      },
+    ]);
 
-		window.addEventListener('scroll', headerScrolling);
+    window.addEventListener('scroll', headerScrolling);
 
-		return () => {
-			window.removeEventListener('scroll', headerScrolling);
-			setLinks([]);
-		};
-	}, []);
+    return () => {
+      window.removeEventListener('scroll', headerScrolling);
+      setLinks([]);
+    };
+  }, []);
 
-  function trackGA(cat, action , label, value) {
+  function trackGA(cat, action, label, value) {
     trackCustomEvent({
       category: cat,
       action: action,
       label: label,
-      value: value
-    })
+      value: value,
+    });
   }
 
   function trackLogoMenu() {
@@ -57,58 +57,58 @@ const Header = () => {
     trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
   }
 
-	return (
-		<div>
-			<header className={'header ' + (scrolling ? 'header--is-active' : 'header--is-not-active')}>
-				<h2 className="hidden">Header Section</h2>
+  return (
+    <div>
+      <header className={'header ' + (scrolling ? 'header--is-active' : 'header--is-not-active')}>
+        <h2 className="hidden">Header Section</h2>
 
-				<div className="container">
-					<div className="logo">
-						<Link to="/" onClick={trackLogoMenu}>
-							<img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
-						</Link>
-					</div>
+        <div className="container">
+          <div className="logo">
+            <Link to="/" onClick={trackLogoMenu}>
+              <img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
+            </Link>
+          </div>
 
-					<div className="mobile-menu">
-						<button
-							className={
-								'mobile-menu__button ' +
-								(toggle ? 'mobile-menu__button--is-active' : 'mobile-menu__button--is-not-active')
-							}
-							onClick={() => {
-                setToggle(!toggle)
-                trackGA('Menu', 'Click', 'Mobile Menu', '')
+          <div className="mobile-menu">
+            <button
+              className={
+                'mobile-menu__button ' +
+                (toggle ? 'mobile-menu__button--is-active' : 'mobile-menu__button--is-not-active')
+              }
+              onClick={() => {
+                setToggle(!toggle);
+                trackGA('Menu', 'Click', 'Mobile Menu', '');
               }}
-							aria-label="Burger Menu"
-						>
-							<FaBars />
-						</button>
-					</div>
+              aria-label="Burger Menu"
+            >
+              <FaBars />
+            </button>
+          </div>
 
-					<div className="desktop-menu">
-						<ul className="desktop-menu-links">
-							{links.map((link, i) => {
-								return (
-									<li className="desktop-menu-links__item" key={i}>
+          <div className="desktop-menu">
+            <ul className="desktop-menu-links">
+              {links.map((link, i) => {
+                return (
+                  <li className="desktop-menu-links__item" key={i}>
                     <Link
                       className="desktop-menu-links__item-link"
                       activeClassName="desktop-menu-links__item-link--current-page"
                       to={link.link}
                       onClick={trackMenuDesktopLinks(link)}
                     >
-											{link.name}
-										</Link>
-									</li>
-								);
-							})}
-						</ul>
-					</div>
-				</div>
-			</header>
+                      {link.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      </header>
 
-			<SideMenu isToggle={toggle} />
-		</div>
-	);
+      <SideMenu isToggle={toggle} />
+    </div>
+  );
 };
 
 export default Header;

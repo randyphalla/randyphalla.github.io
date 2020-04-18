@@ -1,107 +1,106 @@
 import React from 'react';
 import { FaLinkedinIn, FaGithub, FaDribbble, FaBehance } from 'react-icons/fa';
 import {
-	FooterSection,
-	Hidden,
-	BorderContainer,
-	FooterContainer,
-	FooterLogo,
-	FooterLogoImage,
-	SocialMedia,
-	SocialMediaTitle,
-	SocialMediaList,
-	SocialMediaListItem,
-	SocialMediaListItemLink,
-	LetGetInTouch,
-	LetGetInTouchTitle,
-	LetGetInTouchLink,
-	FooterCopyright,
-	FooterCopyrightTitle,
+  FooterSection,
+  Hidden,
+  BorderContainer,
+  FooterContainer,
+  FooterLogo,
+  FooterLogoImage,
+  SocialMedia,
+  SocialMediaTitle,
+  SocialMediaList,
+  SocialMediaListItem,
+  SocialMediaListItemLink,
+  LetGetInTouch,
+  LetGetInTouchTitle,
+  LetGetInTouchLink,
+  FooterCopyright,
+  FooterCopyrightTitle,
 } from './footer.style';
 import LogoRed from '../../assets/images/logo-red.svg';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const Footer = () => {
-
-  function trackGA(cat, action , label, value) {
+  function trackGA(cat, action, label, value) {
     trackCustomEvent({
       category: cat,
       action: action,
       label: label,
-      value: value
-    })
+      value: value,
+    });
   }
 
-	return (
-		<FooterSection>
-			<Hidden>Footer Section</Hidden>
+  return (
+    <FooterSection>
+      <Hidden>Footer Section</Hidden>
 
-			<BorderContainer>
-				<FooterContainer>
-					<FooterLogo>
-						<FooterLogoImage src={LogoRed} alt={LogoRed} />
-					</FooterLogo>
+      <BorderContainer>
+        <FooterContainer>
+          <FooterLogo>
+            <FooterLogoImage src={LogoRed} alt={LogoRed} />
+          </FooterLogo>
 
-					<SocialMedia>
-						<SocialMediaTitle>Social Media</SocialMediaTitle>
-						<SocialMediaList>
-							<SocialMediaListItem>
+          <SocialMedia>
+            <SocialMediaTitle>Social Media</SocialMediaTitle>
+            <SocialMediaList>
+              <SocialMediaListItem>
                 <SocialMediaListItemLink
                   href="https://www.linkedin.com/in/randyphalla/"
                   aria-label="Linkedin Link"
                   onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Linkedin')}
                 >
-									<FaLinkedinIn />
-								</SocialMediaListItemLink>
-							</SocialMediaListItem>
-							<SocialMediaListItem>
+                  <FaLinkedinIn />
+                </SocialMediaListItemLink>
+              </SocialMediaListItem>
+              <SocialMediaListItem>
                 <SocialMediaListItemLink
                   href="https://github.com/randyphalla"
                   aria-label="Github Link"
                   onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Github')}
                 >
-									<FaGithub />
-								</SocialMediaListItemLink>
-							</SocialMediaListItem>
-							<SocialMediaListItem>
+                  <FaGithub />
+                </SocialMediaListItemLink>
+              </SocialMediaListItem>
+              <SocialMediaListItem>
                 <SocialMediaListItemLink
                   href="https://dribbble.com/randyphalla"
                   aria-label="Dribbble Link"
                   onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Dribbble')}
                 >
-									<FaDribbble />
-								</SocialMediaListItemLink>
-							</SocialMediaListItem>
-							<SocialMediaListItem>
+                  <FaDribbble />
+                </SocialMediaListItemLink>
+              </SocialMediaListItem>
+              <SocialMediaListItem>
                 <SocialMediaListItemLink
                   href="https://www.behance.net/randyphalla"
                   aria-label="Behance Link"
                   onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Behance')}
                 >
-									<FaBehance />
-								</SocialMediaListItemLink>
-							</SocialMediaListItem>
-						</SocialMediaList>
-					</SocialMedia>
+                  <FaBehance />
+                </SocialMediaListItemLink>
+              </SocialMediaListItem>
+            </SocialMediaList>
+          </SocialMedia>
 
-					<LetGetInTouch>
-						<LetGetInTouchTitle>Let's Get In Touch</LetGetInTouchTitle>
+          <LetGetInTouch>
+            <LetGetInTouchTitle>Let's Get In Touch</LetGetInTouchTitle>
             <LetGetInTouchLink
               href="mailTo:randyphalla@gmail.com"
               aria-label="My email"
               onClick={trackGA('Footer - Links', 'Click', 'Lets Get In Touch', 'Email')}
             >
-							randyphalla@gmail.com
-						</LetGetInTouchLink>
-					</LetGetInTouch>
-				</FooterContainer>
-			</BorderContainer>
+              randyphalla@gmail.com
+            </LetGetInTouchLink>
+          </LetGetInTouch>
+        </FooterContainer>
+      </BorderContainer>
 
-			<FooterCopyright>
-				<FooterCopyrightTitle>&copy; 2020 Randy Phalla. All Rights Reserved.</FooterCopyrightTitle>
-			</FooterCopyright>
-		</FooterSection>
-	);
+      <FooterCopyright>
+        <FooterCopyrightTitle>&copy; 2020 Randy Phalla. All Rights Reserved.</FooterCopyrightTitle>
+      </FooterCopyright>
+    </FooterSection>
+  );
 };
 
 export default Footer;
