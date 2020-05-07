@@ -3,13 +3,10 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
+import { Hidden } from '../theme/global.style';
 
 const NotFoundSection = styled.section`
   min-height: calc(100vh - 85px);
-`;
-
-const Hidden = styled.h2`
-  display: none;
 `;
 
 const NotFoundContainer = styled.div`

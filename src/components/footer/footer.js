@@ -2,7 +2,6 @@ import React from 'react';
 import { FaLinkedinIn, FaGithub, FaDribbble, FaBehance } from 'react-icons/fa';
 import {
   FooterSection,
-  Hidden,
   BorderContainer,
   FooterContainer,
   FooterLogo,
@@ -19,6 +18,7 @@ import {
   FooterCopyrightTitle,
 } from './footer.style';
 import LogoRed from '../../assets/images/logo-red.svg';
+import { Hidden } from '../../theme/global.style';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const Footer = () => {

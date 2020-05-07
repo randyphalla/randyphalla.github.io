@@ -9,10 +9,6 @@ export const BannerAltWrapper = styled.div`
   background-color: var(--red-color);
 `;
 
-export const Hidden = styled.h2`
-  display: none;
-`;
-
 export const BannerAltContainer = styled.div`
   width: 80%;
   margin: 0 auto;

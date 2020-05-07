@@ -6,7 +6,6 @@ import Banner from '../components/banner/banner';
 import { ProjectsItem, ProjectsItemAvatar, ProjectsItemTitle, ProjectsItemDescription } from '../theme/card.style';
 import {
   AboutMeSection,
-  Hidden,
   AboutMeContainer,
   AboutMeProfileContainer,
   AboutMeProfileAvatar,
@@ -28,6 +27,7 @@ import {
   FeaturedProjectsSection,
   FeaturedProjectsProjects,
 } from '../theme/index.style';
+import { Hidden } from '../theme/global.style';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const IndexPage = () => {

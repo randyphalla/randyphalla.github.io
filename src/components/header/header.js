@@ -6,6 +6,7 @@ import LogoRed from '../../assets/images/logo-red.svg';
 import { FaBars } from 'react-icons/fa';
 import SideMenu from '../side-menu/side-menu';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { Hidden } from '../../theme/global.style';
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -60,7 +61,7 @@ const Header = () => {
   return (
     <div>
       <header className={'header ' + (scrolling ? 'header--is-active' : 'header--is-not-active')}>
-        <h2 className="hidden">Header Section</h2>
+        <Hidden>Header Section</Hidden>
 
         <div className="container">
           <div className="logo">

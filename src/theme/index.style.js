@@ -9,10 +9,6 @@ export const AboutMeSection = styled.section`
   }
 `;
 
-export const Hidden = styled.h2`
-  display: none;
-`;
-
 export const AboutMeContainer = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -275,67 +271,3 @@ export const ButtonContainer = styled.div`
     padding-left: 16px;
   }
 `;
-
-// const Contact = styled.section`
-//     padding: 16px;
-//     margin-bottom: 60px;
-// `;
-
-// const ContactSocialMediaList = styled.div`
-//     display: flex;
-//     justify-content: space-evenly;
-//     align-items: center;
-//     flex-wrap: wrap;
-
-//     @media screen and (min-width: 576px) {
-//         flex-direction: row;
-//         justify-content: center;
-//     }
-// `;
-
-// const ContactSocialMediaListItem = styled.div`
-//     padding: 16px;
-//     margin: 10px;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     border-radius: 50%;
-//     background-color: #FF001F;
-//     box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.1);
-
-//     transition: all 300ms linear;
-
-//     svg {
-//         fill: white;
-//         width: 1.5em;
-//         height: 1.5em;
-//     }
-
-//     &:hover {
-//         background-color: transparent;
-
-//         svg { fill: #FF001F; }
-//     }
-
-//     @media screen and (min-width: 576px) {
-//         margin-left: 10px;
-//         margin-right: 10px;
-
-//         svg {
-//             width: 2em;
-//             height: 2em;
-//         }
-//     }
-// `;
-
-// export {
-//   AboutMeSection,
-//   Hidden,
-//   AboutMeContainer,
-//   AboutMeProfileContainer,
-//   AboutMeProfileAvatar,
-//   AboueMeParagraphContainer,
-//   AboueMeParagraph
-// };

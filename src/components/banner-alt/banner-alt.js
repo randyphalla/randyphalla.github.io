@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Hidden,
   BannerAltWrapper,
   BannerAltContainer,
   BannerAltCont,
@@ -8,6 +7,7 @@ import {
   BannerAltDescription,
   BannerAltContLeftBorder,
 } from './banner-alt.style';
+import { Hidden } from '../../theme/global.style';
 import { Button } from '../../theme/button.style';
 
 const BannerAlt = ({ title, description, isResume }) => {

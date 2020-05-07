@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const Hidden = styled.h2`
-  display: none;
-`;
-
 export const BannerSection = styled.div`
   display: flex;
   align-items: center;

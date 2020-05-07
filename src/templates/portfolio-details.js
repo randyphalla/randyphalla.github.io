@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import BannerAlt from '../components/banner-alt/banner-alt';
-
+import { Hidden } from '../theme/global.style';
 import './portfolio-details.scss';
 
 const PortfolioDetailsPage = ({ pageContext: { project } }) => {
@@ -14,8 +14,8 @@ const PortfolioDetailsPage = ({ pageContext: { project } }) => {
       <BannerAlt title={project.title} description={project.description} />
 
       <section className="portfolio-details">
-        <h2 className="hidden">Portfolio Details</h2>
-        <div className="container">
+        <Hidden>Portfolio Details</Hidden>
+        <div class="container">
           <div className="portfolio-details__about">
             <h3 className="portfolio-title">Project Overview</h3>
             <p className="portfolio-paragraph">{project.about}</p>
@@ -27,23 +27,6 @@ const PortfolioDetailsPage = ({ pageContext: { project } }) => {
         </div>
       </section>
 
-      {/* <section className="portfolio-items">
-				<h2 className="hidden">Portfolio Items</h2>
-				<div className="container">
-					<div className="portfolio-items__items">
-						{items.map((item, index) => {
-							return (
-								<div className="portfolio-item" key={index}>
-									<div className="portfolio-item__image"></div>
-									<p className="portfolio-item__title" key={index}>
-										{item.name}
-									</p>
-								</div>
-							);
-						})}
-					</div>
-				</div>
-			</section> */}
     </Layout>
   );
 };

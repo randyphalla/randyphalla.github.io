@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import './side-menu.scss';
 import Logo from '../../assets/images/logo.svg';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { Hidden } from '../../theme/global.style';
 
 const SideMenu = ({ isToggle }) => {
   const [links, setLinks] = useState([]);
@@ -38,7 +39,7 @@ const SideMenu = ({ isToggle }) => {
 
   return (
     <section className={'side-menu ' + (isToggle ? 'side-menu--is-active' : 'side-menu--is-not-active')}>
-      <h2 className="hidden">Side Menu</h2>
+      <Hidden>Side Menu</Hidden>
 
       <div className="side-menu__logo">
         <img className="side-menu__logo-avatar" src={Logo} alt="Logo" />

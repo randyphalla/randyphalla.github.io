@@ -3,7 +3,6 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import BannerAlt from '../components/banner-alt/banner-alt';
 import {
-  Hidden,
   MySkillsSection,
   Container,
   MySkillsList,
@@ -13,6 +12,7 @@ import {
   DefaultTitle,
   DefaultTitleSpan,
 } from '../theme/index.style';
+import { Hidden } from '../theme/global.style';
 
 const UsesPage = () => {
   const [useSoftwares, setSoftwares] = useState([]);

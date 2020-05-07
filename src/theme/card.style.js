@@ -11,6 +11,10 @@ export const ProjectsItem = styled.div`
   @media (min-width: 992px) {
     width: calc((100% / 3) - 32px);
   }
+
+  @media (min-width: 1600px) {
+    width: calc((100% / 4) - 32px);
+  }
 `;
 
 export const ProjectsItemAvatar = styled.div`

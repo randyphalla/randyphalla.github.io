@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  Hidden,
   BannerSection,
   BannerContainer,
   BannerHelloThere,
   BannerTitle,
   BannerDescription,
 } from './banner.style';
+import { Hidden } from '../../theme/global.style';
 
 const Banner = () => {
   return (

@@ -4,10 +4,6 @@ export const FooterSection = styled.div`
   background-color: var(--white-color);
 `;
 
-export const Hidden = styled.h2`
-  display: none;
-`;
-
 export const BorderContainer = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);

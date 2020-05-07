@@ -4,7 +4,7 @@
 
 ### Install
 
-`npm install` or `yarn`
+`yarn`
 
 ### Development
 
@@ -12,7 +12,11 @@
 
 ### Building
 
-`npm run build`
+`yarn build`
+
+### Test Build Locally
+
+`yarn serve`
 
 ## TODO
 

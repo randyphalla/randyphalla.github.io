@@ -7,6 +7,7 @@ import BannerAlt from '../components/banner-alt/banner-alt';
 
 import { ProjectsItem, ProjectsItemAvatar, ProjectsItemTitle, ProjectsItemDescription } from '../theme/card.style';
 import './portfolio.scss';
+import { Hidden } from '../theme/global.style';
 
 const PortfolioPage = ({ pageContext: { projects } }) => {
   return (
@@ -16,7 +17,7 @@ const PortfolioPage = ({ pageContext: { projects } }) => {
       <BannerAlt title="Portfolio" description="" />
 
       <section className="portfolio">
-        <h2 className="hidden">Portfolio Section</h2>
+        <Hidden>Portfolio Section</Hidden>
 
         <div className="container">
           <div className="projects">
