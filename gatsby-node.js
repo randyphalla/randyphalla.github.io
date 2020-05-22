@@ -20,14 +20,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
           image: '',
           title: '',
           alt: '',
-        },
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        },
-      ],
+        }
+      ]
     },
     {
       id: 2,
@@ -41,14 +35,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
           image: '',
           title: '',
           alt: '',
-        },
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        },
-      ],
+        }
+      ]
     },
     {
       id: 3,
@@ -62,14 +50,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
           image: '',
           title: '',
           alt: '',
-        },
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        },
-      ],
+        }
+      ]
     },
     {
       id: 4,
@@ -83,14 +65,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
           image: '',
           title: '',
           alt: '',
-        },
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        },
-      ],
+        }
+      ]
     },
     {
       id: 5,
@@ -104,15 +80,39 @@ exports.createPages = async ({ actions: { createPage } }) => {
           image: '',
           title: '',
           alt: '',
-        },
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'COVID-19',
+      description: '',
+      about: '',
+      role: 'Designer and Developer',
+      items: [
         {
           thumbnail: '',
           image: '',
           title: '',
           alt: '',
-        },
-      ],
+        }
+      ]
     },
+    {
+      id: 7,
+      title: 'Pokédex',
+      description: '',
+      about: '',
+      role: 'Designer and Developer',
+      items: [
+        {
+          thumbnail: '',
+          image: '',
+          title: '',
+          alt: '',
+        }
+      ]
+    }
   ];
 
   // Create portfolio page
