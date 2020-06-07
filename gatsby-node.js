@@ -112,6 +112,21 @@ exports.createPages = async ({ actions: { createPage } }) => {
           alt: '',
         }
       ]
+    },
+    {
+      id: 8,
+      title: 'Marvel App',
+      description: '',
+      about: '',
+      role: 'Designer and Developer',
+      items: [
+        {
+          thumbnail: '',
+          image: '',
+          title: '',
+          alt: '',
+        }
+      ]
     }
   ];
 

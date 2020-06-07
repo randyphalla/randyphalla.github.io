@@ -8,17 +8,14 @@ import {
 } from './banner.style';
 import { Hidden } from '../../theme/global.style';
 
-const Banner = () => {
+const Banner = ({helloThere, name, description}) => {
   return (
     <BannerSection>
       <Hidden>Banner Section</Hidden>
       <BannerContainer>
-        <BannerHelloThere>Hello there, I'm</BannerHelloThere>
-        <BannerTitle>Randy Phalla</BannerTitle>
-        <BannerDescription>
-          I am a front end web developer and designer that specializes in front end development and user interface
-          design.
-        </BannerDescription>
+        <BannerHelloThere>{ helloThere }</BannerHelloThere>
+        <BannerTitle>{ name }</BannerTitle>
+        <BannerDescription>{ description }</BannerDescription>
       </BannerContainer>
     </BannerSection>
   );

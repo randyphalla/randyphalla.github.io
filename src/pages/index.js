@@ -167,7 +167,22 @@ const IndexPage = () => {
       {
         id: 5,
         title: 'Musicbook',
-        description: 'UI Design',
+        description: 'UI Design & Web Development',
+      },
+      {
+        id: 6,
+        title: 'COVID-19',
+        description: 'UI Design & Web Development',
+      },
+      {
+        id: 7,
+        title: 'Pokédex',
+        description: 'UI Design & Web Development',
+      },
+      {
+        id: 8,
+        title: 'Marvel App',
+        description: 'UI Design & Web Development',
       },
     ]);
 
@@ -205,7 +220,12 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" keywords={[]} />
 
-      <Banner />
+      <Banner
+        helloThere="Hello there, I'm"
+        name="Randy Phalla"
+        description="I am a front end web developer and designer that specializes in front end development and user interface
+        design."
+      />
 
       <AboutMeSection>
         <Hidden>About me Section</Hidden>
