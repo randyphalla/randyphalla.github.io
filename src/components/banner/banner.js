@@ -8,14 +8,14 @@ import {
 } from './banner.style';
 import { Hidden } from '../../theme/global.style';
 
-const Banner = ({helloThere, name, description}) => {
+const Banner = (props) => {
   return (
     <BannerSection>
       <Hidden>Banner Section</Hidden>
       <BannerContainer>
-        <BannerHelloThere>{ helloThere }</BannerHelloThere>
-        <BannerTitle>{ name }</BannerTitle>
-        <BannerDescription>{ description }</BannerDescription>
+        <BannerHelloThere>{ props.helloThere }</BannerHelloThere>
+        <BannerTitle>{ props.name }</BannerTitle>
+        <BannerDescription>{ props.description }</BannerDescription>
       </BannerContainer>
     </BannerSection>
   );

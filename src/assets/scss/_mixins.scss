@@ -3,7 +3,7 @@
  * Button Mixins
  *
  */
-@mixin primaryBtn($color, $backgroundColor) {
+@mixin primaryButton($color, $backgroundColor) {
 	color: $color;
 	background-color: $backgroundColor;
 
@@ -13,7 +13,7 @@
 	}
 }
 
-@mixin secondaryBtn($color, $backgroundColor) {
+@mixin secondaryButton($color, $backgroundColor) {
 	color: $color;
 	background-color: $backgroundColor;
 
@@ -23,7 +23,7 @@
 	}
 }
 
-@mixin tertiaryBtn($color, $backgroundColor) {
+@mixin textButton($color, $backgroundColor) {
 	color: $color;
 	background-color: $backgroundColor;
 

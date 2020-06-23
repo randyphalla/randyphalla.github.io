@@ -35,15 +35,15 @@ export const Button = styled.button`
     }
   }
 
-  .primary-btn,
-  .secondary-btn,
-  .tertiary-btn {
+  .primary-button,
+  .secondary-button,
+  .text-button {
     &:hover {
       border: 2px solid var(--red-color);
     }
   }
 
-  &.primary-btn {
+  &.primary-button {
     color: var(--white-color);
     background-color: var(--red-color);
 
@@ -53,7 +53,7 @@ export const Button = styled.button`
     }
   }
 
-  &.secondary-btn {
+  &.secondary-button {
     color: var(--red-color);
     background-color: var(--white-color);
 
@@ -63,7 +63,7 @@ export const Button = styled.button`
     }
   }
 
-  &.tertiary-btn {
+  &.text-button {
     color: var(--red-color);
     background-color: var(--transparent);
 

@@ -46,10 +46,10 @@ const IndexPage = () => {
         title: 'CSS3 (SCSS)',
       },
       {
-        title: 'Bootstrap',
+        title: 'Bootstrap (3/4)',
       },
       {
-        title: 'JavaScript (ES6)',
+        title: 'JavaScript (ES5/6)',
       },
       {
         title: 'jQuery',
@@ -58,16 +58,19 @@ const IndexPage = () => {
         title: 'Angular 2-8',
       },
       {
-        title: 'Ionic',
-      },
-      {
         title: 'ReactJS',
       },
       {
-        title: 'React Native',
+        title: 'GatsbyJS',
       },
       {
-        title: 'GatsbyJS',
+        title: 'NextJS',
+      },
+      {
+        title: 'Ionic',
+      },
+      {
+        title: 'React Native',
       },
       {
         title: 'Firebase',
@@ -164,11 +167,11 @@ const IndexPage = () => {
         title: 'Zane Barles',
         description: 'UI Design',
       },
-      {
-        id: 5,
-        title: 'Musicbook',
-        description: 'UI Design & Web Development',
-      },
+      // {
+      //   id: 5,
+      //   title: 'Musicbook',
+      //   description: 'UI Design & Web Development',
+      // },
       {
         id: 6,
         title: 'COVID-19',
@@ -251,10 +254,7 @@ const IndexPage = () => {
             <DefaultTitleSpan>Skills</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList>
-            {skills &&
-              skills.map((skill, i) => {
-                return <MySkilsListItem key={i}>{skill.title}</MySkilsListItem>;
-              })}
+            {skills && skills.map((skill, i) => { return <MySkilsListItem key={i}>{skill.title}</MySkilsListItem>; })}
           </MySkillsList>
         </Container>
       </MySkillsSection>
@@ -318,10 +318,7 @@ const IndexPage = () => {
             <DefaultTitleSpan>Hobbies</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList>
-            {hobbies &&
-              hobbies.map((hobbie, i) => {
-                return <MySkilsListItem key={i}> {hobbie.name}</MySkilsListItem>;
-              })}
+            {hobbies && hobbies.map((hobbie, i) => { return <MySkilsListItem key={i}> {hobbie.name}</MySkilsListItem>; })}
           </MySkillsList>
         </Container>
       </MySkillsSection>

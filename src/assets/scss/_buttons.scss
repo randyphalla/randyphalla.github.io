@@ -17,40 +17,46 @@
 
 	transition: all 200ms linear;
 
+  &--white {
+    color: var(--white-color);
+    background-color: transparent;
+    border: 2px solid var(--white-color);
+
+    &:hover {
+      color: var(--red-color);
+      background-color: var(--white-color);
+      border: 2px solid var(--white-color);
+    }
+  }
+
 	&:hover {
 		cursor: pointer;
 		border: 2px solid var(--black-color);
 	}
 }
 
-.primary-btn,
-.secondary-btn,
-.tertiary-btn {
+.primary-button,
+.secondary-button,
+.text-button {
 	&:hover {
 		border: 2px solid var(--red-color);
 	}
 }
 
-.primary-btn {
-	@include primaryBtn(var(--white-color), var(--red-color));
-}
+.primary-button { @include primaryButton(var(--white-color), var(--red-color)); }
 
-.secondary-btn {
-	@include secondaryBtn(var(--red-color), var(--white-color));
-}
+.secondary-button { @include secondaryButton(var(--red-color), var(--white-color)); }
 
-.tertiary-btn {
-	@include tertiaryBtn(var(--red-color), var(--transparent));
-}
+.text-button { @include textButton(var(--red-color), var(--transparent)); }
 
-.default-btn--white {
-	color: var(--white-color);
-	background-color: transparent;
-	border: 2px solid var(--white-color);
+// .default-btn--white {
+// 	color: var(--white-color);
+// 	background-color: transparent;
+// 	border: 2px solid var(--white-color);
 
-	&:hover {
-		color: var(--red-color);
-		background-color: var(--white-color);
-		border: 2px solid var(--white-color);
-	}
-}
+// 	&:hover {
+// 		color: var(--red-color);
+// 		background-color: var(--white-color);
+// 		border: 2px solid var(--white-color);
+// 	}
+// }
