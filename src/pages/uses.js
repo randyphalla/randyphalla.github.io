@@ -62,15 +62,15 @@ const UsesPage = () => {
     setHardware([
       {
         title: 'Laptop: ',
-        name: 'MacBook Pro (Retina, 15-inch, Mid 2015)',
+        name: 'MacBook Pro (Retina, 15-inch, Mid 2015) / ASUS ROG Strix (i7, GTX 1650)',
       },
       {
         title: 'Keyboard: ',
-        name: 'Logitech G810',
+        name: 'Logitech G810 / Ducky One 2 SF',
       },
       {
         title: 'Mouse: ',
-        name: 'Logitech G903 or G Pro Gaming Mouse',
+        name: 'Logitech G Pro Wireless',
       },
       {
         title: 'Monitors: ',

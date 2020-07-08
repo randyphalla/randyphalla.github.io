@@ -12,6 +12,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const [links, setLinks] = useState([]);
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     const headerScrolling = () => {
@@ -58,6 +59,36 @@ const Header = () => {
     trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
   }
 
+  function changeTheme(mode) {
+    setTheme(mode);
+    console.log(mode);
+  }
+
+  function LightModeButton(props) {
+    return (
+      <button
+        className="theme-button theme-button--light"
+        onClick={props.onClick}
+      >Light Mode</button>
+    )
+  }
+
+  function DarkModeButton(props) {
+    return (
+      <button
+        className="theme-button theme-button--dark"
+        onClick={props.onClick}
+      >Dark Mode</button>
+    )
+  }
+
+  let modeButton;
+  if (theme === 'light') {
+    modeButton = <DarkModeButton onClick={ () => changeTheme('dark') }/>
+  } else {
+    modeButton = <LightModeButton onClick={ () => changeTheme('light') } />
+  }
+
   return (
     <div>
       <header className={'header ' + (scrolling ? 'header--is-active' : 'header--is-not-active')}>
@@ -102,6 +133,9 @@ const Header = () => {
                   </li>
                 );
               })}
+              <li className="desktop-menu-links__item">
+               { modeButton }
+              </li>
             </ul>
           </div>
         </div>

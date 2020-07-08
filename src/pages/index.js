@@ -147,46 +147,41 @@ const IndexPage = () => {
     ]);
 
     setProjects([
-      {
-        id: 1,
-        title: 'Smart Cart',
-        description: 'UI Design',
-      },
-      {
-        id: 2,
-        title: 'British Airways',
-        description: 'UI Design',
-      },
-      {
-        id: 3,
-        title: 'Car Dashboard',
-        description: 'UI Design',
-      },
-      {
-        id: 4,
-        title: 'Zane Barles',
-        description: 'UI Design',
-      },
       // {
-      //   id: 5,
-      //   title: 'Musicbook',
+      //   id: 1,
+      //   title: 'Smart Cart',
+      //   description: 'UI Design',
+      // },
+      // {
+      //   id: 2,
+      //   title: 'British Airways',
+      //   description: 'UI Design',
+      // },
+      // {
+      //   id: 3,
+      //   title: 'Car Dashboard',
+      //   description: 'UI Design',
+      // },
+      // {
+      //   id: 4,
+      //   title: 'Zane Barles',
+      //   description: 'UI Design',
+      // },
+      // {
+      //   id: 6,
+      //   title: 'COVID-19',
       //   description: 'UI Design & Web Development',
       // },
-      {
-        id: 6,
-        title: 'COVID-19',
-        description: 'UI Design & Web Development',
-      },
-      {
-        id: 7,
-        title: 'Pokédex',
-        description: 'UI Design & Web Development',
-      },
-      {
-        id: 8,
-        title: 'Marvel App',
-        description: 'UI Design & Web Development',
-      },
+      // {
+      //   id: 7,
+      //   title: 'Pokédex',
+      //   description: 'UI Design & Web Development',
+      // },
+      // {
+      //   id: 8,
+      //   title: 'Marvel App',
+      //   description: 'UI Design & Web Development',
+      // },
     ]);
 
     return () => {
@@ -194,7 +189,7 @@ const IndexPage = () => {
       setExperiences([]);
       setEducations([]);
       setHobbies([]);
-      setProjects([]);
+      // setProjects([]);
     };
   }, []);
 
@@ -347,8 +342,8 @@ const IndexPage = () => {
                 );
               })}
             {!projects.length && (
-              <div className="">
-                <p className="">Theres are currently no project unavailable at this time</p>
+              <div className="unavailable-project">
+                <p className="unavailable-project__text">Theres are currently no project unavailable at this time</p>
               </div>
             )}
           </FeaturedProjectsProjects>
