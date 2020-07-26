@@ -48,7 +48,7 @@ const SideMenu = ({ isToggle }) => {
       <ul className="side-menu__lists">
         {links.map((link, i) => {
           return (
-            <li className="side-menu__lists__item" key={i}>
+            <li className="side-menu__lists-item" key={i}>
               <Link to={link.link} onClick={trackMobileMenuLinks(link)}>
                 {link.name}
               </Link>

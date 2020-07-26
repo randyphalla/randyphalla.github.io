@@ -40,61 +40,55 @@ const IndexPage = () => {
   useEffect(() => {
     setSkills([
       {
-        title: 'HTML5',
+        name: 'HTML5',
       },
       {
-        title: 'CSS3 (SCSS)',
+        name: 'CSS3 (SCSS)',
       },
       {
-        title: 'Bootstrap (3/4)',
+        name: 'Bootstrap (3/4)',
       },
       {
-        title: 'JavaScript (ES5/6)',
+        name: 'Responsive Web Design'
       },
       {
-        title: 'jQuery',
+        name: 'JavaScript (ES5/6)',
       },
       {
-        title: 'Angular 2-8',
+        name: 'jQuery',
       },
       {
-        title: 'ReactJS',
+        name: 'Angular 2-8',
       },
       {
-        title: 'GatsbyJS',
+        name: 'Ionic',
       },
       {
-        title: 'NextJS',
+        name: 'ReactJS (GatsbyJS & NextJS)',
       },
       {
-        title: 'Ionic',
+        name: 'React Native',
       },
       {
-        title: 'React Native',
+        name: 'Storybook'
       },
       {
-        title: 'Firebase',
+        name: 'Firebase',
       },
       {
-        title: 'Git',
+        name: 'Git (Sourcetree & GitHub)',
       },
       {
-        title: 'Sourcetree',
+        name: 'Sketch',
       },
       {
-        title: 'GitHub',
+        name: 'Adobe Photoshop',
       },
       {
-        title: 'Sketch',
+        name: 'Adobe Illustrator',
       },
       {
-        title: 'Adobe Photoshop',
-      },
-      {
-        title: 'Adobe Illustrator',
-      },
-      {
-        title: 'UI Design',
+        name: 'UI Design',
       },
     ]);
 
@@ -249,7 +243,7 @@ const IndexPage = () => {
             <DefaultTitleSpan>Skills</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList>
-            {skills && skills.map((skill, i) => { return <MySkilsListItem key={i}>{skill.title}</MySkilsListItem>; })}
+            {skills && skills.map((skill, i) => { return <MySkilsListItem key={i}>{skill.name}</MySkilsListItem>; })}
           </MySkillsList>
         </Container>
       </MySkillsSection>
@@ -343,7 +337,7 @@ const IndexPage = () => {
               })}
             {!projects.length && (
               <div className="unavailable-project">
-                <p className="unavailable-project__text">Theres are currently no project unavailable at this time</p>
+                <p className="unavailable-project__text">There's are currently no project unavailable at this time</p>
               </div>
             )}
           </FeaturedProjectsProjects>

@@ -73,6 +73,7 @@ const NotFoundButton = styled.button`
     color: var(--red-color);
     border: 3px solid var(--red-color);
     background-color: transparent;
+    box-shadow: none;
     cursor: pointer;
   }
 `;
