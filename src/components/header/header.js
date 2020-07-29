@@ -12,7 +12,42 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const [links, setLinks] = useState([]);
-  const [theme, setTheme] = useState('light');
+  // const [theme, setTheme] = useState('light');
+
+  const toggleMenu = (toggle) => {
+  }
+  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackLogoMenu = () => trackGA('Menu', 'Click', 'Logo', '');
+  const trackMenuDesktopLinks = (link) => trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
+
+  // const changeTheme = (mode) => {
+  //   setTheme(mode);
+  //   // window.localStorage.setItem('theme', mode);
+  //   // const myTheme = window.localStorage.getItem('theme');
+  // };
+  // const LightModeButton = (props) => {
+  //   return (
+  //     <button
+  //       className="theme-button theme-button--light"
+  //       onClick={props.onClick}
+  //     >Light Mode</button>
+  //   )
+  // };
+  // const DarkModeButton = (props) => {
+  //   return (
+  //     <button
+  //       className="theme-button theme-button--dark"
+  //       onClick={props.onClick}
+  //     >Dark Mode</button>
+  //   )
+  // };
+
+  // let modeButton;
+  // if (theme === 'light') {
+  //   modeButton = <DarkModeButton onClick={ () => changeTheme('dark') }/>
+  // } else {
+  //   modeButton = <LightModeButton onClick={ () => changeTheme('light') } />
+  // }
 
   useEffect(() => {
     const headerScrolling = () => {
@@ -42,53 +77,6 @@ const Header = () => {
     };
   }, []);
 
-  function trackGA(cat, action, label, value) {
-    trackCustomEvent({
-      category: cat,
-      action: action,
-      label: label,
-      value: value,
-    });
-  }
-
-  function trackLogoMenu() {
-    trackGA('Menu', 'Click', 'Logo', '');
-  }
-
-  function trackMenuDesktopLinks(link) {
-    trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
-  }
-
-  function changeTheme(mode) {
-    setTheme(mode);
-    console.log(mode);
-  }
-
-  function LightModeButton(props) {
-    return (
-      <button
-        className="theme-button theme-button--light"
-        onClick={props.onClick}
-      >Light Mode</button>
-    )
-  }
-
-  function DarkModeButton(props) {
-    return (
-      <button
-        className="theme-button theme-button--dark"
-        onClick={props.onClick}
-      >Dark Mode</button>
-    )
-  }
-
-  let modeButton;
-  if (theme === 'light') {
-    modeButton = <DarkModeButton onClick={ () => changeTheme('dark') }/>
-  } else {
-    modeButton = <LightModeButton onClick={ () => changeTheme('light') } />
-  }
-
   return (
     <div>
       <header className={'header ' + (scrolling ? 'header--is-active' : 'header--is-not-active')}>
@@ -96,7 +84,7 @@ const Header = () => {
 
         <div className="container">
           <div className="logo">
-            <Link to="/" onClick={trackLogoMenu}>
+            <Link to="/" onClick={ () => trackLogoMenu }>
               <img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
             </Link>
           </div>
@@ -107,10 +95,7 @@ const Header = () => {
                 'mobile-menu__button ' +
                 (toggle ? 'mobile-menu__button--is-active' : 'mobile-menu__button--is-not-active')
               }
-              onClick={() => {
-                setToggle(!toggle);
-                trackGA('Menu', 'Click', 'Mobile Menu', '');
-              }}
+              onClick={ () => toggleMenu(!toggle) }
               aria-label="Burger Menu"
             >
               <FaBars />
@@ -133,9 +118,9 @@ const Header = () => {
                   </li>
                 );
               })}
-              <li className="desktop-menu-links__item">
+              {/* <li className="desktop-menu-links__item">
                { modeButton }
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

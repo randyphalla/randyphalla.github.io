@@ -39,12 +39,12 @@ export const AboutMeProfileContainer = styled.div`
   }
 `;
 
-export const AboutMeProfileAvatar = styled.div`
+export const AboutMeProfileAvatar = styled.img`
   height: 280px;
   width: 100%;
 
   background-color: var(--light-grey-color);
-  border-radius: 10px;
+  border-radius: 8px;
 
   @media screen and (min-width: 768px) {
     width: 280px;

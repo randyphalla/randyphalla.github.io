@@ -18,9 +18,14 @@
 
 `yarn serve`
 
+### Debugging
+
+## Caching problem
+
+`yarn clean` or `gatsby clean`
+
 ## TODO
 
-- Add profile picture
 - Body copy
 - Get Portfolio items
 - Get Portfolio body copy
@@ -36,3 +41,4 @@
 - Resume Link (DONE)
 - Header (Done)
 - Clean up UI pages (Done)
+- Add profile picture (DONE)

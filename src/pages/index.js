@@ -29,6 +29,7 @@ import {
 } from '../theme/index.style';
 import { Hidden } from '../theme/global.style';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import RandyPhallaProfile from '../assets/images/me.jpeg';
 
 const IndexPage = () => {
   const [skills, setSkills] = useState([]);
@@ -162,17 +163,17 @@ const IndexPage = () => {
       //   description: 'UI Design',
       // },
       // {
-      //   id: 6,
+      //   id: 5,
       //   title: 'COVID-19',
       //   description: 'UI Design & Web Development',
       // },
       // {
-      //   id: 7,
+      //   id: 6,
       //   title: 'Pokédex',
       //   description: 'UI Design & Web Development',
       // },
       // {
-      //   id: 8,
+      //   id: 7,
       //   title: 'Marvel App',
       //   description: 'UI Design & Web Development',
       // },
@@ -215,22 +216,21 @@ const IndexPage = () => {
       <Banner
         helloThere="Hello there, I'm"
         name="Randy Phalla"
-        description="I am a front end web developer and designer that specializes in front end development and user interface
-        design."
+        description="I am a front-end developer and designer that specializes in front-end development and user interface design."
       />
 
       <AboutMeSection>
         <Hidden>About me Section</Hidden>
         <AboutMeContainer>
           <AboutMeProfileContainer>
-            <AboutMeProfileAvatar></AboutMeProfileAvatar>
+            <AboutMeProfileAvatar
+              src={RandyPhallaProfile}
+              alt="Randy Phalla's Profile"
+            ></AboutMeProfileAvatar>
           </AboutMeProfileContainer>
           <AboueMeParagraphContainer>
             <AboueMeParagraph>
-              I’m a Web Developer and Designer based London, Ontario Canada. I am passionate from about creating
-              aesthetically websites and designs. I can help you translate your PSDs or design files and prototype them
-              into web or mobile. I’m currently working at Devlift Media as a Web Developer, where I take designs and
-              prototype them into the web or mobile apps.
+              I’m a Front-End Developer and Designer based in London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, JavaScript. I’m currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.
             </AboueMeParagraph>
           </AboueMeParagraphContainer>
         </AboutMeContainer>
@@ -319,8 +319,7 @@ const IndexPage = () => {
             <DefaultTitleSpan>Featured Projects</DefaultTitleSpan>
           </DefaultTitle>
           <FeaturedProjectsProjects>
-            {projects &&
-              projects.map((project, i) => {
+            {projects && projects.map((project, i) => {
                 return (
                   <ProjectsItem key={i}>
                     <Link
@@ -335,9 +334,9 @@ const IndexPage = () => {
                   </ProjectsItem>
                 );
               })}
-            {!projects.length && (
+            {projects && !projects.length && (
               <div className="unavailable-project">
-                <p className="unavailable-project__text">There's are currently no project unavailable at this time</p>
+                <p className="unavailable-project__text">There's currently no project unavailable at this moment</p>
               </div>
             )}
           </FeaturedProjectsProjects>
