@@ -59,6 +59,7 @@ export const AboueMeParagraphContainer = styled.div`
 
 export const AboueMeParagraph = styled.p`
   margin: 0;
+  margin-bottom: 16px;
 
   color: var(--black-color);
   font-family: 'Raleway', sans-serif;
@@ -68,9 +69,19 @@ export const AboueMeParagraph = styled.p`
   line-height: 30px;
 
   @media screen and (min-width: 768px) {
-    padding: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 `;
+
+export const AboueMeParagraphLink = styled.a`
+  color: var(--devlift-color);
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`
 
 export const MySkillsSection = styled.section`
   margin-bottom: 16px;

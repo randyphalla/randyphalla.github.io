@@ -22,14 +22,8 @@ import { Hidden } from '../../theme/global.style';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const Footer = () => {
-  function trackGA(cat, action, label, value) {
-    trackCustomEvent({
-      category: cat,
-      action: action,
-      label: label,
-      value: value,
-    });
-  }
+
+  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
 
   return (
     <FooterSection>
@@ -48,7 +42,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://www.linkedin.com/in/randyphalla/"
                   aria-label="Linkedin Link"
-                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Linkedin')}
+                  title=""
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Linkedin')}
                 >
                   <FaLinkedinIn />
                 </SocialMediaListItemLink>
@@ -57,7 +52,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://github.com/randyphalla"
                   aria-label="Github Link"
-                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Github')}
+                  title=""
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Github')}
                 >
                   <FaGithub />
                 </SocialMediaListItemLink>
@@ -66,7 +62,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://dribbble.com/randyphalla"
                   aria-label="Dribbble Link"
-                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Dribbble')}
+                  title=""
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Dribbble')}
                 >
                   <FaDribbble />
                 </SocialMediaListItemLink>
@@ -75,7 +72,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://www.behance.net/randyphalla"
                   aria-label="Behance Link"
-                  onClick={trackGA('Footer - Links', 'Click', 'Footer', 'Behance')}
+                  title=""
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Behance')}
                 >
                   <FaBehance />
                 </SocialMediaListItemLink>
@@ -88,7 +86,8 @@ const Footer = () => {
             <LetGetInTouchLink
               href="mailTo:randyphalla@gmail.com"
               aria-label="My email"
-              onClick={trackGA('Footer - Links', 'Click', 'Lets Get In Touch', 'Email')}
+              title=""
+              onClick={() => trackGA('Footer - Links', 'Click', 'Lets Get In Touch', 'Email')}
             >
               randyphalla@gmail.com
             </LetGetInTouchLink>

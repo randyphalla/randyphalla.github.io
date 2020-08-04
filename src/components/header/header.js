@@ -14,9 +14,11 @@ const Header = () => {
   const [links, setLinks] = useState([]);
   // const [theme, setTheme] = useState('light');
 
-  const toggleMenu = (toggle) => {
-  }
   const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const toggleMenu = (toggle) => {
+    trackGA('Menu', 'Click', 'Mobile Menu', toggle);
+    setToggle(toggle);
+  }
   const trackLogoMenu = () => trackGA('Menu', 'Click', 'Logo', '');
   const trackMenuDesktopLinks = (link) => trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
 
@@ -95,7 +97,7 @@ const Header = () => {
                 'mobile-menu__button ' +
                 (toggle ? 'mobile-menu__button--is-active' : 'mobile-menu__button--is-not-active')
               }
-              onClick={ () => toggleMenu(!toggle) }
+              onClick={ () => toggleMenu(!toggle)}
               aria-label="Burger Menu"
             >
               <FaBars />
@@ -111,7 +113,7 @@ const Header = () => {
                       className="desktop-menu-links__item-link"
                       activeClassName="desktop-menu-links__item-link--current-page"
                       to={link.link}
-                      onClick={trackMenuDesktopLinks(link)}
+                      onClick={ () => trackMenuDesktopLinks(link) }
                     >
                       {link.name}
                     </Link>

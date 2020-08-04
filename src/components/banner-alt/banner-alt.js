@@ -21,8 +21,17 @@ const BannerAlt = ({ title, description, isResume }) => {
             <BannerAltDescription>{description}</BannerAltDescription>
           </BannerAltContLeftBorder>
           {isResume && (
-            <a href="../assets/files/Randy Phalla's Resume.pdf" download aria-label="Download my resume">
-              <Button className="default-btn--white" aria-label="Resume" type="button">
+            <a
+              href="../assets/files/Randy Phalla's Resume.pdf"
+              download
+              aria-label="Download my resume"
+              title="Download my resume"
+            >
+              <Button
+                className="default-btn--white"
+                aria-label="Resume"
+                type="button"
+              >
                 Resume
               </Button>
             </a>

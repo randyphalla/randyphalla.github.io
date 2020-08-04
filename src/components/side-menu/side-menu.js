@@ -7,6 +7,8 @@ import { Hidden } from '../../theme/global.style';
 
 const SideMenu = ({ isToggle }) => {
   const [links, setLinks] = useState([]);
+  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackMobileMenuLinks = (link) => trackGA('Mobile Menu - Links', 'Click', 'Mobile Menu', link);
 
   useEffect(() => {
     setLinks([
@@ -24,19 +26,6 @@ const SideMenu = ({ isToggle }) => {
     };
   }, []);
 
-  function trackGA(cat, action, label, value) {
-    trackCustomEvent({
-      category: cat,
-      action: action,
-      label: label,
-      value: value,
-    });
-  }
-
-  function trackMobileMenuLinks(link) {
-    trackGA('Mobile Menu - Links', 'Click', 'Mobile Menu', link);
-  }
-
   return (
     <section className={'side-menu ' + (isToggle ? 'side-menu--is-active' : 'side-menu--is-not-active')}>
       <Hidden>Side Menu</Hidden>
@@ -49,7 +38,7 @@ const SideMenu = ({ isToggle }) => {
         {links.map((link, i) => {
           return (
             <li className="side-menu__lists-item" key={i}>
-              <Link to={link.link} onClick={trackMobileMenuLinks(link)}>
+              <Link to={link.link} onClick={() => trackMobileMenuLinks(link)}>
                 {link.name}
               </Link>
             </li>

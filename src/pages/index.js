@@ -11,6 +11,7 @@ import {
   AboutMeProfileAvatar,
   AboueMeParagraphContainer,
   AboueMeParagraph,
+  AboueMeParagraphLink,
   MySkillsSection,
   Container,
   MySkillsList,
@@ -97,7 +98,7 @@ const IndexPage = () => {
       {
         company: 'Devlift Media',
         started: 'Dec 2016 - Present',
-        role: 'Front-End Web Developer',
+        role: 'Web Developer',
         siteLink: 'https://www.devlift.com',
       },
       {
@@ -214,9 +215,9 @@ const IndexPage = () => {
       <SEO title="Home" keywords={[]} />
 
       <Banner
-        helloThere="Hello there, I'm"
+        helloThere="Hello there, my name is"
         name="Randy Phalla"
-        description="I am a front-end developer and designer that specializes in front-end development and user interface design."
+        description="I build things for the web and mobile"
       />
 
       <AboutMeSection>
@@ -230,7 +231,13 @@ const IndexPage = () => {
           </AboutMeProfileContainer>
           <AboueMeParagraphContainer>
             <AboueMeParagraph>
-              I’m a Front-End Developer and Designer based in London, Ontario Canada. I am passionate from about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, JavaScript. I’m currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.
+              I’m a Front-end Developer and Designer based in London, Ontario Canada.
+            </AboueMeParagraph>
+            <AboueMeParagraph>
+              I specializes in front-end development and user interface design. I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.
+            </AboueMeParagraph>
+            <AboueMeParagraph>
+              I’m currently working at <AboueMeParagraphLink href="https://www.devlift.com" target="_blank" title="Go to Devlift Media Website">Devlift Media</AboueMeParagraphLink> as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.
             </AboueMeParagraph>
           </AboueMeParagraphContainer>
         </AboutMeContainer>
@@ -263,7 +270,12 @@ const IndexPage = () => {
                       {experience.company} -<WorkEducationDateStarted> {experience.started}</WorkEducationDateStarted>
                     </WorkEducationCompanyName>
                     <WorkEducationRole>{experience.role}</WorkEducationRole>
-                    <WorkEducationLink href={experience.siteLink} onClick={trackWorkExperiencesLink(i)}>
+                    <WorkEducationLink
+                      href={experience.siteLink}
+                      aria-label={`Go to ${experience.company}`}
+                      title={`Go to ${experience.company}`}
+                      onClick={trackWorkExperiencesLink(i)}
+                    >
                       {experience.siteLink}
                     </WorkEducationLink>
                   </WorkEducationListItem>
@@ -289,7 +301,12 @@ const IndexPage = () => {
                     </WorkEducationCompanyName>
                     <WorkEducationRole>{education.program}</WorkEducationRole>
                     {education && education.siteLink ? (
-                      <WorkEducationLink href={education.siteLink} onClick={trackEducationLink(i)}>
+                      <WorkEducationLink
+                        href={education.siteLink}
+                        title={`Go to ${education.school} link`}
+                        aria-label={`Go to ${education.school} link`}
+                        onClick={trackEducationLink(i)}
+                      >
                         {education.siteLink}
                       </WorkEducationLink>
                     ) : null}
