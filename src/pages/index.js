@@ -11,7 +11,7 @@ import {
   AboutMeProfileAvatar,
   AboueMeParagraphContainer,
   AboueMeParagraph,
-  AboueMeParagraphLink,
+  AboutMeParagraphLink,
   MySkillsSection,
   Container,
   MySkillsList,
@@ -217,7 +217,7 @@ const IndexPage = () => {
       <Banner
         helloThere="Hello there, my name is"
         name="Randy Phalla"
-        description="I build things for the web and mobile"
+        description="I specializes in front-end development and user interface design."
       />
 
       <AboutMeSection>
@@ -234,10 +234,10 @@ const IndexPage = () => {
               I’m a Front-end Developer and Designer based in London, Ontario Canada.
             </AboueMeParagraph>
             <AboueMeParagraph>
-              I specializes in front-end development and user interface design. I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.
+              I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.
             </AboueMeParagraph>
             <AboueMeParagraph>
-              I’m currently working at <AboueMeParagraphLink href="https://www.devlift.com" target="_blank" title="Go to Devlift Media Website">Devlift Media</AboueMeParagraphLink> as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.
+              I’m currently working at <AboutMeParagraphLink href="https://www.devlift.com" target="_blank" title="Go to Devlift Media Website">Devlift Media</AboutMeParagraphLink> as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.
             </AboueMeParagraph>
           </AboueMeParagraphContainer>
         </AboutMeContainer>

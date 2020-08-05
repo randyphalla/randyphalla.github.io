@@ -36,18 +36,27 @@ export const AboutMeProfileContainer = styled.div`
   @media screen and (min-width: 768px) {
     display: block;
     padding: 16px;
+    /* position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height:  280px;
+      width:  280px;
+      border: 2px solid var(--red-color);
+      border-radius: 8px;
+    } */
   }
 `;
 
 export const AboutMeProfileAvatar = styled.img`
-  height: 280px;
-  width: 100%;
-
-  background-color: var(--light-grey-color);
-  border-radius: 8px;
-
   @media screen and (min-width: 768px) {
+    height: 280px;
     width: 280px;
+    background-color: var(--light-grey-color);
+    border-radius: 8px;
   }
 `;
 
@@ -74,8 +83,9 @@ export const AboueMeParagraph = styled.p`
   }
 `;
 
-export const AboueMeParagraphLink = styled.a`
+export const AboutMeParagraphLink = styled.a`
   color: var(--devlift-color);
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
@@ -121,6 +131,7 @@ export const MySkillsList = styled.ul`
 
 export const MySkilsListItem = styled.li`
   position: relative;
+
   padding-top: 16px;
   padding-left: 44px;
   padding-right: 16px;

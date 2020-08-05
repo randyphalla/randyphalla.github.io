@@ -38,7 +38,6 @@ export const BannerContainer = styled.div`
 export const BannerHelloThere = styled.h3`
   margin: 0;
 
-  /* color: var(--black-color); */
   color: var(--red-color);
   font-size: 10px;
   font-family: 'Montserrat', sans-serif;
@@ -52,9 +51,8 @@ export const BannerHelloThere = styled.h3`
 
 export const BannerTitle = styled.h3`
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 
-  /* color: var(--red-color); */
   color: var(--black-color);
   font-size: 30px;
   font-family: 'Montserrat', sans-serif;
@@ -68,7 +66,6 @@ export const BannerTitle = styled.h3`
 export const BannerDescription = styled.p`
   margin: 0;
 
-  /* color: var(--black-color); */
   color: #3C3D41;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
