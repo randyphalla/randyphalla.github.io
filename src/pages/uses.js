@@ -46,7 +46,7 @@ const UsesPage = () => {
         name: 'Spotify',
       },
       {
-        name: 'Adobe Photoshop and Illustrator',
+        name: 'Adobe Photoshop, Illustrator and XD',
       },
       {
         name: 'Sketch',

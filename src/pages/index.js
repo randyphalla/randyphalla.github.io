@@ -217,7 +217,7 @@ const IndexPage = () => {
       <Banner
         helloThere="Hello there, my name is"
         name="Randy Phalla"
-        description="I specializes in front-end development and user interface design."
+        description="I specialize in front-end development and user interface design."
       />
 
       <AboutMeSection>

@@ -30,15 +30,5 @@
 - Get Portfolio items
 - Get Portfolio body copy
 
-- Add Google Analytics (DONE)
-- Add jQuery in Technical Skills (DONE)
-- Fix scroll for safari (DONE)
-- Portfolio (DONE)
-- Portfolio Details (DONE)
-- Contact (DONE)
-- Update Banner (DONE)
-- Create Mobile Menu (DONE)
-- Resume Link (DONE)
-- Header (Done)
-- Clean up UI pages (Done)
-- Add profile picture (DONE)
+## In future development
+- Add light and dark Theme
