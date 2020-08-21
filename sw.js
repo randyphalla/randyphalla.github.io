@@ -26,20 +26,20 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-19ce7c36df7d99376b4f.js"
+    "url": "webpack-runtime-3db3bc5cb748c7c96aa7.js"
   },
   {
     "url": "framework-c1e60178d4eaaf8f8382.js"
   },
   {
-    "url": "app-8500e0931f121468d275.js"
+    "url": "app-1b1a28f9a2a6e3cdc185.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-5d2982e3230016142106.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "d388cc59c06d224cc3776a3ff2bde3ac"
+    "revision": "51d61e3d85fae2d6ff5bf1036fc67bb7"
   },
   {
     "url": "google-fonts/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2",
@@ -50,19 +50,11 @@ self.__precacheManifest = [
     "revision": "39d93cf678c740f9f6b2b1cfde34bee3"
   },
   {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "c7047792c6f91b88e0d9abc0cd819e92"
-  },
-  {
-    "url": "page-data/app-data.json",
-    "revision": "8250c4d10efa70a2d3e58d1a2134a9ac"
-  },
-  {
     "url": "polyfill-c2f4f11cb3258f439c5b.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "e2f21795b6c4674d922d98542c8badad"
+    "revision": "d62c5367f34d20e0412ad830f468994b"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -81,12 +73,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/randyphalla.github.io`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/randyphalla.github.io/app-8500e0931f121468d275.js`))) {
+  if (!resources || !(await caches.match(`/app-1b1a28f9a2a6e3cdc185.js`))) {
     return await fetch(event.request)
   }
 
@@ -99,7 +91,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/randyphalla.github.io/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
