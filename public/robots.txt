@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: http://randyphalla.github.io/sitemap.xml
+Host: randyphalla.github.io
