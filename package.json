@@ -4,6 +4,7 @@
   "description": "I’m a Front-end Developer and Designer based in London, Ontario Canada. I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript. I’m currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.",
   "version": "0.1.0",
   "author": "Randy Phalla <randyphalla@gmail.com>",
+  "homepage": "https://randyphalla.github.io/",
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.47",
@@ -19,6 +20,7 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-sharp": "^2.5.13",
+    "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -42,7 +44,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d docs"
   },
   "repository": {
     "type": "git",
