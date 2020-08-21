@@ -73,9 +73,7 @@ export const SocialMediaListItem = styled.li`
   padding-top: 10px;
   padding-bottom: 10px;
 
-  &:last-child {
-    padding-bottom: 0;
-  }
+  &:last-child { padding-bottom: 0; }
 
   svg {
     width: 30px;
@@ -84,32 +82,46 @@ export const SocialMediaListItem = styled.li`
 
     transition: all 300ms linear;
 
-    &:hover {
-      fill: var(--red-color) !important;
-    }
+    &:hover { fill: var(--red-color) !important; }
   }
 
   &:first-child {
     svg {
-      fill: #0073b1;
+      /* fill: #0073b1; */
+
+      &:hover {
+        fill: #0073b1 !important;
+      }
     }
   }
 
   &:nth-child(2) {
     svg {
-      fill: #24292e;
+      /* fill: #24292e;  */
+
+      &:hover {
+        fill: #d8d8d8 !important;
+      }
     }
   }
 
   &:nth-child(3) {
     svg {
-      fill: #ea4c89;
+      /* fill: #ea4c89;  */
+
+      &:hover {
+        fill: #ea4c89 !important;
+      }
     }
   }
 
   &:last-child {
     svg {
-      fill: #0057ff;
+      /* fill: #0057ff; */
+
+      &:hover {
+        fill: #0057ff !important;
+      }
     }
   }
 
@@ -119,9 +131,7 @@ export const SocialMediaListItem = styled.li`
     svg {
       margin-right: 10px;
 
-      &:last-child {
-        margin-left: 0;
-      }
+      &:last-child { margin-left: 0; }
     }
   }
 `;

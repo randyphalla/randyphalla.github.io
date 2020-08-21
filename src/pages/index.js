@@ -3,7 +3,12 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Banner from '../components/banner/banner';
-import { ProjectsItem, ProjectsItemAvatar, ProjectsItemTitle, ProjectsItemDescription } from '../theme/card.style';
+import {
+  ProjectsItem,
+  ProjectsItemAvatar,
+  ProjectsItemTitle,
+  ProjectsItemDescription
+} from '../theme/card.style';
 import {
   AboutMeSection,
   AboutMeContainer,
@@ -38,6 +43,11 @@ const IndexPage = () => {
   const [educations, setEducations] = useState([]);
   const [hobbies, setHobbies] = useState([]);
   const [projects, setProjects] = useState([]);
+
+  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackWorkExperiencesLink = (id) => trackGA('Work Experiences - Links', 'Click', 'Work Experience', id);
+  const trackEducationLink = (id) => trackGA('Educations - Links', 'Click', 'Education', id);
+  const trackFeaturedPropjectsLink = (id) => trackGA('Featured Projects - Links', 'Click', 'Featured Projects', id);
 
   useEffect(() => {
     setSkills([
@@ -147,37 +157,44 @@ const IndexPage = () => {
       //   id: 1,
       //   title: 'Smart Cart',
       //   description: 'UI Design',
+      //   poster: ''
       // },
       // {
       //   id: 2,
       //   title: 'British Airways',
       //   description: 'UI Design',
+      //   poster: ''
       // },
       // {
       //   id: 3,
       //   title: 'Car Dashboard',
       //   description: 'UI Design',
+      //   poster: ''
       // },
       // {
       //   id: 4,
       //   title: 'Zane Barles',
       //   description: 'UI Design',
+      //   poster: ''
       // },
       // {
       //   id: 5,
       //   title: 'COVID-19',
-      //   description: 'UI Design & Web Development',
+      //   description: 'Web Development',
+      //   poster: ''
       // },
       // {
       //   id: 6,
       //   title: 'Pokédex',
-      //   description: 'UI Design & Web Development',
+      //   description: 'Web Development',
+      //   poster: ''
       // },
       // {
       //   id: 7,
       //   title: 'Marvel App',
-      //   description: 'UI Design & Web Development',
-      // },
+      //   description: 'Web Development',
+      //   poster: ''
+      // }
     ]);
 
     return () => {
@@ -188,27 +205,6 @@ const IndexPage = () => {
       // setProjects([]);
     };
   }, []);
-
-  function trackGA(cat, action, label, value) {
-    trackCustomEvent({
-      category: cat,
-      action: action,
-      label: label,
-      value: value,
-    });
-  }
-
-  function trackWorkExperiencesLink(id) {
-    trackGA('Work Experiences - Links', 'Click', 'Work Experience', id);
-  }
-
-  function trackEducationLink(id) {
-    trackGA('Educations - Links', 'Click', 'Education', id);
-  }
-
-  function trackFeaturedPropjectsLink(id) {
-    trackGA('Featured Projects - Links', 'Click', 'Featured Projects', id);
-  }
 
   return (
     <Layout>
@@ -274,7 +270,7 @@ const IndexPage = () => {
                       href={experience.siteLink}
                       aria-label={`Go to ${experience.company}`}
                       title={`Go to ${experience.company}`}
-                      onClick={trackWorkExperiencesLink(i)}
+                      onClick={() => trackWorkExperiencesLink(i)}
                     >
                       {experience.siteLink}
                     </WorkEducationLink>
@@ -305,7 +301,7 @@ const IndexPage = () => {
                         href={education.siteLink}
                         title={`Go to ${education.school} link`}
                         aria-label={`Go to ${education.school} link`}
-                        onClick={trackEducationLink(i)}
+                        onClick={() => trackEducationLink(i)}
                       >
                         {education.siteLink}
                       </WorkEducationLink>
@@ -336,21 +332,23 @@ const IndexPage = () => {
             <DefaultTitleSpan>Featured Projects</DefaultTitleSpan>
           </DefaultTitle>
           <FeaturedProjectsProjects>
-            {projects && projects.map((project, i) => {
+            {
+              projects && projects.map((project, i) => {
                 return (
                   <ProjectsItem key={i}>
                     <Link
                       to={`portfolio/${project.id}/`}
                       aria-label="Project link"
-                      onClick={trackFeaturedPropjectsLink(i)}
+                      onClick={() => trackFeaturedPropjectsLink(i)}
                     >
                       <ProjectsItemAvatar></ProjectsItemAvatar>
                     </Link>
                     <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
                     <ProjectsItemDescription>{project.description}</ProjectsItemDescription>
                   </ProjectsItem>
-                );
-              })}
+                )
+              })
+            }
             {projects && !projects.length && (
               <div className="unavailable-project">
                 <p className="unavailable-project__text">There's currently no project unavailable at this moment</p>
