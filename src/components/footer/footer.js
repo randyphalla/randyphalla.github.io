@@ -42,7 +42,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://www.linkedin.com/in/randyphalla/"
                   aria-label="Linkedin Link"
-                  title=""
+                  title="Linkedin"
+                  rel="noopener"
                   onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Linkedin')}
                 >
                   <FaLinkedinIn />
@@ -52,7 +53,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://github.com/randyphalla"
                   aria-label="Github Link"
-                  title=""
+                  title="Github"
+                  rel="noopener"
                   onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Github')}
                 >
                   <FaGithub />
@@ -62,7 +64,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://dribbble.com/randyphalla"
                   aria-label="Dribbble Link"
-                  title=""
+                  title="Dribbble"
+                  rel="noopener"
                   onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Dribbble')}
                 >
                   <FaDribbble />
@@ -72,7 +75,8 @@ const Footer = () => {
                 <SocialMediaListItemLink
                   href="https://www.behance.net/randyphalla"
                   aria-label="Behance Link"
-                  title=""
+                  title="Behance"
+                  rel="noopener"
                   onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Behance')}
                 >
                   <FaBehance />
@@ -86,7 +90,8 @@ const Footer = () => {
             <LetGetInTouchLink
               href="mailTo:randyphalla@gmail.com"
               aria-label="My email"
-              title=""
+              title="Email"
+              rel="noopener"
               onClick={() => trackGA('Footer - Links', 'Click', 'Lets Get In Touch', 'Email')}
             >
               randyphalla@gmail.com

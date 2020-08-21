@@ -39,7 +39,7 @@ export const BannerHelloThere = styled.h3`
   margin: 0;
 
   color: var(--red-color);
-  font-size: 10px;
+  font-size: 12px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
