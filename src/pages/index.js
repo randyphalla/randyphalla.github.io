@@ -353,7 +353,7 @@ const IndexPage = () => {
             }
             {projects && !projects.length && (
               <div className="unavailable-project">
-                <p className="unavailable-project__text">There's currently no project unavailable at this moment</p>
+                <p className="unavailable-project__text">Theirs currently no projects available at this moment</p>
               </div>
             )}
           </FeaturedProjectsProjects>

@@ -132,7 +132,7 @@ const UsesPage = () => {
         <Hidden>Hardware Section</Hidden>
         <Container>
           <DefaultTitle>
-            <DefaultTitleSpan>Hardware</DefaultTitleSpan>
+            <DefaultTitleSpan>Hardwares</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList className="uses-list">
             {useHardware.map((hardware, i) => {
