@@ -13,98 +13,24 @@ import {
   DefaultTitleSpan,
 } from '../theme/index.style';
 import { Hidden } from '../theme/global.style';
+import { Softwares, Hardwares, Others } from '../config/data';
 
 const UsesPage = () => {
-  const [useSoftwares, setSoftwares] = useState([]);
-  const [useHardware, setHardware] = useState([]);
-  const [useOther, setOther] = useState([]);
+  const [softwares, setSoftwares] = useState([]);
+  const [hardwares, setHardwares] = useState([]);
+  const [others, setOthers] = useState([]);
 
   useEffect(() => {
-    setSoftwares([
-      {
-        name: 'Google Chrome',
-      },
-      {
-        name: 'Visual Studio Code (One Dark Pro and Material Icon Themes)',
-      },
-      {
-        name: 'Terminal',
-      },
-      {
-        name: 'Sourcetree',
-      },
-      {
-        name: 'Trello',
-      },
-      {
-        name: 'Slack',
-      },
-      {
-        name: 'Discord',
-      },
-      {
-        name: 'Spotify',
-      },
-      {
-        name: 'Adobe Photoshop, Illustrator and XD',
-      },
-      {
-        name: 'Sketch',
-      },
-      {
-        name: 'Xcode',
-      },
-      {
-        name: 'Android Studio',
-      },
-    ]);
+    setSoftwares(Softwares);
 
-    setHardware([
-      {
-        title: 'Laptop: ',
-        name: 'MacBook Pro (13-inch, 2020) / ASUS ROG Strix (i7, GTX 1650)',
-      },
-      {
-        title: 'Keyboard: ',
-        name: 'Ducky One 2 SF',
-      },
-      {
-        title: 'Mouse: ',
-        name: 'Logitech G Pro Wireless',
-      },
-      {
-        title: 'Monitors: ',
-        name: 'Two 27-inch Asus VP278H-P Gaming Monitor',
-      },
-      {
-        title: 'Headset: ',
-        name: 'Bose QuietComfort 25 Over-Ear Noise Cancelling Headphones',
-      },
-      {
-        title: 'Phone: ',
-        name: 'Samsung S7',
-      },
-    ]);
+    setHardwares(Hardwares);
 
-    setOther([
-      {
-        title: 'Eyewear: ',
-        name: 'Gunnar Intercept',
-      },
-      {
-        title: 'Desk: ',
-        name: 'BEKANT from Ikea',
-      },
-      {
-        title: 'Chair: ',
-        name: 'Hyken Technical Mesh Task Chair from Staples',
-      },
-    ]);
+    setOthers(Others);
 
     return () => {
       setSoftwares([]);
-      setHardware([]);
-      setOther([]);
+      setHardwares([]);
+      setOthers([]);
     };
   }, []);
 
@@ -121,9 +47,7 @@ const UsesPage = () => {
             <DefaultTitleSpan>Softwares</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList className="uses-list">
-            {useSoftwares.map((software, i) => {
-              return <MySkilsListItem key={i}>{software.name}</MySkilsListItem>;
-            })}
+            {softwares && softwares.map((software, i) => <MySkilsListItem key={i}>{software.name}</MySkilsListItem> )}
           </MySkillsList>
         </Container>
       </MySkillsSection>
@@ -135,14 +59,12 @@ const UsesPage = () => {
             <DefaultTitleSpan>Hardwares</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList className="uses-list">
-            {useHardware.map((hardware, i) => {
-              return (
-                <MySkilsListItem className="uses-list-item--hardware" key={i}>
-                  <MySkilsListItemTitle>{hardware.title}</MySkilsListItemTitle>
-                  <MySkilsListItemName>{hardware.name}</MySkilsListItemName>
-                </MySkilsListItem>
-              );
-            })}
+            {hardwares && hardwares.map((hardware, i) => 
+              <MySkilsListItem className="uses-list-item--hardware" key={i}>
+                <MySkilsListItemTitle>{hardware.title}</MySkilsListItemTitle>
+                <MySkilsListItemName>{hardware.name}</MySkilsListItemName>
+              </MySkilsListItem>
+            )}
           </MySkillsList>
         </Container>
       </MySkillsSection>
@@ -154,14 +76,12 @@ const UsesPage = () => {
             <DefaultTitleSpan>Others</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList className="uses-list">
-            {useOther.map((other, i) => {
-              return (
-                <MySkilsListItem className="uses-list-item--hardware" key={i}>
-                  <MySkilsListItemTitle>{other.title}</MySkilsListItemTitle>
-                  <MySkilsListItemName>{other.name}</MySkilsListItemName>
-                </MySkilsListItem>
-              );
-            })}
+            {others && others.map((other, i) => 
+              <MySkilsListItem className="uses-list-item--hardware" key={i}>
+                <MySkilsListItemTitle>{other.title}</MySkilsListItemTitle>
+                <MySkilsListItemName>{other.name}</MySkilsListItemName>
+              </MySkilsListItem>           
+            )}
           </MySkillsList>
         </Container>
       </MySkillsSection>

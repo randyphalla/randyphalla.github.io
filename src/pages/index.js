@@ -36,6 +36,7 @@ import {
 import { Hidden } from '../theme/global.style';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import RandyPhallaProfile from '../assets/images/me.jpeg';
+import { Skills, Experiences, Educations, Hobbies, Projects } from '../config/data';
 
 const IndexPage = () => {
   const [skills, setSkills] = useState([]);
@@ -50,159 +51,18 @@ const IndexPage = () => {
   const trackFeaturedPropjectsLink = (id) => trackGA('Featured Projects - Links', 'Click', 'Featured Projects', id);
 
   useEffect(() => {
-    setSkills([
-      {
-        name: 'HTML5',
-      },
-      {
-        name: 'CSS3 (SCSS)',
-      },
-      {
-        name: 'Bootstrap (3/4)',
-      },
-      {
-        name: 'Responsive Web Design'
-      },
-      {
-        name: 'JavaScript (ES5/6)',
-      },
-      {
-        name: 'jQuery',
-      },
-      {
-        name: 'Angular 2-8',
-      },
-      {
-        name: 'Ionic',
-      },
-      {
-        name: 'ReactJS (GatsbyJS & NextJS)',
-      },
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Storybook'
-      },
-      {
-        name: 'Firebase',
-      },
-      {
-        name: 'Git (Sourcetree & GitHub)',
-      },
-      {
-        name: 'Sketch',
-      },
-      {
-        name: 'Adobe Photoshop',
-      },
-      {
-        name: 'Adobe Illustrator',
-      },
-      {
-        name: 'UI Design',
-      },
-    ]);
-
-    setExperiences([
-      {
-        company: 'Devlift Media',
-        started: 'Dec 2016 - Present',
-        role: 'Web Developer',
-        siteLink: 'https://www.devlift.com',
-      },
-      {
-        company: 'BuzzPR',
-        started: 'Aug 2016 - Sept 2016',
-        role: 'Graphic Design Intern',
-        siteLink: 'https://www.buzzpr.ca',
-      },
-    ]);
-
-    setEducations([
-      {
-        school: 'Fanshawe College',
-        started: 'Sept 2015 - Apr 2016',
-        program: 'Interactive Media Specialist',
-        // siteLink: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next',
-      },
-      {
-        school: 'Fanshawe College',
-        started: 'Sept 2011 - Apr 2014',
-        program: 'Graphic Design',
-        // siteLink: 'https://www.fanshawec.ca/programs/grd1-graphic-design/next',
-      },
-    ]);
-
-    setHobbies([
-      {
-        name: 'Games (PS4, Switch, PC and Mobile)',
-      },
-      {
-        name: 'Gym',
-      },
-      {
-        name: 'Coffee',
-      },
-      {
-        name: 'Eating',
-      },
-      {
-        name: 'TV Shows and Movies',
-      },
-    ]);
-
-    setProjects([
-      // {
-      //   id: 1,
-      //   title: 'Smart Cart',
-      //   description: 'UI Design',
-      //   poster: ''
-      // },
-      // {
-      //   id: 2,
-      //   title: 'British Airways',
-      //   description: 'UI Design',
-      //   poster: ''
-      // },
-      // {
-      //   id: 3,
-      //   title: 'Car Dashboard',
-      //   description: 'UI Design',
-      //   poster: ''
-      // },
-      // {
-      //   id: 4,
-      //   title: 'Zane Barles',
-      //   description: 'UI Design',
-      //   poster: ''
-      // },
-      // {
-      //   id: 5,
-      //   title: 'COVID-19',
-      //   description: 'Web Development',
-      //   poster: ''
-      // },
-      // {
-      //   id: 6,
-      //   title: 'Pokédex',
-      //   description: 'Web Development',
-      //   poster: ''
-      // },
-      // {
-      //   id: 7,
-      //   title: 'Marvel App',
-      //   description: 'Web Development',
-      //   poster: ''
-      // }
-    ]);
+    setSkills(Skills);
+    setExperiences(Experiences);
+    setEducations(Educations);
+    setHobbies(Hobbies);
+    setProjects(Projects);
 
     return () => {
       setSkills([]);
       setExperiences([]);
       setEducations([]);
       setHobbies([]);
-      // setProjects([]);
+      setProjects([]);
     };
   }, []);
 
