@@ -24,7 +24,7 @@ export const Skills = [
     name: 'Ionic',
   },
   {
-    name: 'ReactJS (GatsbyJS & NextJS)',
+    name: 'ReactJS (GatsbyJS)',
   },
   {
     name: 'React Native',
@@ -87,13 +87,7 @@ export const Hobbies = [
     name: 'Games (PS4, Switch, PC and Mobile)',
   },
   {
-    name: 'Gym',
-  },
-  {
-    name: 'Coffee',
-  },
-  {
-    name: 'Eating',
+    name: 'Gym (Cycling and Powerlifting)',
   },
   {
     name: 'TV Shows and Movies',
@@ -101,48 +95,48 @@ export const Hobbies = [
 ];
 
 export const Projects = [
-  {
-    id: 1,
-    title: 'Smart Cart',
-    description: 'UI Design',
-    poster: ''
-  },
-  {
-    id: 2,
-    title: 'British Airways',
-    description: 'UI Design',
-    poster: ''
-  },
-  {
-    id: 3,
-    title: 'Car Dashboard',
-    description: 'UI Design',
-    poster: ''
-  },
-  {
-    id: 4,
-    title: 'Zane Barles',
-    description: 'UI Design',
-    poster: ''
-  },
-  {
-    id: 5,
-    title: 'COVID-19',
-    description: 'Web Development',
-    poster: ''
-  },
-  {
-    id: 6,
-    title: 'Pokédex',
-    description: 'Web Development',
-    poster: ''
-  },
-  {
-    id: 7,
-    title: 'Marvel App',
-    description: 'Web Development',
-    poster: ''
-  }
+  // {
+  //   id: 1,
+  //   title: 'Smart Cart',
+  //   description: 'UI Design',
+  //   poster: ''
+  // },
+  // {
+  //   id: 2,
+  //   title: 'British Airways',
+  //   description: 'UI Design',
+  //   poster: ''
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Car Dashboard',
+  //   description: 'UI Design',
+  //   poster: ''
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Zane Barles',
+  //   description: 'UI Design',
+  //   poster: ''
+  // },
+  // {
+  //   id: 5,
+  //   title: 'COVID-19',
+  //   description: 'Web Development',
+  //   poster: ''
+  // },
+  // {
+  //   id: 6,
+  //   title: 'Pokédex',
+  //   description: 'Web Development',
+  //   poster: ''
+  // },
+  // {
+  //   id: 7,
+  //   title: 'Marvel App',
+  //   description: 'Web Development',
+  //   poster: ''
+  // }
 ];
 
 export const Softwares = [

@@ -176,10 +176,10 @@ const IndexPage = () => {
       </WorkEducationSection>
 
       <MySkillsSection>
-        <Hidden>My Hobbies Section</Hidden>
+        <Hidden>My Hobbies and Interest Section</Hidden>
         <Container>
           <DefaultTitle>
-            <DefaultTitleSpan>Hobbies</DefaultTitleSpan>
+            <DefaultTitleSpan>Hobbies and Interest</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList>
             {hobbies && hobbies.map((hobbie, i) => { return <MySkilsListItem key={i}> {hobbie.name}</MySkilsListItem>; })}
@@ -213,7 +213,7 @@ const IndexPage = () => {
             }
             {projects && !projects.length && (
               <div className="unavailable-project">
-                <p className="unavailable-project__text">Theirs currently no projects available at this moment</p>
+                <p className="unavailable-project__text">There's currently no projects available at this moment</p>
               </div>
             )}
           </FeaturedProjectsProjects>
