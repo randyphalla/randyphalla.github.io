@@ -121,19 +121,25 @@ export const Projects = [
   // },
   // {
   //   id: 5,
-  //   title: 'COVID-19',
+  //   title: 'COVID-19 App',
   //   description: 'Web Development',
   //   poster: ''
   // },
   // {
   //   id: 6,
-  //   title: 'Pokédex',
+  //   title: 'Pokédex App',
   //   description: 'Web Development',
   //   poster: ''
   // },
   // {
   //   id: 7,
   //   title: 'Marvel App',
+  //   description: 'Web Development',
+  //   poster: ''
+  // }
+  // {
+  //   id: 8,
+  //   title: 'Rick and Morty App',
   //   description: 'Web Development',
   //   poster: ''
   // }
