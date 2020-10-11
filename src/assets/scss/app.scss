@@ -4,15 +4,15 @@
 @import 'theme';
 
 :root {
-  // --red-color: #ff001f;
-  --red-color: #B30015; // WCG AAA
-	--white-color: #ffffff;
-	--black-color: #040303;
-	--transparent: transparent;
-	--grey-color: #d8d8d8;
+  --red-color: #ff001f;
+  // --red-color: #b30015; // WCG AAA
+  --white-color: #ffffff;
+  --black-color: #040303;
+  --transparent: transparent;
+  --grey-color: #d8d8d8;
   --light-grey-color: #f6f7f9;
-  // --devlift-color: #6ac9c8;
-  --devlift-color: #24605B; // WCG AAA
+  --devlift-color: #6ac9c8;
+  // --devlift-color: #24605B; // WCG AAA
 }
 
 h1,
@@ -21,27 +21,33 @@ h3,
 h4,
 h5,
 h6,
-p { margin: 0; }
+p {
+  margin: 0;
+}
 
-.mt-60 { margin-top: 60px; }
+.mt-60 {
+  margin-top: 60px;
+}
 
-.mb-35 { margin-bottom: 35px; }
+.mb-35 {
+  margin-bottom: 35px;
+}
 
 .container {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 
-	@media screen and (min-width: 768px) {
-		width: 85%;
-	}
+  @media screen and (min-width: 768px) {
+    width: 85%;
+  }
 
-	@media screen and (min-width: 992px) {
-		width: 75%;
-	}
+  @media screen and (min-width: 992px) {
+    width: 75%;
+  }
 
-	@media screen and (min-width: 1200px) {
-		width: 70%;
-	}
+  @media screen and (min-width: 1200px) {
+    width: 70%;
+  }
 }
 
 .unavailable-project {

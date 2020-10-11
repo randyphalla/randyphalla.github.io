@@ -118,7 +118,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   // Create portfolio page
   createPage({
     path: `/portfolio`,
-    component: require.resolve('./src/templates/portfolio.js'),
+    component: require.resolve('./src/templates/portfolio.tsx'),
     context: { projects },
   });
 
@@ -126,7 +126,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   projects.forEach(project => {
     createPage({
       path: `/portfolio/${project.id}`,
-      component: require.resolve('./src/templates/portfolio-details.js'),
+      component: require.resolve('./src/templates/portfolio-details.tsx'),
       context: { project },
     });
   });
