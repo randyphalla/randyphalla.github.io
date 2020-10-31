@@ -6,7 +6,7 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';
 
 type SideMenuProps = {
-  isToggle?: string;
+  isToggle: boolean;
 }
 
 const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {

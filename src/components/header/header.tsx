@@ -9,18 +9,18 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';
 
 const Header = () => {
-  const [toggle, setToggle] = useState(false);
-  const [scrolling, setScrolling] = useState(false);
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [scrolling, setScrolling] = useState<boolean>(false);
   const [links, setLinks] = useState([]);
   // const [theme, setTheme] = useState('light');
 
   const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
-  const toggleMenu = (toggle) => {
+  const toggleMenu = (toggle: boolean) => {
     trackGA('Menu', 'Click', 'Mobile Menu', toggle);
     setToggle(toggle);
   }
   const trackLogoMenu = () => trackGA('Menu', 'Click', 'Logo', '');
-  const trackMenuDesktopLinks = (link) => trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
+  const trackMenuDesktopLinks = (link: string) => trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
 
   // const changeTheme = (mode) => {
   //   setTheme(mode);

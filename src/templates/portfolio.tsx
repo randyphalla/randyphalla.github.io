@@ -21,7 +21,7 @@ const PortfolioPage = ({ pageContext: { projects } }) => {
 
         <div className="container">
           <div className="projects">
-            {projects.map((project, i) => {
+            {projects.map((project, i: number) => {
               return (
                 <ProjectsItem key={i}>
                   <Link to={`${project.id}/`}>
