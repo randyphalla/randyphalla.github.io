@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Banner from '../components/banner/banner';
@@ -17,26 +18,17 @@ import {
   AboueMeParagraphContainer,
   AboueMeParagraph,
   AboutMeParagraphLink,
-  MySkillsSection,
   Container,
-  MySkillsList,
-  MySkilsListItem,
   DefaultTitle,
   DefaultTitleSpan,
-  WorkEducationSection,
-  WorkEducationList,
-  WorkEducationListItem,
-  WorkEducationCompanyName,
-  WorkEducationDateStarted,
-  WorkEducationRole,
-  WorkEducationLink,
   FeaturedProjectsSection,
   FeaturedProjectsProjects,
 } from '../theme/index.style';
 import { Hidden } from '../theme/global.style';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import RandyPhallaProfile from '../assets/images/me.jpeg';
 import { Skills, Experiences, Educations, Hobbies, Projects } from '../config/data';
+import { List } from '../components/list/list';
+import { DotList } from '../components/dot-list/dot-list';
 
 const IndexPage = () => {
   const [skills, setSkills] = useState([]);
@@ -46,8 +38,6 @@ const IndexPage = () => {
   const [projects, setProjects] = useState([]);
 
   const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
-  const trackWorkExperiencesLink = (id) => trackGA('Work Experiences - Links', 'Click', 'Work Experience', id);
-  const trackEducationLink = (id) => trackGA('Educations - Links', 'Click', 'Education', id);
   const trackFeaturedPropjectsLink = (id) => trackGA('Featured Projects - Links', 'Click', 'Featured Projects', id);
 
   useEffect(() => {
@@ -99,93 +89,13 @@ const IndexPage = () => {
         </AboutMeContainer>
       </AboutMeSection>
 
-      <MySkillsSection>
-        <Hidden>My Skills Section</Hidden>
-        <Container>
-          <DefaultTitle>
-            <DefaultTitleSpan>Skills</DefaultTitleSpan>
-          </DefaultTitle>
-          <MySkillsList>
-            {skills && skills.map((skill, i) => { return <MySkilsListItem key={i}>{skill.name}</MySkilsListItem>; })}
-          </MySkillsList>
-        </Container>
-      </MySkillsSection>
+      <DotList hiddenText="My Skills Section" title="Skills" items={skills} />
 
-      <WorkEducationSection>
-        <Hidden>My Work Experience Section</Hidden>
-        <Container>
-          <DefaultTitle>
-            <DefaultTitleSpan>Work Experience</DefaultTitleSpan>
-          </DefaultTitle>
-          <WorkEducationList>
-            {experiences &&
-              experiences.map((experience, i) => {
-                return (
-                  <WorkEducationListItem key={i}>
-                    <WorkEducationCompanyName>
-                      {experience.company} -<WorkEducationDateStarted> {experience.started}</WorkEducationDateStarted>
-                    </WorkEducationCompanyName>
-                    <WorkEducationRole>{experience.role}</WorkEducationRole>
-                    <WorkEducationLink
-                      href={experience.siteLink}
-                      aria-label={`Go to ${experience.company}`}
-                      title={`Go to ${experience.company}`}
-                      onClick={() => trackWorkExperiencesLink(i)}
-                      rel="noopener"
-                    >
-                      {experience.siteLink}
-                    </WorkEducationLink>
-                  </WorkEducationListItem>
-                );
-              })}
-          </WorkEducationList>
-        </Container>
-      </WorkEducationSection>
+      <List hiddenText="My Work Experience Section" title="Work Experience" items={experiences} />
 
-      <WorkEducationSection>
-        <Hidden>My Education Section</Hidden>
-        <Container>
-          <DefaultTitle>
-            <DefaultTitleSpan>Education</DefaultTitleSpan>
-          </DefaultTitle>
-          <WorkEducationList>
-            {educations &&
-              educations.map((education, i) => {
-                return (
-                  <WorkEducationListItem key={i}>
-                    <WorkEducationCompanyName>
-                      {education.school} - <WorkEducationDateStarted> {education.started}</WorkEducationDateStarted>
-                    </WorkEducationCompanyName>
-                    <WorkEducationRole>{education.program}</WorkEducationRole>
-                    {education && education.siteLink ? (
-                      <WorkEducationLink
-                        href={education.siteLink}
-                        title={`Go to ${education.school} link`}
-                        aria-label={`Go to ${education.school} link`}
-                        onClick={() => trackEducationLink(i)}
-                        rel="noopener"
-                      >
-                        {education.siteLink}
-                      </WorkEducationLink>
-                    ) : null}
-                  </WorkEducationListItem>
-                );
-              })}
-          </WorkEducationList>
-        </Container>
-      </WorkEducationSection>
+      <List hiddenText="My Education Section" title="Education" items={educations} />
 
-      <MySkillsSection>
-        <Hidden>My Hobbies and Interest Section</Hidden>
-        <Container>
-          <DefaultTitle>
-            <DefaultTitleSpan>Hobbies and Interest</DefaultTitleSpan>
-          </DefaultTitle>
-          <MySkillsList>
-            {hobbies && hobbies.map((hobbie, i) => { return <MySkilsListItem key={i}> {hobbie.name}</MySkilsListItem>; })}
-          </MySkillsList>
-        </Container>
-      </MySkillsSection>
+      <DotList hiddenText="My Hobbies and Interest Section" title="Hobbies and Interest" items={hobbies} />
 
       <FeaturedProjectsSection>
         <Hidden>Featured Projects Section</Hidden>
@@ -219,6 +129,7 @@ const IndexPage = () => {
           </FeaturedProjectsProjects>
         </Container>
       </FeaturedProjectsSection>
+
     </Layout>
   );
 };

@@ -188,7 +188,7 @@ export const DefaultTitle = styled.h3`
 
   display: block;
   margin-top: 32px;
-  margin-bottom: 32px;
+  margin-bottom: ${props => props.dot ? 16 : 32}px;
 
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;

@@ -3,17 +3,19 @@ type SkillsProps = {
 }
 
 type ExperiencesProps = {
-  company?: string;
-  started?: string;
+  title?: string;
   role?: string;
-  siteLink?: string;
+  url?: string;
+  startedDate?: string;
+  endedDate?: string;
 }
 
 type EducationsProps = {
-  school?: string;
-  started?: string;
-  program?: string;
-  siteLink?: string;
+  title?: string;
+  role?: string;
+  url?: string;
+  startedDate?: string;
+  endedDate?: string;
 }
 
 type HobbiesProps = {
@@ -100,31 +102,35 @@ export const Skills: SkillsProps[] = [
 
 export const Experiences: ExperiencesProps[] = [
   {
-    company: 'Devlift Media',
-    started: 'Dec 2016 - Present',
+    title: 'Devlift Media',
     role: 'Web Developer',
-    siteLink: 'https://www.devlift.com',
+    startedDate: 'Dec 2016',
+    endedDate: 'Present',
+    url: 'https://www.devlift.com',
   },
   {
-    company: 'BuzzPR',
-    started: 'Aug 2016 - Sept 2016',
+    title: 'BuzzPR',
     role: 'Graphic Design Intern',
-    siteLink: 'https://www.buzzpr.ca',
+    startedDate: 'Aug 2016',
+    endedDate: 'Sept 2016',
+    url: 'https://www.buzzpr.ca',
   }
 ];
 
 export const Educations: EducationsProps[] = [
   {
-    school: 'Fanshawe College',
-    started: 'Sept 2015 - Apr 2016',
-    program: 'Interactive Media Specialist',
-    // siteLink: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next',
+    title: 'Fanshawe College',
+    role: 'Interactive Media Specialist',
+    startedDate: 'Sept 2015',
+    endedDate: 'Apr 2016',
+    url: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next'
   },
   {
-    school: 'Fanshawe College',
-    started: 'Sept 2011 - Apr 2014',
-    program: 'Graphic Design',
-    // siteLink: 'https://www.fanshawec.ca/programs/grd1-graphic-design/next',
+    title: 'Fanshawe College',
+    role: 'Graphic Design',
+    startedDate: 'Sept 2011',
+    endedDate: 'Apr 2014',
+    url: 'hhttps://www.fanshawec.ca/programs/grd1-graphic-design/next'
   }
 ];
 
