@@ -51,7 +51,7 @@ const UsesPage = () => {
       </MySkillsSection>
 
       <MySkillsSection>
-        <Hidden>Hardware Section</Hidden>
+        <Hidden>Hardwares Section</Hidden>
         <Container>
           <DefaultTitle>
             <DefaultTitleSpan>Hardwares</DefaultTitleSpan>

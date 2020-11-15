@@ -1,46 +1,46 @@
 type SkillsProps = {
-  name?: string;
+  name: string;
 }
 
 type ExperiencesProps = {
-  title?: string;
-  role?: string;
+  title: string;
+  role: string;
   url?: string;
-  startedDate?: string;
-  endedDate?: string;
+  startedDate: string;
+  endedDate: string;
 }
 
 type EducationsProps = {
-  title?: string;
-  role?: string;
+  title: string;
+  role: string;
   url?: string;
-  startedDate?: string;
-  endedDate?: string;
+  startedDate: string;
+  endedDate: string;
 }
 
 type HobbiesProps = {
-  name?: string;
+  name: string;
 }
 
 type ProjectsProps = {
-  id?: number;
-  title?: string;
-  description?: string;
-  poster?: string;
+  id: number;
+  title: string;
+  description: string;
+  poster: string;
 }
 
 type SoftwaresProps = {
-  name?: string;
+  name: string;
 }
 
 type HardwaresProps = {
-  title?: string;
-  name?: string;
+  title: string;
+  name: string;
 }
 
 type OthersProps = {
-  title?: string;
-  name?: string;
+  title: string;
+  name: string;
 }
 
 export const Skills: SkillsProps[] = [
@@ -123,14 +123,14 @@ export const Educations: EducationsProps[] = [
     role: 'Interactive Media Specialist',
     startedDate: 'Sept 2015',
     endedDate: 'Apr 2016',
-    url: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next'
+    // url: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next'
   },
   {
     title: 'Fanshawe College',
     role: 'Graphic Design',
     startedDate: 'Sept 2011',
     endedDate: 'Apr 2014',
-    url: 'hhttps://www.fanshawec.ca/programs/grd1-graphic-design/next'
+    // url: 'hhttps://www.fanshawec.ca/programs/grd1-graphic-design/next'
   }
 ];
 
