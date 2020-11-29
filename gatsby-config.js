@@ -36,20 +36,30 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`600`, `700`]
-          },
-          {
-            family: `Raleway`,
-            variants: [`300`, `500`]
-          },
-        ]
+          `Montserrat\:600,700`,
+          `Raleway\:300,500` // you can also specify font weights and styles
+        ],
+        display: 'swap'
       }
     },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Montserrat`,
+    //         variants: [`600`, `700`]
+    //       },
+    //       {
+    //         family: `Raleway`,
+    //         variants: [`300`, `500`]
+    //       },
+    //     ]
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
