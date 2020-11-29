@@ -89,13 +89,29 @@ const IndexPage = () => {
         </AboutMeContainer>
       </AboutMeSection>
 
-      <DotList hiddenText="My Skills Section" title="Skills" items={skills} />
+      <DotList
+        hiddenText="My Skills Section"
+        title="Skills"
+        items={skills}
+      />
 
-      <List hiddenText="My Work Experience Section" title="Work Experience" items={experiences} />
+      <List
+        hiddenText="My Work Experience Section"
+        title="Work Experience"
+        items={experiences}
+      />
 
-      <List hiddenText="My Education Section" title="Education" items={educations} />
+      <List
+        hiddenText="My Education Section"
+        title="Education"
+        items={educations}
+      />
 
-      <DotList hiddenText="My Hobbies and Interest Section" title="Hobbies and Interest" items={hobbies} />
+      <DotList
+        hiddenText="My Hobbies and Interest Section"
+        title="Hobbies and Interest"
+        items={hobbies}
+      />
 
       <FeaturedProjectsSection>
         <Hidden>Featured Projects Section</Hidden>

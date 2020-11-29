@@ -31,7 +31,10 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
   }, []);
 
   return (
-    <section className={'side-menu ' + (props.isToggle ? 'side-menu--is-active' : 'side-menu--is-not-active')}>
+    <section className={
+      'side-menu ' + (props.isToggle ?
+      'side-menu--is-active' : 'side-menu--is-not-active')
+    }>
       <Hidden>Side Menu</Hidden>
 
       <div className="side-menu__logo">

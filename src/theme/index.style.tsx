@@ -36,18 +36,6 @@ export const AboutMeProfileContainer = styled.div`
   @media screen and (min-width: 768px) {
     display: block;
     padding: 16px;
-    /* position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      height:  280px;
-      width:  280px;
-      border: 2px solid var(--red-color);
-      border-radius: 8px;
-    } */
   }
 `;
 
@@ -84,12 +72,12 @@ export const AboueMeParagraph = styled.p`
 `;
 
 export const AboutMeParagraphLink = styled.a`
-  color: var(--devlift-color);
-  text-decoration: none;
+  color: var(--black-color);
+  text-decoration: underline;
+  cursor: pointer;
 
   &:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    text-decoration: none;
   }
 `
 
@@ -150,7 +138,7 @@ export const MySkilsListItem = styled.li`
     height: 10px;
     width: 10px;
 
-    background-color: var(--red-color);
+    background-color: var(--black-color);
     border-radius: 25px;
 
     opacity: 0.4;
@@ -207,7 +195,7 @@ export const DefaultTitle = styled.h3`
     width: 100%;
     height: 3px;
 
-    background: var(--red-color);
+    background: var(--black-color);
 
     z-index: -1;
     opacity: 0.5;

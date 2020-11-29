@@ -5,8 +5,10 @@ export const BannerAltWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  /* margin-bottom: 60px; */
-  background-color: var(--red-color);
+  margin-bottom: 80px;
+
+  background-color: var(--white-color);
+  border-bottom: 1px solid var(--black-color);
 `;
 
 export const BannerAltContainer = styled.div`
@@ -42,7 +44,7 @@ export const BannerAltTitle = styled.h3`
   margin: 0;
   padding-bottom: 10px;
 
-  color: var(--white-color);
+  color: var(--black-color);
   font-size: 30px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -53,7 +55,7 @@ export const BannerAltDescription = styled.p`
   margin-left: 16px;
   margin-bottom: 10px;
 
-  color: var(--white-color);
+  color: var(--black-color);
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
@@ -71,6 +73,6 @@ export const BannerAltContLeftBorder = styled.div`
     margin-left: 0;
     height: 100%;
     width: 3px;
-    background-color: var(--white-color);
+    background-color: var(--black-color);
   }
 `;

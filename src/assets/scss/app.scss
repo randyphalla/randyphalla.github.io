@@ -5,14 +5,12 @@
 
 :root {
   --red-color: #ff001f;
-  // --red-color: #b30015; // WCG AAA
   --white-color: #ffffff;
   --black-color: #040303;
   --transparent: transparent;
   --grey-color: #d8d8d8;
   --light-grey-color: #f6f7f9;
   --devlift-color: #6ac9c8;
-  // --devlift-color: #24605B; // WCG AAA
 }
 
 h1,
@@ -21,7 +19,10 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+body {
+  font-family: sans-serif;
+  font-weight: 400;
   margin: 0;
 }
 

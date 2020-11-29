@@ -87,8 +87,6 @@ export const SocialMediaListItem = styled.li`
 
   &:first-child {
     svg {
-      /* fill: #0073b1; */
-
       &:hover {
         fill: #0073b1 !important;
       }
@@ -97,8 +95,6 @@ export const SocialMediaListItem = styled.li`
 
   &:nth-child(2) {
     svg {
-      /* fill: #24292e;  */
-
       &:hover {
         fill: #d8d8d8 !important;
       }
@@ -107,8 +103,6 @@ export const SocialMediaListItem = styled.li`
 
   &:nth-child(3) {
     svg {
-      /* fill: #ea4c89;  */
-
       &:hover {
         fill: #ea4c89 !important;
       }
@@ -117,8 +111,6 @@ export const SocialMediaListItem = styled.li`
 
   &:last-child {
     svg {
-      /* fill: #0057ff; */
-
       &:hover {
         fill: #0057ff !important;
       }

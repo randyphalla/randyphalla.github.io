@@ -38,7 +38,7 @@ export const BannerContainer = styled.div`
 export const BannerHelloThere = styled.h3`
   margin: 0;
 
-  color: var(--red-color);
+  color: var(--black-color);
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;

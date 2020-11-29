@@ -22,35 +22,6 @@ const Header = () => {
   const trackLogoMenu = () => trackGA('Menu', 'Click', 'Logo', '');
   const trackMenuDesktopLinks = (link: string) => trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
 
-  // const changeTheme = (mode) => {
-  //   setTheme(mode);
-  //   // window.localStorage.setItem('theme', mode);
-  //   // const myTheme = window.localStorage.getItem('theme');
-  // };
-  // const LightModeButton = (props) => {
-  //   return (
-  //     <button
-  //       className="theme-button theme-button--light"
-  //       onClick={props.onClick}
-  //     >Light Mode</button>
-  //   )
-  // };
-  // const DarkModeButton = (props) => {
-  //   return (
-  //     <button
-  //       className="theme-button theme-button--dark"
-  //       onClick={props.onClick}
-  //     >Dark Mode</button>
-  //   )
-  // };
-
-  // let modeButton;
-  // if (theme === 'light') {
-  //   modeButton = <DarkModeButton onClick={ () => changeTheme('dark') }/>
-  // } else {
-  //   modeButton = <LightModeButton onClick={ () => changeTheme('light') } />
-  // }
-
   useEffect(() => {
     const headerScrolling = () => {
       if (document.documentElement.scrollTop > 10 || document.body.scrollTop > 10) {
@@ -120,9 +91,6 @@ const Header = () => {
                   </li>
                 );
               })}
-              {/* <li className="desktop-menu-links__item">
-               { modeButton }
-              </li> */}
             </ul>
           </div>
         </div>
