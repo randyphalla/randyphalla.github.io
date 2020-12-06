@@ -23,7 +23,7 @@ export const ProjectsItemAvatar = styled.div`
 
   background-color: var(--light-grey-color);
   border-radius: 8px;
-  transition: all 300ms ease;
+  transition: all 0.3s;
 
   &:hover {
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
@@ -45,5 +45,5 @@ export const ProjectsItemDescription = styled.p`
 
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 `;

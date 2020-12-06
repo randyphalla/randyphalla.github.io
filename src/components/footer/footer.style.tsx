@@ -45,7 +45,7 @@ export const SocialMedia = styled.div`
 export const SocialMediaTitle = styled.h3`
   margin-bottom: 10px;
 
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -78,9 +78,9 @@ export const SocialMediaListItem = styled.li`
   svg {
     width: 30px;
     height: 30px;
-    fill: var(--black-color);
+    fill: var(--black-color-1);
 
-    transition: all 300ms linear;
+    transition: all 0.3s;
 
     &:hover { fill: var(--red-color) !important; }
   }
@@ -137,7 +137,7 @@ export const LetGetInTouch = styled.div`
 export const LetGetInTouchTitle = styled.h3`
   margin-bottom: 10px;
 
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -149,14 +149,14 @@ export const LetGetInTouchTitle = styled.h3`
 `;
 
 export const LetGetInTouchLink = styled.a`
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-size: 12px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.5px;
   text-decoration: none;
 
-  transition: all 300ms ease;
+  transition: all 0.3s;
 
   &:hover {
     color: var(--red-color);
@@ -170,8 +170,8 @@ export const FooterCopyright = styled.div`
 `;
 
 export const FooterCopyrightTitle = styled.p`
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 10px;
 `;

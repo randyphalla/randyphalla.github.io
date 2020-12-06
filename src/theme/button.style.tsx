@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const Button = styled.button`
   padding: 5px 20px;
 
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.5px;
   line-height: 30px;
@@ -16,11 +16,11 @@ export const Button = styled.button`
   border: 2px solid transparent;
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 
-  transition: all 200ms linear;
+  transition: all 0.3s;
 
   &:hover {
     cursor: pointer;
-    border: 2px solid var(--black-color);
+    border: 2px solid var(--black-color-1);
   }
 
   &.default-btn--white {

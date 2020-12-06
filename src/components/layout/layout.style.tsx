@@ -6,7 +6,7 @@ export const Main = styled.main`
 	opacity: 0;
 
 	animation-name: pageTransition;
-	animation-duration: 500ms;
+	animation-duration: 400ms;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
 `;

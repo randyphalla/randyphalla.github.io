@@ -52,13 +52,13 @@ const Header = () => {
 
   return (
     <div>
-      <header className={'header ' + (scrolling ? 'header--is-active' : 'header--is-not-active')}>
+      <header className={'header ' + (scrolling ? 'header--is-active' : '')}>
         <Hidden>Header Section</Hidden>
 
         <div className="container">
           <div className="logo">
             <Link to="/" onClick={ () => trackLogoMenu }>
-              <img className="logo__avatar" src={scrolling ? LogoRed : Logo} alt="Logo" />
+              <img className="logo__avatar" src={LogoRed} alt="Logo" />
             </Link>
           </div>
 

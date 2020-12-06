@@ -40,26 +40,11 @@ module.exports = {
       options: {
         fonts: [
           `Montserrat\:600,700`,
-          `Raleway\:300,500` // you can also specify font weights and styles
+          `Raleway\:400` // you can also specify font weights and styles
         ],
         display: 'swap'
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Montserrat`,
-    //         variants: [`600`, `700`]
-    //       },
-    //       {
-    //         family: `Raleway`,
-    //         variants: [`300`, `500`]
-    //       },
-    //     ]
-    //   }
-    // },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

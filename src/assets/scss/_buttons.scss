@@ -1,10 +1,10 @@
 .default-btn {
-	@include RalewayFont(500);
+	@include RalewayFont(400);
 
 	width: 100%;
 	padding: 5px 20px;
 
-	color: var(--black-color);
+	color: var(--black-color-1);
 	font-size: 14px;
 	letter-spacing: 0.5px;
 	line-height: 30px;
@@ -15,7 +15,7 @@
 	border: 2px solid transparent;
 	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 
-	transition: all 200ms linear;
+	transition: all 0.3s;
 
   &--white {
     color: var(--white-color);
@@ -31,7 +31,7 @@
 
 	&:hover {
 		cursor: pointer;
-		border: 2px solid var(--black-color);
+		border: 2px solid var(--black-color-1);
 	}
 }
 

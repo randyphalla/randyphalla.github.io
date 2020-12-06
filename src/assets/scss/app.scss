@@ -6,7 +6,8 @@
 :root {
   --red-color: #ff001f;
   --white-color: #ffffff;
-  --black-color: #040303;
+  --black-color-1: #040303;
+  --black-color-2: #3F3F3E;
   --transparent: transparent;
   --grey-color: #d8d8d8;
   --light-grey-color: #f6f7f9;
@@ -56,7 +57,7 @@ body {
   padding-left: 16px;
 
   &__text {
-    @include RalewayFont(500);
+    @include RalewayFont(400);
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.5px;

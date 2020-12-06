@@ -49,7 +49,7 @@ const NotFoundSectionBody = styled.p`
   color: var(--red-color);
   font-size: 40px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 `;
 
 const NotFoundButton = styled.button`
@@ -58,7 +58,7 @@ const NotFoundButton = styled.button`
   color: var(--white-color);
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.5px;
   line-height: 30px;
 
@@ -67,7 +67,7 @@ const NotFoundButton = styled.button`
   border: 3px solid transparent;
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 
-  transition: all 200ms linear;
+  transition: all 0.3s;
 
   &:hover {
     color: var(--red-color);

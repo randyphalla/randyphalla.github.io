@@ -58,9 +58,9 @@ export const AboueMeParagraph = styled.p`
   margin: 0;
   margin-bottom: 16px;
 
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.5px;
   line-height: 30px;
@@ -72,7 +72,7 @@ export const AboueMeParagraph = styled.p`
 `;
 
 export const AboutMeParagraphLink = styled.a`
-  color: var(--black-color);
+  color: var(--black-color-1);
   text-decoration: underline;
   cursor: pointer;
 
@@ -126,7 +126,7 @@ export const MySkilsListItem = styled.li`
   padding-bottom: 16px;
 
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
 
   &::after {
@@ -138,7 +138,7 @@ export const MySkilsListItem = styled.li`
     height: 10px;
     width: 10px;
 
-    background-color: var(--black-color);
+    background-color: var(--black-color-1);
     border-radius: 25px;
 
     opacity: 0.4;
@@ -166,7 +166,7 @@ export const MySkilsListItemTitle = styled.span`
 
 export const MySkilsListItemName = styled.span`
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.8;
 `;
@@ -195,7 +195,7 @@ export const DefaultTitle = styled.h3`
     width: 100%;
     height: 3px;
 
-    background: var(--black-color);
+    background: var(--black-color-1);
 
     z-index: -1;
     opacity: 0.5;
@@ -223,33 +223,33 @@ export const WorkEducationListItem = styled.li`
 `;
 
 export const WorkEducationCompanyName = styled.p`
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 `;
 
 export const WorkEducationDateStarted = styled.span`
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 export const WorkEducationRole = styled.p`
   margin-top: 6px;
   margin-bottom: 6px;
 
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-size: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 `;
 
 export const WorkEducationLink = styled.a`
-  color: var(--black-color);
+  color: var(--black-color-1);
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   text-decoration: underline;
 `;

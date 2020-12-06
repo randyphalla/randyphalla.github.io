@@ -1,7 +1,7 @@
 @import '../../assets/scss/app';
 
 body {
-	@include RalewayFont(500);
+	@include RalewayFont(400);
 	margin: 0;
 }
 
@@ -11,7 +11,7 @@ body {
 	opacity: 0;
 
 	animation-name: pageTransition;
-	animation-duration: 500ms;
+	animation-duration: 400ms;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
 }
