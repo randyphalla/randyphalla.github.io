@@ -89,7 +89,7 @@ const NotFoundPage = () => {
             <NotFoundSectionTitle>404</NotFoundSectionTitle>
             <NotFoundSectionBody>Whoops, noting to see here!</NotFoundSectionBody>
             <Link to="/">
-              <NotFoundButton>Home</NotFoundButton>
+              <NotFoundButton type="button">Home</NotFoundButton>
             </Link>
           </NotFoundInfo>
         </NotFoundContainer>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import './header.scss';
-import Logo from '../../assets/images/logo.svg';
+// import Logo from '../../assets/images/logo.svg';
 import LogoRed from '../../assets/images/logo-red.svg';
 import { FaBars } from 'react-icons/fa';
 import SideMenu from '../side-menu/side-menu';
@@ -69,7 +69,8 @@ const Header = () => {
                 (toggle ? 'mobile-menu__button--is-active' : 'mobile-menu__button--is-not-active')
               }
               onClick={ () => toggleMenu(!toggle)}
-              aria-label="Burger Menu"
+              type="button"
+              aria-label="Menu"
             >
               <FaBars />
             </button>
