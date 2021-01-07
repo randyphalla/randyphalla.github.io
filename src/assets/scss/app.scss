@@ -4,10 +4,27 @@
 @import 'theme';
 
 :root {
-  --red-color: #ff001f;
-  --white-color: #ffffff;
+  // Red
+  --red-color-1: #ff001f;
+  --red-color-2: #ff4c3d;
+  --red-color-3: #ff705c;
+  --red-color-4: #ff907a;
+  --red-color-5: #ffad9a;
+  --red-color-6: #ffc8bb;
+  --red-color-7: #ffe4dd;
+  --red-color-8: #ffffff;
+
+  // Black
   --black-color-1: #040303;
-  --black-color-2: #3F3F3E;
+  --black-color-2: #262626;
+  --black-color-3: #454545;
+  --black-color-4: #676666;
+  --black-color-5: #8a8a8a;
+  --black-color-6: #b0b0b0;
+  --black-color-7: #d7d7d7;
+  --black-color-8: #ffffff;
+
+  --white-color: #ffffff;
   --transparent: transparent;
   --grey-color: #d8d8d8;
   --light-grey-color: #f6f7f9;

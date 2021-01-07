@@ -82,7 +82,7 @@ export const SocialMediaListItem = styled.li`
 
     transition: all 0.3s;
 
-    &:hover { fill: var(--red-color) !important; }
+    &:hover { fill: var(--red-color-1) !important; }
   }
 
   &:first-child {
@@ -159,7 +159,7 @@ export const LetGetInTouchLink = styled.a`
   transition: all 0.3s;
 
   &:hover {
-    color: var(--red-color);
+    color: var(--red-color-1);
   }
 `;
 

@@ -29,7 +29,7 @@ export const Button = styled.button`
     border: 2px solid var(--white-color);
 
     &:hover {
-      color: var(--red-color);
+      color: var(--red-color-1);
       background-color: var(--white-color);
       border: 2px solid var(--white-color);
     }
@@ -39,36 +39,36 @@ export const Button = styled.button`
   .secondary-button,
   .text-button {
     &:hover {
-      border: 2px solid var(--red-color);
+      border: 2px solid var(--red-color-1);
     }
   }
 
   &.primary-button {
     color: var(--white-color);
-    background-color: var(--red-color);
+    background-color: var(--red-color-1);
 
     &:hover {
-      color: var(--red-color);
+      color: var(--red-color-1);
       background-color: var(--white-color);
     }
   }
 
   &.secondary-button {
-    color: var(--red-color);
+    color: var(--red-color-1);
     background-color: var(--white-color);
 
     &:hover {
       color: var(--white-color);
-      background-color: var(--red-color);
+      background-color: var(--red-color-1);
     }
   }
 
   &.text-button {
-    color: var(--red-color);
+    color: var(--red-color-1);
     background-color: var(--transparent);
 
     &:hover {
-      /* color: var(--red-color); */
+      /* color: var(--red-color-1); */
       /* background-color: var(--white-color); */
     }
   }
