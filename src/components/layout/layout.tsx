@@ -24,7 +24,6 @@ const Layout: FC<LayoutProps> = (props: LayoutProps) => (
     `}
     render={data => (
       <>
-        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
         <Header />
         <main className="main">
           <Hidden>Main Content</Hidden>

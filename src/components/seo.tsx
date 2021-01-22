@@ -43,7 +43,7 @@ const SEO: FC<SeoProps> = (props: SeoProps) => {
               },
               {
                 property: `og:image`,
-                content: `TODO: need add logo`,
+                content: data.site.siteMetadata.defaultImg,
               },
               {
                 property: `og:type`,
@@ -55,11 +55,11 @@ const SEO: FC<SeoProps> = (props: SeoProps) => {
               },
               {
                 property: `twitter:url`,
-                content: `https://randyphalla.github.io/`,
+                content: data.site.siteMetadata.twitterUrl,
               },
               {
                 name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
+                content: data.site.siteMetadata.twitterUsername,
               },
               {
                 name: `twitter:title`,
@@ -71,7 +71,7 @@ const SEO: FC<SeoProps> = (props: SeoProps) => {
               },
               {
                 property: `twitter:image`,
-                content: `TODO: need add logo`,
+                content: data.site.siteMetadata.twitterImg,
               },
               {
                 name: `google-site-verification`,
@@ -108,7 +108,12 @@ const detailsQuery = graphql`
       siteMetadata {
         title
         description
-        author
+        author,
+        siteUrl,
+        defaultImg,
+        twitterUrl
+        twitterImg,
+        twitterUsername,
       }
     }
   }

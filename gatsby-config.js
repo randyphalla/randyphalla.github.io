@@ -4,6 +4,11 @@ module.exports = {
     description: `I’m a Front-end Developer and Designer based in London, Ontario Canada. I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript. I’m currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.`,
     author: `randyphalla@gmail.com`,
     siteUrl: `http://randyphalla.github.io/`,
+    twitterUrl: `https://twitter.com/devrandyp`,
+    defaultImg: `/images/randyphalla-icon.png`,
+    twitterImg: `/images/randyphalla-icon.png`,
+    twitterUsername: `@devrandyp`,
+    instagramUsername: `@randyphalla`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,10 +33,11 @@ module.exports = {
       options: {
         name: `Randy Phalla's Portfolio Website`,
         short_name: `RP Portfolio`,
+        description: `I’m a Front-end Developer and Designer based in London, Ontario Canada. I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript. I’m currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.`,
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#FF001F`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/randyphalla-icon.png`, // This path is relative to the root of the site.
       },
     },

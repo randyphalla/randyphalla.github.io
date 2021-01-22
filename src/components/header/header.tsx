@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import './header.scss';
-// import Logo from '../../assets/images/logo.svg';
 import LogoRed from '../../assets/images/logo-red.svg';
 import { FaBars } from 'react-icons/fa';
 import SideMenu from '../side-menu/side-menu';
@@ -12,7 +11,6 @@ const Header = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [links, setLinks] = useState([]);
-  // const [theme, setTheme] = useState('light');
 
   const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
   const toggleMenu = (toggle: boolean) => {
@@ -51,7 +49,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <header className={'header ' + (scrolling ? 'header--is-active' : '')}>
         <Hidden>Header Section</Hidden>
 
@@ -98,7 +96,7 @@ const Header = () => {
       </header>
 
       <SideMenu isToggle={toggle} />
-    </div>
+    </>
   );
 };
 
