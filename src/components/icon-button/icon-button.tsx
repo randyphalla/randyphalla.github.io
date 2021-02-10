@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import './icon-button.scss';
 
 type IconButtonProps = {
   icon: string;

@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import './button.scss';
 
 type ButtonProps = {
   label: string;
@@ -10,14 +9,12 @@ type ButtonProps = {
 }
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  console.log(props);
   let className = 'rp-button';
 
   const generateClassName = () => {
     if (props.type) {
       className += ` rp-button--type-${props.type}`;
     }
-    console.log(className);
     return className;
   }
 

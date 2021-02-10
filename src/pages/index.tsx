@@ -29,7 +29,6 @@ import RandyPhallaProfile from '../assets/images/me.jpeg';
 import { Skills, Experiences, Educations, Hobbies, Projects } from '../config/data';
 import { List } from '../components/list/list';
 import { DotList } from '../components/dot-list/dot-list';
-import Button from '../components/button/button';
 
 const IndexPage = () => {
   const [skills, setSkills] = useState([]);
