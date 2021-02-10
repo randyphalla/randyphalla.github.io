@@ -21,9 +21,9 @@ type ListItemProps = {
 }
 
 const List: FC<ListProps> = (props: ListProps) => {
-  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
-  const trackWorkExperiencesLink = (id) => trackGA('Work Experiences - Links', 'Click', 'Work Experience', id);
-  const trackEducationLink = (id) => trackGA('Educations - Links', 'Click', 'Education', id);
+  const trackGA = (cat: string, action: string, label: string, value: any) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackWorkExperiencesLink = (id: number) => trackGA('Work Experiences - Links', 'Click', 'Work Experience', id);
+  const trackEducationLink = (id: number) => trackGA('Educations - Links', 'Click', 'Education', id);
 
   return (
     <WorkEducationSection>

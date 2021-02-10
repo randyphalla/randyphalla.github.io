@@ -38,8 +38,8 @@ const IndexPage = () => {
   const [hobbies, setHobbies] = useState([]);
   const [projects, setProjects] = useState([]);
 
-  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
-  const trackFeaturedPropjectsLink = (id) => trackGA('Featured Projects - Links', 'Click', 'Featured Projects', id);
+  const trackGA = (cat: string, action: string, label: string, value: any) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackFeaturedPropjectsLink = (id: number) => trackGA('Featured Projects - Links', 'Click', 'Featured Projects', id);
 
   useEffect(() => {
     setSkills(Skills);
@@ -89,7 +89,7 @@ const IndexPage = () => {
           </AboueMeParagraphContainer>
         </AboutMeContainer>
       </AboutMeSection>
-      
+
       <DotList
         hiddenText="My Skills Section"
         title="Skills"

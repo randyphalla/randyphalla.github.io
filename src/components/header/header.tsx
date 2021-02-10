@@ -12,7 +12,7 @@ const Header = () => {
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [links, setLinks] = useState([]);
 
-  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackGA = (cat: string, action: string, label: string, value: any) => trackCustomEvent({category: cat, action: action, label: label, value: value});
   const toggleMenu = (toggle: boolean) => {
     trackGA('Menu', 'Click', 'Mobile Menu', toggle);
     setToggle(toggle);
