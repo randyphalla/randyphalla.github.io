@@ -1,6 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import './side-menu.scss';
 import Logo from '../../assets/images/logo.svg';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';

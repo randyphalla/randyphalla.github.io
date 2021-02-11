@@ -6,6 +6,7 @@ import { FaBars } from 'react-icons/fa';
 import SideMenu from '../side-menu/side-menu';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';
+import { HeaderSection, HeaderContainer, HeaderLogo, HeaderLogoContainer, HeaderMobileMenu, HeaderMobileMenuButton, HeaderDesktopMenu, HeaderDesktopMenuItem, HeaderDesktopMenuItems } from './header.style';
 
 const Header = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -50,51 +51,44 @@ const Header = () => {
 
   return (
     <>
-      <header className={'header ' + (scrolling ? 'header--is-active' : '')}>
+      <HeaderSection className={(scrolling ? 'is-active' : '')}>
         <Hidden>Header Section</Hidden>
-
-        <div className="container">
-          <div className="logo">
+        <HeaderContainer>
+          <HeaderLogoContainer>
             <Link to="/" onClick={ () => trackLogoMenu }>
-              <img className="logo__avatar" src={LogoRed} alt="Logo" />
+              <HeaderLogo src={LogoRed} alt="Logo" />
             </Link>
-          </div>
-
-          <div className="mobile-menu">
-            <button
-              className={
-                'mobile-menu__button ' +
-                (toggle ? 'mobile-menu__button--is-active' : 'mobile-menu__button--is-not-active')
-              }
-              onClick={ () => toggleMenu(!toggle)}
+          </HeaderLogoContainer>
+          <HeaderMobileMenu>
+            <HeaderMobileMenuButton
+              className={(scrolling ? 'is-active' : '') + (toggle ? ' is-toggle' : '')}
+              onClick={() => toggleMenu(!toggle)}
               type="button"
               aria-label="Menu"
             >
               <FaBars />
-            </button>
-          </div>
-
-          <div className="desktop-menu">
-            <ul className="desktop-menu-links">
+            </HeaderMobileMenuButton>
+          </HeaderMobileMenu>
+          <HeaderDesktopMenu>
+            <HeaderDesktopMenuItems>
               {links.map((link, i) => {
                 return (
-                  <li className="desktop-menu-links__item" key={i}>
+                  <HeaderDesktopMenuItem key={i}>
                     <Link
-                      className="desktop-menu-links__item-link"
-                      activeClassName="desktop-menu-links__item-link--current-page"
+                      className="gatsby-link"
+                      activeClassName="gatsby-link--current-page"
                       to={link.link}
-                      onClick={ () => trackMenuDesktopLinks(link) }
+                      onClick={() => trackMenuDesktopLinks(link)}
                     >
                       {link.name}
                     </Link>
-                  </li>
+                  </HeaderDesktopMenuItem>
                 );
               })}
-            </ul>
-          </div>
-        </div>
-      </header>
-
+            </HeaderDesktopMenuItems>
+          </HeaderDesktopMenu>
+        </HeaderContainer>
+      </HeaderSection>
       <SideMenu isToggle={toggle} />
     </>
   );

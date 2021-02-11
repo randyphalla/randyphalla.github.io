@@ -10,9 +10,13 @@ const HeaderSection = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
 
-  .is-active {
+  &.is-active {
     background-color: var(--white-color);
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
+
+    .gatsby-link {
+      color: var(--black-color-1);
+    }
   }
 `;
 
@@ -21,13 +25,24 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
+  width: 80%;
+  margin: 0 auto;
 
   @media screen and (min-width: 768px) {
+    width: 85%;
     padding: 0 16px;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 75%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 70%;
   }
 `;
 
-const HeaderLogoContianer = styled.div`
+const HeaderLogoContainer = styled.div`
 
 `;
 
@@ -75,10 +90,9 @@ const HeaderMobileMenuButton = styled.button`
     }
   }
 
-  .is-active {
+  &.is-active {
     background-color: var(--white-color);
     border: 2px solid var(--black-color-1);
-    transform: rotate(90deg);
 
     svg {
       fill: var(--black-color-1);
@@ -92,6 +106,10 @@ const HeaderMobileMenuButton = styled.button`
         fill: var(--white-color);
       }
     }
+  }
+
+  &.is-toggle {
+    transform: rotate(90deg);
   }
 `;
 
@@ -138,7 +156,7 @@ const HeaderDesktopMenuItem = styled.li`
     }
   }
 
-  .is-active {
+  &.is-active {
     &:hover {
       &::after {
         background-color: var(--black-color-1);
@@ -150,7 +168,7 @@ const HeaderDesktopMenuItem = styled.li`
 export {
   HeaderSection,
   HeaderContainer,
-  HeaderLogoContianer,
+  HeaderLogoContainer,
   HeaderLogo,
   HeaderMobileMenu,
   HeaderMobileMenuButton,
