@@ -61,6 +61,8 @@ const Header = () => {
           </HeaderLogoContainer>
           <HeaderMobileMenu>
             <HeaderMobileMenuButton
+              // isToggle={toggle}
+              // className={(scrolling ? 'is-active' : '')}
               className={(scrolling ? 'is-active' : '') + (toggle ? ' is-toggle' : '')}
               onClick={() => toggleMenu(!toggle)}
               type="button"

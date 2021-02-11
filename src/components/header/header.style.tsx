@@ -72,7 +72,6 @@ const HeaderMobileMenuButton = styled.button`
   border-radius: 25px;
   background-color: var(--black-color-1);
   transform: rotate(0);
-
   transition: all 0.3s;
 
   svg {
@@ -109,7 +108,24 @@ const HeaderMobileMenuButton = styled.button`
   }
 
   &.is-toggle {
+    border: 2px solid var(--black-color-1);
+    background-color: var(--black-color-1);
     transform: rotate(90deg);
+
+    svg {
+      fill: var(--white-color);
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    &:hover {
+      border: 2px solid var(--black-color-1);
+      background-color: var(--white-color);
+
+      svg {
+        fill: var(--black-color-1);
+      }
+    }
   }
 `;
 
