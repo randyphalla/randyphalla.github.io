@@ -7,20 +7,20 @@
   "homepage": "https://randyphalla.github.io/",
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^2.32.9",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-google-analytics": "^2.11.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.10.0",
-    "gatsby-plugin-robots-txt": "^1.5.5",
+    "gatsby-plugin-robots-txt": "^1.5.6",
     "gatsby-plugin-sass": "^2.8.0",
-    "gatsby-plugin-sharp": "^2.14.3",
+    "gatsby-plugin-sharp": "^2.14.4",
     "gatsby-plugin-styled-components": "^3.10.0",
     "gatsby-plugin-typescript": "^2.12.1",
     "gatsby-source-filesystem": "^2.11.1",
-    "gatsby-transformer-sharp": "^2.12.0",
+    "gatsby-transformer-sharp": "^2.12.1",
     "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1",
-    "sass": "^1.32.8"
+    "sass": "^1.32.12"
   },
   "keywords": [
     "gatsby"
@@ -40,9 +40,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "clean": "gatsby clean",
