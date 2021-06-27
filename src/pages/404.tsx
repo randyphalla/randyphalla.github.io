@@ -14,23 +14,11 @@ const NotFoundContainer = styled.div`
   justify-content: center;
   align-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   min-height: calc(100vh - 205px);
   margin: 0 auto;
   padding-top: 60px;
   padding-bottom: 60px;
-
-  @media screen and (min-width: 768px) {
-    width: 85%;
-  }
-
-  @media screen and (min-width: 992px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 70%;
-  }
 `;
 
 const NotFoundInfo = styled.div``;

@@ -10,7 +10,6 @@ export const AboutMeSection = styled.section`
 `;
 
 export const AboutMeContainer = styled.div`
-  width: 80%;
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
@@ -18,15 +17,6 @@ export const AboutMeContainer = styled.div`
     flex-direction: row;
     justify-items: center;
     align-items: center;
-    width: 85%;
-  }
-
-  @media screen and (min-width: 992px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 70%;
   }
 `;
 
@@ -82,29 +72,18 @@ export const AboutMeParagraphLink = styled.a`
 `
 
 export const MySkillsSection = styled.section`
-  margin-bottom: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 `;
 
 export const Container = styled.div`
-  width: 80%;
   margin: 0 auto;
-
-  @media screen and (min-width: 768px) {
-    width: 85%;
-  }
-
-  @media screen and (min-width: 992px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 70%;
-  }
 `;
 
 export const MySkillsList = styled.ul`
   list-style: none;
   padding-left: 0;
+  margin-top: 0;
   margin-bottom: 0;
 
   display: flex;
@@ -121,7 +100,7 @@ export const MySkilsListItem = styled.li`
   position: relative;
 
   padding-top: 16px;
-  padding-left: 44px;
+  padding-left: 32px;
   padding-right: 16px;
   padding-bottom: 16px;
 
@@ -133,7 +112,8 @@ export const MySkilsListItem = styled.li`
     content: '';
     position: absolute;
     top: 19px;
-    left: 16px;
+    /* left: 16px; */
+    left: 0;
 
     height: 10px;
     width: 10px;
@@ -175,51 +155,45 @@ export const DefaultTitle = styled.h3`
   position: relative;
 
   display: block;
-  margin-top: 32px;
-  margin-bottom: ${props => props.dot ? 16 : 32}px;
+  margin-top: 0;
+  margin-bottom: ${props => props.dot ? 0 : 16}px;
 
+  color: var(--black-color-3);
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 14px;
+  text-transform: uppercase;
 
   background-color: var(--white-color);
-
   z-index: 3;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: var(--black-color-1);
-
-    z-index: -1;
-    opacity: 0.5;
-  }
 `;
 
 export const DefaultTitleSpan = styled.span`
-  margin-left: -16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: var(--white-color);
+  /* margin-left: -16px; */
+  /* padding-left: 16px;
+  padding-right: 16px; */
+  /* background-color: var(--white-color); */
 `;
 
-export const WorkEducationSection = styled.section``;
+export const WorkEducationSection = styled.section`
+  padding-top: 32px;
+  padding-bottom: 32px;
+`;
 
 export const WorkEducationList = styled.ul`
   list-style: none;
   padding-left: 0;
+  margin-top: 0;
   margin-bottom: 0;
 `;
 
 export const WorkEducationListItem = styled.li`
-  margin-left: 16px;
+  /* margin-left: 16px; */
   margin-bottom: 32px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 `;
 
 export const WorkEducationCompanyName = styled.p`
@@ -255,8 +229,8 @@ export const WorkEducationLink = styled.a`
 `;
 
 export const FeaturedProjectsSection = styled.section`
-  padding-top: 0;
-  padding-bottom: 60px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 `;
 
 export const FeaturedProjectsProjects = styled.div`

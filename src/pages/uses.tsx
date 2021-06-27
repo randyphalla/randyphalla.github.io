@@ -41,7 +41,7 @@ const UsesPage = () => {
       <MySkillsSection>
         <Hidden>Softwares Section</Hidden>
         <Container>
-          <DefaultTitle>
+          <DefaultTitle dot>
             <DefaultTitleSpan>Softwares</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList className="uses-list">
@@ -53,7 +53,7 @@ const UsesPage = () => {
       <MySkillsSection>
         <Hidden>Hardwares Section</Hidden>
         <Container>
-          <DefaultTitle>
+          <DefaultTitle dot>
             <DefaultTitleSpan>Hardwares</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList className="uses-list">
@@ -70,7 +70,7 @@ const UsesPage = () => {
       <MySkillsSection>
         <Hidden>Others Section</Hidden>
         <Container>
-          <DefaultTitle>
+          <DefaultTitle dot>
             <DefaultTitleSpan>Others</DefaultTitleSpan>
           </DefaultTitle>
           <MySkillsList className="uses-list">

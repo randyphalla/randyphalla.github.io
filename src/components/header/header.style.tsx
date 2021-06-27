@@ -4,7 +4,10 @@ const HeaderSection = styled.header`
   position: fixed;
   top: 0;
   z-index: 1;
+
   width: 100%;
+  display: flex;
+  justify-content: center;
 
   background-color: var(--white-color);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -24,21 +27,12 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-  width: 80%;
-  margin: 0 auto;
+  padding: 16px 32px;
+  width: 100%;
+  max-width: 1280px;
 
   @media screen and (min-width: 768px) {
-    width: 85%;
-    padding: 0 16px;
-  }
-
-  @media screen and (min-width: 992px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 70%;
+    padding: 0 32px;
   }
 `;
 

@@ -5,6 +5,11 @@ export const FooterSection = styled.div`
 `;
 
 export const BorderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 `;
@@ -13,22 +18,13 @@ export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  margin: 0 auto;
-  padding: 5px 16px;
+  width: 100%;
+  max-width: 1280px;
+  padding: 32px 16px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    width: 85%;
-  }
-
-  @media screen and (min-width: 992px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 70%;
   }
 `;
 

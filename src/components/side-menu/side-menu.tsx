@@ -34,7 +34,7 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
     <SideMenuSection active={props.isToggle}>
       <Hidden>Side Menu</Hidden>
       <SideMenuLogoContainer>
-        <SideMenuLogo src={Logo} alt="Logo" />
+        <SideMenuLogo src={Logo} alt="Randy Phalla's Logo" title="Randy Phalla's Logo" />
       </SideMenuLogoContainer>
       <SideMenuItems>
         {links.map((link, i) => {

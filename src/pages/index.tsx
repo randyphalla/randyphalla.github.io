@@ -72,7 +72,8 @@ const IndexPage = () => {
           <AboutMeProfileContainer>
             <AboutMeProfileAvatar
               src={RandyPhallaProfile}
-              alt="Randy Phalla's Profile"
+              alt="Randy Phalla"
+              title="Randy Phalla"
             ></AboutMeProfileAvatar>
           </AboutMeProfileContainer>
           <AboueMeParagraphContainer>
@@ -80,7 +81,7 @@ const IndexPage = () => {
               I’m a Front-end Developer and Designer based in London, Ontario Canada.
             </AboueMeParagraph>
             <AboueMeParagraph>
-              I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.
+              I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, XD, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.
             </AboueMeParagraph>
             <AboueMeParagraph>
               I’m currently working at <AboutMeParagraphLink href="https://www.devlift.com" target="_blank" title="Go to Devlift Media Website" rel="noopener">Devlift Media</AboutMeParagraphLink> as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6+), TypeScript, Angular, Ionic, ReactJS and React Native.

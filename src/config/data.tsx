@@ -54,6 +54,9 @@ export const Skills: SkillsProps[] = [
     name: 'Bootstrap (3/4)',
   },
   {
+    name: 'Tailwind CSS',
+  },
+  {
     name: 'Responsive Web Design',
   },
   {
@@ -66,7 +69,7 @@ export const Skills: SkillsProps[] = [
     name: 'jQuery',
   },
   {
-    name: 'Angular 2-8',
+    name: 'Angular (2-11+)',
   },
   {
     name: 'Ionic',
@@ -84,20 +87,20 @@ export const Skills: SkillsProps[] = [
     name: 'Firebase',
   },
   {
+    name: 'PHP'
+  },
+  {
+    name: 'MySQL'
+  },
+  {
     name: 'Git (Sourcetree & GitHub)',
   },
   {
     name: 'Sketch',
   },
   {
-    name: 'Adobe Photoshop',
-  },
-  {
-    name: 'Adobe Illustrator',
-  },
-  {
-    name: 'UI Design',
-  },
+    name: 'Adobe (Photoshop, Illustrator and XD)',
+  }
 ];
 
 export const Experiences: ExperiencesProps[] = [

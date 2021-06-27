@@ -30,7 +30,7 @@ const Footer = () => {
       <BorderContainer>
         <FooterContainer>
           <FooterLogo>
-            <FooterLogoImage src={LogoRed} alt={LogoRed} />
+            <FooterLogoImage src={LogoRed} alt="Randy Phalla's Logo" title="Randy Phalla's Logo" />
           </FooterLogo>
 
           <SocialMedia>
@@ -99,7 +99,7 @@ const Footer = () => {
       </BorderContainer>
 
       <FooterCopyright>
-        <FooterCopyrightTitle>&copy; 2020 Randy Phalla. All Rights Reserved.</FooterCopyrightTitle>
+        <FooterCopyrightTitle>&copy; 2021 Randy Phalla. All Rights Reserved.</FooterCopyrightTitle>
       </FooterCopyright>
     </FooterSection>
   );

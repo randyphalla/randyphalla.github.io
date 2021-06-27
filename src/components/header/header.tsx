@@ -56,7 +56,7 @@ const Header = () => {
         <HeaderContainer>
           <HeaderLogoContainer>
             <Link to="/" onClick={ () => trackLogoMenu }>
-              <HeaderLogo src={LogoRed} alt="Logo" />
+              <HeaderLogo src={LogoRed} alt="Randy Phalla's Logo" title="Randy Phalla's Logo" />
             </Link>
           </HeaderLogoContainer>
           <HeaderMobileMenu>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const BannerAltWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 100px 0;
   margin-bottom: 80px;
 
@@ -12,20 +12,6 @@ export const BannerAltWrapper = styled.div`
 `;
 
 export const BannerAltContainer = styled.div`
-  width: 80%;
-  margin: 0 auto;
-
-  @media screen and (min-width: 768px) {
-    width: 85%;
-  }
-
-  @media screen and (min-width: 992px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 70%;
-  }
 `;
 
 export const BannerAltCont = styled.div`

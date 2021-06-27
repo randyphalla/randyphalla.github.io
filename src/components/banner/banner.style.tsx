@@ -19,19 +19,10 @@ export const BannerContainer = styled.div`
   align-items: flex-start;
   align-content: flex-start;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: 85%;
     margin-left: 16px;
-  }
-
-  @media screen and (min-width: 992px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 70%;
   }
 `;
 

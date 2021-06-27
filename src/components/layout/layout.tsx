@@ -27,7 +27,9 @@ const Layout: FC<LayoutProps> = (props: LayoutProps) => (
         <Header />
         <main className="main">
           <Hidden>Main Content</Hidden>
-          {props.children}
+          <div className="main__contianer">
+            {props.children}
+          </div>
         </main>
         <Footer />
       </>
