@@ -56,7 +56,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
     {
       id: 4,
       title: 'Zane Barles',
-      description: 'Branding',
+      description: 'Design',
       about: 'Stuff',
       role: 'Designer and Developer',
       items: [
@@ -70,8 +70,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
     },
     {
       id: 5,
-      title: 'COVID-19',
-      description: '',
+      title: 'Pokédex',
+      description: 'Web app',
       about: '',
       role: 'Designer and Developer',
       items: [
@@ -85,8 +85,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
     },
     {
       id: 6,
-      title: 'Pokédex',
-      description: '',
+      title: 'Marvel App',
+      description: 'Web app',
       about: '',
       role: 'Designer and Developer',
       items: [
@@ -100,8 +100,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
     },
     {
       id: 7,
-      title: 'Marvel App',
-      description: '',
+      title: 'Musicbook',
+      description: 'Web app',
       about: '',
       role: 'Designer and Developer',
       items: [
@@ -115,19 +115,19 @@ exports.createPages = async ({ actions: { createPage } }) => {
     }
   ];
 
-  // Create portfolio page
-  createPage({
-    path: `/portfolio`,
-    component: require.resolve('./src/templates/portfolio.tsx'),
-    context: { projects },
-  });
+  // // Create portfolio page
+  // createPage({
+  //   path: `/portfolio`,
+  //   component: require.resolve('./src/templates/portfolio.tsx'),
+  //   context: { projects },
+  // });
 
-  // Create list of portfolio pages
-  projects.forEach(project => {
-    createPage({
-      path: `/portfolio/${project.id}`,
-      component: require.resolve('./src/templates/portfolio-details.tsx'),
-      context: { project },
-    });
-  });
+  // // Create list of portfolio pages
+  // projects.forEach(project => {
+  //   createPage({
+  //     path: `/portfolio/${project.id}`,
+  //     component: require.resolve('./src/templates/portfolio-details.tsx'),
+  //     context: { project },
+  //   });
+  // });
 };

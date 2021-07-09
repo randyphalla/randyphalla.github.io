@@ -121,7 +121,7 @@ const IndexPage = () => {
             <DefaultTitleSpan>Featured Projects</DefaultTitleSpan>
           </DefaultTitle>
           <FeaturedProjectsProjects>
-            {
+            {/* {
               projects && projects.map((project, i) => {
                 return (
                   <ProjectsItem key={i}>
@@ -142,7 +142,10 @@ const IndexPage = () => {
               <div className="unavailable-project">
                 <p className="unavailable-project__text">There's currently no projects available at this moment</p>
               </div>
-            )}
+            )} */}
+            <div className="unavailable-project">
+              <p className="unavailable-project__text">There's currently no projects available at this moment</p>
+            </div>
           </FeaturedProjectsProjects>
         </Container>
       </FeaturedProjectsSection>

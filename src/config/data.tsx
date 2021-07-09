@@ -149,55 +149,70 @@ export const Hobbies: HobbiesProps[] = [
   }
 ];
 
+export const FeaturedProjects: ProjectsProps[] = [
+  {
+    id: 1,
+    title: 'Smart Cart',
+    description: 'UI Design',
+    poster: ''
+  },
+  {
+    id: 3,
+    title: 'Ford Fusion - Car Dashboard',
+    description: 'UI Design',
+    poster: ''
+  },
+  {
+    id: 5,
+    title: 'Pokédex App',
+    description: 'Web App',
+    poster: ''
+  },
+];
+
 export const Projects: ProjectsProps[] = [
-  // {
-  //   id: 1,
-  //   title: 'Smart Cart',
-  //   description: 'UI Design',
-  //   poster: ''
-  // },
-  // {
-  //   id: 2,
-  //   title: 'British Airways',
-  //   description: 'UI Design',
-  //   poster: ''
-  // },
-  // {
-  //   id: 3,
-  //   title: 'Car Dashboard',
-  //   description: 'UI Design',
-  //   poster: ''
-  // },
-  // {
-  //   id: 4,
-  //   title: 'Zane Barles',
-  //   description: 'UI Design',
-  //   poster: ''
-  // },
-  // {
-  //   id: 5,
-  //   title: 'COVID-19 App',
-  //   description: 'Web Development',
-  //   poster: ''
-  // },
-  // {
-  //   id: 6,
-  //   title: 'Pokédex App',
-  //   description: 'Web Development',
-  //   poster: ''
-  // },
-  // {
-  //   id: 7,
-  //   title: 'Marvel App',
-  //   description: 'Web Development',
-  //   poster: ''
-  // }
-  // {
-  //   id: 8,
-  //   title: 'Rick and Morty App',
-  //   description: 'Web Development',
-  //   poster: ''
-  // }
+  {
+    id: 1,
+    title: 'Smart Cart',
+    description: 'UI Design',
+    poster: ''
+  },
+  {
+    id: 2,
+    title: 'British Airways',
+    description: 'UI Design',
+    poster: ''
+  },
+  {
+    id: 3,
+    title: 'Ford Fusion - Car Dashboard',
+    description: 'UI Design',
+    poster: ''
+  },
+  {
+    id: 4,
+    title: 'Zane Barles',
+    description: 'Design',
+    poster: ''
+  },
+  {
+    id: 5,
+    title: 'Pokédex App',
+    description: 'Web App',
+    poster: ''
+  },
+  {
+    id: 6,
+    title: 'Marvel App',
+    description: 'Web App',
+    poster: ''
+  },
+  {
+    id: 7,
+    title: 'Musicbook',
+    description: 'Web App',
+    poster: ''
+  }
 ];
 
 export const Softwares: SoftwaresProps[] = [
