@@ -19,7 +19,7 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1280px;
+  max-width: 992px;
   padding: 32px 16px;
 
   @media screen and (min-width: 768px) {

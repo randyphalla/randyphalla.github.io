@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Banner from '../components/banner/banner';
-import {
-  ProjectsItem,
-  ProjectsItemAvatar,
-  ProjectsItemTitle,
-  ProjectsItemDescription
-} from '../theme/card.style';
+// import {
+//   ProjectsItem,
+//   ProjectsItemAvatar,
+//   ProjectsItemTitle,
+//   ProjectsItemDescription
+// } from '../theme/card.style';
 import {
   AboutMeSection,
   AboutMeContainer,
   AboutMeProfileContainer,
-  AboutMeProfileAvatar,
+  // AboutMeProfileAvatar,
   AboueMeParagraphContainer,
   AboueMeParagraph,
   AboutMeParagraphLink,
@@ -25,10 +25,11 @@ import {
   FeaturedProjectsProjects,
 } from '../theme/index.style';
 import { Hidden } from '../theme/global.style';
-import RandyPhallaProfile from '../assets/images/me.jpeg';
+// import RandyPhallaProfile from '../images/me.jpeg';
 import { Skills, Experiences, Educations, Hobbies, Projects } from '../config/data';
 import { List } from '../components/list/list';
 import { DotList } from '../components/dot-list/dot-list';
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = () => {
   const [skills, setSkills] = useState([]);
@@ -70,11 +71,20 @@ const IndexPage = () => {
         <Hidden>About me Section</Hidden>
         <AboutMeContainer>
           <AboutMeProfileContainer>
-            <AboutMeProfileAvatar
+            {/* <AboutMeProfileAvatar
               src={RandyPhallaProfile}
               alt="Randy Phalla"
               title="Randy Phalla"
-            ></AboutMeProfileAvatar>
+            ></AboutMeProfileAvatar> */}
+            <StaticImage
+              placeholder="blurred"
+              layout="fixed"
+              src="../images/me.jpeg"
+              alt="Randy Phalla"
+              title="Randy Phalla"
+              width={280}
+              height={280}
+            />
           </AboutMeProfileContainer>
           <AboueMeParagraphContainer>
             <AboueMeParagraph>

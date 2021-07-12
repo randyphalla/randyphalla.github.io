@@ -26,6 +26,14 @@ export const AboutMeProfileContainer = styled.div`
   @media screen and (min-width: 768px) {
     display: block;
     padding: 16px;
+    padding-left: 0px;
+
+    .gatsby-image-wrapper {
+      height: 280px;
+      width: 280px;
+      background-color: var(--light-grey-color);
+      border-radius: 8px;
+    }
   }
 `;
 
@@ -112,7 +120,6 @@ export const MySkilsListItem = styled.li`
     content: '';
     position: absolute;
     top: 19px;
-    /* left: 16px; */
     left: 0;
 
     height: 10px;
@@ -168,12 +175,7 @@ export const DefaultTitle = styled.h3`
   z-index: 3;
 `;
 
-export const DefaultTitleSpan = styled.span`
-  /* margin-left: -16px; */
-  /* padding-left: 16px;
-  padding-right: 16px; */
-  /* background-color: var(--white-color); */
-`;
+export const DefaultTitleSpan = styled.span``;
 
 export const WorkEducationSection = styled.section`
   padding-top: 32px;
@@ -188,7 +190,6 @@ export const WorkEducationList = styled.ul`
 `;
 
 export const WorkEducationListItem = styled.li`
-  /* margin-left: 16px; */
   margin-bottom: 32px;
 
   &:last-child {

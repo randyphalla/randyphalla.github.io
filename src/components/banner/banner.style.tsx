@@ -20,10 +20,6 @@ export const BannerContainer = styled.div`
   align-content: flex-start;
   flex-direction: column;
   width: 100%;
-
-  @media screen and (min-width: 768px) {
-    margin-left: 16px;
-  }
 `;
 
 export const BannerHelloThere = styled.h3`

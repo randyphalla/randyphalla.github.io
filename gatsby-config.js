@@ -11,6 +11,7 @@ module.exports = {
     instagramUsername: `@randyphalla`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -24,9 +25,15 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require("sass"),
-      }
+      // options: {
+      //   // implementation: require("sass"),
+      //   cssLoaderOptions: {
+      //     esModule: false,
+      //     modules: {
+      //       namedExport: false,
+      //     },
+      //   },
+      // },
     },
     {
       resolve: `gatsby-plugin-manifest`,
