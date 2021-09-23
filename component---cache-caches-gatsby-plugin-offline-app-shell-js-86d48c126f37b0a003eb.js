@@ -1,2 +1,0 @@
-(self.webpackChunkrandy_phalla_portfolio_website=self.webpackChunkrandy_phalla_portfolio_website||[]).push([[306],{1930:function(e,t,n){"use strict";var a=n(8580);t.__esModule=!0,t.default=void 0;var l=a(n(3793)),u=a(n(7294)),r=function(e){function t(){return e.apply(this,arguments)||this}return(0,l.default)(t,e),t.prototype.render=function(){return u.default.createElement(u.default.Fragment,null)},t}(u.default.Component);t.default=r}}]);
-//# sourceMappingURL=component---cache-caches-gatsby-plugin-offline-app-shell-js-86d48c126f37b0a003eb.js.map
