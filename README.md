@@ -23,6 +23,14 @@
 
 `yarn clean` or `gatsby clean`
 
+### Update Packages
+
+- yarn
+`yarn upgrade`
+
+- npm
+`npm outdated` and `npm update`
+
 ## TODO
 
 - Body copy
