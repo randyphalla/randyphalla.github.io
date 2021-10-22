@@ -5,10 +5,10 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Banner from '../components/banner/banner';
 // import {
-//   ProjectsItem,
-//   ProjectsItemAvatar,
-//   ProjectsItemTitle,
-//   ProjectsItemDescription
+//   Card,
+//   CardAvatar,
+//   CardTitle,
+//   CardDescription
 // } from '../theme/card.style';
 import {
   AboutMeSection,
@@ -134,17 +134,17 @@ const IndexPage = () => {
             {/* {
               projects && projects.map((project, i) => {
                 return (
-                  <ProjectsItem key={i}>
+                  <Card key={i}>
                     <Link
                       to={`portfolio/${project.id}/`}
                       aria-label="Project link"
                       onClick={() => trackFeaturedPropjectsLink(i)}
                     >
-                      <ProjectsItemAvatar></ProjectsItemAvatar>
+                      <CardAvatar></CardAvatar>
                     </Link>
-                    <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
-                    <ProjectsItemDescription>{project.description}</ProjectsItemDescription>
-                  </ProjectsItem>
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </Card>
                 )
               })
             }

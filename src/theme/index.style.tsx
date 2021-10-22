@@ -62,7 +62,8 @@ export const AboueMeParagraph = styled.p`
   font-size: 16px;
   letter-spacing: 0.5px;
   line-height: 30px;
-
+  font-variant-numeric: lining-nums;
+  
   @media screen and (min-width: 768px) {
     padding-left: 16px;
     padding-right: 16px;
@@ -115,7 +116,8 @@ export const MySkilsListItem = styled.li`
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 16px;
-
+  font-variant-numeric: lining-nums;
+  
   &::after {
     content: '';
     position: absolute;
@@ -227,6 +229,10 @@ export const WorkEducationLink = styled.a`
   font-weight: 400;
   font-size: 14px;
   text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 export const FeaturedProjectsSection = styled.section`

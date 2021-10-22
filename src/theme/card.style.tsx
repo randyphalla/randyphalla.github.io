@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProjectsItem = styled.div`
+export const Card = styled.div`
   padding: 16px;
   width: 100%;
 
@@ -17,7 +17,7 @@ export const ProjectsItem = styled.div`
   }
 `;
 
-export const ProjectsItemAvatar = styled.div`
+export const CardAvatar = styled.div`
   height: 280px;
   width: 100%;
 
@@ -30,7 +30,7 @@ export const ProjectsItemAvatar = styled.div`
   }
 `;
 
-export const ProjectsItemTitle = styled.h4`
+export const CardTitle = styled.h4`
   margin: 0;
   padding-top: 30px;
   padding-bottom: 10px;
@@ -40,7 +40,7 @@ export const ProjectsItemTitle = styled.h4`
   font-weight: 600;
 `;
 
-export const ProjectsItemDescription = styled.p`
+export const CardDescription = styled.p`
   margin: 0;
 
   font-size: 14px;

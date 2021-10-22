@@ -5,7 +5,7 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import BannerAlt from '../components/banner-alt/banner-alt';
 
-import { ProjectsItem, ProjectsItemAvatar, ProjectsItemTitle, ProjectsItemDescription } from '../theme/card.style';
+import { Card, CardAvatar, CardTitle, CardDescription } from '../theme/card.style';
 import './portfolio.scss';
 import { Hidden } from '../theme/global.style';
 
@@ -23,13 +23,13 @@ const PortfolioPage = ({ pageContext: { projects } }) => {
           <div className="projects">
             {projects.map((project, i: number) => {
               return (
-                <ProjectsItem key={i}>
+                <Card key={i}>
                   <Link to={`${project.id}/`}>
-                    <ProjectsItemAvatar></ProjectsItemAvatar>
+                    <CardAvatar></CardAvatar>
                   </Link>
-                  <ProjectsItemTitle>{project.title}</ProjectsItemTitle>
-                  <ProjectsItemDescription>{project.description}</ProjectsItemDescription>
-                </ProjectsItem>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </Card>
               );
             })}
           </div>
