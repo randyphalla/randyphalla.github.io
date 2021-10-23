@@ -6,7 +6,17 @@ import { FaBars } from 'react-icons/fa';
 import SideMenu from '../side-menu/side-menu';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';
-import { HeaderSection, HeaderContainer, HeaderLogo, HeaderLogoContainer, HeaderMobileMenu, HeaderMobileMenuButton, HeaderDesktopMenu, HeaderDesktopMenuItem, HeaderDesktopMenuItems } from './header.style';
+import { 
+  HeaderSection, 
+  HeaderContainer, 
+  HeaderLogo, 
+  HeaderLogoContainer, 
+  HeaderMobileMenu, 
+  HeaderMobileMenuButton, 
+  HeaderDesktopMenu, 
+  HeaderDesktopMenuItem, 
+  HeaderDesktopMenuItems
+} from './header.style';
 
 const Header = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -20,6 +30,10 @@ const Header = () => {
   }
   const trackLogoMenu = () => trackGA('Menu', 'Click', 'Logo', '');
   const trackMenuDesktopLinks = (link: string) => trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
+  const toggleBackDrop = (toggle: boolean) => {
+    trackGA('Menu', 'Click', 'Mobile Menu Backdrop', toggle);
+    setToggle(toggle);
+  }
 
   useEffect(() => {
     const headerScrolling = () => {
@@ -91,7 +105,7 @@ const Header = () => {
           </HeaderDesktopMenu>
         </HeaderContainer>
       </HeaderSection>
-      <SideMenu isToggle={toggle} />
+      <SideMenu isToggle={toggle} onBackDropClick={() => toggleBackDrop(!toggle)} />
     </>
   );
 };
