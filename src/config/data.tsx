@@ -99,8 +99,11 @@ export const Skills: SkillsProps[] = [
     name: 'Sketch',
   },
   {
+    name: 'Figma',
+  },
+  {
     name: 'Adobe (Photoshop, Illustrator and XD)',
-  }
+  },
 ];
 
 export const Experiences: ExperiencesProps[] = [

@@ -72,7 +72,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
       id: 5,
       title: 'Pokédex',
       description: 'Web app',
-      about: '',
+      about: 'Stuff',
       role: 'Designer and Developer',
       items: [
         {
@@ -87,7 +87,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
       id: 6,
       title: 'Marvel App',
       description: 'Web app',
-      about: '',
+      about: 'Stuff',
       role: 'Designer and Developer',
       items: [
         {
@@ -102,7 +102,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
       id: 7,
       title: 'Musicbook',
       description: 'Web app',
-      about: '',
+      about: 'Stuff',
       role: 'Designer and Developer',
       items: [
         {

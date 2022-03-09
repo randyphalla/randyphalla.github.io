@@ -21,19 +21,28 @@ import {
 const Header = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [scrolling, setScrolling] = useState<boolean>(false);
-  const [links, setLinks] = useState([]);
+  const [links] = useState([
+    {
+      name: 'Home',
+      link: '/',
+    },
+    {
+      name: 'Uses',
+      link: '/uses/',
+    }
+  ]);
 
   const trackGA = (cat: string, action: string, label: string, value: any) => trackCustomEvent({category: cat, action: action, label: label, value: value});
   const toggleMenu = (toggle: boolean) => {
     trackGA('Menu', 'Click', 'Mobile Menu', toggle);
     setToggle(toggle);
-  }
+  };
   const trackLogoMenu = () => trackGA('Menu', 'Click', 'Logo', '');
   const trackMenuDesktopLinks = (link: string) => trackGA('Dekstop Menu - Links', 'Click', 'Dekstop Menu', link);
   const toggleBackDrop = (toggle: boolean) => {
     trackGA('Menu', 'Click', 'Mobile Menu Backdrop', toggle);
     setToggle(toggle);
-  }
+  };
 
   useEffect(() => {
     const headerScrolling = () => {
@@ -44,22 +53,17 @@ const Header = () => {
       }
     };
 
-    setLinks([
-      {
-        name: 'Home',
-        link: '/',
-      },
-      {
-        name: 'Uses',
-        link: '/uses',
-      },
-    ]);
+    const reSize = () => {
+      if (document.documentElement.clientWidth > 768 || document.body.clientWidth > 768) {
+        return setToggle(false);
+      }
+    };
 
     window.addEventListener('scroll', headerScrolling);
-
+    window.addEventListener('resize', reSize);
     return () => {
       window.removeEventListener('scroll', headerScrolling);
-      setLinks([]);
+      window.removeEventListener('resize', reSize);
     };
   }, []);
 
@@ -92,9 +96,8 @@ const Header = () => {
                   <HeaderDesktopMenuItem key={i}>
                     <Link
                       className="gatsby-link"
-                      activeClassName="gatsby-link--current-page"
                       to={link.link}
-                      onClick={() => trackMenuDesktopLinks(link)}
+                      onClick={() => trackMenuDesktopLinks(link.link)}
                     >
                       {link.name}
                     </Link>

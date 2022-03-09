@@ -30,7 +30,7 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
       },
       {
         name: 'Uses',
-        link: '/uses',
+        link: '/uses/',
       },
     ]);
     return () => {
@@ -51,7 +51,7 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
         <SideMenuItems>
           {links.map((link, i) => {
             return (
-              <SideMenuItem key={i}>
+              <SideMenuItem key={i} className={`${window.location.pathname === link.link ? 'active-link' : ' '}`}>
                 <Link
                   to={link.link}
                   onClick={() => trackMobileMenuLinks(link)}
