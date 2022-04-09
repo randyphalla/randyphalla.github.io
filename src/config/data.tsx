@@ -1,47 +1,27 @@
-type SkillsProps = {
-  name: string;
-}
+import {
+  SkillsProps,
+  ExperiencesProps,
+  EducationsProps,
+  HobbiesProps,
+  ProjectsProps,
+  SoftwaresProps,
+  HardwaresProps,
+  OthersProps
+} from "../types";
 
-type ExperiencesProps = {
-  title: string;
-  role: string;
-  url?: string;
-  startedDate: string;
-  endedDate: string;
-}
-
-type EducationsProps = {
-  title: string;
-  role: string;
-  url?: string;
-  startedDate: string;
-  endedDate: string;
-}
-
-type HobbiesProps = {
-  name: string;
-}
-
-type ProjectsProps = {
-  id: number;
-  title: string;
-  description: string;
-  poster: string;
-}
-
-type SoftwaresProps = {
-  name: string;
-}
-
-type HardwaresProps = {
-  title: string;
-  name: string;
-}
-
-type OthersProps = {
-  title: string;
-  name: string;
-}
+/**
+ *
+ * Front-end developent
+ * HTML5, CSS3 (SCSS), Bootstrap (3/4), Tailwind CSS, MUI (Material UI), Responsive Web Design, JavaScript (ES5/6+), Typescript, jQuery, Angular (2-11+), Ionic, ReactJS (GatsbyJS),  React Native, Storybook, Firebase
+ *
+ *
+ * Back-end development
+ * PHP & MySQL
+ *
+ *
+ * Software
+ * Adobe (Photoshop, Illustrator and XD), Figma, Sketch, Git (Sourcetree & GitHub)
+ */
 
 export const Skills: SkillsProps[] = [
   {
@@ -57,13 +37,16 @@ export const Skills: SkillsProps[] = [
     name: 'Tailwind CSS',
   },
   {
+    name: 'MUI (Material UI)',
+  },
+  {
     name: 'Responsive Web Design',
   },
   {
     name: 'JavaScript (ES5/6+)',
   },
   {
-    name: 'TypeScript',
+    name: 'Typescript',
   },
   {
     name: 'jQuery',
@@ -142,10 +125,16 @@ export const Educations: EducationsProps[] = [
 
 export const Hobbies: HobbiesProps[] = [
   {
-    name: 'Games (PS4, Switch, PC and Mobile)',
+    name: 'Games (PS4/5, Switch, PC and Mobile)',
   },
   {
-    name: 'Gym (Cycling and Powerlifting)',
+    name: 'Powerlifting',
+  },
+  {
+    name: 'Cycling/Biking'
+  },
+  {
+    name: 'Running/Jogging'
   },
   {
     name: 'TV Shows and Movies',
@@ -238,6 +227,9 @@ export const Softwares: SoftwaresProps[] = [
     name: 'Slack',
   },
   {
+    name: 'Microsoft Teams',
+  },
+  {
     name: 'Discord',
   },
   {
@@ -245,6 +237,9 @@ export const Softwares: SoftwaresProps[] = [
   },
   {
     name: 'Adobe Photoshop, Illustrator and XD',
+  },
+  {
+    name: 'Figma',
   },
   {
     name: 'Sketch',

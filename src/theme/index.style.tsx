@@ -37,15 +37,6 @@ export const AboutMeProfileContainer = styled.div`
   }
 `;
 
-export const AboutMeProfileAvatar = styled.img`
-  @media screen and (min-width: 768px) {
-    height: 280px;
-    width: 280px;
-    background-color: var(--light-grey-color);
-    border-radius: 8px;
-  }
-`;
-
 export const AboueMeParagraphContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding: 16px;
@@ -63,7 +54,7 @@ export const AboueMeParagraph = styled.p`
   letter-spacing: 0.5px;
   line-height: 30px;
   font-variant-numeric: lining-nums;
-  
+
   @media screen and (min-width: 768px) {
     padding-left: 16px;
     padding-right: 16px;
@@ -117,7 +108,7 @@ export const MySkilsListItem = styled.li`
   font-weight: 400;
   font-size: 16px;
   font-variant-numeric: lining-nums;
-  
+
   &::after {
     content: '';
     position: absolute;
