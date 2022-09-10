@@ -1,6 +1,7 @@
 const Header = () => {
   return (
     <header className="">
+      <h2 class="hidden">Header</h2>
       <div>
         <div></div>
         <nav>

@@ -7,11 +7,12 @@ export interface Props {
 const { name, role } = Astro.props as Props;
 ---
 
-<section class="banner">
-  <div>
-    <h3>Hey I'm {name}</h3>
-    <p>{role}</p>
-    <p>I specialize in front-end development and user interface design.</p>
+<section class="">
+  <h3 class="hidden">Banner</h3>
+  <div class="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
+    <h3 class="text-base leading-7">Hey I'm {name}</h3>
+    <p class="text-base leading-7">{role}</p>
+    <p class="text-base leading-7">I specialize in front-end development and user interface design.</p>
   </div>
 </section>
 <style></style>
