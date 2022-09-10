@@ -1,0 +1,16 @@
+---
+export interface Props {
+	name: string;
+  builtWith: string;
+}
+
+const { name, builtWith } = Astro.props as Props;
+---
+
+<footer class="">
+  <div>
+    <p>Designed and Built by {name}</p>
+    <p>Built with {builtWith}</p>
+  </div>
+</footer>
+<style></style>

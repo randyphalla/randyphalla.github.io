@@ -1,87 +1,75 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import Button from '../components/Button';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer.astro';
+import Banner from '../components/Banner.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Home">
+
 	<Header />
-	<main>
-		<h2 class="italic font-black text-red-600">Home</h2>
 
-		<section>
-			<div>
-				<h3>Hey I'm Randy</h3>
-				<p>Front-end developer & ui designer</p>
-				<p>I specialize in front-end development and user interface design.</p>
-			</div>
-		</section>
+	<main class="">
 
-		<section>
-			<img src="" alt="" />
-			<div>
-				<p>I'm a Front-end Developer and Designer based in London, Ontario Canada.</p>
+		<Banner
+			name="Randy Phalla"
+			role="Front-end developer & ui designer"
+		/>
 
-				<p>I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, XD, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.</p>
+		<section id="aboutMe" class="">
+			<img class="" src="" alt="" />
+			<div class="">
+				<p class="">I'm a Front-end Developer and Designer based in London, Ontario Canada.</p>
 
-				<p>I'm currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase</p>
+				<p class="">I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, XD, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.</p>
 
-				<button type="button">Resume</button>
+				<p class="">I'm currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase</p>
 
-				<h4>Hobbies and interest</h4>
-				<ul>
-					<li>Games (PS5, Switch and PC)</li>
-					<li>Recreational activity (Jogging, Running, Cycling and Powerlifting)</li>
-					<li>TV Shows and Movies</li>
+				<button class="" type="button">Resume</button>
+
+				<h4 class="">Hobbies and interest</h4>
+				<ul class="">
+					<li class="">Games (PS5, Switch and PC)</li>
+					<li class="">Recreational activity (Jogging, Running, Cycling and Powerlifting)</li>
+					<li class="">TV Shows and Movies</li>
 				</ul>
 			</div>
 		</section>
 
-		<section>
-			<div>
-				<h3>Work experiences</h3>
-				<div>
-					<h4>Web Developer @ Devlift Media</h4>
-					<p>Dec 2016 - Present</p>
+		<section id="workExperiences" class="">
+			<div class="">
+				<h3 class="">Work experiences</h3>
+				<div class="">
+					<h4 class="">Web Developer @ Devlift Media</h4>
+					<p class="">Dec 2016 - Present</p>
 				</div>
-				<div>
-					<h4>Graphic Design Intern @ BuzzPR</h4>
-					<p>Aug 2016 - Sept 2016</p>
-				</div>
-			</div>
-		</section>
-
-		<section>
-			<div>
-				<h3>Education</h3>
-				<div onclick="test()">
-					<h4>Interactive Media Specialist @ Fanshawe College</h4>
-					<p>Sept 2015 - Apr 2016</p>
-				</div>
-				<div>
-					<h4>Graphic Design @ Fanshawe College</h4>
-					<p>Sept 2011 - Apr 2014</p>
+				<div class="">
+					<h4 class="">Graphic Design Intern @ BuzzPR</h4>
+					<p class="">Aug 2016 - Sept 2016</p>
 				</div>
 			</div>
 		</section>
 
-		<section>
-			<div>
-				<h3>Portfolio</h3>
+		<section id="educationExperiences" class="">
+			<div class="">
+				<h3 class="">Education</h3>
+				<div class="" onclick="test()">
+					<h4 class="">Interactive Media Specialist @ Fanshawe College</h4>
+					<p class="">Sept 2015 - Apr 2016</p>
+				</div>
+				<div class="">
+					<h4 class="">Graphic Design @ Fanshawe College</h4>
+					<p class="">Sept 2011 - Apr 2014</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="portfolio" class="">
+			<div class="">
+				<h3 class="">Portfolio</h3>
 				<div class="portfolio-list">
 					<div class="portfolio-list__item">
-						<img src="" alt="" />
-						<h4>Portfolio One</h4>
-						<p>Portfolio One description</p>
-					</div>
-					<div class="portfolio-list__item">
-						<img src="" alt="" />
-						<h4>Portfolio One</h4>
-						<p>Portfolio One description</p>
-					</div>
-					<div class="portfolio-list__item">
-						<img src="" alt="" />
+						<img class="" src="" alt="" />
 						<h4>Portfolio One</h4>
 						<p>Portfolio One description</p>
 					</div>
@@ -89,19 +77,24 @@ import Footer from '../components/Footer';
 			</div>
 		</section>
 
-		<section>
-			<div>
-				<ul>
-					<li>Github</li>
-					<li>Dribbble</li>
-					<li>LinkedIn</li>
-					<li>Email</li>
+		<section class="">
+			<div class="">
+				<ul class="">
+					<li class="">Github</li>
+					<li class="">Dribbble</li>
+					<li class="">LinkedIn</li>
+					<li class="">Email</li>
 				</ul>
 			</div>
 		</section>
 
 	</main>
-	<Footer />
+
+	<Footer
+		name="Randy Phalla"
+		builtWith="Astro, Tailwind and React"
+	/>
+
 </Layout>
 
 <script type="text/javascript">
