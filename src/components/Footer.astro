@@ -9,9 +9,9 @@ const { name, builtWith } = Astro.props as Props;
 
 <footer class="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
   <h2 class="hidden">Footer</h2>
-  <div>
-    <p class="text-base leading-7">Designed and Built by {name}</p>
-    <p class="text-base leading-7">Built with {builtWith}</p>
+  <div class="text-center">
+    <p class="text-base leading-7">Designed and Built by <span class="font-bold">{name}</span></p>
+    <p class="text-base leading-7">Built with <span class="font-bold">{builtWith}</span></p>
   </div>
 </footer>
 <style></style>

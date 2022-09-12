@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import Header from '../components/Header';
+import Header from '../components/Header';
 import Footer from '../components/Footer.astro';
 import Banner from '../components/Banner.astro';
 ---
 
 <Layout title="Home">
 
-	<!-- <Header /> -->
+	<Header />
 
 	<main class="">
 		<h2 class="hidden">Main Content</h2>
@@ -21,55 +21,51 @@ import Banner from '../components/Banner.astro';
 			<h3 class="hidden">About me</h3>
 			<img class="" src="" alt="Randy Phalla" />
 			<div class="">
-				<p class="mb-3 text-base leading-7">I'm a Front-end Developer based in London, Ontario Canada.I graduated from <span class="font-bold text-red-500">Fanshawe college</span> from the <span class="font-bold text-red-500">Interactive Media Specialist</span> and <span class="font-bold text-red-500">Graphic Design</span>.</p>
+				<p class="mb-4 text-base leading-7">I'm a Front-end Developer based in London, Ontario Canada. I graduated from <span class="font-bold text-red-500">Fanshawe college</span> from the <span class="font-bold text-red-500">Interactive Media Specialist</span> and <span class="font-bold text-red-500">Graphic Design</span>.</p>
 
-				<p class="mb-3 text-base leading-7">I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, XD, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.</p>
+				<p class="mb-4 text-base leading-7">I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, XD, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript.</p>
 
-				<p class="mb-3 text-base leading-7">I'm currently working at <span class="font-bold text-red-500">Devlift Media</span> as a <span class="font-bold text-red-500">Full Stack Developer / Senior Web Developer</span>, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase.</p>
+				<p class="mb-4 text-base leading-7">I'm currently working at <span class="font-bold text-red-500">Devlift Media</span> as a <span class="font-bold text-red-500">Full Stack Developer / Senior Web Developer</span>, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase.</p>
 
-				<p class="mb-3 text-base leading-7">When i'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
+				<p class="mb-4 text-base leading-7">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
 
-				<div>
-					<button class="border-1 border-dotted border-red-500 pt-2 pb-2 pl-4 pr-4 text-white bg-red-500 rounded-lg" type="button">Resume</button>
-					<div>
-						<ul class="">
-							<li class="">Github</li>
-							<li class="">Dribbble</li>
-							<li class="">LinkedIn</li>
-							<li class="">Email</li>
-						</ul>
-					</div>
-				</div>
+				<button
+					class="border-1 border-solid border-red-500 pt-2 pb-2 pl-4 pr-4 text-white bg-red-500 rounded-lg hover:bg-transparent hover:text-red-500"
+					type="button"
+					href="#"
+				>
+					Resume
+				</button>
 
 			</div>
 		</section>
 
-		<section id="workExperiences" class="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
+		<section id="workExperience" class="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
 			<h3 class="hidden">Work Experiences</h3>
 			<div class="">
 				<h4 class="text-base leading-7">Work experiences</h4>
-				<div class="mb-3">
+				<div class="mb-4">
 					<h4 class="font-bold text-base leading-7">Full Stack Developer / Senior Web Developer @ Devlift Media</h4>
-					<p class="text-base leading-7">Dec 2016 - Present</p>
+					<p class="text-gray-600 text-base leading-7">Dec 2016 - Present</p>
 				</div>
 				<div class="">
 					<h4 class="font-bold text-base leading-7">Graphic Design Intern @ BuzzPR</h4>
-					<p class="text-base leading-7">Aug 2016 - Sept 2016</p>
+					<p class="text-gray-600 text-base leading-7">Aug 2016 - Sept 2016</p>
 				</div>
 			</div>
 		</section>
 
-		<section id="educationExperiences" class="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
-			<h3 class="hidden">Education Experiences</h3>
+		<section id="education" class="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
+			<h3 class="hidden">Education</h3>
 			<div class="">
 				<h3 class="text-base leading-7">Education</h3>
-				<div class="mb-3" onclick="test()">
+				<div class="mb-4" onclick="test()">
 					<h4 class="font-bold text-base leading-7">Interactive Media Specialist @ Fanshawe College</h4>
-					<p class="text-base leading-7">Sept 2015 - Apr 2016</p>
+					<p class="text-gray-600 text-base leading-7">Sept 2015 - Apr 2016</p>
 				</div>
 				<div class="">
 					<h4 class="font-bold text-base leading-7">Graphic Design @ Fanshawe College</h4>
-					<p class="text-base leading-7">Sept 2011 - Apr 2014</p>
+					<p class="text-gray-600 text-base leading-7">Sept 2011 - Apr 2014</p>
 				</div>
 			</div>
 		</section>
@@ -78,11 +74,11 @@ import Banner from '../components/Banner.astro';
 			<h3 class="hidden">Portfolio</h3>
 			<div class="">
 				<h4 class="text-base leading-7">Portfolio</h4>
-				<div class="portfolio-list">
-					<div class="portfolio-list__item">
+				<div class="">
+					<div class="">
 						<img class="" src="" alt="Portfolio" />
-						<h4 class="text-base leading-7">Portfolio One</h4>
-						<p class="text-base leading-7">Portfolio One description</p>
+						<h4 class="font-bold text-gray-900">Portfolio One</h4>
+						<p class="text-base text-gray-600">Portfolio One description</p>
 					</div>
 				</div>
 			</div>

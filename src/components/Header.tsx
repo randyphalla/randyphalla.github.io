@@ -1,9 +1,11 @@
 const Header = () => {
   return (
     <header className="">
-      <h2 class="hidden">Header</h2>
-      <div>
-        <div></div>
+      <h2 className="hidden">Header</h2>
+      <div className="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
+        <div>
+          <img className="" src="" alt="Randy Phalla's Logo" />
+        </div>
         <nav>
           <ul>
             <li>
@@ -13,10 +15,10 @@ const Header = () => {
               <a href="#aboutMe">About</a>
             </li>
             <li>
-              <a href="#workExperiences">Work Experiences</a>
+              <a href="#workExperience">Work Experience</a>
             </li>
             <li>
-              <a href="#educationExperiences">Education Experiences</a>
+              <a href="#education">Education</a>
             </li>
             <li>
               <a href="#portfolio">Portfolio</a>
