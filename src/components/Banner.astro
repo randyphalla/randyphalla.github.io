@@ -9,10 +9,11 @@ const { name, role } = Astro.props as Props;
 
 <section class="">
   <h3 class="hidden">Banner</h3>
-  <div class="max-w-4xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
-    <h3 class="font-bold text-6xl">Hey, I'm <span class="gradient-text">{name}</span></h3>
-    <p class="mt-4 text-2xl text-gray-800">{role}</p>
-    <p class="mt-2 text-gray-600">I specialize in front-end development and user interface design.</p>
+  <div class="max-w-5xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
+    <h3 class="font-bold text-1xl">Hey, I'm</h3>
+    <h3 class="font-bold text-7xl"><span class="gradient-text">{name}</span></h3>
+    <p class="mt-2 text-3xl text-gray-800">{role}</p>
+    <!-- <p class="mt-2 text-gray-600">I specialize in front-end development and user interface design.</p> -->
   </div>
 </section>
 <style>
