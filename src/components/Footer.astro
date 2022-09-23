@@ -1,17 +1,16 @@
 ---
 export interface Props {
 	name: string;
-  builtWith: string;
 }
 
-const { name, builtWith } = Astro.props as Props;
+const { name } = Astro.props as Props;
 ---
 
-<footer class="max-w-5xl mx-auto pt-4 pb-4 px-4 border-1 border-dotted border-red-500">
+<footer class="max-w-5xl mx-auto pt-4 pb-4 px-4 ">
   <h2 class="hidden">Footer</h2>
   <div class="text-center">
     <p class="text-base leading-7">Designed and Built by <span class="font-bold">{name}</span></p>
-    <p class="text-base leading-7">Built with <span class="font-bold">{builtWith}</span></p>
+    <p class="text-base leading-7">Built with <a class="font-bold" href="https://astro.build/" target="_blank">Astro</a>, <a class="font-bold" href="https://tailwindcss.com/" target="_blank">Tailwind</a>, and <a class="font-bold" href="https://reactjs.org/" target="_blank">React</a></p>
   </div>
 </footer>
 <style></style>
