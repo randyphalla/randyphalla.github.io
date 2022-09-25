@@ -4,7 +4,7 @@ const Header = () => {
       <h2 className="hidden">Header</h2>
       <div className="max-w-5xl mx-auto pt-4 pb-4 px-4 ">
         <div>
-          <img className="" src="" alt="Randy Phalla's Logo" />
+          <img className="" src="" alt="Randy Phalla" />
         </div>
         <nav>
           <ul>
@@ -21,7 +21,7 @@ const Header = () => {
               <a href="#education">Education</a>
             </li>
             <li>
-              <a href="#portfolio">Portfolio</a>
+              <a href="#projects">Projects</a>
             </li>
           </ul>
         </nav>
