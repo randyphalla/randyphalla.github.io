@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header';
 import Footer from '../components/Footer.astro';
 import Banner from '../components/Banner.astro';
+import { IoLogoGithub } from "react-icons/io5";
 ---
 
 <Layout title="Home">
@@ -23,11 +24,9 @@ import Banner from '../components/Banner.astro';
 			<div class="">
 				<img class="" src="" alt="Portrait of Randy Phalla" />
 				<div class="">
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014). I'm passionate about front-end development, creating aesthetically websites and user experience.</p>
+					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs. I'm passionate about front-end development, creating aesthetically websites and user experiences.</p>
 
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <span class="underline underline-offset-2">Devlift Media</span> as a Full Stack Developer / Senior Web Developer. My role is taking artwork files (Photoshop, Illustrator, XD, Sketch, Figma, etc.) and build those projects in web apps or mobile. Leading front-end development, mentor junior developers, taking & assigning tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using a work. HTML5, CSS3 (SCSS), Bootstrap (3/4), Tailwind, JavaScript (ES5/6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase.</p>
-
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <span class="underline underline-offset-2">BuzzPR</span>, where I was working as a Graphic Design Intern in Toronto, Ontario. My role was create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
+					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <span class="underline underline-offset-2">Devlift Media</span> as a Full Stack Developer / Senior Web Developer. My role is taking artwork files (Photoshop, Illustrator, XD, Sketch & Figma) and build those projects in web apps or mobile. Lead front-end development, mentor junior developers, ability to create, taking, & assigning tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using a work. HTML5, CSS3 (SCSS), Bootstrap (3/4), Tailwind, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase. My previous role was at <span class="underline underline-offset-2">BuzzPR</span> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
 
 					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
 
@@ -42,17 +41,28 @@ import Banner from '../components/Banner.astro';
 			</div>
 		</section>
 
+		<section id="Skills" class="max-w-5xl mx-auto py-10 px-4">
+			<h3 class="hidden">Skills</h3>
+			<h4 class="mb-5 font-bold text-3xl">Skills</h4>
+			<div class="">
+				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Front-end developmet:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React / React Native, , Material UI, TailwindCSS, Bootstrap (3+), AstroJS.</p>
+				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Back-end development:</span> Firebase, PHP and MySQL.</p>
+				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Project management:</span> Trello and JIRA.</p>
+				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Softwares:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Github, Sourcetree, Slack, Terminal.</p>
+			</div>
+		</section>
+
 		<section id="work" class="max-w-5xl mx-auto py-10 px-4">
 			<h3 class="hidden">Work Experiences</h3>
 			<h4 class="mb-5 font-bold text-3xl">Work experiences</h4>
 			<div class="">
 				<div class="mb-4">
-					<h4 class="font-bold text-base leading-7">Full Stack Developer / Senior Web Developer @ Devlift Media</h4>
-					<p class="text-gray-600 text-base leading-7">Dec 2016 - Present</p>
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Full Stack Developer / Senior Web Developer @ Devlift Media</h4>
+					<p class="ext-gray-600 text-sm md:text-base leading-7">Dec 2016 - Present</p>
 				</div>
 				<div class="">
-					<h4 class="font-bold text-base leading-7">Graphic Design Intern @ BuzzPR</h4>
-					<p class="text-gray-600 text-base leading-7">Aug 2016 - Sept 2016</p>
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Graphic Design Intern @ BuzzPR</h4>
+					<p class="text-gray-600 text-sm md:text-base leading-7">Aug 2016 - Sept 2016</p>
 				</div>
 			</div>
 		</section>
@@ -62,12 +72,12 @@ import Banner from '../components/Banner.astro';
 			<h3 class="mb-5 font-bold text-3xl">Education</h3>
 			<div class="">
 				<div class="mb-4" onclick="test()">
-					<h4 class="font-bold text-base leading-7">Interactive Media Specialist @ Fanshawe College</h4>
-					<p class="text-gray-600 text-base leading-7">Sept 2015 - Apr 2016</p>
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Interactive Media Specialist @ Fanshawe College</h4>
+					<p class="text-gray-600 text-sm md:text-base leading-7">Sept 2015 - Apr 2016</p>
 				</div>
 				<div class="">
-					<h4 class="font-bold text-base leading-7">Graphic Design @ Fanshawe College</h4>
-					<p class="text-gray-600 text-base leading-7">Sept 2011 - Apr 2014</p>
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Graphic Design @ Fanshawe College</h4>
+					<p class="text-gray-600 text-sm md:text-base leading-7">Sept 2011 - Apr 2014</p>
 				</div>
 			</div>
 		</section>
@@ -76,28 +86,49 @@ import Banner from '../components/Banner.astro';
 			<h3 class="hidden">Projects</h3>
 			<h4 class="mb-5 font-bold text-3xl">Projects</h4>
 			<div class="">
-				<div class="">
-					<img class="" src="" alt="projects" />
-					<h4 class="font-bold text-gray-900">projects One</h4>
-					<p class="text-base text-gray-600">projects One description</p>
+				<div class="mb-4">
+					<img class="" src="" alt="Project" />
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Projects One</h4>
+					<p class="text-gray-600 text-sm md:text-base leading-7">projects One description</p>
 				</div>
-				<div class="">
-					<img class="" src="" alt="projects" />
-					<h4 class="font-bold text-gray-900">projects One</h4>
-					<p class="text-base text-gray-600">projects One description</p>
+				<div class="mb-4">
+					<img class="" src="" alt="Project" />
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Projects One</h4>
+					<p class="text-gray-600 text-sm md:text-base leading-7">projects One description</p>
 				</div>
 			</div>
 		</section>
 
-		<section class="max-w-5xl mx-auto py-10 px-4 ">
+		<section id="socials" class="max-w-5xl mx-auto py-10 px-4 ">
 			<h3 class="hidden">Socials</h3>
 			<h4 class="mb-5 font-bold text-3xl">Socials</h4>
 			<div class="">
 				<ul class="">
-					<li class="">Github</li>
-					<li class="">Dribbble</li>
-					<li class="">LinkedIn</li>
-					<li class="">Email</li>
+					<li class="">
+						<a href="https://github.com/randyphalla" target="_blank" aria-label="Redirect to Github">
+							<IoLogoGithub />
+						</a>
+					</li>
+					<li class="">
+						<a href="https://www.linkedin.com/in/randyphalla/" target="_blank" aria-label="Redirect to Linkedin">
+							<IoLogoGithub />
+						</a>
+					</li>
+					<li class="">
+						<a href="https://dribbble.com/randyphalla" target="_blank" aria-label="Redirect to Dribbble">
+							<IoLogoGithub />
+						</a>
+					</li>
+					<li class="">
+						<a href="https://www.behance.net/randyphalla" target="_blank" aria-label="Redirect to Behance">
+							<IoLogoGithub />
+						</a>
+					</li>
+					<li class="">
+						<a href="#" aria-label="Open email">
+							<IoLogoGithub />
+						</a>
+					</li>
 				</ul>
 			</div>
 		</section>
