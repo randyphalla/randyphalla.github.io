@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@astrojs/image": "^0.8.0",
     "react-icons": "^4.4.0"
   }
 }

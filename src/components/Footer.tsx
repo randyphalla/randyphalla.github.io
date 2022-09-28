@@ -7,37 +7,37 @@ const Footer = () => {
 
       <div className="flex justify-center md:justify-between items-center flex-col md:flex-row">
 
-        <img className="" src="" alt="Randy Phalla" />
+        <img className="w-16" src="public/randyphalla-icon.png" alt="Randy Phalla" />
 
         <ul className="mt-5 mb-5 md:mt-0 md:mb-0 flex justify-center md:justify-evenly items-center md:items-start flex-col md:flex-row">
 
-          <li className="ml-2 mr-2 w-fit">
+          <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
             <a href="https://github.com/randyphalla" target="_blank" aria-label="Redirect to Github">
-              <IoLogoGithub />
+              <IoLogoGithub className="text-4xl md:text-2xl hover:text-gray-600" />
             </a>
           </li>
 
-          <li className="ml-2 mr-2 w-fit">
+          <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
             <a href="https://www.linkedin.com/in/randyphalla/" target="_blank" aria-label="Redirect to Linkedin">
-              <IoLogoLinkedin />
+              <IoLogoLinkedin className="text-4xl md:text-2xl hover:text-gray-600" />
             </a>
           </li>
 
-          <li className="ml-2 mr-2 w-fit">
+          <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
             <a href="https://dribbble.com/randyphalla" target="_blank" aria-label="Redirect to Dribbble">
-              <IoLogoDribbble />
+              <IoLogoDribbble className="text-4xl md:text-2xl hhover:text-gray-600" />
             </a>
           </li>
 
-          <li className="ml-2 mr-2 w-fit">
+          <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
             <a href="https://www.behance.net/randyphalla" target="_blank" aria-label="Redirect to Behance">
-              <IoLogoBehance />
+              <IoLogoBehance className="text-4xl md:text-2xl hover:text-gray-600" />
             </a>
           </li>
 
-          <li className="ml-2 mr-2 w-fit">
+          <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
             <a href="#" aria-label="Open email">
-              <IoMail />
+              <IoMail className="text-4xl md:text-2xl hover:text-gray-600" />
             </a>
           </li>
 

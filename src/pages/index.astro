@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner.astro';
+// import { Image, Picture } from '@astrojs/image/components';
+
 ---
 
 <Layout title="Home">
@@ -20,12 +22,14 @@ import Banner from '../components/Banner.astro';
 		<section id="aboutMe" class="max-w-5xl mx-auto py-10 px-4">
 			<h3 class="hidden">About me</h3>
 			<h4 class="mb-5 font-bold text-3xl">About</h4>
-			<div class="">
-				<img class="" src="" alt="Portrait of Randy Phalla" />
-				<div class="">
+			<div class="flex justify-between items-start flex-col lg:flex-row">
+				<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="public/me.jpeg" alt="Portrait of Randy Phalla" />
+				<div class="lg:ml-8">
 					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.</p>
 
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank">Devlift Media</a> as a Full Stack Developer / Senior Web Developer. My role is taking artwork files (Photoshop, Illustrator, XD, Sketch & Figma) and build those projects in web apps or mobile. Lead front-end development, mentor junior developers, ability to create, taking, & assigning tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using a work. HTML5, CSS3 (SCSS), Bootstrap (3/4), Tailwind, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase. My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
+					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank">Devlift Media</a> as a Full Stack Developer / Senior Web Developer. My role is taking artwork files (Photoshop, Illustrator, XD, Sketch & Figma) and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using at work. HTML5, CSS3 (SCSS), Bootstrap (3/4), Tailwind, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Material UI, Storybook and Firebase.</p>
+
+					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
 
 					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
 
