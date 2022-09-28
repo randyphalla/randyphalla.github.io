@@ -45,7 +45,7 @@ const Footer = () => {
 
         <div className="">
           <p className="text-sm">Designed and Built by <span className="font-bold">Randy Phalla</span></p>
-          <p className="text-sm">Built with <a className="font-bold" href="https://astro.build/" target="_blank" aria-label="Redirect to Astro">Astro</a>, <a className="font-bold" href="https://tailwindcss.com/" target="_blank" aria-label="Redirect to Tailwind">Tailwind</a>, and <a className="font-bold" href="https://reactjs.org/" target="_blank" aria-label="Redirect to React">React</a></p>
+          <p className="text-sm">Built with <a className="font-bold hover:text-gray-600" href="https://astro.build/" target="_blank" aria-label="Redirect to Astro">Astro</a>, <a className="font-bold hover:text-gray-600" href="https://tailwindcss.com/" target="_blank" aria-label="Redirect to Tailwind">Tailwind</a>, and <a className="font-bold hover:text-gray-600" href="https://reactjs.org/" target="_blank" aria-label="Redirect to React">React</a></p>
         </div>
 
       </div>
