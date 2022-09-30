@@ -2,7 +2,7 @@ import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } f
 
 const Footer = () => {
   return (
-    <footer className="max-w-5xl mx-auto py-10 px-4">
+    <footer className="max-w-screen-xl mx-auto py-10 px-4">
       <h2 className="hidden">Footer</h2>
 
       {/* flex justify-center md:justify-between items-center flex-col md:flex-row */}
