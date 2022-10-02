@@ -1,0 +1,25 @@
+.header-nav {}
+
+.header-nav__list {}
+
+.header-nav__list-item {}
+
+.header-nav__list-item-link {
+  position: relative;
+}
+
+.header-nav__list-item-link::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.header-nav__list-item-link:hover::after {
+  opacity: 1
+}
