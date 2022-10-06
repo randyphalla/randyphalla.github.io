@@ -28,7 +28,7 @@ const Header = () => {
 
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
           <img className="w-10 md:w-16 transition-all" src="public/randyphalla-icon.png" alt="Randy Phalla" />
-          <button className="md:hidden border-1 border-solid" aria-label="Open menu" onClick={handleMobileMenu}>
+          <button className="mobile-menu-button p-1 md:hidden border-1 border-solid border-gray-900 hover:bg-primary hover:border-primary" aria-label="Open menu" onClick={handleMobileMenu}>
             <IoMenu className="h-8 w-8" />
           </button>
           <nav className="header-nav hidden md:block">

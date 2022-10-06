@@ -7,5 +7,6 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind(),
-  ]
+  ],
+  server: { port: 4200 } // THIS PORT WILL CHANGE TO ANY PORT (DEFAULT 3000)
 });
