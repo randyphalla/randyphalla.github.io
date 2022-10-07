@@ -55,6 +55,8 @@ const Portfolio = () => {
             key={item.id}
             onClick={() => handlePortfolioModal(item)}
             className="p-4 bg-gray-900 hover:bg-gray-800 border-1 border-solid border-gray-900 hover:border-gray-800 rounded-lg cursor-pointer transition-all"
+            role="button"
+            aria-label="Open portfolio modal"
           >
             <img className="" src={item.imgSrc} alt={item.imgSrcAlt} />
             <h4 className="text-white font-bold text-base md:text-lg leading-7 md:leading-8">{item.title}</h4>
