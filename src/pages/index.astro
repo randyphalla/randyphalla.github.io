@@ -1,97 +1,115 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Banner from '../components/Banner.astro';
-// import Portfolio from '../components/Portfolio';
+import Portfolio from '../components/Portfolio';
+
+const frontEndSkills = "HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React / React Native, Astro, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).";
+const backEndSkills = "Firebase, PHP and MySQL.";
+const projectManagementSkills = "Trello and JIRA.";
+const toolsSkills = "Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Github, Sourcetree, and Slack.";
+const works = [
+	{
+		role: 'Full Stack Developer',
+		link: 'https://devlift.com/',
+		linkLabel: "Redirect to Devlift Media's site",
+		company: 'Devlift Media',
+		date: 'Dec 2016 - Present',
+	},
+	{
+		role: 'Graphic Design Intern',
+		link: 'http://www.buzzpr.ca/',
+		linkLabel: "Redirect to BuzzPR's site",
+		company: 'BuzzPR',
+		date: 'Aug 2016 - Sept 2016',
+	}
+];
+const educations = [
+{
+		role: 'Interactive Media Specialist',
+		link: '"https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next',
+		linkLabel: "Redirect to Fanshawe College's site",
+		company: 'Fanshawe College',
+		date: 'Sept 2015 - Apr 2016',
+	},
+	{
+		role: 'Graphic Design',
+		link: 'https://www.fanshawec.ca/programs/grd1-graphic-design/next',
+		linkLabel: "Redirect to Fanshawe College's site",
+		company: 'Fanshawe College',
+		date: 'Sept 2011 - Apr 2014',
+	}
+];
 ---
 
 <Layout title="Home">
 
-	<Header client:load />
+	<Banner
+		name="Randy Phalla"
+		role="Front-end developer"
+	/>
 
-	<main class="">
-		<h2 class="hidden">Main Content</h2>
+	<section id="aboutMe" class="max-w-screen-xl mx-auto py-10 px-4">
+		<h3 class="hidden">About me</h3>
+		<h4 class="title-gradient title-gradient--about mb-5 font-bold text-3xl">About</h4>
+		<div class="flex justify-between items-start flex-col lg:flex-row">
+			<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="public/me.jpeg" alt="Portrait of Randy Phalla" />
+			<div class="lg:ml-8">
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.</p>
 
-		<Banner
-			name="Randy Phalla"
-			role="Front-end developer"
-		/>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files (Photoshop, Illustrator, XD, Sketch & Figma) and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using at work. HTML5, CSS3 (SCSS), Tailwind, Material UI, CSS in JS, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Storybook and Firebase.</p>
 
-		<section id="aboutMe" class="max-w-screen-xl mx-auto py-10 px-4">
-			<h3 class="hidden">About me</h3>
-			<h4 class="title-gradient title-gradient--about mb-5 font-bold text-3xl">About</h4>
-			<div class="flex justify-between items-start flex-col lg:flex-row">
-				<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="public/me.jpeg" alt="Portrait of Randy Phalla" />
-				<div class="lg:ml-8">
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
 
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files (Photoshop, Illustrator, XD, Sketch & Figma) and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using at work. HTML5, CSS3 (SCSS), Tailwind, Material UI, CSS in JS, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Storybook and Firebase.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
 
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
-
-					<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
-
-					<a
-						class="border-1 border-solid border-gray-900 pt-2 pb-2 pl-4 pr-4 text-white bg-gray-900 rounded-lg hover:bg-transparent hover:text-gray-900 transition-all"
-						type="button"
-						href="#"
-					>
-						Resume
-					</a>
-				</div>
+				<a
+					class="border-1 border-solid border-gray-900 pt-2 pb-2 pl-4 pr-4 text-white bg-gray-900 rounded-lg hover:bg-transparent hover:text-gray-900 transition-all"
+					type="button"
+					href="#"
+				>
+					Resume
+				</a>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section id="Skills" class="max-w-screen-xl mx-auto py-10 px-4">
-			<h3 class="hidden">Skills</h3>
-			<h4 class="title-gradient title-gradient--skills mb-5 font-bold text-3xl">Skills</h4>
-			<div class="">
-				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Front-end developmet:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React / React Native, Astro, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).</p>
-				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Back-end development:</span> Firebase, PHP and MySQL.</p>
-				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Project management:</span> Trello and JIRA.</p>
-				<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Tools:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Github, Sourcetree, and Slack.</p>
-			</div>
-		</section>
+	<section id="Skills" class="max-w-screen-xl mx-auto py-10 px-4">
+		<h3 class="hidden">Skills</h3>
+		<h4 class="title-gradient title-gradient--skills mb-5 font-bold text-3xl">Skills</h4>
+		<div class="">
+			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Front-end developmet:</span> {frontEndSkills}</p>
+			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Back-end development:</span> {backEndSkills}</p>
+			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Project management:</span> {projectManagementSkills}</p>
+			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Tools:</span> {toolsSkills}</p>
+		</div>
+	</section>
 
-		<section id="work" class="max-w-screen-xl mx-auto py-10 px-4">
-			<h3 class="hidden">Work Experience</h3>
-			<h4 class="title-gradient title-gradient--work mb-5 font-bold text-3xl">Work experience</h4>
-			<div class="">
+	<section id="work" class="max-w-screen-xl mx-auto py-10 px-4">
+		<h3 class="hidden">Work Experience</h3>
+		<h4 class="title-gradient title-gradient--work mb-5 font-bold text-3xl">Work experience</h4>
+		<div class="">
+			{works.map((work) => (
 				<div class="mb-4">
-					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Full Stack Developer <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">@Devlift Media</a></h4>
-					<p class="ext-gray-600 text-sm md:text-base leading-7">Dec 2016 - Present</p>
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">{work.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href={work.link} target="_blank" aria-label={work.linkLabel}>@{work.company}</a></h4>
+					<p class="ext-gray-600 text-sm md:text-base leading-7">{work.date}</p>
 				</div>
-				<div class="">
-					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Graphic Design Intern <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">@BuzzPR</a></h4>
-					<p class="text-gray-600 text-sm md:text-base leading-7">Aug 2016 - Sept 2016</p>
+			))}
+		</div>
+	</section>
+
+	<section id="education" class="max-w-screen-xl mx-auto py-10 px-4 ">
+		<h3 class="hidden">Education</h3>
+		<h3 class="title-gradient title-gradient--education mb-5 font-bold text-3xl">Education</h3>
+		<div class="">
+			{educations.map((education) => (
+				<div class="mb-4">
+					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">{education.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href={education.link} target="_blank" aria-label={education.linkLabel}>@{education.company}</a></h4>
+					<p class="ext-gray-600 text-sm md:text-base leading-7">{education.date}</p>
 				</div>
-			</div>
-		</section>
+			))}
+		</div>
+	</section>
 
-		<section id="education" class="max-w-screen-xl mx-auto py-10 px-4 ">
-			<h3 class="hidden">Education</h3>
-			<h3 class="title-gradient title-gradient--education mb-5 font-bold text-3xl">Education</h3>
-			<div class="">
-				<div class="mb-4" onclick="test()">
-					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Interactive Media Specialist <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href="https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next" target="_blank" aria-label="Redirect to Fanshawe College's site">@Fanshawe College</a></h4>
-					<p class="text-gray-600 text-sm md:text-base leading-7">Sept 2015 - Apr 2016</p>
-				</div>
-				<div class="">
-					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">Graphic Design <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href="https://www.fanshawec.ca/programs/grd1-graphic-design/next" target="_blank" aria-label="Redirect to Fanshawe College's site">@Fanshawe College</a></h4>
-					<p class="text-gray-600 text-sm md:text-base leading-7">Sept 2011 - Apr 2014</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- <Portfolio client:load /> -->
-
-	</main>
-
-	<Footer />
+	<Portfolio client:load />
 
 </Layout>
-
-<style></style>
-
-<script type="text/javascript"></script>

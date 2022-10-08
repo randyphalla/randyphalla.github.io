@@ -27,7 +27,7 @@ const Header = () => {
         <h2 className="hidden">Header</h2>
 
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
-          <img className="w-10 md:w-16 transition-all" src="public/randyphalla-icon.png" alt="Randy Phalla" />
+          <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
           <button
             className="mobile-menu-button p-1 md:hidden border-1 border-solid border-gray-900 hover:bg-primary hover:border-primary"
             aria-label="Open menu"

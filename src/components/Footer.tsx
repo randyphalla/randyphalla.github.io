@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto py-10 px-4">
         <div className="flex md:grid justify-center md:justify-between items-center flex-col md:flex-row md:grid-cols-3">
 
-          <img className="w-16" src="public/randyphalla-icon.png" alt="Randy Phalla" />
+          <img className="w-16" src="/randyphalla-icon.png" alt="Randy Phalla" />
 
           <ul className="mt-5 mb-5 md:mt-0 md:mb-0 flex justify-center md:justify-start items-center md:items-start flex-col md:flex-row">
 
