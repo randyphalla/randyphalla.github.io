@@ -45,13 +45,12 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                 >
                   Payment successful
                 </Dialog.Title>
-                <Dialog.Description className="text-sm text-gray-500">This will permanently deactivate your account</Dialog.Description>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    Your payment has been successfully submitted. We've sent
-                    you an email with all of the details of your order.
-                  </p>
-                </div>
+                <Dialog.Description className="mt-2 text-sm text-gray-500">This will permanently deactivate your account</Dialog.Description>
+
+                <p className="mt-2 text-sm text-gray-500">
+                  Your payment has been successfully submitted. We've sent
+                  you an email with all of the details of your order.
+                </p>
 
                 <div className="mt-4">
                   <button

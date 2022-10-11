@@ -3,7 +3,7 @@ import './Header.style.css';
 import { IoMenu } from "react-icons/io5/index.js";
 
 const Header = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(true);
   // const [isMobileViewport, setMobileViewport] = useState(false);
 
   const handleMobileMenu = () => {
@@ -85,8 +85,9 @@ const Header = () => {
       </header>
 
       {isMobileMenuOpen && (
-        <div className="mobile-menu hidden">
-          <nav className="">
+        <div className="mobile-menu p-4 fixed inset-0 p-4 bg-gray-900/90">
+
+          <nav className="p-4 rounded-lg bg-gray-50">
             <ul className="">
               <li className="">
                 <a
@@ -132,6 +133,11 @@ const Header = () => {
               </li>
             </ul>
           </nav>
+
+
+          {/* Make this as a backdrop */}
+          <div className="" onClick={handleMobileMenu}></div>
+
         </div>
       )}
     </>
