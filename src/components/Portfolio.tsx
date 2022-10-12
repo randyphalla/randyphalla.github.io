@@ -46,7 +46,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <section id="projects" className="max-w-screen-xl mx-auto py-10 px-4 ">
+      <section id="portfolio" className="max-w-screen-xl mx-auto py-10 px-4 ">
         <h3 className="hidden">Projects</h3>
         <h4 className="title-gradient title-gradient--projects mb-5 font-bold text-3xl">Projects</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

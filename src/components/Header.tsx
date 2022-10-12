@@ -10,6 +10,15 @@ const Header = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   }
 
+  const scrollToSection = (id: string) => {
+    const scrollElement = globalThis.document.getElementById(id);
+    scrollElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start"
+    });
+  };
+
   useEffect(() => {
     addEventListener('resize', (event: UIEvent) => {
       const windowWidth = event.target as Window;
@@ -23,7 +32,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header border-b-1 border-solid border-gray-50/[.10">
+      <header id="header" className="header border-b-1 border-solid border-gray-50/[.10">
         <h2 className="hidden">Header</h2>
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
           <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
@@ -39,42 +48,48 @@ const Header = () => {
               <li className="header-nav__list-item pr-4">
                 <a
                   className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
-                  href="#"
+                  onClick={() => scrollToSection('header')}
+                  role="button"
                   aria-label="Scroll to top of the page"
                 >Home</a>
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
                   className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
-                  href="#aboutMe"
+                  onClick={() => scrollToSection('about')}
+                  role="button"
                   aria-label="Scroll to about section"
                 >About</a>
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
                   className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
-                  href="#skills"
+                  onClick={() => scrollToSection('skills')}
+                  role="button"
                   aria-label="Scroll to skills section"
                 >Skills</a>
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
                   className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
-                  href="#work"
+                  onClick={() => scrollToSection('work')}
+                  role="button"
                   aria-label="Scroll to work Experiences section"
                 >Work Experiences</a>
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
                   className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
-                  href="#education"
+                  onClick={() => scrollToSection('education')}
+                  role="button"
                   aria-label="Scroll to education section"
                 >Education</a>
               </li>
               <li className="header-nav__list-item">
                 <a
                   className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
-                  href="#projects"
+                  onClick={() => scrollToSection('portfolio')}
+                  role="button"
                   aria-label="Scroll to projects section"
                 >Projects</a>
               </li>
@@ -100,42 +115,48 @@ const Header = () => {
               <li className="py-2">
                 <a
                   className="text-white text-2xl"
-                  href="#"
+                  onClick={() => scrollToSection('header')}
+                  role="button"
                   aria-label="Scroll to top of the page"
                 >Home</a>
               </li>
               <li className="py-2">
                 <a
                   className="text-white text-2xl"
-                  href="#aboutMe"
+                  onClick={() => scrollToSection('about')}
+                  role="button"
                   aria-label="Scroll to about section"
                 >About</a>
               </li>
               <li className="py-2">
                 <a
                   className="text-white text-2xl"
-                  href="#skills"
+                  onClick={() => scrollToSection('skills')}
+                  role="button"
                   aria-label="Scroll to skills section"
                 >Skills</a>
               </li>
               <li className="py-2">
                 <a
                   className="text-white text-2xl"
-                  href="#work"
+                  onClick={() => scrollToSection('work')}
+                  role="button"
                   aria-label="Scroll to work Experiences section"
                 >Work experience</a>
               </li>
               <li className="py-2">
                 <a
                   className="text-white text-2xl"
-                  href="#education"
+                  onClick={() => scrollToSection('education')}
+                  role="button"
                   aria-label="Scroll to education section"
                 >Education</a>
               </li>
               <li className="py-2">
                 <a
                   className="text-white text-2xl"
-                  href="#projects"
+                  onClick={() => scrollToSection('portfolio')}
+                  role="button"
                   aria-label="Scroll to projects section"
                 >Projects</a>
               </li>
@@ -143,7 +164,7 @@ const Header = () => {
           </nav>
 
 
-          {/* Make this as a backdrop */}
+          {/* TODO: Make this as a backdrop */}
           <div className="" onClick={handleMobileMenu}></div>
 
         </div>
