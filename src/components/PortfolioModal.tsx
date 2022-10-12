@@ -1,10 +1,11 @@
 import { Fragment } from 'react';
 import { Dialog, Transition } from "@headlessui/react";
+import { PortfolioType } from '../types/Portfolio';
 
 type PortfolioModalProps = {
   isOpen: boolean;
   onClose?: () => void;
-  portfolio?: any;
+  portfolio?: PortfolioType;
 }
 
 const PortfolioModal = (props: PortfolioModalProps) => {

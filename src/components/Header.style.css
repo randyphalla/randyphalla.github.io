@@ -1,12 +1,14 @@
+.header {}
+
+.header__menu-button {}
+
 .header-nav {}
 
 .header-nav__list {}
 
 .header-nav__list-item {}
 
-.header-nav__list-item-link {
-  position: relative;
-}
+.header-nav__list-item-link { position: relative; }
 
 .header-nav__list-item-link::after {
   content: "";
@@ -20,6 +22,6 @@
   transition: opacity 0.5s;
 }
 
-.header-nav__list-item-link:hover::after {
-  opacity: 1
-}
+.header-nav__list-item-link:hover::after { opacity: 1 }
+
+.mobile-menu-nav { height: calc(100vh - 73px); }

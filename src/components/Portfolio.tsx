@@ -1,17 +1,10 @@
 import './Portfolio.style.css';
 import { useState } from 'react';
 import PortfolioModal from './PortfolioModal';
-
-type PortfolioItem = {
-  id: number;
-  imgSrc?: string;
-  imgSrcAlt?: string;
-  title: string;
-  description?: string;
-}
+import { PortfolioType } from '../types/Portfolio';
 
 const Portfolio = () => {
-  const portfolioItems: PortfolioItem[] = [
+  const portfolioItems: PortfolioType[] = [
     {
       id: 0,
       imgSrc: 'Starwars',
@@ -40,10 +33,10 @@ const Portfolio = () => {
       title: 'Musicbook',
     },
   ];
-  const [items] = useState<PortfolioItem[]>(portfolioItems);
+  const [items] = useState<PortfolioType[]>(portfolioItems);
   const [selectedPortfolio, setSelectedPortfolio] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
-  const handlePortfolioModalOpen = (item: PortfolioItem) => {
+  const handlePortfolioModalOpen = (item: PortfolioType) => {
     setModalOpen(!isModalOpen);
     setSelectedPortfolio(item);
   };
@@ -57,7 +50,7 @@ const Portfolio = () => {
         <h3 className="hidden">Projects</h3>
         <h4 className="title-gradient title-gradient--projects mb-5 font-bold text-3xl">Projects</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {items && items.map((item: PortfolioItem) => (
+          {items && items.map((item: PortfolioType) => (
             <div
               key={item.id}
               onClick={() => handlePortfolioModalOpen(item)}

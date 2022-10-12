@@ -17,7 +17,7 @@ const { title } = Astro.props as Props;
 		<meta name="theme-color" content="#000000">
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Randy Phalla</title>
+		<title>Randy Phalla | {title}</title>
 	</head>
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>
@@ -42,9 +42,14 @@ const { title } = Astro.props as Props;
 			/* rgb(255, 41, 55); */
 		}
 
-		.mobile-menu-button:hover svg {
+		.header__menu-button:hover svg {
 			@apply stroke-gray-50;
 		}
+
+		.mobile-menu-button:hover svg {
+			@apply stroke-white;
+		}
+
 	}
 
 	/* a:focus-visible, button:focus-visible {

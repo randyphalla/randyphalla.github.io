@@ -3,7 +3,7 @@ import './Header.style.css';
 import { IoMenu } from "react-icons/io5/index.js";
 
 const Header = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(true);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   // const [isMobileViewport, setMobileViewport] = useState(false);
 
   const handleMobileMenu = () => {
@@ -23,17 +23,16 @@ const Header = () => {
 
   return (
     <>
-      <header className="border-b-1 border-solid border-gray-100">
+      <header className="header border-b-1 border-solid border-gray-50/[.10">
         <h2 className="hidden">Header</h2>
-
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
           <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
           <button
-            className="mobile-menu-button p-1 md:hidden border-1 border-solid border-gray-900 hover:bg-primary hover:border-primary"
+            className="header__menu-button p-1 md:hidden border-1 border-solid border-primary hover:bg-primary hover:border-primary"
             aria-label="Open menu"
             onClick={handleMobileMenu}
           >
-            <IoMenu className="h-8 w-8" />
+            <IoMenu className="h-8 w-8 stroke-primary" />
           </button>
           <nav className="header-nav hidden md:block">
             <ul className="header-nav__list flex justify-between items-center">
@@ -85,48 +84,57 @@ const Header = () => {
       </header>
 
       {isMobileMenuOpen && (
-        <div className="mobile-menu p-4 fixed inset-0 p-4 bg-gray-900/90">
-
-          <nav className="p-4 rounded-lg bg-gray-50">
-            <ul className="">
-              <li className="">
+        <div className="mobile-menu fixed inset-0 z-10 bg-gray-900">
+          <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
+            <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
+            <button
+              className="mobile-menu-button p-1 md:hidden bg-primary border-1 border-solid border-primary hover:bg-transparent hover:border-white"
+              aria-label="Open menu"
+              onClick={handleMobileMenu}
+            >
+              <IoMenu className="h-8 w-8 stroke-white" />
+            </button>
+          </div>
+          <nav className="mobile-menu-nav flex justify-start justify-items-center p-8">
+            <ul className="relative flex justify-center justify-items-center flex-col">
+              <li className="py-2">
                 <a
-                  className=""
+                  className="text-white text-2xl"
                   href="#"
                   aria-label="Scroll to top of the page"
                 >Home</a>
               </li>
-              <li className="">
+              <li className="py-2">
                 <a
-                  className=""
+                  className="text-white text-2xl"
                   href="#aboutMe"
                   aria-label="Scroll to about section"
                 >About</a>
               </li>
-              <li className="">
+              <li className="py-2">
                 <a
-                  className=""
+                  className="text-white text-2xl"
                   href="#skills"
                   aria-label="Scroll to skills section"
                 >Skills</a>
               </li>
-              <li className="">
+              <li className="py-2">
                 <a
-                  className=""
+                  className="text-white text-2xl"
                   href="#work"
                   aria-label="Scroll to work Experiences section"
                 >Work experience</a>
               </li>
-              <li className="">
+              <li className="py-2">
                 <a
-                  className=""
+                  className="text-white text-2xl"
                   href="#education"
                   aria-label="Scroll to education section"
                 >Education</a>
               </li>
-              <li className="">
+              <li className="py-2">
                 <a
-                  className=""
+                  className="text-white text-2xl"
                   href="#projects"
                   aria-label="Scroll to projects section"
                 >Projects</a>
