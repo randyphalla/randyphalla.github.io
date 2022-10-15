@@ -24,4 +24,8 @@
 
 .header-nav__list-item-link:hover::after { opacity: 1 }
 
+.mobile-menu {
+  z-index: -1;
+}
+
 .mobile-menu-nav { height: calc(100vh - 73px); }

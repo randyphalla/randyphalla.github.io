@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import './Header.style.css';
-import { IoMenu } from "react-icons/io5/index.js";
+import { IoMenu, IoClose } from "react-icons/io5/index.js";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // const [isMobileViewport, setMobileViewport] = useState(false);
 
   const handleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -17,6 +16,10 @@ const Header = () => {
       block: "start",
       inline: "start"
     });
+
+    if (isMobileMenuOpen) {
+      setMobileMenuOpen(false);
+    };
   };
 
   useEffect(() => {
@@ -98,77 +101,75 @@ const Header = () => {
         </div>
       </header>
 
-      {isMobileMenuOpen && (
-        <div className="mobile-menu fixed inset-0 z-10 bg-gray-900">
-          <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
-            <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
-            <button
-              className="mobile-menu-button p-1 md:hidden bg-primary border-1 border-solid border-primary hover:bg-transparent hover:border-white"
-              aria-label="Open menu"
-              onClick={handleMobileMenu}
-            >
-              <IoMenu className="h-8 w-8 stroke-white" />
-            </button>
-          </div>
-          <nav className="mobile-menu-nav flex justify-start justify-items-center p-8">
-            <ul className="relative flex justify-center justify-items-center flex-col">
-              <li className="py-2">
-                <a
-                  className="text-white text-2xl"
-                  onClick={() => scrollToSection('header')}
-                  role="button"
-                  aria-label="Scroll to top of the page"
-                >Home</a>
-              </li>
-              <li className="py-2">
-                <a
-                  className="text-white text-2xl"
-                  onClick={() => scrollToSection('about')}
-                  role="button"
-                  aria-label="Scroll to about section"
-                >About</a>
-              </li>
-              <li className="py-2">
-                <a
-                  className="text-white text-2xl"
-                  onClick={() => scrollToSection('skills')}
-                  role="button"
-                  aria-label="Scroll to skills section"
-                >Skills</a>
-              </li>
-              <li className="py-2">
-                <a
-                  className="text-white text-2xl"
-                  onClick={() => scrollToSection('work')}
-                  role="button"
-                  aria-label="Scroll to work Experiences section"
-                >Work experience</a>
-              </li>
-              <li className="py-2">
-                <a
-                  className="text-white text-2xl"
-                  onClick={() => scrollToSection('education')}
-                  role="button"
-                  aria-label="Scroll to education section"
-                >Education</a>
-              </li>
-              <li className="py-2">
-                <a
-                  className="text-white text-2xl"
-                  onClick={() => scrollToSection('portfolio')}
-                  role="button"
-                  aria-label="Scroll to projects section"
-                >Projects</a>
-              </li>
-            </ul>
-          </nav>
-
-
-          {/* TODO: Make this as a backdrop */}
-          <div className="" onClick={handleMobileMenu}></div>
-
+      {/* {isMobileMenuOpen && ()} */}
+      <div className={`mobile-menu fixed inset-0 bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
+        <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
+          <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
+          <button
+            className="mobile-menu-button p-1 md:hidden bg-primary border-1 border-solid border-primary hover:bg-transparent hover:border-white"
+            aria-label="Open menu"
+            onClick={handleMobileMenu}
+          >
+            {/* <IoMenu className="h-8 w-8 stroke-white" /> */}
+            <IoClose className="h-8 w-8 stroke-white text-white" />
+          </button>
         </div>
-      )}
+        <nav className="mobile-menu-nav flex justify-start justify-items-center p-8">
+          <ul className="relative flex justify-center justify-items-center flex-col">
+            <li className="py-2">
+              <a
+                className="text-white text-2xl transition-all hover:text-primary"
+                onClick={() => scrollToSection('header')}
+                role="button"
+                aria-label="Scroll to top of the page"
+              >Home</a>
+            </li>
+            <li className="py-2">
+              <a
+                className="text-white text-2xl transition-all hover:text-primary"
+                onClick={() => scrollToSection('about')}
+                role="button"
+                aria-label="Scroll to about section"
+              >About</a>
+            </li>
+            <li className="py-2">
+              <a
+                className="text-white text-2xl transition-all hover:text-primary"
+                onClick={() => scrollToSection('skills')}
+                role="button"
+                aria-label="Scroll to skills section"
+              >Skills</a>
+            </li>
+            <li className="py-2">
+              <a
+                className="text-white text-2xl transition-all hover:text-primary"
+                onClick={() => scrollToSection('work')}
+                role="button"
+                aria-label="Scroll to work Experiences section"
+              >Work experience</a>
+            </li>
+            <li className="py-2">
+              <a
+                className="text-white text-2xl transition-all hover:text-primary"
+                onClick={() => scrollToSection('education')}
+                role="button"
+                aria-label="Scroll to education section"
+              >Education</a>
+            </li>
+            <li className="py-2">
+              <a
+                className="text-white text-2xl transition-all hover:text-primary"
+                onClick={() => scrollToSection('portfolio')}
+                role="button"
+                aria-label="Scroll to projects section"
+              >Projects</a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* TODO: Make this as a backdrop */}
+        {/* <div className="" onClick={handleMobileMenu}></div> */}
+      </div>
     </>
   )
 };
