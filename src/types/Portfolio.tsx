@@ -5,6 +5,7 @@ export type PortfolioType = {
   title: string;
   description?: string;
   images?: PortfolioImageType[];
+  type?: string;
 };
 
 export type PortfolioImageType = {

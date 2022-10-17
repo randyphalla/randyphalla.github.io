@@ -7,30 +7,43 @@ const Portfolio = () => {
   const portfolioItems: PortfolioType[] = [
     {
       id: 0,
-      imgSrc: 'Starwars',
+      imgSrc: '',
       imgSrcAlt: 'Starwars',
       title: 'Starwars',
-      description: 'Project One description',
+      type: "Web",
+      description: `
+        This project is about fetching data from a server and a web application. The goal was to display a list of character and display the detail of that character and the the programming languages I used to create this project was HTML, CSS/SCSS, Foundation 6, JavaScript, Gulp
+      `,
     },
     {
       id: 1,
-      imgSrc: 'Marvel',
+      imgSrc: '',
       imgSrcAlt: 'Marvel',
       title: 'Marvel',
-      description: 'Project One description',
+      type: "Mobile",
+      description: `
+        This project is about fetching data from a server and mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click and the the programming languages I used to create this project was React Native & Expo.
+      `,
     },
     {
       id: 2,
-      imgSrc: 'Pokemon',
+      imgSrc: '',
       imgSrcAlt: 'Pokemon',
       title: 'Pokemon',
-      description: 'Project One description',
+      type: "Mobile",
+      description: `
+        This project is about fetching data from a server and mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click and the the programming languages I used to create this project was React Native & Expo.
+      `,
     },
     {
       id: 3,
-      imgSrc: 'Musicbook',
+      imgSrc: '',
       imgSrcAlt: 'Musicbook',
       title: 'Musicbook',
+      type: "Web",
+      description: `
+        This project is about creating music app using PHP & MySQL. Users are able to create a user account and login with your new account, users have the ability to favorite/unfavorite their artists, albums, songs, playlist and users and able to create, update and delete their own playlist. and the the programming languages I used to create this project was PHP & MySQL, HTML5, CSS3, Bootstrap v5.
+      `,
     },
   ];
   const [items] = useState<PortfolioType[]>(portfolioItems);
@@ -51,16 +64,17 @@ const Portfolio = () => {
         <h4 className="title-gradient title-gradient--projects mb-5 font-bold text-3xl">Projects</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {items && items.map((item: PortfolioType) => (
-            <div
-              key={item.id}
-              onClick={() => handlePortfolioModalOpen(item)}
-              className="p-4 bg-gray-900 hover:bg-gray-800 border-1 border-solid border-gray-900 hover:border-gray-800 rounded-lg cursor-pointer transition-all"
-              role="button"
-              aria-label="Open portfolio modal"
-            >
-              <img className="" src={item.imgSrc} alt={item.imgSrcAlt} />
-              <h4 className="text-white font-bold text-base md:text-lg leading-7 md:leading-8">{item.title}</h4>
-              {item.description && (<p className="text-white text-sm md:text-base leading-7">{item.description}</p>)}
+            <div key={item.id}>
+              <div
+                onClick={() => handlePortfolioModalOpen(item)}
+                className="p-4 bg-gray-900 hover:bg-gray-800 border-1 border-solid border-gray-900 hover:border-gray-800 rounded-lg cursor-pointer transition-all"
+                role="button"
+                aria-label="Open portfolio modal"
+              >
+                <img className="" src={item.imgSrc} alt={item.imgSrcAlt} />
+                <h4 className="text-white font-bold text-base md:text-lg leading-7 md:leading-8">{item.title}</h4>
+              </div>
+              {item.type && (<p className="mt-2 text-gray-500 text-sm">{item.type}</p>)}
             </div>
           ))}
         </div>
