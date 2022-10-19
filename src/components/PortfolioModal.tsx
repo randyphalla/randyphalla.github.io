@@ -10,7 +10,6 @@ type PortfolioModalProps = {
 
 const PortfolioModal = (props: PortfolioModalProps) => {
   const { isOpen, onClose, portfolio } = props;
-  console.log(portfolio);
 
   return (
     <Transition appear show={isOpen} as={Fragment}>

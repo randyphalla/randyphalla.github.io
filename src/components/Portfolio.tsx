@@ -7,7 +7,7 @@ const Portfolio = () => {
   const portfolioItems: PortfolioType[] = [
     {
       id: 0,
-      imgSrc: '',
+      imgSrc: 'https://via.placeholder.com/150',
       imgSrcAlt: 'Starwars',
       title: 'Starwars',
       type: "Web",
@@ -17,7 +17,7 @@ const Portfolio = () => {
     },
     {
       id: 1,
-      imgSrc: '',
+      imgSrc: 'https://via.placeholder.com/150',
       imgSrcAlt: 'Marvel',
       title: 'Marvel',
       type: "Mobile",
@@ -27,7 +27,7 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      imgSrc: '',
+      imgSrc: 'https://via.placeholder.com/150',
       imgSrcAlt: 'Pokemon',
       title: 'Pokemon',
       type: "Mobile",
@@ -37,7 +37,7 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      imgSrc: '',
+      imgSrc: 'https://via.placeholder.com/150',
       imgSrcAlt: 'Musicbook',
       title: 'Musicbook',
       type: "Web",
@@ -64,15 +64,15 @@ const Portfolio = () => {
         <h4 className="title-gradient title-gradient--projects mb-5 font-bold text-3xl">Projects</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {items && items.map((item: PortfolioType) => (
-            <div key={item.id}>
+            <div className="" key={item.id}>
               <div
                 onClick={() => handlePortfolioModalOpen(item)}
-                className="p-4 bg-gray-900 hover:bg-gray-800 border-1 border-solid border-gray-900 hover:border-gray-800 rounded-lg cursor-pointer transition-all"
+                className="p-4 bg-gray-900 hover:bg-gray-700 border-1 border-solid border-gray-900 hover:border-gray-800 rounded-lg cursor-pointer transition-all"
                 role="button"
                 aria-label="Open portfolio modal"
               >
-                <img className="" src={item.imgSrc} alt={item.imgSrcAlt} />
-                <h4 className="text-white font-bold text-base md:text-lg leading-7 md:leading-8">{item.title}</h4>
+                <img className="w-full h-full" src={item.imgSrc} alt={item.imgSrcAlt} />
+                <h4 className="mt-2 text-white font-bold text-base md:text-lg leading-7 md:leading-8">{item.title}</h4>
               </div>
               {item.type && (<p className="mt-2 text-gray-500 text-sm">{item.type}</p>)}
             </div>
