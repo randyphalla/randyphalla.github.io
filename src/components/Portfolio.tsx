@@ -12,8 +12,10 @@ const Portfolio = () => {
       title: 'Starwars',
       type: "Web",
       description: `
-        This project is about fetching data from a server and a web application. The goal was to display a list of character and display the detail of that character and the the programming languages I used to create this project was HTML, CSS/SCSS, Foundation 6, JavaScript, Gulp
+        This project is about fetching data from a server and a web application. The goal was to display a list of character and display the detail of that character and the the programming languages I used to create this project was HTML, CSS/SCSS, Foundation 6, JavaScript, Gulp.
       `,
+      link: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
+      languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
     },
     {
       id: 1,
@@ -24,6 +26,8 @@ const Portfolio = () => {
       description: `
         This project is about fetching data from a server and mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click and the the programming languages I used to create this project was React Native & Expo.
       `,
+      link: 'https://github.com/randyphalla/marvel-expo-app',
+      languages: 'React Native, Expo and CSS-in-JS',
     },
     {
       id: 2,
@@ -34,6 +38,8 @@ const Portfolio = () => {
       description: `
         This project is about fetching data from a server and mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click and the the programming languages I used to create this project was React Native & Expo.
       `,
+      link: 'https://github.com/randyphalla/pokemon-expo-app',
+      languages: 'React Native, Expo and CSS-in-JS',
     },
     {
       id: 3,
@@ -42,8 +48,10 @@ const Portfolio = () => {
       title: 'Musicbook',
       type: "Web",
       description: `
-        This project is about creating music app using PHP & MySQL. Users are able to create a user account and login with your new account, users have the ability to favorite/unfavorite their artists, albums, songs, playlist and users and able to create, update and delete their own playlist. and the the programming languages I used to create this project was PHP & MySQL, HTML5, CSS3, Bootstrap v5.
+        This project is about creating music app using PHP & MySQL. Users are able to create a user account and login with your new account, users have the ability to favorite/unfavorite their artists, albums, songs, playlist and users and able to create, update and delete their own playlist. and the the programming languages I used to create this project was HTML5, CSS3, Bootstrap v5, PHP and MySQL.
       `,
+      link: 'https://github.com/randyphalla/musicbook-php-mysql',
+      languages: 'HTML5, CSS3, Bootstrap v5, PHP and MySQL',
     },
   ];
   const [items] = useState<PortfolioType[]>(portfolioItems);

@@ -48,10 +48,14 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                 >
                   {portfolio?.title}
                 </Dialog.Title>
-                <Dialog.Description className="mt-2 text-sm text-gray-500">
+                <p className="mt-2 text-sm text-gray-500">{portfolio?.languages}</p>
+                <Dialog.Description
+                  className="mt-2 text-sm text-gray-500"
+                >
                   {portfolio?.description}
                 </Dialog.Description>
-                <div className="mt-4">
+                <p className="mt-2 text-sm text-gray-500">{portfolio?.link}</p>
+                {/* <div className="mt-4">
                   <button
                     className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                     type="button"
@@ -59,7 +63,7 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                   >
                     Close
                   </button>
-                </div>
+                </div> */}
               </Dialog.Panel>
             </Transition.Child>
           </div>
