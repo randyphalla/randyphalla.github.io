@@ -2,11 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 import Portfolio from '../components/Portfolio';
+import { PortfolioType } from '../types/Portfolio';
 
 const frontEndSkills = "HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React / React Native, Astro, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).";
+
 const backEndSkills = "Firebase, PHP and MySQL.";
+
 const projectManagementSkills = "Trello and JIRA.";
-const toolsSkills = "Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Github, Sourcetree, and Slack.";
+
+const toolsSkills = "Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Microsoft (Teams, Excel & Word), Github, Sourcetree, and Slack.";
+
 const works = [
 	{
 		role: 'Full Stack Developer',
@@ -23,6 +28,7 @@ const works = [
 		date: 'Aug 2016 - Sept 2016',
 	}
 ];
+
 const educations = [
 {
 		role: 'Interactive Media Specialist',
@@ -38,6 +44,57 @@ const educations = [
 		company: 'Fanshawe College',
 		date: 'Sept 2011 - Apr 2014',
 	}
+];
+
+const portfolioItems: PortfolioType[] = [
+  {
+    id: 0,
+    imgSrc: 'https://via.placeholder.com/150',
+    imgSrcAlt: 'Starwars',
+    title: 'Starwars',
+    type: "Web",
+    description: `
+      This project is about fetching data from a server and a web application. The goal was to display a list of character and display the detail of that character and the the programming languages I used to create this project was HTML, CSS/SCSS, Foundation 6, JavaScript, Gulp.
+    `,
+    link: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
+    languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
+  },
+  {
+    id: 1,
+    imgSrc: 'https://via.placeholder.com/150',
+    imgSrcAlt: 'Marvel',
+    title: 'Marvel',
+    type: "Mobile",
+    description: `
+      This project is about fetching data from a server and mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click and the the programming languages I used to create this project was React Native & Expo.
+    `,
+    link: 'https://github.com/randyphalla/marvel-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
+  },
+  {
+    id: 2,
+    imgSrc: 'https://via.placeholder.com/150',
+    imgSrcAlt: 'Pokemon',
+    title: 'Pokemon',
+    type: "Mobile",
+    description: `
+      This project is about fetching data from a server and mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click and the the programming languages I used to create this project was React Native & Expo.
+    `,
+    link: 'https://github.com/randyphalla/pokemon-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
+  },
+  {
+    id: 3,
+    imgSrc: 'https://via.placeholder.com/150',
+    imgSrcAlt: 'Musicbook',
+    title: 'Musicbook',
+    type: "Web",
+    description: `
+      This project is about creating music app using PHP & MySQL. Users are able to create a user account and login with your new account, users have the ability to favorite/unfavorite their artists, albums, songs, playlist and users and able to create, update and delete their own playlist. and the the programming languages I used to create this project was HTML5, CSS3, Bootstrap v5, PHP and MySQL.
+    `,
+    link: 'https://github.com/randyphalla/musicbook-php-mysql',
+    languages: 'HTML5, CSS3, Bootstrap v5, PHP and MySQL',
+  },
 ];
 ---
 
@@ -111,6 +168,9 @@ const educations = [
 		</div>
 	</section>
 
-	<Portfolio client:load />
+	<Portfolio 
+    client:load 
+    portfolios={portfolioItems} 
+  />
 
 </Layout>
