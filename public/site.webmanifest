@@ -1,0 +1,21 @@
+{ "name":"Randy Phalla's Portfolio",
+  "short_name":"RP's Portfolio",
+  "description": "I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.",
+  "icons":[
+    {
+      "src":"/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FF2734",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "https://randyphalla.github.io/"
+}

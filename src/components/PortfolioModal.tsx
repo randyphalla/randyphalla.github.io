@@ -28,7 +28,7 @@ const PortfolioModal = (props: PortfolioModalProps) => {
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
+          <div className="min-h-full p-4 flex items-center justify-center text-left">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -38,32 +38,31 @@ const PortfolioModal = (props: PortfolioModalProps) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <div>
-                  <img src={portfolio?.imgSrc} alt={portfolio?.imgSrcAlt} />
-                </div>
-                <Dialog.Title
-                  as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
-                >
-                  {portfolio?.title}
-                </Dialog.Title>
-                <p className="mt-2 text-sm text-gray-500">{portfolio?.languages}</p>
-                <Dialog.Description
-                  className="mt-2 text-sm text-gray-500"
-                >
-                  {portfolio?.description}
-                </Dialog.Description>
-                <p className="mt-2 text-sm text-gray-500">{portfolio?.link}</p>
-                {/* <div className="mt-4">
-                  <button
-                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                    type="button"
-                    onClick={onClose}
+              <Dialog.Panel className="flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white shadow-xl transition-all">
+                <img 
+                  className="w-full h-full rounded-lg"
+                  src={portfolio?.imgSrc} 
+                  alt={portfolio?.imgSrcAlt} 
+                />
+                <div className="md:pl-6">
+
+                  <Dialog.Title
+                    as="h3"
+                    className="title-gradient title-gradient mt-5 md:mt-0 font-bold text-2xl md:text-3xl"
                   >
-                    Close
-                  </button>
-                </div> */}
+                    {portfolio?.title}
+                  </Dialog.Title>
+
+                  <p className="mt-4 text-lg md:text-xl	font-bold">Languges:</p>
+                  <Dialog.Description className="text-gray-600 text-base md:text-lg">{portfolio?.languages}</Dialog.Description>
+                  
+                  <p className="mt-4 text-lg md:text-xl font-bold">Site/repo link:</p>
+                  <Dialog.Description className="text-gray-600 text-sm md:text-base">{portfolio?.link}</Dialog.Description>
+                  
+                  <p className="mt-4 text-lg md:text-xl font-bold">Project overview:</p>
+                  <Dialog.Description className="text-gray-600 text-base md:text-lg">{portfolio?.description}</Dialog.Description>
+                  
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>

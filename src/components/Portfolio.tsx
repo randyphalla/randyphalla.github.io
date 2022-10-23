@@ -9,7 +9,7 @@ interface PortfolioProps {
 
 const Portfolio = (props: PortfolioProps) => {
   const { portfolios } = props;
-  const [selectedPortfolio, setSelectedPortfolio] = useState(null);
+  const [selectedPortfolio, setSelectedPortfolio] = useState(portfolios[0]);
   const [isModalOpen, setModalOpen] = useState(false);
   const handlePortfolioModalOpen = (item: PortfolioType) => {
     setModalOpen(!isModalOpen);

@@ -36,7 +36,7 @@ const Footer = () => {
             </li>
 
             <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
-              <a href="#" aria-label="Open email">
+              <a href="mailto: randyphalla@gmail.com" aria-label="Open email">
                 <IoMail className="text-4xl md:text-2xl hover:text-gray-600 transition-all" />
               </a>
             </li>
