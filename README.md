@@ -10,3 +10,6 @@
 - `npm run preview` | Preview your build locally, before deploying
 - `npm run astro...` | Run CLI commands like `astro add`, `astro preview`
 - `npm run astro --help` | Get help using the Astro CLI
+
+## Hosting
+> Using [Github pages]() and [Netlify]()

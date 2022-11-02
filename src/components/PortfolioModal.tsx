@@ -39,10 +39,10 @@ const PortfolioModal = (props: PortfolioModalProps) => {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white shadow-xl transition-all">
-                <img 
+                <img
                   className="w-full h-full rounded-lg"
-                  src={portfolio?.imgSrc} 
-                  alt={portfolio?.imgSrcAlt} 
+                  src={portfolio?.imgSrc}
+                  alt={portfolio?.imgSrcAlt}
                 />
                 <div className="md:pl-6">
 
@@ -55,13 +55,24 @@ const PortfolioModal = (props: PortfolioModalProps) => {
 
                   <p className="mt-4 text-lg md:text-xl	font-bold">Languges:</p>
                   <Dialog.Description className="text-gray-600 text-base md:text-lg">{portfolio?.languages}</Dialog.Description>
-                  
-                  <p className="mt-4 text-lg md:text-xl font-bold">Site/repo link:</p>
-                  <Dialog.Description className="text-gray-600 text-sm md:text-base">{portfolio?.link}</Dialog.Description>
-                  
+
+                  {portfolio?.siteLink && (
+                    <>
+                      <p className="mt-4 text-lg md:text-xl font-bold">Site:</p>
+                      <Dialog.Description className="text-gray-600 text-sm md:text-base">{portfolio?.siteLink}</Dialog.Description>
+                    </>
+                  )}
+
+                  {portfolio?.repoLink && (
+                    <>
+                      <p className="mt-4 text-lg md:text-xl font-bold">Repo</p>
+                      <Dialog.Description className="text-gray-600 text-sm md:text-base">{portfolio?.repoLink}</Dialog.Description>
+                    </>
+                  )}
+
                   <p className="mt-4 text-lg md:text-xl font-bold">Project overview:</p>
                   <Dialog.Description className="text-gray-600 text-base md:text-lg">{portfolio?.description}</Dialog.Description>
-                  
+
                 </div>
               </Dialog.Panel>
             </Transition.Child>

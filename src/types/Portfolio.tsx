@@ -6,7 +6,8 @@ export type PortfolioType = {
   description?: string;
   images?: PortfolioImageType[];
   type?: string;
-  link?: string;
+  repoLink?: string;
+  siteLink?: string;
   languages?: string;
 };
 
