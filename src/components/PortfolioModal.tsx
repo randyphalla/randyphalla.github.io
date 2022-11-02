@@ -40,15 +40,15 @@ const PortfolioModal = (props: PortfolioModalProps) => {
             >
               <Dialog.Panel className="flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white shadow-xl transition-all">
                 <img
-                  className="w-full h-full rounded-lg"
+                  className="w-full md:max-w-sm h-full rounded-lg"
                   src={portfolio?.imgSrc}
                   alt={portfolio?.imgSrcAlt}
                 />
-                <div className="md:pl-6">
+                <div className="w-full md:max-w-lg md:pl-6">
 
                   <Dialog.Title
                     as="h3"
-                    className="title-gradient title-gradient mt-5 md:mt-0 font-bold text-2xl md:text-3xl"
+                    className="mt-5 md:mt-0 font-bold text-2xl md:text-3xl"
                   >
                     {portfolio?.title}
                   </Dialog.Title>
@@ -59,14 +59,14 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                   {portfolio?.siteLink && (
                     <>
                       <p className="mt-4 text-lg md:text-xl font-bold">Site:</p>
-                      <Dialog.Description className="text-gray-600 text-sm md:text-base">{portfolio?.siteLink}</Dialog.Description>
+                      <a className="text-gray-600 text-sm md:text-base transition-all hover:text-gray-500" href={portfolio?.siteLink} target="_blank">{portfolio?.siteLink}</a>
                     </>
                   )}
 
                   {portfolio?.repoLink && (
                     <>
-                      <p className="mt-4 text-lg md:text-xl font-bold">Repo</p>
-                      <Dialog.Description className="text-gray-600 text-sm md:text-base">{portfolio?.repoLink}</Dialog.Description>
+                      <p className="mt-4 text-lg md:text-xl font-bold">Repo:</p>
+                      <a className="text-gray-600 text-sm md:text-base transition-all hover:text-gray-500" href={portfolio?.repoLink} target="_blank">{portfolio?.repoLink}</a>
                     </>
                   )}
 
