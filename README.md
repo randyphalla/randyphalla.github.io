@@ -1,8 +1,6 @@
 # Welcome to [Randy Phalla's Portfolio](https://randyphalla.github.io/)
 > Built with [Astro](https://randyphalla.github.io/), [Tailwind](https://randyphalla.github.io/), and [React](https://randyphalla.github.io/).
 
-## Getting started
-
 ## Scripts
 - `npm install` | Installs dependencies
 - `npm run dev` | Starts local dev server at `localhost:3000`
@@ -12,4 +10,4 @@
 - `npm run astro --help` | Get help using the Astro CLI
 
 ## Hosting
-> Using [Github pages]() and [Netlify]()
+> Using [Github pages](https://pages.github.com/) and [Netlify](https://www.netlify.com/)

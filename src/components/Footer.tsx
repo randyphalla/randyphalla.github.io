@@ -11,31 +11,31 @@ const Footer = () => {
 
           <ul className="mt-5 mb-5 md:mt-0 md:mb-0 flex justify-center md:justify-start items-center md:items-start flex-col md:flex-row">
 
-            <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
+            <li className="mt-2 mb-2 md:mt-0 md: ml-2 mr-2 w-fit">
               <a href="https://github.com/randyphalla" target="_blank" aria-label="Redirect to Github">
                 <IoLogoGithub className="text-4xl md:text-2xl hover:text-gray-600 transition-all" />
               </a>
             </li>
 
-            <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
+            <li className="mt-2 mb-2 md:mt-0 md: ml-2 mr-2 w-fit">
               <a href="https://www.linkedin.com/in/randyphalla/" target="_blank" aria-label="Redirect to Linkedin">
                 <IoLogoLinkedin className="text-4xl md:text-2xl hover:text-gray-600 transition-all" />
               </a>
             </li>
 
-            <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
+            <li className="mt-2 mb-2 md:mt-0 md: ml-2 mr-2 w-fit">
               <a href="https://dribbble.com/randyphalla" target="_blank" aria-label="Redirect to Dribbble">
                 <IoLogoDribbble className="text-4xl md:text-2xl hover:text-gray-600 transition-all" />
               </a>
             </li>
 
-            <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
+            <li className="mt-2 mb-2 md:mt-0 md: ml-2 mr-2 w-fit">
               <a href="https://www.behance.net/randyphalla" target="_blank" aria-label="Redirect to Behance">
                 <IoLogoBehance className="text-4xl md:text-2xl hover:text-gray-600 transition-all" />
               </a>
             </li>
 
-            <li className="mt-2 mb-2 md:mt-0 md: mb-0 ml-2 mr-2 w-fit">
+            <li className="mt-2 mb-2 md:mt-0 md: ml-2 mr-2 w-fit">
               <a href="mailto: randyphalla@gmail.com" aria-label="Open email">
                 <IoMail className="text-4xl md:text-2xl hover:text-gray-600 transition-all" />
               </a>
