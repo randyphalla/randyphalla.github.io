@@ -110,7 +110,6 @@ async function renderToStaticMarkup$1(Component, props, { default: children, ...
 	const vnode = React.createElement(Component, newProps);
 	let html;
 	if (metadata && metadata.hydrate) {
-		html = ReactDOM.renderToString(vnode);
 		if ('renderToReadableStream' in ReactDOM) {
 			html = await renderToReadableStreamAsync(vnode);
 		} else {
@@ -208,7 +207,7 @@ const _renderer1 = {
 	renderToStaticMarkup: renderToStaticMarkup$1,
 };
 
-const ASTRO_VERSION = "1.5.0";
+const ASTRO_VERSION = "1.6.5";
 
 function createDeprecatedFetchContentFn() {
   return () => {
@@ -263,70 +262,53 @@ function isHTMLString(value) {
   return Object.prototype.toString.call(value) === "[object HTMLString]";
 }
 
-function removeLeadingForwardSlashWindows(path) {
-  return path.startsWith("/") && path[2] === ":" ? path.substring(1) : path;
-}
+var idle_prebuilt_default = `(self.Astro=self.Astro||{}).idle=t=>{const e=async()=>{await(await t())()};"requestIdleCallback"in window?window.requestIdleCallback(e):setTimeout(e,200)},window.dispatchEvent(new Event("astro:idle"));`;
 
-class Metadata {
-  constructor(filePathname, opts) {
-    this.modules = opts.modules;
-    this.hoisted = opts.hoisted;
-    this.hydratedComponents = opts.hydratedComponents;
-    this.clientOnlyComponents = opts.clientOnlyComponents;
-    this.hydrationDirectives = opts.hydrationDirectives;
-    this.filePath = removeLeadingForwardSlashWindows(filePathname);
-    this.mockURL = new URL(filePathname, "http://example.com");
-    this.metadataCache = /* @__PURE__ */ new Map();
+var load_prebuilt_default = `(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));`;
+
+var media_prebuilt_default = `(self.Astro=self.Astro||{}).media=(s,a)=>{const t=async()=>{await(await s())()};if(a.value){const e=matchMedia(a.value);e.matches?t():e.addEventListener("change",t,{once:!0})}},window.dispatchEvent(new Event("astro:media"));`;
+
+var only_prebuilt_default = `(self.Astro=self.Astro||{}).only=t=>{(async()=>await(await t())())()},window.dispatchEvent(new Event("astro:only"));`;
+
+var visible_prebuilt_default = `(self.Astro=self.Astro||{}).visible=(s,c,n)=>{const r=async()=>{await(await s())()};let i=new IntersectionObserver(e=>{for(const t of e)if(!!t.isIntersecting){i.disconnect(),r();break}});for(let e=0;e<n.children.length;e++){const t=n.children[e];i.observe(t)}},window.dispatchEvent(new Event("astro:visible"));`;
+
+var astro_island_prebuilt_default = `var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(\`astro:\${e}\`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}`;
+
+function determineIfNeedsHydrationScript(result) {
+  if (result._metadata.hasHydrationScript) {
+    return false;
   }
-  resolvePath(specifier) {
-    if (specifier.startsWith(".")) {
-      const url = new URL(specifier, this.mockURL);
-      return removeLeadingForwardSlashWindows(decodeURI(url.pathname));
-    } else {
-      return specifier;
-    }
-  }
-  getPath(Component) {
-    const metadata = this.getComponentMetadata(Component);
-    return (metadata == null ? void 0 : metadata.componentUrl) || null;
-  }
-  getExport(Component) {
-    const metadata = this.getComponentMetadata(Component);
-    return (metadata == null ? void 0 : metadata.componentExport) || null;
-  }
-  getComponentMetadata(Component) {
-    if (this.metadataCache.has(Component)) {
-      return this.metadataCache.get(Component);
-    }
-    const metadata = this.findComponentMetadata(Component);
-    this.metadataCache.set(Component, metadata);
-    return metadata;
-  }
-  findComponentMetadata(Component) {
-    const isCustomElement = typeof Component === "string";
-    for (const { module, specifier } of this.modules) {
-      const id = this.resolvePath(specifier);
-      for (const [key, value] of Object.entries(module)) {
-        if (isCustomElement) {
-          if (key === "tagName" && Component === value) {
-            return {
-              componentExport: key,
-              componentUrl: id
-            };
-          }
-        } else if (Component === value) {
-          return {
-            componentExport: key,
-            componentUrl: id
-          };
-        }
-      }
-    }
-    return null;
-  }
+  return result._metadata.hasHydrationScript = true;
 }
-function createMetadata(filePathname, options) {
-  return new Metadata(filePathname, options);
+const hydrationScripts = {
+  idle: idle_prebuilt_default,
+  load: load_prebuilt_default,
+  only: only_prebuilt_default,
+  media: media_prebuilt_default,
+  visible: visible_prebuilt_default
+};
+function determinesIfNeedsDirectiveScript(result, directive) {
+  if (result._metadata.hasDirectives.has(directive)) {
+    return false;
+  }
+  result._metadata.hasDirectives.add(directive);
+  return true;
+}
+function getDirectiveScriptText(directive) {
+  if (!(directive in hydrationScripts)) {
+    throw new Error(`Unknown directive: ${directive}`);
+  }
+  const directiveScriptText = hydrationScripts[directive];
+  return directiveScriptText;
+}
+function getPrescripts(type, directive) {
+  switch (type) {
+    case "both":
+      return `<style>astro-island,astro-slot{display:contents}</style><script>${getDirectiveScriptText(directive) + astro_island_prebuilt_default}<\/script>`;
+    case "directive":
+      return `<script>${getDirectiveScriptText(directive)}<\/script>`;
+  }
+  return "";
 }
 
 const PROP_TYPE = {
@@ -553,171 +535,6 @@ async function generateHydrateScript(scriptOptions, metadata) {
   return island;
 }
 
-class SlotString extends HTMLString {
-  constructor(content, instructions) {
-    super(content);
-    this.instructions = instructions;
-  }
-}
-async function renderSlot(_result, slotted, fallback) {
-  if (slotted) {
-    let iterator = renderChild(slotted);
-    let content = "";
-    let instructions = null;
-    for await (const chunk of iterator) {
-      if (chunk.type === "directive") {
-        if (instructions === null) {
-          instructions = [];
-        }
-        instructions.push(chunk);
-      } else {
-        content += chunk;
-      }
-    }
-    return markHTMLString(new SlotString(content, instructions));
-  }
-  return fallback;
-}
-async function renderSlots(result, slots = {}) {
-  let slotInstructions = null;
-  let children = {};
-  if (slots) {
-    await Promise.all(
-      Object.entries(slots).map(
-        ([key, value]) => renderSlot(result, value).then((output) => {
-          if (output.instructions) {
-            if (slotInstructions === null) {
-              slotInstructions = [];
-            }
-            slotInstructions.push(...output.instructions);
-          }
-          children[key] = output;
-        })
-      )
-    );
-  }
-  return { slotInstructions, children };
-}
-
-async function* renderChild(child) {
-  child = await child;
-  if (child instanceof SlotString) {
-    if (child.instructions) {
-      yield* child.instructions;
-    }
-    yield child;
-  } else if (isHTMLString(child)) {
-    yield child;
-  } else if (Array.isArray(child)) {
-    for (const value of child) {
-      yield markHTMLString(await renderChild(value));
-    }
-  } else if (typeof child === "function") {
-    yield* renderChild(child());
-  } else if (typeof child === "string") {
-    yield markHTMLString(escapeHTML(child));
-  } else if (!child && child !== 0) ; else if (child instanceof AstroComponent || Object.prototype.toString.call(child) === "[object AstroComponent]") {
-    yield* renderAstroComponent(child);
-  } else if (ArrayBuffer.isView(child)) {
-    yield child;
-  } else if (typeof child === "object" && (Symbol.asyncIterator in child || Symbol.iterator in child)) {
-    yield* child;
-  } else {
-    yield child;
-  }
-}
-
-var idle_prebuilt_default = `(self.Astro=self.Astro||{}).idle=t=>{const e=async()=>{await(await t())()};"requestIdleCallback"in window?window.requestIdleCallback(e):setTimeout(e,200)},window.dispatchEvent(new Event("astro:idle"));`;
-
-var load_prebuilt_default = `(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));`;
-
-var media_prebuilt_default = `(self.Astro=self.Astro||{}).media=(s,a)=>{const t=async()=>{await(await s())()};if(a.value){const e=matchMedia(a.value);e.matches?t():e.addEventListener("change",t,{once:!0})}},window.dispatchEvent(new Event("astro:media"));`;
-
-var only_prebuilt_default = `(self.Astro=self.Astro||{}).only=t=>{(async()=>await(await t())())()},window.dispatchEvent(new Event("astro:only"));`;
-
-var visible_prebuilt_default = `(self.Astro=self.Astro||{}).visible=(s,c,n)=>{const r=async()=>{await(await s())()};let i=new IntersectionObserver(e=>{for(const t of e)if(!!t.isIntersecting){i.disconnect(),r();break}});for(let e=0;e<n.children.length;e++){const t=n.children[e];i.observe(t)}},window.dispatchEvent(new Event("astro:visible"));`;
-
-var astro_island_prebuilt_default = `var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(\`astro:\${e}\`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}`;
-
-function determineIfNeedsHydrationScript(result) {
-  if (result._metadata.hasHydrationScript) {
-    return false;
-  }
-  return result._metadata.hasHydrationScript = true;
-}
-const hydrationScripts = {
-  idle: idle_prebuilt_default,
-  load: load_prebuilt_default,
-  only: only_prebuilt_default,
-  media: media_prebuilt_default,
-  visible: visible_prebuilt_default
-};
-function determinesIfNeedsDirectiveScript(result, directive) {
-  if (result._metadata.hasDirectives.has(directive)) {
-    return false;
-  }
-  result._metadata.hasDirectives.add(directive);
-  return true;
-}
-function getDirectiveScriptText(directive) {
-  if (!(directive in hydrationScripts)) {
-    throw new Error(`Unknown directive: ${directive}`);
-  }
-  const directiveScriptText = hydrationScripts[directive];
-  return directiveScriptText;
-}
-function getPrescripts(type, directive) {
-  switch (type) {
-    case "both":
-      return `<style>astro-island,astro-slot{display:contents}</style><script>${getDirectiveScriptText(directive) + astro_island_prebuilt_default}<\/script>`;
-    case "directive":
-      return `<script>${getDirectiveScriptText(directive)}<\/script>`;
-  }
-  return "";
-}
-
-const Fragment = Symbol.for("astro:fragment");
-const Renderer = Symbol.for("astro:renderer");
-const encoder = new TextEncoder();
-const decoder = new TextDecoder();
-function stringifyChunk(result, chunk) {
-  switch (chunk.type) {
-    case "directive": {
-      const { hydration } = chunk;
-      let needsHydrationScript = hydration && determineIfNeedsHydrationScript(result);
-      let needsDirectiveScript = hydration && determinesIfNeedsDirectiveScript(result, hydration.directive);
-      let prescriptType = needsHydrationScript ? "both" : needsDirectiveScript ? "directive" : null;
-      if (prescriptType) {
-        let prescripts = getPrescripts(prescriptType, hydration.directive);
-        return markHTMLString(prescripts);
-      } else {
-        return "";
-      }
-    }
-    default: {
-      return chunk.toString();
-    }
-  }
-}
-class HTMLParts {
-  constructor() {
-    this.parts = "";
-  }
-  append(part, result) {
-    if (ArrayBuffer.isView(part)) {
-      this.parts += decoder.decode(part);
-    } else {
-      this.parts += stringifyChunk(result, part);
-    }
-  }
-  toString() {
-    return this.parts;
-  }
-  toArrayBuffer() {
-    return encoder.encode(this.parts);
-  }
-}
-
 function validateComponentProps(props, displayName) {
   var _a;
   if (((_a = (Object.assign({"BASE_URL":"/","MODE":"production","DEV":false,"PROD":true},{_:process.env._,}))) == null ? void 0 : _a.DEV) && props != null) {
@@ -752,7 +569,7 @@ function isAstroComponent(obj) {
   return typeof obj === "object" && Object.prototype.toString.call(obj) === "[object AstroComponent]";
 }
 function isAstroComponentFactory(obj) {
-  return obj == null ? false : !!obj.isAstroComponentFactory;
+  return obj == null ? false : obj.isAstroComponentFactory === true;
 }
 async function* renderAstroComponent(component) {
   for await (const value of component) {
@@ -798,6 +615,306 @@ async function renderToIterable(result, componentFactory, displayName, props, ch
 }
 async function renderTemplate(htmlParts, ...expressions) {
   return new AstroComponent(htmlParts, expressions);
+}
+
+async function* renderChild(child) {
+  child = await child;
+  if (child instanceof SlotString) {
+    if (child.instructions) {
+      yield* child.instructions;
+    }
+    yield child;
+  } else if (isHTMLString(child)) {
+    yield child;
+  } else if (Array.isArray(child)) {
+    for (const value of child) {
+      yield markHTMLString(await renderChild(value));
+    }
+  } else if (typeof child === "function") {
+    yield* renderChild(child());
+  } else if (typeof child === "string") {
+    yield markHTMLString(escapeHTML(child));
+  } else if (!child && child !== 0) ; else if (child instanceof AstroComponent || Object.prototype.toString.call(child) === "[object AstroComponent]") {
+    yield* renderAstroComponent(child);
+  } else if (ArrayBuffer.isView(child)) {
+    yield child;
+  } else if (typeof child === "object" && (Symbol.asyncIterator in child || Symbol.iterator in child)) {
+    yield* child;
+  } else {
+    yield child;
+  }
+}
+
+const slotString = Symbol.for("astro:slot-string");
+class SlotString extends HTMLString {
+  constructor(content, instructions) {
+    super(content);
+    this.instructions = instructions;
+    this[slotString] = true;
+  }
+}
+function isSlotString(str) {
+  return !!str[slotString];
+}
+async function renderSlot(_result, slotted, fallback) {
+  if (slotted) {
+    let iterator = renderChild(slotted);
+    let content = "";
+    let instructions = null;
+    for await (const chunk of iterator) {
+      if (chunk.type === "directive") {
+        if (instructions === null) {
+          instructions = [];
+        }
+        instructions.push(chunk);
+      } else {
+        content += chunk;
+      }
+    }
+    return markHTMLString(new SlotString(content, instructions));
+  }
+  return fallback;
+}
+async function renderSlots(result, slots = {}) {
+  let slotInstructions = null;
+  let children = {};
+  if (slots) {
+    await Promise.all(
+      Object.entries(slots).map(
+        ([key, value]) => renderSlot(result, value).then((output) => {
+          if (output.instructions) {
+            if (slotInstructions === null) {
+              slotInstructions = [];
+            }
+            slotInstructions.push(...output.instructions);
+          }
+          children[key] = output;
+        })
+      )
+    );
+  }
+  return { slotInstructions, children };
+}
+
+const Fragment = Symbol.for("astro:fragment");
+const Renderer = Symbol.for("astro:renderer");
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
+function stringifyChunk(result, chunk) {
+  switch (chunk.type) {
+    case "directive": {
+      const { hydration } = chunk;
+      let needsHydrationScript = hydration && determineIfNeedsHydrationScript(result);
+      let needsDirectiveScript = hydration && determinesIfNeedsDirectiveScript(result, hydration.directive);
+      let prescriptType = needsHydrationScript ? "both" : needsDirectiveScript ? "directive" : null;
+      if (prescriptType) {
+        let prescripts = getPrescripts(prescriptType, hydration.directive);
+        return markHTMLString(prescripts);
+      } else {
+        return "";
+      }
+    }
+    default: {
+      if (isSlotString(chunk)) {
+        let out = "";
+        const c = chunk;
+        if (c.instructions) {
+          for (const instr of c.instructions) {
+            out += stringifyChunk(result, instr);
+          }
+        }
+        out += chunk.toString();
+        return out;
+      }
+      return chunk.toString();
+    }
+  }
+}
+class HTMLParts {
+  constructor() {
+    this.parts = "";
+  }
+  append(part, result) {
+    if (ArrayBuffer.isView(part)) {
+      this.parts += decoder.decode(part);
+    } else {
+      this.parts += stringifyChunk(result, part);
+    }
+  }
+  toString() {
+    return this.parts;
+  }
+  toArrayBuffer() {
+    return encoder.encode(this.parts);
+  }
+}
+
+const ClientOnlyPlaceholder = "astro-client-only";
+const skipAstroJSXCheck = /* @__PURE__ */ new WeakSet();
+let originalConsoleError;
+let consoleFilterRefs = 0;
+async function renderJSX(result, vnode) {
+  switch (true) {
+    case vnode instanceof HTMLString:
+      if (vnode.toString().trim() === "") {
+        return "";
+      }
+      return vnode;
+    case typeof vnode === "string":
+      return markHTMLString(escapeHTML(vnode));
+    case typeof vnode === "function":
+      return vnode;
+    case (!vnode && vnode !== 0):
+      return "";
+    case Array.isArray(vnode):
+      return markHTMLString(
+        (await Promise.all(vnode.map((v) => renderJSX(result, v)))).join("")
+      );
+  }
+  if (isVNode(vnode)) {
+    switch (true) {
+      case !vnode.type: {
+        throw new Error(`Unable to render ${result._metadata.pathname} because it contains an undefined Component!
+Did you forget to import the component or is it possible there is a typo?`);
+      }
+      case vnode.type === Symbol.for("astro:fragment"):
+        return renderJSX(result, vnode.props.children);
+      case vnode.type.isAstroComponentFactory: {
+        let props = {};
+        let slots = {};
+        for (const [key, value] of Object.entries(vnode.props ?? {})) {
+          if (key === "children" || value && typeof value === "object" && value["$$slot"]) {
+            slots[key === "children" ? "default" : key] = () => renderJSX(result, value);
+          } else {
+            props[key] = value;
+          }
+        }
+        return markHTMLString(await renderToString(result, vnode.type, props, slots));
+      }
+      case (!vnode.type && vnode.type !== 0):
+        return "";
+      case (typeof vnode.type === "string" && vnode.type !== ClientOnlyPlaceholder):
+        return markHTMLString(await renderElement$1(result, vnode.type, vnode.props ?? {}));
+    }
+    if (vnode.type) {
+      let extractSlots2 = function(child) {
+        if (Array.isArray(child)) {
+          return child.map((c) => extractSlots2(c));
+        }
+        if (!isVNode(child)) {
+          _slots.default.push(child);
+          return;
+        }
+        if ("slot" in child.props) {
+          _slots[child.props.slot] = [..._slots[child.props.slot] ?? [], child];
+          delete child.props.slot;
+          return;
+        }
+        _slots.default.push(child);
+      };
+      if (typeof vnode.type === "function" && vnode.type["astro:renderer"]) {
+        skipAstroJSXCheck.add(vnode.type);
+      }
+      if (typeof vnode.type === "function" && vnode.props["server:root"]) {
+        const output2 = await vnode.type(vnode.props ?? {});
+        return await renderJSX(result, output2);
+      }
+      if (typeof vnode.type === "function" && !skipAstroJSXCheck.has(vnode.type)) {
+        useConsoleFilter();
+        try {
+          const output2 = await vnode.type(vnode.props ?? {});
+          if (output2 && output2[AstroJSX]) {
+            return await renderJSX(result, output2);
+          } else if (!output2) {
+            return await renderJSX(result, output2);
+          }
+        } catch (e) {
+          skipAstroJSXCheck.add(vnode.type);
+        } finally {
+          finishUsingConsoleFilter();
+        }
+      }
+      const { children = null, ...props } = vnode.props ?? {};
+      const _slots = {
+        default: []
+      };
+      extractSlots2(children);
+      for (const [key, value] of Object.entries(props)) {
+        if (value["$$slot"]) {
+          _slots[key] = value;
+          delete props[key];
+        }
+      }
+      const slotPromises = [];
+      const slots = {};
+      for (const [key, value] of Object.entries(_slots)) {
+        slotPromises.push(
+          renderJSX(result, value).then((output2) => {
+            if (output2.toString().trim().length === 0)
+              return;
+            slots[key] = () => output2;
+          })
+        );
+      }
+      await Promise.all(slotPromises);
+      let output;
+      if (vnode.type === ClientOnlyPlaceholder && vnode.props["client:only"]) {
+        output = await renderComponent(
+          result,
+          vnode.props["client:display-name"] ?? "",
+          null,
+          props,
+          slots
+        );
+      } else {
+        output = await renderComponent(
+          result,
+          typeof vnode.type === "function" ? vnode.type.name : vnode.type,
+          vnode.type,
+          props,
+          slots
+        );
+      }
+      if (typeof output !== "string" && Symbol.asyncIterator in output) {
+        let parts = new HTMLParts();
+        for await (const chunk of output) {
+          parts.append(chunk, result);
+        }
+        return markHTMLString(parts.toString());
+      } else {
+        return markHTMLString(output);
+      }
+    }
+  }
+  return markHTMLString(`${vnode}`);
+}
+async function renderElement$1(result, tag, { children, ...props }) {
+  return markHTMLString(
+    `<${tag}${spreadAttributes(props)}${markHTMLString(
+      (children == null || children == "") && voidElementNames.test(tag) ? `/>` : `>${children == null ? "" : await renderJSX(result, children)}</${tag}>`
+    )}`
+  );
+}
+function useConsoleFilter() {
+  consoleFilterRefs++;
+  if (!originalConsoleError) {
+    originalConsoleError = console.error;
+    try {
+      console.error = filteredConsoleError;
+    } catch (error) {
+    }
+  }
+}
+function finishUsingConsoleFilter() {
+  consoleFilterRefs--;
+}
+function filteredConsoleError(msg, ...rest) {
+  if (consoleFilterRefs > 0 && typeof msg === "string") {
+    const isKnownReactHookError = msg.includes("Warning: Invalid hook call.") && msg.includes("https://reactjs.org/link/invalid-hook-call");
+    if (isKnownReactHookError)
+      return;
+  }
+  originalConsoleError(msg, ...rest);
 }
 
 /**
@@ -929,7 +1046,7 @@ function internalSpreadAttributes(values, shouldEscape = true) {
   }
   return markHTMLString(output);
 }
-function renderElement$1(name, { props: _props, children = "" }, shouldEscape = true) {
+function renderElement(name, { props: _props, children = "" }, shouldEscape = true) {
   const { lang: _, "data-astro-id": astroId, "define:vars": defineVars, ...props } = _props;
   if (defineVars) {
     if (name === "style") {
@@ -997,7 +1114,7 @@ function getComponentType(Component) {
 }
 async function renderComponent(result, displayName, Component, _props, slots = {}) {
   var _a;
-  Component = await Component;
+  Component = await Component ?? Component;
   switch (getComponentType(Component)) {
     case "fragment": {
       const children2 = await renderSlot(result, slots == null ? void 0 : slots.default);
@@ -1048,7 +1165,12 @@ Did you mean to add ${formatList(probableRendererNames.map((r) => "`" + r + "`")
   const { children, slotInstructions } = await renderSlots(result, slots);
   let renderer;
   if (metadata.hydrate !== "only") {
-    if (Component && Component[Renderer]) {
+    let isTagged = false;
+    try {
+      isTagged = Component && Component[Renderer];
+    } catch {
+    }
+    if (isTagged) {
       const rendererName = Component[Renderer];
       renderer = renderers.find(({ name }) => name === rendererName);
     }
@@ -1208,7 +1330,7 @@ ${serializeProps(
       yield* slotInstructions;
     }
     yield { type: "directive", hydration, result };
-    yield markHTMLString(renderElement$1("astro-island", island, false));
+    yield markHTMLString(renderElement("astro-island", island, false));
   }
   return renderAll();
 }
@@ -1220,12 +1342,12 @@ const uniqueElements = (item, index, all) => {
 };
 function renderHead(result) {
   result._metadata.hasRenderedHead = true;
-  const styles = Array.from(result.styles).filter(uniqueElements).map((style) => renderElement$1("style", style));
+  const styles = Array.from(result.styles).filter(uniqueElements).map((style) => renderElement("style", style));
   result.styles.clear();
   const scripts = Array.from(result.scripts).filter(uniqueElements).map((script, i) => {
-    return renderElement$1("script", script, false);
+    return renderElement("script", script, false);
   });
-  const links = Array.from(result.links).filter(uniqueElements).map((link) => renderElement$1("link", link, false));
+  const links = Array.from(result.links).filter(uniqueElements).map((link) => renderElement("link", link, false));
   return markHTMLString(links.join("\n") + styles.join("\n") + scripts.join("\n"));
 }
 async function* maybeRenderHead(result) {
@@ -1271,7 +1393,7 @@ function spreadAttributes(values, _name, { class: scopedClassName } = {}) {
 
 const AstroJSX = "astro:jsx";
 const Empty = Symbol("empty");
-const toSlotName = (str) => str.trim().replace(/[-_]([a-z])/g, (_, w) => w.toUpperCase());
+const toSlotName = (slotAttr) => slotAttr;
 function isVNode(vnode) {
   return vnode && typeof vnode === "object" && vnode[AstroJSX];
 }
@@ -1343,174 +1465,6 @@ function createVNode(type, props) {
   transformSetDirectives(vnode);
   transformSlots(vnode);
   return vnode;
-}
-
-const ClientOnlyPlaceholder = "astro-client-only";
-const skipAstroJSXCheck = /* @__PURE__ */ new WeakSet();
-let originalConsoleError;
-let consoleFilterRefs = 0;
-async function renderJSX(result, vnode) {
-  switch (true) {
-    case vnode instanceof HTMLString:
-      if (vnode.toString().trim() === "") {
-        return "";
-      }
-      return vnode;
-    case typeof vnode === "string":
-      return markHTMLString(escapeHTML(vnode));
-    case typeof vnode === "function":
-      return vnode;
-    case (!vnode && vnode !== 0):
-      return "";
-    case Array.isArray(vnode):
-      return markHTMLString(
-        (await Promise.all(vnode.map((v) => renderJSX(result, v)))).join("")
-      );
-  }
-  if (isVNode(vnode)) {
-    switch (true) {
-      case !vnode.type: {
-        throw new Error(`Unable to render ${result._metadata.pathname} because it contains an undefined Component!
-Did you forget to import the component or is it possible there is a typo?`);
-      }
-      case vnode.type === Symbol.for("astro:fragment"):
-        return renderJSX(result, vnode.props.children);
-      case vnode.type.isAstroComponentFactory: {
-        let props = {};
-        let slots = {};
-        for (const [key, value] of Object.entries(vnode.props ?? {})) {
-          if (key === "children" || value && typeof value === "object" && value["$$slot"]) {
-            slots[key === "children" ? "default" : key] = () => renderJSX(result, value);
-          } else {
-            props[key] = value;
-          }
-        }
-        return markHTMLString(await renderToString(result, vnode.type, props, slots));
-      }
-      case (!vnode.type && vnode.type !== 0):
-        return "";
-      case (typeof vnode.type === "string" && vnode.type !== ClientOnlyPlaceholder):
-        return markHTMLString(await renderElement(result, vnode.type, vnode.props ?? {}));
-    }
-    if (vnode.type) {
-      let extractSlots2 = function(child) {
-        if (Array.isArray(child)) {
-          return child.map((c) => extractSlots2(c));
-        }
-        if (!isVNode(child)) {
-          _slots.default.push(child);
-          return;
-        }
-        if ("slot" in child.props) {
-          _slots[child.props.slot] = [..._slots[child.props.slot] ?? [], child];
-          delete child.props.slot;
-          return;
-        }
-        _slots.default.push(child);
-      };
-      if (typeof vnode.type === "function" && vnode.type["astro:renderer"]) {
-        skipAstroJSXCheck.add(vnode.type);
-      }
-      if (typeof vnode.type === "function" && vnode.props["server:root"]) {
-        const output2 = await vnode.type(vnode.props ?? {});
-        return await renderJSX(result, output2);
-      }
-      if (typeof vnode.type === "function" && !skipAstroJSXCheck.has(vnode.type)) {
-        useConsoleFilter();
-        try {
-          const output2 = await vnode.type(vnode.props ?? {});
-          if (output2 && output2[AstroJSX]) {
-            return await renderJSX(result, output2);
-          } else if (!output2) {
-            return await renderJSX(result, output2);
-          }
-        } catch (e) {
-          skipAstroJSXCheck.add(vnode.type);
-        } finally {
-          finishUsingConsoleFilter();
-        }
-      }
-      const { children = null, ...props } = vnode.props ?? {};
-      const _slots = {
-        default: []
-      };
-      extractSlots2(children);
-      for (const [key, value] of Object.entries(props)) {
-        if (value["$$slot"]) {
-          _slots[key] = value;
-          delete props[key];
-        }
-      }
-      const slotPromises = [];
-      const slots = {};
-      for (const [key, value] of Object.entries(_slots)) {
-        slotPromises.push(
-          renderJSX(result, value).then((output2) => {
-            if (output2.toString().trim().length === 0)
-              return;
-            slots[key] = () => output2;
-          })
-        );
-      }
-      await Promise.all(slotPromises);
-      let output;
-      if (vnode.type === ClientOnlyPlaceholder && vnode.props["client:only"]) {
-        output = await renderComponent(
-          result,
-          vnode.props["client:display-name"] ?? "",
-          null,
-          props,
-          slots
-        );
-      } else {
-        output = await renderComponent(
-          result,
-          typeof vnode.type === "function" ? vnode.type.name : vnode.type,
-          vnode.type,
-          props,
-          slots
-        );
-      }
-      if (typeof output !== "string" && Symbol.asyncIterator in output) {
-        let parts = new HTMLParts();
-        for await (const chunk of output) {
-          parts.append(chunk, result);
-        }
-        return markHTMLString(parts.toString());
-      } else {
-        return markHTMLString(output);
-      }
-    }
-  }
-  return markHTMLString(`${vnode}`);
-}
-async function renderElement(result, tag, { children, ...props }) {
-  return markHTMLString(
-    `<${tag}${spreadAttributes(props)}${markHTMLString(
-      (children == null || children == "") && voidElementNames.test(tag) ? `/>` : `>${children == null ? "" : await renderJSX(result, children)}</${tag}>`
-    )}`
-  );
-}
-function useConsoleFilter() {
-  consoleFilterRefs++;
-  if (!originalConsoleError) {
-    originalConsoleError = console.error;
-    try {
-      console.error = filteredConsoleError;
-    } catch (error) {
-    }
-  }
-}
-function finishUsingConsoleFilter() {
-  consoleFilterRefs--;
-}
-function filteredConsoleError(msg, ...rest) {
-  if (consoleFilterRefs > 0 && typeof msg === "string") {
-    const isKnownReactHookError = msg.includes("Warning: Invalid hook call.") && msg.includes("https://reactjs.org/link/invalid-hook-call");
-    if (isKnownReactHookError)
-      return;
-  }
-  originalConsoleError(msg, ...rest);
 }
 
 const slotName = (str) => str.trim().replace(/[-_]([a-z])/g, (_, w) => w.toUpperCase());
@@ -1733,11 +1687,6 @@ const Header = () => {
 };
 __astro_tag_component__(Header, "@astrojs/react");
 
-const $$module1$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-	__proto__: null,
-	default: Header
-}, Symbol.toStringTag, { value: 'Module' }));
-
 const Footer = () => {
   return /* @__PURE__ */ jsxs("footer", {
     className: "border-t-1 border-solid border-gray-100",
@@ -1847,20 +1796,11 @@ const Footer = () => {
 };
 __astro_tag_component__(Footer, "@astrojs/react");
 
-const $$module2$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-	__proto__: null,
-	default: Footer
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const $$metadata$2 = createMetadata("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro", { modules: [{ module: $$module1$1, specifier: "../components/Header", assert: {} }, { module: $$module2$1, specifier: "../components/Footer", assert: {} }], hydratedComponents: [Header], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set(["load"]), hoisted: [] });
 const $$Astro$2 = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
 const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Layout;
   const { title } = Astro2.props;
-  const STYLES = [];
-  for (const STYLE of STYLES)
-    $$result.styles.add(STYLE);
   return renderTemplate`<html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -1891,18 +1831,6 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 </body></html>`;
 });
 
-const $$file$2 = "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro";
-const $$url$2 = undefined;
-
-const $$module1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-	__proto__: null,
-	$$metadata: $$metadata$2,
-	default: $$Layout,
-	file: $$file$2,
-	url: $$url$2
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const $$metadata$1 = createMetadata("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro", { modules: [], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro$1 = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
 const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
@@ -1918,17 +1846,6 @@ const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
   </div>
 </section>`;
 });
-
-const $$file$1 = "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro";
-const $$url$1 = undefined;
-
-const $$module2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-	__proto__: null,
-	$$metadata: $$metadata$1,
-	default: $$Banner,
-	file: $$file$1,
-	url: $$url$1
-}, Symbol.toStringTag, { value: 'Module' }));
 
 const PortfolioModal = (props) => {
   const {
@@ -2077,16 +1994,6 @@ const Portfolio = (props) => {
 };
 __astro_tag_component__(Portfolio, "@astrojs/react");
 
-const $$module3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-	__proto__: null,
-	default: Portfolio
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const $$module4 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-	__proto__: null
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const $$metadata = createMetadata("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro", { modules: [{ module: $$module1, specifier: "../layouts/Layout.astro", assert: {} }, { module: $$module2, specifier: "../components/Banner.astro", assert: {} }, { module: $$module3, specifier: "../components/Portfolio", assert: {} }, { module: $$module4, specifier: "../types/Portfolio", assert: {} }], hydratedComponents: [Portfolio], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set(["load"]), hoisted: [] });
 const $$Astro = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
@@ -2182,14 +2089,13 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
 		<div class="flex justify-between items-start flex-col lg:flex-row">
 			<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="/me.jpeg" alt="Portrait of Randy Phalla">
 			<div class="lg:ml-8">
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">
-					I'm a front-end Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a front-end Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media.</p>
 
 				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files such as Photoshop, Illustrator, XD, Sketch & Figma and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, collaborating with designers, developers and clients.</p>
 
 				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
 
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities.</p>
 
 				<!-- TOOD: get resume and update link -->
 				<!-- <a
@@ -2236,7 +2142,6 @@ const $$url = "";
 
 const _page0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
-	$$metadata,
 	default: $$Index,
 	file: $$file,
 	url: $$url
@@ -2270,9 +2175,14 @@ new RegExp(
 
 function getRouteGenerator(segments, addTrailingSlash) {
   const template = segments.map((segment) => {
-    return segment[0].spread ? `/:${segment[0].content.slice(3)}(.*)?` : "/" + segment.map((part) => {
-      if (part)
-        return part.dynamic ? `:${part.content}` : part.content.normalize().replace(/\?/g, "%3F").replace(/#/g, "%23").replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return "/" + segment.map((part) => {
+      if (part.spread) {
+        return `:${part.content.slice(3)}(.*)?`;
+      } else if (part.dynamic) {
+        return `:${part.content}`;
+      } else {
+        return part.content.normalize().replace(/\?/g, "%3F").replace(/#/g, "%23").replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      }
     }).join("");
   }).join("");
   let trailing = "";
@@ -2314,7 +2224,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.b46808f6.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Portfolio":"Portfolio.d6016520.js","/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Header":"Header.256b88be.js","@astrojs/react/client.js":"client.091107ac.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.b46808f6.css","/Header.256b88be.js","/Portfolio.d6016520.js","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.091107ac.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/me.jpeg","/randyphalla-icon.png","/site.webmanifest","/chunks/index.a18801a5.js","/chunks/index.f255b493.js","/chunks/jsx-runtime.5b11b7a3.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.dc49c6d3.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Portfolio":"Portfolio.9ec8ab2c.js","/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Header":"Header.256b88be.js","@astrojs/react/client.js":"client.091107ac.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.dc49c6d3.css","/Header.256b88be.js","/Portfolio.9ec8ab2c.js","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.091107ac.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/me.jpeg","/randyphalla-icon.png","/site.webmanifest","/chunks/index.a18801a5.js","/chunks/index.f255b493.js","/chunks/jsx-runtime.5b11b7a3.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
