@@ -1,7 +1,7 @@
 import './Portfolio.style.css';
 import { useState } from 'react';
 import PortfolioModal from './PortfolioModal';
-import { PortfolioType } from '../types/Portfolio';
+import type { PortfolioType } from '@types/Portfolio';
 
 interface PortfolioProps {
   portfolios: PortfolioType[];

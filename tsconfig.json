@@ -11,5 +11,13 @@
     "isolatedModules": true,
     // Astro will directly run your TypeScript code, no transpilation needed.
     "noEmit": true,
-  }
+    "importsNotUsedAsValues": "error",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@types/*": ["src/types/*"],
+    },
+  },
 }

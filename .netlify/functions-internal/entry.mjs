@@ -537,7 +537,7 @@ async function generateHydrateScript(scriptOptions, metadata) {
 
 function validateComponentProps(props, displayName) {
   var _a;
-  if (((_a = (Object.assign({"BASE_URL":"/","MODE":"production","DEV":false,"PROD":true},{_:process.env._,}))) == null ? void 0 : _a.DEV) && props != null) {
+  if (((_a = (Object.assign({"BASE_URL":"/","MODE":"production","DEV":false,"PROD":true},{}))) == null ? void 0 : _a.DEV) && props != null) {
     for (const prop of Object.keys(props)) {
       if (HydrationDirectiveProps.has(prop)) {
         console.warn(
@@ -1796,7 +1796,7 @@ const Footer = () => {
 };
 __astro_tag_component__(Footer, "@astrojs/react");
 
-const $$Astro$2 = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
+const $$Astro$2 = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/layouts/Layout.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
 const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Layout;
@@ -1821,7 +1821,7 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 	${renderHead($$result)}</head>
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>
-		${renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Header", "client:component-export": "default" })}
+		${renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" })}
 		<main>
 			<h2 class="hidden">Main Content</h2>
 			${renderSlot($$result, $$slots["default"])}
@@ -1831,7 +1831,7 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 </body></html>`;
 });
 
-const $$Astro$1 = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
+const $$Astro$1 = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/components/Banner.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
 const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Banner;
@@ -1842,7 +1842,7 @@ const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
     <h4 class="text-gray-900 font-normal text-sm md:text-base">Hey, I'm</h4>
     <h5 class="text-gray-900 font-bold text-6xl md:text-7xl"><span class="gradient-text">${name}</span></h5>
     <h6 class="mt-2 text-gray-900 font-medium text-2xl md:text-3xl">${role}</h6>
-    <p class="mt-2 text-base md:text-lg">I'm passionate about front-end development, creating aesthetically websites and user experiences.</p>
+    <p class="mt-2 text-base md:text-lg">I specialize in accessibility, animations and UI/UX. </p>
   </div>
 </section>`;
 });
@@ -1994,7 +1994,7 @@ const Portfolio = (props) => {
 };
 __astro_tag_component__(Portfolio, "@astrojs/react");
 
-const $$Astro = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
+const $$Astro = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/pages/index.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
@@ -2089,13 +2089,13 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
 		<div class="flex justify-between items-start flex-col lg:flex-row">
 			<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="/me.jpeg" alt="Portrait of Randy Phalla">
 			<div class="lg:ml-8">
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a front-end Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.</p>
 
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files such as Photoshop, Illustrator, XD, Sketch & Figma and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, collaborating with designers, developers and clients.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files such as Photoshop, Illustrator, XD, Sketch & Figma and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using at work are HTML5, CSS3 (SCSS), Tailwind, Material UI, CSS-in-JS, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Storybook and Firebase.</p>
 
 				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
 
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
 
 				<!-- TOOD: get resume and update link -->
 				<!-- <a
@@ -2134,10 +2134,10 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
 					<p class="text-gray-600 text-sm md:text-base leading-7">${education.date}</p>
 				</div>`)}
 		</div>
-	</section>${renderComponent($$result, "Portfolio", Portfolio, { "client:load": true, "portfolios": portfolioItems, "client:component-hydration": "load", "client:component-path": "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Portfolio", "client:component-export": "default" })}` })}`;
+	</section>${renderComponent($$result, "Portfolio", Portfolio, { "client:load": true, "portfolios": portfolioItems, "client:component-hydration": "load", "client:component-path": "@components/Portfolio", "client:component-export": "default" })}` })}`;
 });
 
-const $$file = "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro";
+const $$file = "C:/Users/Asian/Documents/Github/portfolio-v2/src/pages/index.astro";
 const $$url = "";
 
 const _page0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
@@ -2224,7 +2224,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.dc49c6d3.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Portfolio":"Portfolio.9ec8ab2c.js","/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Header":"Header.256b88be.js","@astrojs/react/client.js":"client.091107ac.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.dc49c6d3.css","/Header.256b88be.js","/Portfolio.9ec8ab2c.js","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.091107ac.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/me.jpeg","/randyphalla-icon.png","/site.webmanifest","/chunks/index.a18801a5.js","/chunks/index.f255b493.js","/chunks/jsx-runtime.5b11b7a3.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.331694a7.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@components/Portfolio":"Portfolio.c0e5347d.js","@components/Header":"Header.e5eb5414.js","@astrojs/react/client.js":"client.4dc2232e.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.331694a7.css","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.4dc2232e.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/Header.e5eb5414.js","/me.jpeg","/Portfolio.c0e5347d.js","/randyphalla-icon.png","/site.webmanifest","/chunks/index.0068e881.js","/chunks/index.e900f84f.js","/chunks/jsx-runtime.0578c9aa.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
