@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import sitemap from '@astrojs/sitemap';
 import netlify from "@astrojs/netlify/functions";
-import partytown from "@astrojs/partytown";
+// import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,12 +17,12 @@ export default defineConfig({
         'https://symphonious-torte-5a2754.netlify.app/'
       ],
     }),
-    partytown({
-      config: {
-        debug: true,
-        forward: ["dataLayer.push"],
-      },
-    }),
+    // partytown({
+    //   config: {
+    //     debug: true,
+    //     forward: ["dataLayer.push"],
+    //   },
+    // }),
   ],
   server: {
     port: 4200
