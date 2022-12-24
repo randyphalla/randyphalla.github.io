@@ -14,7 +14,7 @@ const { title } = Astro.props as Props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.">
+		<meta name="description" content="I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="theme-color" content="#FF2734">
 		<meta name="robots" content="index,follow">
@@ -27,6 +27,15 @@ const { title } = Astro.props as Props;
 		<!-- <meta name="google-site-verification" content="verification_token"> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>Randy Phalla | {title}</title>
+		<!-- Google tag (gtag.js) -->
+		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-JV18J6ZMNR"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-JV18J6ZMNR');
+		</script>
 	</head>
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>

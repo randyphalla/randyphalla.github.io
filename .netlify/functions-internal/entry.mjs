@@ -207,7 +207,25 @@ const _renderer1 = {
 	renderToStaticMarkup: renderToStaticMarkup$1,
 };
 
-const ASTRO_VERSION = "1.6.5";
+function baseCreateComponent(cb, moduleId) {
+  cb.isAstroComponentFactory = true;
+  cb.moduleId = moduleId;
+  return cb;
+}
+function createComponentWithOptions(opts) {
+  const cb = baseCreateComponent(opts.factory, opts.moduleId);
+  cb.propagation = opts.propagation;
+  return cb;
+}
+function createComponent(arg1, moduleId) {
+  if (typeof arg1 === "function") {
+    return baseCreateComponent(arg1, moduleId);
+  } else {
+    return createComponentWithOptions(arg1);
+  }
+}
+
+const ASTRO_VERSION = "1.6.14";
 
 function createDeprecatedFetchContentFn() {
   return () => {
@@ -311,6 +329,379 @@ function getPrescripts(type, directive) {
   return "";
 }
 
+const headAndContentSym = Symbol.for("astro.headAndContent");
+function isHeadAndContent(obj) {
+  return typeof obj === "object" && !!obj[headAndContentSym];
+}
+
+function serializeListValue(value) {
+  const hash = {};
+  push(value);
+  return Object.keys(hash).join(" ");
+  function push(item) {
+    if (item && typeof item.forEach === "function")
+      item.forEach(push);
+    else if (item === Object(item))
+      Object.keys(item).forEach((name) => {
+        if (item[name])
+          push(name);
+      });
+    else {
+      item = item === false || item == null ? "" : String(item).trim();
+      if (item) {
+        item.split(/\s+/).forEach((name) => {
+          hash[name] = true;
+        });
+      }
+    }
+  }
+}
+function isPromise(value) {
+  return !!value && typeof value === "object" && typeof value.then === "function";
+}
+
+var _a$2;
+const renderTemplateResultSym = Symbol.for("astro.renderTemplateResult");
+class RenderTemplateResult {
+  constructor(htmlParts, expressions) {
+    this[_a$2] = true;
+    this.htmlParts = htmlParts;
+    this.error = void 0;
+    this.expressions = expressions.map((expression) => {
+      if (isPromise(expression)) {
+        return Promise.resolve(expression).catch((err) => {
+          if (!this.error) {
+            this.error = err;
+            throw err;
+          }
+        });
+      }
+      return expression;
+    });
+  }
+  get [(_a$2 = renderTemplateResultSym, Symbol.toStringTag)]() {
+    return "AstroComponent";
+  }
+  async *[Symbol.asyncIterator]() {
+    const { htmlParts, expressions } = this;
+    for (let i = 0; i < htmlParts.length; i++) {
+      const html = htmlParts[i];
+      const expression = expressions[i];
+      yield markHTMLString(html);
+      yield* renderChild(expression);
+    }
+  }
+}
+function isRenderTemplateResult(obj) {
+  return typeof obj === "object" && !!obj[renderTemplateResultSym];
+}
+async function* renderAstroTemplateResult(component) {
+  for await (const value of component) {
+    if (value || value === 0) {
+      for await (const chunk of renderChild(value)) {
+        switch (chunk.type) {
+          case "directive": {
+            yield chunk;
+            break;
+          }
+          default: {
+            yield markHTMLString(chunk);
+            break;
+          }
+        }
+      }
+    }
+  }
+}
+function renderTemplate(htmlParts, ...expressions) {
+  return new RenderTemplateResult(htmlParts, expressions);
+}
+
+function isAstroComponentFactory(obj) {
+  return obj == null ? false : obj.isAstroComponentFactory === true;
+}
+async function renderToString(result, componentFactory, props, children) {
+  const factoryResult = await componentFactory(result, props, children);
+  if (factoryResult instanceof Response) {
+    const response = factoryResult;
+    throw response;
+  }
+  let parts = new HTMLParts();
+  const templateResult = isHeadAndContent(factoryResult) ? factoryResult.content : factoryResult;
+  for await (const chunk of renderAstroTemplateResult(templateResult)) {
+    parts.append(chunk, result);
+  }
+  return parts.toString();
+}
+function isAPropagatingComponent(result, factory) {
+  let hint = factory.propagation || "none";
+  if (factory.moduleId && result.propagation.has(factory.moduleId) && hint === "none") {
+    hint = result.propagation.get(factory.moduleId);
+  }
+  return hint === "in-tree" || hint === "self";
+}
+
+const defineErrors = (errs) => errs;
+const AstroErrorData = defineErrors({
+  UnknownCompilerError: {
+    title: "Unknown compiler error.",
+    code: 1e3
+  },
+  StaticRedirectNotAvailable: {
+    title: "`Astro.redirect` is not available in static mode.",
+    code: 3001,
+    message: "Redirects are only available when using `output: 'server'`. Update your Astro config if you need SSR features.",
+    hint: "See https://docs.astro.build/en/guides/server-side-rendering/#enabling-ssr-in-your-project for more information on how to enable SSR."
+  },
+  ClientAddressNotAvailable: {
+    title: "`Astro.clientAddress` is not available in current adapter.",
+    code: 3002,
+    message: (adapterName) => `\`Astro.clientAddress\` is not available in the \`${adapterName}\` adapter. File an issue with the adapter to add support.`
+  },
+  StaticClientAddressNotAvailable: {
+    title: "`Astro.clientAddress` is not available in static mode.",
+    code: 3003,
+    message: "`Astro.clientAddress` is only available when using `output: 'server'`. Update your Astro config if you need SSR features.",
+    hint: "See https://docs.astro.build/en/guides/server-side-rendering/#enabling-ssr-in-your-project for more information on how to enable SSR."
+  },
+  NoMatchingStaticPathFound: {
+    title: "No static path found for requested path.",
+    code: 3004,
+    message: (pathName) => `A \`getStaticPaths()\` route pattern was matched, but no matching static path was found for requested path \`${pathName}\`.`,
+    hint: (possibleRoutes) => `Possible dynamic routes being matched: ${possibleRoutes.join(", ")}.`
+  },
+  OnlyResponseCanBeReturned: {
+    title: "Invalid type returned by Astro page.",
+    code: 3005,
+    message: (route, returnedValue) => `Route ${route ? route : ""} returned a \`${returnedValue}\`. Only a Response can be returned from Astro files.`,
+    hint: "See https://docs.astro.build/en/guides/server-side-rendering/#response for more information."
+  },
+  MissingMediaQueryDirective: {
+    title: "Missing value for `client:media` directive.",
+    code: 3006,
+    message: 'Media query not provided for `client:media` directive. A media query similar to `client:media="(max-width: 600px)"` must be provided'
+  },
+  NoMatchingRenderer: {
+    title: "No matching renderer found.",
+    code: 3007,
+    message: (componentName, componentExtension, plural, validRenderersCount) => `Unable to render \`${componentName}\`.
+
+${validRenderersCount > 0 ? `There ${plural ? "are." : "is."} ${validRenderersCount} renderer${plural ? "s." : ""} configured in your \`astro.config.mjs\` file,
+but ${plural ? "none were." : "it was not."} able to server-side render \`${componentName}\`.` : `No valid renderer was found ${componentExtension ? `for the \`.${componentExtension}\` file extension.` : `for this file extension.`}`}`,
+    hint: (probableRenderers) => `Did you mean to enable the ${probableRenderers} integration?
+
+See https://docs.astro.build/en/core-concepts/framework-components/ for more information on how to install and configure integrations.`
+  },
+  NoClientEntrypoint: {
+    title: "No client entrypoint specified in renderer.",
+    code: 3008,
+    message: (componentName, clientDirective, rendererName) => `\`${componentName}\` component has a \`client:${clientDirective}\` directive, but no client entrypoint was provided by \`${rendererName}\`.`,
+    hint: "See https://docs.astro.build/en/reference/integrations-reference/#addrenderer-option for more information on how to configure your renderer."
+  },
+  NoClientOnlyHint: {
+    title: "Missing hint on client:only directive.",
+    code: 3009,
+    message: (componentName) => `Unable to render \`${componentName}\`. When using the \`client:only\` hydration strategy, Astro needs a hint to use the correct renderer.`,
+    hint: (probableRenderers) => `Did you mean to pass \`client:only="${probableRenderers}"\`? See https://docs.astro.build/en/reference/directives-reference/#clientonly for more information on client:only`
+  },
+  InvalidGetStaticPathParam: {
+    title: "Invalid value returned by a `getStaticPaths` path.",
+    code: 3010,
+    message: (paramType) => `Invalid params given to \`getStaticPaths\` path. Expected an \`object\`, got \`${paramType}\``,
+    hint: "See https://docs.astro.build/en/reference/api-reference/#getstaticpaths for more information on getStaticPaths."
+  },
+  InvalidGetStaticPathsReturn: {
+    title: "Invalid value returned by getStaticPaths.",
+    code: 3011,
+    message: (returnType) => `Invalid type returned by \`getStaticPaths\`. Expected an \`array\`, got \`${returnType}\``,
+    hint: "See https://docs.astro.build/en/reference/api-reference/#getstaticpaths for more information on getStaticPaths."
+  },
+  GetStaticPathsRemovedRSSHelper: {
+    title: "getStaticPaths RSS helper is not available anymore.",
+    code: 3012,
+    message: "The RSS helper has been removed from `getStaticPaths`. Try the new @astrojs/rss package instead.",
+    hint: "See https://docs.astro.build/en/guides/rss/ for more information."
+  },
+  GetStaticPathsExpectedParams: {
+    title: "Missing params property on `getStaticPaths` route.",
+    code: 3013,
+    message: "Missing or empty required `params` property on `getStaticPaths` route.",
+    hint: "See https://docs.astro.build/en/reference/api-reference/#getstaticpaths for more information on getStaticPaths."
+  },
+  GetStaticPathsInvalidRouteParam: {
+    title: "Invalid value for `getStaticPaths` route parameter.",
+    code: 3014,
+    message: (key, value, valueType) => `Invalid getStaticPaths route parameter for \`${key}\`. Expected undefined, a string or a number, received \`${valueType}\` (\`${value}\`)`,
+    hint: "See https://docs.astro.build/en/reference/api-reference/#getstaticpaths for more information on getStaticPaths."
+  },
+  GetStaticPathsRequired: {
+    title: "`getStaticPaths()` function required for dynamic routes.",
+    code: 3015,
+    message: "`getStaticPaths()` function is required for dynamic routes. Make sure that you `export` a `getStaticPaths` function from your dynamic route.",
+    hint: `See https://docs.astro.build/en/core-concepts/routing/#dynamic-routes for more information on dynamic routes.
+
+Alternatively, set \`output: "server"\` in your Astro config file to switch to a non-static server build.
+See https://docs.astro.build/en/guides/server-side-rendering/ for more information on non-static rendering.`
+  },
+  ReservedSlotName: {
+    title: "Invalid slot name.",
+    code: 3016,
+    message: (slotName) => `Unable to create a slot named \`${slotName}\`. \`${slotName}\` is a reserved slot name. Please update the name of this slot.`
+  },
+  NoAdapterInstalled: {
+    title: "Cannot use Server-side Rendering without an adapter.",
+    code: 3017,
+    message: `Cannot use \`output: 'server'\` without an adapter. Please install and configure the appropriate server adapter for your final deployment.`,
+    hint: "See https://docs.astro.build/en/guides/server-side-rendering/ for more information."
+  },
+  NoMatchingImport: {
+    title: "No import found for component.",
+    code: 3018,
+    message: (componentName) => `Could not render \`${componentName}\`. No matching import has been found for \`${componentName}\`.`,
+    hint: "Please make sure the component is properly imported."
+  },
+  UnknownViteError: {
+    title: "Unknown Vite Error.",
+    code: 4e3
+  },
+  FailedToLoadModuleSSR: {
+    title: "Could not import file.",
+    code: 4001,
+    message: (importName) => `Could not import \`${importName}\`.`,
+    hint: "This is often caused by a typo in the import path. Please make sure the file exists."
+  },
+  InvalidGlob: {
+    title: "Invalid glob pattern.",
+    code: 4002,
+    message: (globPattern) => `Invalid glob pattern: \`${globPattern}\`. Glob patterns must start with './', '../' or '/'.`,
+    hint: "See https://docs.astro.build/en/guides/imports/#glob-patterns for more information on supported glob patterns."
+  },
+  UnknownCSSError: {
+    title: "Unknown CSS Error.",
+    code: 5e3
+  },
+  CSSSyntaxError: {
+    title: "CSS Syntax Error.",
+    code: 5001
+  },
+  UnknownMarkdownError: {
+    title: "Unknown Markdown Error.",
+    code: 6e3
+  },
+  MarkdownFrontmatterParseError: {
+    title: "Failed to parse Markdown frontmatter.",
+    code: 6001
+  },
+  UnknownConfigError: {
+    title: "Unknown configuration error.",
+    code: 7e3
+  },
+  ConfigNotFound: {
+    title: "Specified configuration file not found.",
+    code: 7001,
+    message: (configFile) => `Unable to resolve \`--config "${configFile}"\`. Does the file exist?`
+  },
+  ConfigLegacyKey: {
+    title: "Legacy configuration detected.",
+    code: 7002,
+    message: (legacyConfigKey) => `Legacy configuration detected: \`${legacyConfigKey}\`.`,
+    hint: "Please update your configuration to the new format.\nSee https://astro.build/config for more information."
+  },
+  UnknownError: {
+    title: "Unknown Error.",
+    code: 99999
+  }
+});
+
+function normalizeLF(code) {
+  return code.replace(/\r\n|\r(?!\n)|\n/g, "\n");
+}
+function getErrorDataByCode(code) {
+  const entry = Object.entries(AstroErrorData).find((data) => data[1].code === code);
+  if (entry) {
+    return {
+      name: entry[0],
+      data: entry[1]
+    };
+  }
+}
+
+function codeFrame(src, loc) {
+  if (!loc || loc.line === void 0 || loc.column === void 0) {
+    return "";
+  }
+  const lines = normalizeLF(src).split("\n").map((ln) => ln.replace(/\t/g, "  "));
+  const visibleLines = [];
+  for (let n = -2; n <= 2; n++) {
+    if (lines[loc.line + n])
+      visibleLines.push(loc.line + n);
+  }
+  let gutterWidth = 0;
+  for (const lineNo of visibleLines) {
+    let w = `> ${lineNo}`;
+    if (w.length > gutterWidth)
+      gutterWidth = w.length;
+  }
+  let output = "";
+  for (const lineNo of visibleLines) {
+    const isFocusedLine = lineNo === loc.line - 1;
+    output += isFocusedLine ? "> " : "  ";
+    output += `${lineNo + 1} | ${lines[lineNo]}
+`;
+    if (isFocusedLine)
+      output += `${Array.from({ length: gutterWidth }).join(" ")}  | ${Array.from({
+        length: loc.column
+      }).join(" ")}^
+`;
+  }
+  return output;
+}
+
+class AstroError extends Error {
+  constructor(props, ...params) {
+    var _a;
+    super(...params);
+    this.type = "AstroError";
+    const { code, name, title, message, stack, location, hint, frame } = props;
+    this.errorCode = code;
+    if (name) {
+      this.name = name;
+    } else {
+      this.name = ((_a = getErrorDataByCode(this.errorCode)) == null ? void 0 : _a.name) ?? "UnknownError";
+    }
+    this.title = title;
+    if (message)
+      this.message = message;
+    this.stack = stack ? stack : this.stack;
+    this.loc = location;
+    this.hint = hint;
+    this.frame = frame;
+  }
+  setErrorCode(errorCode) {
+    var _a;
+    this.errorCode = errorCode;
+    this.name = ((_a = getErrorDataByCode(this.errorCode)) == null ? void 0 : _a.name) ?? "UnknownError";
+  }
+  setLocation(location) {
+    this.loc = location;
+  }
+  setName(name) {
+    this.name = name;
+  }
+  setMessage(message) {
+    this.message = message;
+  }
+  setHint(hint) {
+    this.hint = hint;
+  }
+  setFrame(source, location) {
+    this.frame = codeFrame(source, location);
+  }
+  static is(err) {
+    return err.type === "AstroError";
+  }
+}
+
 const PROP_TYPE = {
   Value: 0,
   JSON: 1,
@@ -405,33 +796,10 @@ function serializeProps(props, metadata) {
   return serialized;
 }
 
-function serializeListValue(value) {
-  const hash = {};
-  push(value);
-  return Object.keys(hash).join(" ");
-  function push(item) {
-    if (item && typeof item.forEach === "function")
-      item.forEach(push);
-    else if (item === Object(item))
-      Object.keys(item).forEach((name) => {
-        if (item[name])
-          push(name);
-      });
-    else {
-      item = item === false || item == null ? "" : String(item).trim();
-      if (item) {
-        item.split(/\s+/).forEach((name) => {
-          hash[name] = true;
-        });
-      }
-    }
-  }
-}
-
 const HydrationDirectivesRaw = ["load", "idle", "media", "visible", "only"];
 const HydrationDirectives = new Set(HydrationDirectivesRaw);
 const HydrationDirectiveProps = new Set(HydrationDirectivesRaw.map((n) => `client:${n}`));
-function extractDirectives(inputProps) {
+function extractDirectives(displayName, inputProps) {
   let extracted = {
     isPage: false,
     hydration: null,
@@ -478,9 +846,7 @@ function extractDirectives(inputProps) {
             );
           }
           if (extracted.hydration.directive === "media" && typeof extracted.hydration.value !== "string") {
-            throw new Error(
-              'Error: Media query must be provided for "client:media", similar to client:media="(max-width: 600px)"'
-            );
+            throw new AstroError(AstroErrorData.MissingMediaQueryDirective);
           }
           break;
         }
@@ -492,6 +858,9 @@ function extractDirectives(inputProps) {
     } else {
       extracted.props[key] = value;
     }
+  }
+  for (const sym of Object.getOwnPropertySymbols(inputProps)) {
+    extracted.props[sym] = inputProps[sym];
   }
   return extracted;
 }
@@ -535,9 +904,38 @@ async function generateHydrateScript(scriptOptions, metadata) {
   return island;
 }
 
+var _a$1;
+const astroComponentInstanceSym = Symbol.for("astro.componentInstance");
+class AstroComponentInstance {
+  constructor(result, props, slots, factory) {
+    this[_a$1] = true;
+    this.result = result;
+    this.props = props;
+    this.slots = slots;
+    this.factory = factory;
+  }
+  async init() {
+    this.returnValue = this.factory(this.result, this.props, this.slots);
+    return this.returnValue;
+  }
+  async *render() {
+    if (this.returnValue === void 0) {
+      await this.init();
+    }
+    let value = this.returnValue;
+    if (isPromise(value)) {
+      value = await value;
+    }
+    if (isHeadAndContent(value)) {
+      yield* value.content;
+    } else {
+      yield* renderChild(value);
+    }
+  }
+}
+_a$1 = astroComponentInstanceSym;
 function validateComponentProps(props, displayName) {
-  var _a;
-  if (((_a = (Object.assign({"BASE_URL":"/","MODE":"production","DEV":false,"PROD":true},{}))) == null ? void 0 : _a.DEV) && props != null) {
+  if (props != null) {
     for (const prop of Object.keys(props)) {
       if (HydrationDirectiveProps.has(prop)) {
         console.warn(
@@ -547,74 +945,16 @@ function validateComponentProps(props, displayName) {
     }
   }
 }
-class AstroComponent {
-  constructor(htmlParts, expressions) {
-    this.htmlParts = htmlParts;
-    this.expressions = expressions;
-  }
-  get [Symbol.toStringTag]() {
-    return "AstroComponent";
-  }
-  async *[Symbol.asyncIterator]() {
-    const { htmlParts, expressions } = this;
-    for (let i = 0; i < htmlParts.length; i++) {
-      const html = htmlParts[i];
-      const expression = expressions[i];
-      yield markHTMLString(html);
-      yield* renderChild(expression);
-    }
-  }
-}
-function isAstroComponent(obj) {
-  return typeof obj === "object" && Object.prototype.toString.call(obj) === "[object AstroComponent]";
-}
-function isAstroComponentFactory(obj) {
-  return obj == null ? false : obj.isAstroComponentFactory === true;
-}
-async function* renderAstroComponent(component) {
-  for await (const value of component) {
-    if (value || value === 0) {
-      for await (const chunk of renderChild(value)) {
-        switch (chunk.type) {
-          case "directive": {
-            yield chunk;
-            break;
-          }
-          default: {
-            yield markHTMLString(chunk);
-            break;
-          }
-        }
-      }
-    }
-  }
-}
-async function renderToString(result, componentFactory, props, children) {
-  const Component = await componentFactory(result, props, children);
-  if (!isAstroComponent(Component)) {
-    const response = Component;
-    throw response;
-  }
-  let parts = new HTMLParts();
-  for await (const chunk of renderAstroComponent(Component)) {
-    parts.append(chunk, result);
-  }
-  return parts.toString();
-}
-async function renderToIterable(result, componentFactory, displayName, props, children) {
+function createAstroComponentInstance(result, displayName, factory, props, slots = {}) {
   validateComponentProps(props, displayName);
-  const Component = await componentFactory(result, props, children);
-  if (!isAstroComponent(Component)) {
-    console.warn(
-      `Returning a Response is only supported inside of page components. Consider refactoring this logic into something like a function that can be used in the page.`
-    );
-    const response = Component;
-    throw response;
+  const instance = new AstroComponentInstance(result, props, slots, factory);
+  if (isAPropagatingComponent(result, factory) && !result.propagators.has(factory)) {
+    result.propagators.set(factory, instance);
   }
-  return renderAstroComponent(Component);
+  return instance;
 }
-async function renderTemplate(htmlParts, ...expressions) {
-  return new AstroComponent(htmlParts, expressions);
+function isAstroComponentInstance(obj) {
+  return typeof obj === "object" && !!obj[astroComponentInstanceSym];
 }
 
 async function* renderChild(child) {
@@ -634,8 +974,10 @@ async function* renderChild(child) {
     yield* renderChild(child());
   } else if (typeof child === "string") {
     yield markHTMLString(escapeHTML(child));
-  } else if (!child && child !== 0) ; else if (child instanceof AstroComponent || Object.prototype.toString.call(child) === "[object AstroComponent]") {
-    yield* renderAstroComponent(child);
+  } else if (!child && child !== 0) ; else if (isRenderTemplateResult(child)) {
+    yield* renderAstroTemplateResult(child);
+  } else if (isAstroComponentInstance(child)) {
+    yield* child.render();
   } else if (ArrayBuffer.isView(child)) {
     yield child;
   } else if (typeof child === "object" && (Symbol.asyncIterator in child || Symbol.iterator in child)) {
@@ -750,7 +1092,22 @@ class HTMLParts {
 }
 
 const ClientOnlyPlaceholder = "astro-client-only";
-const skipAstroJSXCheck = /* @__PURE__ */ new WeakSet();
+class Skip {
+  constructor(vnode) {
+    this.vnode = vnode;
+    this.count = 0;
+  }
+  increment() {
+    this.count++;
+  }
+  haveNoTried() {
+    return this.count === 0;
+  }
+  isCompleted() {
+    return this.count > 2;
+  }
+}
+Skip.symbol = Symbol("astro:jsx:skip");
 let originalConsoleError;
 let consoleFilterRefs = 0;
 async function renderJSX(result, vnode) {
@@ -771,6 +1128,19 @@ async function renderJSX(result, vnode) {
         (await Promise.all(vnode.map((v) => renderJSX(result, v)))).join("")
       );
   }
+  let skip;
+  if (vnode.props) {
+    if (vnode.props[Skip.symbol]) {
+      skip = vnode.props[Skip.symbol];
+    } else {
+      skip = new Skip(vnode);
+    }
+  } else {
+    skip = new Skip(vnode);
+  }
+  return renderJSXVNode(result, vnode, skip);
+}
+async function renderJSXVNode(result, vnode, skip) {
   if (isVNode(vnode)) {
     switch (true) {
       case !vnode.type: {
@@ -813,25 +1183,35 @@ Did you forget to import the component or is it possible there is a typo?`);
         _slots.default.push(child);
       };
       if (typeof vnode.type === "function" && vnode.type["astro:renderer"]) {
-        skipAstroJSXCheck.add(vnode.type);
+        skip.increment();
       }
       if (typeof vnode.type === "function" && vnode.props["server:root"]) {
         const output2 = await vnode.type(vnode.props ?? {});
         return await renderJSX(result, output2);
       }
-      if (typeof vnode.type === "function" && !skipAstroJSXCheck.has(vnode.type)) {
-        useConsoleFilter();
-        try {
-          const output2 = await vnode.type(vnode.props ?? {});
-          if (output2 && output2[AstroJSX]) {
-            return await renderJSX(result, output2);
-          } else if (!output2) {
-            return await renderJSX(result, output2);
+      if (typeof vnode.type === "function") {
+        if (skip.haveNoTried() || skip.isCompleted()) {
+          useConsoleFilter();
+          try {
+            const output2 = await vnode.type(vnode.props ?? {});
+            let renderResult;
+            if (output2 && output2[AstroJSX]) {
+              renderResult = await renderJSXVNode(result, output2, skip);
+              return renderResult;
+            } else if (!output2) {
+              renderResult = await renderJSXVNode(result, output2, skip);
+              return renderResult;
+            }
+          } catch (e) {
+            if (skip.isCompleted()) {
+              throw e;
+            }
+            skip.increment();
+          } finally {
+            finishUsingConsoleFilter();
           }
-        } catch (e) {
-          skipAstroJSXCheck.add(vnode.type);
-        } finally {
-          finishUsingConsoleFilter();
+        } else {
+          skip.increment();
         }
       }
       const { children = null, ...props } = vnode.props ?? {};
@@ -857,9 +1237,10 @@ Did you forget to import the component or is it possible there is a typo?`);
         );
       }
       await Promise.all(slotPromises);
+      props[Skip.symbol] = skip;
       let output;
       if (vnode.type === ClientOnlyPlaceholder && vnode.props["client:only"]) {
-        output = await renderComponent(
+        output = await renderComponentToIterable(
           result,
           vnode.props["client:display-name"] ?? "",
           null,
@@ -867,7 +1248,7 @@ Did you forget to import the component or is it possible there is a typo?`);
           slots
         );
       } else {
-        output = await renderComponent(
+        output = await renderComponentToIterable(
           result,
           typeof vnode.type === "function" ? vnode.type.name : vnode.type,
           vnode.type,
@@ -1095,48 +1476,25 @@ function guessRenderers(componentUrl) {
       return ["@astrojs/vue"];
     case "jsx":
     case "tsx":
-      return ["@astrojs/react", "@astrojs/preact", "@astrojs/vue (jsx)"];
+      return ["@astrojs/react", "@astrojs/preact", "@astrojs/solid", "@astrojs/vue (jsx)"];
     default:
-      return ["@astrojs/react", "@astrojs/preact", "@astrojs/vue", "@astrojs/svelte"];
+      return [
+        "@astrojs/react",
+        "@astrojs/preact",
+        "@astrojs/solid",
+        "@astrojs/vue",
+        "@astrojs/svelte"
+      ];
   }
 }
-function getComponentType(Component) {
-  if (Component === Fragment) {
-    return "fragment";
-  }
-  if (Component && typeof Component === "object" && Component["astro:html"]) {
-    return "html";
-  }
-  if (isAstroComponentFactory(Component)) {
-    return "astro-factory";
-  }
-  return "unknown";
+function isFragmentComponent(Component) {
+  return Component === Fragment;
 }
-async function renderComponent(result, displayName, Component, _props, slots = {}) {
-  var _a;
-  Component = await Component ?? Component;
-  switch (getComponentType(Component)) {
-    case "fragment": {
-      const children2 = await renderSlot(result, slots == null ? void 0 : slots.default);
-      if (children2 == null) {
-        return children2;
-      }
-      return markHTMLString(children2);
-    }
-    case "html": {
-      const { slotInstructions: slotInstructions2, children: children2 } = await renderSlots(result, slots);
-      const html2 = Component.render({ slots: children2 });
-      const hydrationHtml = slotInstructions2 ? slotInstructions2.map((instr) => stringifyChunk(result, instr)).join("") : "";
-      return markHTMLString(hydrationHtml + html2);
-    }
-    case "astro-factory": {
-      async function* renderAstroComponentInline() {
-        let iterable = await renderToIterable(result, Component, displayName, _props, slots);
-        yield* iterable;
-      }
-      return renderAstroComponentInline();
-    }
-  }
+function isHTMLComponent(Component) {
+  return Component && typeof Component === "object" && Component["astro:html"];
+}
+async function renderFrameworkComponent(result, displayName, Component, _props, slots = {}) {
+  var _a, _b;
   if (!Component && !_props["client:only"]) {
     throw new Error(
       `Unable to render ${displayName} because it is ${Component}!
@@ -1145,7 +1503,7 @@ Did you forget to import the component or is it possible there is a typo?`
   }
   const { renderers } = result._metadata;
   const metadata = { displayName };
-  const { hydration, isPage, props } = extractDirectives(_props);
+  const { hydration, isPage, props } = extractDirectives(displayName, _props);
   let html = "";
   let attrs = void 0;
   if (hydration) {
@@ -1155,13 +1513,7 @@ Did you forget to import the component or is it possible there is a typo?`
     metadata.componentUrl = hydration.componentUrl;
   }
   const probableRendererNames = guessRenderers(metadata.componentUrl);
-  if (Array.isArray(renderers) && renderers.length === 0 && typeof Component !== "string" && !componentIsHTMLElement(Component)) {
-    const message = `Unable to render ${metadata.displayName}!
-
-There are no \`integrations\` set in your \`astro.config.mjs\` file.
-Did you mean to add ${formatList(probableRendererNames.map((r) => "`" + r + "`"))}?`;
-    throw new Error(message);
-  }
+  const validRenderers = renderers.filter((r) => r.name !== "astro:jsx");
   const { children, slotInstructions } = await renderSlots(result, slots);
   let renderer;
   if (metadata.hydrate !== "only") {
@@ -1202,8 +1554,8 @@ Did you mean to add ${formatList(probableRendererNames.map((r) => "`" + r + "`")
         ({ name }) => name === `@astrojs/${rendererName}` || name === rendererName
       );
     }
-    if (!renderer && renderers.length === 1) {
-      renderer = renderers[0];
+    if (!renderer && validRenderers.length === 1) {
+      renderer = validRenderers[0];
     }
     if (!renderer) {
       const extname = (_a = metadata.componentUrl) == null ? void 0 : _a.split(".").pop();
@@ -1214,21 +1566,31 @@ Did you mean to add ${formatList(probableRendererNames.map((r) => "`" + r + "`")
   }
   if (!renderer) {
     if (metadata.hydrate === "only") {
-      throw new Error(`Unable to render ${metadata.displayName}!
-
-Using the \`client:only\` hydration strategy, Astro needs a hint to use the correct renderer.
-Did you mean to pass <${metadata.displayName} client:only="${probableRendererNames.map((r) => r.replace("@astrojs/", "")).join("|")}" />
-`);
+      throw new AstroError({
+        ...AstroErrorData.NoClientOnlyHint,
+        message: AstroErrorData.NoClientOnlyHint.message(metadata.displayName),
+        hint: AstroErrorData.NoClientOnlyHint.hint(
+          probableRendererNames.map((r) => r.replace("@astrojs/", "")).join("|")
+        )
+      });
     } else if (typeof Component !== "string") {
-      const matchingRenderers = renderers.filter((r) => probableRendererNames.includes(r.name));
-      const plural = renderers.length > 1;
+      const matchingRenderers = validRenderers.filter(
+        (r) => probableRendererNames.includes(r.name)
+      );
+      const plural = validRenderers.length > 1;
       if (matchingRenderers.length === 0) {
-        throw new Error(`Unable to render ${metadata.displayName}!
-
-There ${plural ? "are" : "is"} ${renderers.length} renderer${plural ? "s" : ""} configured in your \`astro.config.mjs\` file,
-but ${plural ? "none were" : "it was not"} able to server-side render ${metadata.displayName}.
-
-Did you mean to enable ${formatList(probableRendererNames.map((r) => "`" + r + "`"))}?`);
+        throw new AstroError({
+          ...AstroErrorData.NoMatchingRenderer,
+          message: AstroErrorData.NoMatchingRenderer.message(
+            metadata.displayName,
+            (_b = metadata == null ? void 0 : metadata.componentUrl) == null ? void 0 : _b.split(".").pop(),
+            plural,
+            validRenderers.length
+          ),
+          hint: AstroErrorData.NoMatchingRenderer.hint(
+            formatList(probableRendererNames.map((r) => "`" + r + "`"))
+          )
+        });
       } else if (matchingRenderers.length === 1) {
         renderer = matchingRenderers[0];
         ({ html, attrs } = await renderer.ssr.renderToStaticMarkup.call(
@@ -1266,13 +1628,18 @@ If you're still stuck, please open an issue on GitHub or join us at https://astr
     }
   }
   if (renderer && !renderer.clientEntrypoint && renderer.name !== "@astrojs/lit" && metadata.hydrate) {
-    throw new Error(
-      `${metadata.displayName} component has a \`client:${metadata.hydrate}\` directive, but no client entrypoint was provided by ${renderer.name}!`
-    );
+    throw new AstroError({
+      ...AstroErrorData.NoClientEntrypoint,
+      message: AstroErrorData.NoClientEntrypoint.message(
+        displayName,
+        metadata.hydrate,
+        renderer.name
+      )
+    });
   }
   if (!html && typeof Component === "string") {
     const childSlots = Object.values(children).join("");
-    const iterable = renderAstroComponent(
+    const iterable = renderAstroTemplateResult(
       await renderTemplate`<${Component}${internalSpreadAttributes(props)}${markHTMLString(
         childSlots === "" && voidElementNames.test(Component) ? `/>` : `>${childSlots}</${Component}>`
       )}`
@@ -1334,35 +1701,83 @@ ${serializeProps(
   }
   return renderAll();
 }
+async function renderFragmentComponent(result, slots = {}) {
+  const children = await renderSlot(result, slots == null ? void 0 : slots.default);
+  if (children == null) {
+    return children;
+  }
+  return markHTMLString(children);
+}
+async function renderHTMLComponent(result, Component, _props, slots = {}) {
+  const { slotInstructions, children } = await renderSlots(result, slots);
+  const html = Component.render({ slots: children });
+  const hydrationHtml = slotInstructions ? slotInstructions.map((instr) => stringifyChunk(result, instr)).join("") : "";
+  return markHTMLString(hydrationHtml + html);
+}
+function renderComponent(result, displayName, Component, props, slots = {}) {
+  if (isPromise(Component)) {
+    return Promise.resolve(Component).then((Unwrapped) => {
+      return renderComponent(result, displayName, Unwrapped, props, slots);
+    });
+  }
+  if (isFragmentComponent(Component)) {
+    return renderFragmentComponent(result, slots);
+  }
+  if (isHTMLComponent(Component)) {
+    return renderHTMLComponent(result, Component, props, slots);
+  }
+  if (isAstroComponentFactory(Component)) {
+    return createAstroComponentInstance(result, displayName, Component, props, slots);
+  }
+  return renderFrameworkComponent(result, displayName, Component, props, slots);
+}
+function renderComponentToIterable(result, displayName, Component, props, slots = {}) {
+  const renderResult = renderComponent(result, displayName, Component, props, slots);
+  if (isAstroComponentInstance(renderResult)) {
+    return renderResult.render();
+  }
+  return renderResult;
+}
 
 const uniqueElements = (item, index, all) => {
   const props = JSON.stringify(item.props);
   const children = item.children;
   return index === all.findIndex((i) => JSON.stringify(i.props) === props && i.children == children);
 };
-function renderHead(result) {
-  result._metadata.hasRenderedHead = true;
+async function* renderExtraHead(result, base) {
+  yield base;
+  for (const part of result.extraHead) {
+    yield* renderChild(part);
+  }
+}
+function renderAllHeadContent(result) {
   const styles = Array.from(result.styles).filter(uniqueElements).map((style) => renderElement("style", style));
   result.styles.clear();
   const scripts = Array.from(result.scripts).filter(uniqueElements).map((script, i) => {
     return renderElement("script", script, false);
   });
   const links = Array.from(result.links).filter(uniqueElements).map((link) => renderElement("link", link, false));
-  return markHTMLString(links.join("\n") + styles.join("\n") + scripts.join("\n"));
+  const baseHeadContent = markHTMLString(links.join("\n") + styles.join("\n") + scripts.join("\n"));
+  if (result.extraHead.length > 0) {
+    return renderExtraHead(result, baseHeadContent);
+  } else {
+    return baseHeadContent;
+  }
 }
+function createRenderHead(result) {
+  result._metadata.hasRenderedHead = true;
+  return renderAllHeadContent.bind(null, result);
+}
+const renderHead = createRenderHead;
 async function* maybeRenderHead(result) {
   if (result._metadata.hasRenderedHead) {
     return;
   }
-  yield renderHead(result);
+  yield createRenderHead(result)();
 }
 
 typeof process === "object" && Object.prototype.toString.call(process) === "[object process]";
 
-function createComponent(cb) {
-  cb.isAstroComponentFactory = true;
-  return cb;
-}
 function __astro_tag_component__(Component, rendererName) {
   if (!Component)
     return;
@@ -1796,16 +2211,20 @@ const Footer = () => {
 };
 __astro_tag_component__(Footer, "@astrojs/react");
 
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(raw || cooked.slice()) }));
+var _a;
 const $$Astro$2 = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/layouts/Layout.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
 const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Layout;
   const { title } = Astro2.props;
-  return renderTemplate`<html lang="en">
+  return renderTemplate(_a || (_a = __template([`<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.">
+		<meta name="description" content="I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="theme-color" content="#FF2734">
 		<meta name="robots" content="index,follow">
@@ -1816,20 +2235,21 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<!-- <meta name="google-site-verification" content="verification_token"> -->
-		<meta name="generator"${addAttribute(Astro2.generator, "content")}>
-		<title>Randy Phalla | ${title}</title>
-	${renderHead($$result)}</head>
+		<meta name="generator"`, ">\n		<title>Randy Phalla | ", `</title>
+		<!-- Google tag (gtag.js) -->
+		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-JV18J6ZMNR"><\/script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-JV18J6ZMNR');
+		<\/script>
+	`, `</head>
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>
-		${renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" })}
-		<main>
-			<h2 class="hidden">Main Content</h2>
-			${renderSlot($$result, $$slots["default"])}
-		</main>
-		${renderComponent($$result, "Footer", Footer, {})}
-	
-</body></html>`;
-});
+		`, '\n		<main>\n			<h2 class="hidden">Main Content</h2>\n			', "\n		</main>\n		", "\n	\n</body></html>"])), addAttribute(Astro2.generator, "content"), title, renderHead($$result), renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" }), renderSlot($$result, $$slots["default"]), renderComponent($$result, "Footer", Footer, {}));
+}, "C:/Users/Asian/Documents/Github/portfolio-v2/src/layouts/Layout.astro");
 
 const $$Astro$1 = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/components/Banner.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
 const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
@@ -1842,10 +2262,10 @@ const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
     <h4 class="text-gray-900 font-normal text-sm md:text-base">Hey, I'm</h4>
     <h5 class="text-gray-900 font-bold text-6xl md:text-7xl"><span class="gradient-text">${name}</span></h5>
     <h6 class="mt-2 text-gray-900 font-medium text-2xl md:text-3xl">${role}</h6>
-    <p class="mt-2 text-base md:text-lg">I specialize in accessibility, animations and UI/UX. </p>
+    <p class="mt-2 text-base md:text-lg">I specialize in accessibility, animations and UI/UX.</p>
   </div>
 </section>`;
-});
+}, "C:/Users/Asian/Documents/Github/portfolio-v2/src/components/Banner.astro");
 
 const PortfolioModal = (props) => {
   const {
@@ -2083,35 +2503,26 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
       languages: "HTML5, CSS3, Bootstrap v5, PHP and MySQL"
     }
   ];
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Home" }, { "default": () => renderTemplate`${renderComponent($$result, "Banner", $$Banner, { "name": "Randy Phalla", "role": "Front-end developer" })}${maybeRenderHead($$result)}<section id="about" class="max-w-screen-xl mx-auto py-10 px-4">
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Home" }, { "default": () => renderTemplate`${renderComponent($$result, "Banner", $$Banner, { "name": "Randy Phalla", "role": "Full Stack Developer" })}${maybeRenderHead($$result)}<section id="about" class="max-w-screen-xl mx-auto py-10 px-4">
 		<h3 class="hidden">About me</h3>
 		<h4 class="title-gradient title-gradient--about mb-5 font-bold text-3xl">About</h4>
 		<div class="flex justify-between items-start flex-col lg:flex-row">
 			<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="/me.jpeg" alt="Portrait of Randy Phalla">
 			<div class="lg:ml-8">
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Front-end developer based in London, Ontario Canada. I graduated from Fanshawe college from the Interactive Media Specialist (2016) and Graphic Design (2014) programs.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.</p>
 
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files such as Photoshop, Illustrator, XD, Sketch & Figma and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, colloaborating with designers, developers and clients. Here's a list of web technologies I'm using at work are HTML5, CSS3 (SCSS), Tailwind, Material UI, CSS-in-JS, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Storybook and Firebase.</p>
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files such as Photoshop, Illustrator, XD, Sketch & Figma and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, colloaborating with designers, developers and clients.</p>
 
 				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
 
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">When I'm not working, I would be playing games (PS5, Switch and PC), watching tv shows & movies or doing recreational activity such as jogging, running, cycling and powerlifting.</p>
-
-				<!-- TOOD: get resume and update link -->
-				<!-- <a
-					class="border-1 border-solid border-gray-900 pt-2 pb-2 pl-4 pr-4 text-white bg-gray-900 rounded-lg hover:bg-transparent hover:text-gray-900 transition-all"
-					type="button"
-					href="#"
-				>
-					Resume
-				</a> -->
+				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities. </p>
 			</div>
 		</div>
 	</section><section id="skills" class="max-w-screen-xl mx-auto py-10 px-4">
 		<h3 class="hidden">Skills</h3>
 		<h4 class="title-gradient title-gradient--skills mb-5 font-bold text-3xl">Skills</h4>
 		<div class="">
-			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Front-end developmet:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Astro, Gulp, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).</p>
+			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Front-end development:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Astro, Gulp, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).</p>
 			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Back-end development:</span> Firebase, PHP and MySQL.</p>
 			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Project management:</span> Trello and JIRA.</p>
 			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Tools:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Microsoft (Teams, Excel & Word), Github, Sourcetree, and Slack.</p>
@@ -2135,7 +2546,7 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
 				</div>`)}
 		</div>
 	</section>${renderComponent($$result, "Portfolio", Portfolio, { "client:load": true, "portfolios": portfolioItems, "client:component-hydration": "load", "client:component-path": "@components/Portfolio", "client:component-export": "default" })}` })}`;
-});
+}, "C:/Users/Asian/Documents/Github/portfolio-v2/src/pages/index.astro");
 
 const $$file = "C:/Users/Asian/Documents/Github/portfolio-v2/src/pages/index.astro";
 const $$url = "";
@@ -2224,7 +2635,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.331694a7.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@components/Portfolio":"Portfolio.c0e5347d.js","@components/Header":"Header.e5eb5414.js","@astrojs/react/client.js":"client.4dc2232e.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.331694a7.css","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.4dc2232e.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/Header.e5eb5414.js","/me.jpeg","/Portfolio.c0e5347d.js","/randyphalla-icon.png","/site.webmanifest","/chunks/index.0068e881.js","/chunks/index.e900f84f.js","/chunks/jsx-runtime.0578c9aa.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.78eb1030.css"],"scripts":[{"stage":"head-inline","children":"!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{\"lib\":\"/~partytown/\",\"debug\":true});c[f]=(c[f]||[]).concat([\"dataLayer.push\"])})(window,'partytown','forward');/* Partytown 0.7.3 - MIT builder.io */\n!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,\"/\"==(a=(o.lib||\"/~partytown/\")+(o.debug?\"debug/\":\"\"))[0]&&(s=e.querySelectorAll('script[type=\"text/partytown\"]'),i!=t?i.dispatchEvent(new CustomEvent(\"pt1\",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener(\"pt0\",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||\"partytown-sw.js\"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener(\"statechange\",(function(t){\"activated\"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?\"script\":\"iframe\"),t||(c.setAttribute(\"style\",\"display:block;width:0;height:0;border:0;visibility:hidden\"),c.setAttribute(\"aria-hidden\",!0)),c.src=a+\"partytown-\"+(t?\"atomics.js?v=0.7.3\":\"sandbox-sw.html?\"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement(\"script\")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(\".\").map((function(e,n,i){p=p[i[n]]=n+1<i.length?\"push\"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),\"complete\"==e.readyState?u():(t.addEventListener(\"DOMContentLoaded\",u),t.addEventListener(\"load\",u))}(window,document,navigator,top,window.crossOriginIsolated);"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@components/Portfolio":"Portfolio.84ef9226.js","@components/Header":"Header.1202fb29.js","@astrojs/react/client.js":"client.4dc2232e.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.78eb1030.css","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.4dc2232e.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/Header.1202fb29.js","/me.jpeg","/Portfolio.84ef9226.js","/randyphalla-icon.png","/site.webmanifest","/chunks/index.0068e881.js","/chunks/index.e900f84f.js","/chunks/jsx-runtime.0578c9aa.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png","/~partytown/partytown-atomics.js","/~partytown/partytown-media.js","/~partytown/partytown-sw.js","/~partytown/partytown.js"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
