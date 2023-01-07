@@ -225,7 +225,7 @@ function createComponent(arg1, moduleId) {
   }
 }
 
-const ASTRO_VERSION = "1.6.14";
+const ASTRO_VERSION = "1.9.1";
 
 function createDeprecatedFetchContentFn() {
   return () => {
@@ -473,7 +473,7 @@ const AstroErrorData = defineErrors({
   OnlyResponseCanBeReturned: {
     title: "Invalid type returned by Astro page.",
     code: 3005,
-    message: (route, returnedValue) => `Route ${route ? route : ""} returned a \`${returnedValue}\`. Only a Response can be returned from Astro files.`,
+    message: (route, returnedValue) => `Route \`${route ? route : ""}\` returned a \`${returnedValue}\`. Only a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) can be returned from Astro files.`,
     hint: "See https://docs.astro.build/en/guides/server-side-rendering/#response for more information."
   },
   MissingMediaQueryDirective: {
@@ -560,6 +560,21 @@ See https://docs.astro.build/en/guides/server-side-rendering/ for more informati
     message: (componentName) => `Could not render \`${componentName}\`. No matching import has been found for \`${componentName}\`.`,
     hint: "Please make sure the component is properly imported."
   },
+  InvalidPrerenderExport: {
+    title: "Invalid prerender export.",
+    code: 3019,
+    message: (prefix, suffix) => {
+      let msg = `A \`prerender\` export has been detected, but its value cannot be statically analyzed.`;
+      if (prefix !== "const")
+        msg += `
+Expected \`const\` declaration but got \`${prefix}\`.`;
+      if (suffix !== "true")
+        msg += `
+Expected \`true\` value but got \`${suffix}\`.`;
+      return msg;
+    },
+    hint: "Mutable values declared at runtime are not supported. Please make sure to use exactly `export const prerender = true`."
+  },
   UnknownViteError: {
     title: "Unknown Vite Error.",
     code: 4e3
@@ -592,6 +607,17 @@ See https://docs.astro.build/en/guides/server-side-rendering/ for more informati
     title: "Failed to parse Markdown frontmatter.",
     code: 6001
   },
+  MarkdownContentSchemaValidationError: {
+    title: "Content collection frontmatter invalid.",
+    code: 6002,
+    message: (collection, entryId, error) => {
+      return [
+        `${String(collection)} \u2192 ${String(entryId)} frontmatter does not match collection schema.`,
+        ...error.errors.map((zodError) => zodError.message)
+      ].join("\n");
+    },
+    hint: "See https://docs.astro.build/en/guides/content-collections/ for more information on content schemas."
+  },
   UnknownConfigError: {
     title: "Unknown configuration error.",
     code: 7e3
@@ -606,6 +632,16 @@ See https://docs.astro.build/en/guides/server-side-rendering/ for more informati
     code: 7002,
     message: (legacyConfigKey) => `Legacy configuration detected: \`${legacyConfigKey}\`.`,
     hint: "Please update your configuration to the new format.\nSee https://astro.build/config for more information."
+  },
+  UnknownCLIError: {
+    title: "Unknown CLI Error.",
+    code: 8e3
+  },
+  GenerateContentTypesError: {
+    title: "Failed to generate content types.",
+    code: 8001,
+    message: "`astro sync` command failed to generate content collection types.",
+    hint: "Check your `src/content/config.*` file for typos."
   },
   UnknownError: {
     title: "Unknown Error.",
@@ -664,7 +700,7 @@ class AstroError extends Error {
     this.type = "AstroError";
     const { code, name, title, message, stack, location, hint, frame } = props;
     this.errorCode = code;
-    if (name) {
+    if (name && name !== "Error") {
       this.name = name;
     } else {
       this.name = ((_a = getErrorDataByCode(this.errorCode)) == null ? void 0 : _a.name) ?? "UnknownError";
@@ -678,9 +714,7 @@ class AstroError extends Error {
     this.frame = frame;
   }
   setErrorCode(errorCode) {
-    var _a;
     this.errorCode = errorCode;
-    this.name = ((_a = getErrorDataByCode(this.errorCode)) == null ? void 0 : _a.name) ?? "UnknownError";
   }
   setLocation(location) {
     this.loc = location;
@@ -911,11 +945,14 @@ class AstroComponentInstance {
     this[_a$1] = true;
     this.result = result;
     this.props = props;
-    this.slots = slots;
     this.factory = factory;
+    this.slotValues = {};
+    for (const name in slots) {
+      this.slotValues[name] = slots[name]();
+    }
   }
   async init() {
-    this.returnValue = this.factory(this.result, this.props, this.slots);
+    this.returnValue = this.factory(this.result, this.props, this.slotValues);
     return this.returnValue;
   }
   async *render() {
@@ -1638,10 +1675,11 @@ If you're still stuck, please open an issue on GitHub or join us at https://astr
     });
   }
   if (!html && typeof Component === "string") {
+    const Tag = sanitizeElementName(Component);
     const childSlots = Object.values(children).join("");
     const iterable = renderAstroTemplateResult(
-      await renderTemplate`<${Component}${internalSpreadAttributes(props)}${markHTMLString(
-        childSlots === "" && voidElementNames.test(Component) ? `/>` : `>${childSlots}</${Component}>`
+      await renderTemplate`<${Tag}${internalSpreadAttributes(props)}${markHTMLString(
+        childSlots === "" && voidElementNames.test(Tag) ? `/>` : `>${childSlots}</${Tag}>`
       )}`
     );
     html = "";
@@ -1700,6 +1738,12 @@ ${serializeProps(
     yield markHTMLString(renderElement("astro-island", island, false));
   }
   return renderAll();
+}
+function sanitizeElementName(tag) {
+  const unsafe = /[&<>'"\s]+/g;
+  if (!unsafe.test(tag))
+    return tag;
+  return tag.trim().split(unsafe)[0].trim();
 }
 async function renderFragmentComponent(result, slots = {}) {
   const children = await renderSlot(result, slots == null ? void 0 : slots.default);
@@ -2215,7 +2259,7 @@ var __freeze = Object.freeze;
 var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(raw || cooked.slice()) }));
 var _a;
-const $$Astro$2 = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/layouts/Layout.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
+const $$Astro$2 = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
 const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Layout;
@@ -2235,23 +2279,13 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<!-- <meta name="google-site-verification" content="verification_token"> -->
-		<meta name="generator"`, ">\n		<title>Randy Phalla | ", `</title>
-		<!-- Google tag (gtag.js) -->
-		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-JV18J6ZMNR"><\/script>
-		<script type="text/partytown">
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-JV18J6ZMNR');
-		<\/script>
-	`, `</head>
+		<meta name="generator"`, ">\n		<title>Randy Phalla | ", '</title>\n		<!-- Google tag (gtag.js) -->\n		<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV18J6ZMNR"><\/script>\n		', "\n	", `</head>
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>
-		`, '\n		<main>\n			<h2 class="hidden">Main Content</h2>\n			', "\n		</main>\n		", "\n	\n</body></html>"])), addAttribute(Astro2.generator, "content"), title, renderHead($$result), renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" }), renderSlot($$result, $$slots["default"]), renderComponent($$result, "Footer", Footer, {}));
-}, "C:/Users/Asian/Documents/Github/portfolio-v2/src/layouts/Layout.astro");
+		`, '\n		<main>\n			<h2 class="hidden">Main Content</h2>\n			', "\n		</main>\n		", "\n	\n</body></html>"])), addAttribute(Astro2.generator, "content"), title, maybeRenderHead($$result), renderHead($$result), renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" }), renderSlot($$result, $$slots["default"]), renderComponent($$result, "Footer", Footer, {}));
+}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro");
 
-const $$Astro$1 = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/components/Banner.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
+const $$Astro$1 = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
 const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Banner;
@@ -2265,7 +2299,7 @@ const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
     <p class="mt-2 text-base md:text-lg">I specialize in accessibility, animations and UI/UX.</p>
   </div>
 </section>`;
-}, "C:/Users/Asian/Documents/Github/portfolio-v2/src/components/Banner.astro");
+}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro");
 
 const PortfolioModal = (props) => {
   const {
@@ -2414,7 +2448,7 @@ const Portfolio = (props) => {
 };
 __astro_tag_component__(Portfolio, "@astrojs/react");
 
-const $$Astro = createAstro("C:/Users/Asian/Documents/Github/portfolio-v2/src/pages/index.astro", "https://randyphalla.github.io/", "file:///C:/Users/Asian/Documents/Github/portfolio-v2/");
+const $$Astro = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
@@ -2546,9 +2580,9 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
 				</div>`)}
 		</div>
 	</section>${renderComponent($$result, "Portfolio", Portfolio, { "client:load": true, "portfolios": portfolioItems, "client:component-hydration": "load", "client:component-path": "@components/Portfolio", "client:component-export": "default" })}` })}`;
-}, "C:/Users/Asian/Documents/Github/portfolio-v2/src/pages/index.astro");
+}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro");
 
-const $$file = "C:/Users/Asian/Documents/Github/portfolio-v2/src/pages/index.astro";
+const $$file = "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro";
 const $$url = "";
 
 const _page0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
@@ -2558,7 +2592,7 @@ const _page0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const pageMap = new Map([['src/pages/index.astro', _page0],]);
+const pageMap = new Map([["src/pages/index.astro", _page0],]);
 const renderers = [Object.assign({"name":"astro:jsx","serverEntrypoint":"astro/jsx/server.js","jsxImportSource":"astro"}, { ssr: server_default }),Object.assign({"name":"@astrojs/react","clientEntrypoint":"@astrojs/react/client.js","serverEntrypoint":"@astrojs/react/server.js","jsxImportSource":"react"}, { ssr: _renderer1 }),];
 
 if (typeof process !== "undefined") {
@@ -2635,12 +2669,11 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.78eb1030.css"],"scripts":[{"stage":"head-inline","children":"!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{\"lib\":\"/~partytown/\",\"debug\":true});c[f]=(c[f]||[]).concat([\"dataLayer.push\"])})(window,'partytown','forward');/* Partytown 0.7.3 - MIT builder.io */\n!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,\"/\"==(a=(o.lib||\"/~partytown/\")+(o.debug?\"debug/\":\"\"))[0]&&(s=e.querySelectorAll('script[type=\"text/partytown\"]'),i!=t?i.dispatchEvent(new CustomEvent(\"pt1\",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener(\"pt0\",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||\"partytown-sw.js\"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener(\"statechange\",(function(t){\"activated\"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?\"script\":\"iframe\"),t||(c.setAttribute(\"style\",\"display:block;width:0;height:0;border:0;visibility:hidden\"),c.setAttribute(\"aria-hidden\",!0)),c.src=a+\"partytown-\"+(t?\"atomics.js?v=0.7.3\":\"sandbox-sw.html?\"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement(\"script\")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(\".\").map((function(e,n,i){p=p[i[n]]=n+1<i.length?\"push\"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),\"complete\"==e.readyState?u():(t.addEventListener(\"DOMContentLoaded\",u),t.addEventListener(\"load\",u))}(window,document,navigator,top,window.crossOriginIsolated);"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@components/Portfolio":"Portfolio.84ef9226.js","@components/Header":"Header.1202fb29.js","@astrojs/react/client.js":"client.4dc2232e.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.78eb1030.css","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.4dc2232e.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/Header.1202fb29.js","/me.jpeg","/Portfolio.84ef9226.js","/randyphalla-icon.png","/site.webmanifest","/chunks/index.0068e881.js","/chunks/index.e900f84f.js","/chunks/jsx-runtime.0578c9aa.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png","/~partytown/partytown-atomics.js","/~partytown/partytown-media.js","/~partytown/partytown-sw.js","/~partytown/partytown.js"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.c5f644fb.css"],"scripts":[{"type":"inline","value":"window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a(\"js\",new Date);a(\"config\",\"G-JV18J6ZMNR\");\n"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false,"isExperimentalContentCollections":false,"contentDir":"file:///Users/randyphalla/Documents/GitHub/portfolio-v2/src/content/"},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@components/Portfolio":"Portfolio.38a28946.js","@components/Header":"Header.b7360e12.js","@astrojs/react/client.js":"client.091107ac.js","/astro/hoisted.js?q=0":"hoisted.2a20e3d6.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.c5f644fb.css","/Header.b7360e12.js","/Portfolio.38a28946.js","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.091107ac.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/me.jpeg","/randyphalla-icon.png","/site.webmanifest","/chunks/index.a18801a5.js","/chunks/index.f255b493.js","/chunks/jsx-runtime.5b11b7a3.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
 const _args = {};
-
 const _exports = adapter.createExports(_manifest, _args);
 const handler = _exports['handler'];
 
@@ -2649,4 +2682,4 @@ if(_start in adapter) {
 	adapter[_start](_manifest, _args);
 }
 
-export { handler };
+export { handler, pageMap, renderers };
