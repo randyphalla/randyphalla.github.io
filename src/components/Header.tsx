@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <>
-      <header id="header" className="header border-b-1 border-solid border-gray-50/[.10">
+      <header id="header" className="header dark:bg-gray-900 border-b-1 border-solid border-gray-50/[.10] dark:border-gray-50/[.10]">
         <h2 className="hidden">Header</h2>
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
           <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
@@ -50,7 +50,7 @@ const Header = () => {
             <ul className="header-nav__list flex justify-between items-center">
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('header')}
                   role="button"
                   aria-label="Scroll to top of the page"
@@ -58,7 +58,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('about')}
                   role="button"
                   aria-label="Scroll to about section"
@@ -66,7 +66,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('skills')}
                   role="button"
                   aria-label="Scroll to skills section"
@@ -74,7 +74,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('work')}
                   role="button"
                   aria-label="Scroll to work Experiences section"
@@ -82,7 +82,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('education')}
                   role="button"
                   aria-label="Scroll to education section"
@@ -90,7 +90,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('portfolio')}
                   role="button"
                   aria-label="Scroll to projects section"
@@ -101,8 +101,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* {isMobileMenuOpen && ()} */}
-      <div className={`mobile-menu fixed inset-0 bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
+      <div className={`mobile-menu fixed inset-0 bg-gray-900 dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
         <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
           <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
           <button

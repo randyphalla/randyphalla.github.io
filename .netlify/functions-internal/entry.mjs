@@ -1985,7 +1985,7 @@ const Header = () => {
   return /* @__PURE__ */ jsxs(Fragment$1, {
     children: [/* @__PURE__ */ jsxs("header", {
       id: "header",
-      className: "header border-b-1 border-solid border-gray-50/[.10",
+      className: "header dark:bg-gray-900 border-b-1 border-solid border-gray-50/[.10] dark:border-gray-50/[.10]",
       children: [/* @__PURE__ */ jsx("h2", {
         className: "hidden",
         children: "Header"
@@ -2009,7 +2009,7 @@ const Header = () => {
             children: [/* @__PURE__ */ jsx("li", {
               className: "header-nav__list-item pr-4",
               children: /* @__PURE__ */ jsx("a", {
-                className: "header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider",
+                className: "header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider",
                 onClick: () => scrollToSection("header"),
                 role: "button",
                 "aria-label": "Scroll to top of the page",
@@ -2018,7 +2018,7 @@ const Header = () => {
             }), /* @__PURE__ */ jsx("li", {
               className: "header-nav__list-item pr-4",
               children: /* @__PURE__ */ jsx("a", {
-                className: "header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider",
+                className: "header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider",
                 onClick: () => scrollToSection("about"),
                 role: "button",
                 "aria-label": "Scroll to about section",
@@ -2027,7 +2027,7 @@ const Header = () => {
             }), /* @__PURE__ */ jsx("li", {
               className: "header-nav__list-item pr-4",
               children: /* @__PURE__ */ jsx("a", {
-                className: "header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider",
+                className: "header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider",
                 onClick: () => scrollToSection("skills"),
                 role: "button",
                 "aria-label": "Scroll to skills section",
@@ -2036,7 +2036,7 @@ const Header = () => {
             }), /* @__PURE__ */ jsx("li", {
               className: "header-nav__list-item pr-4",
               children: /* @__PURE__ */ jsx("a", {
-                className: "header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider",
+                className: "header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider",
                 onClick: () => scrollToSection("work"),
                 role: "button",
                 "aria-label": "Scroll to work Experiences section",
@@ -2045,7 +2045,7 @@ const Header = () => {
             }), /* @__PURE__ */ jsx("li", {
               className: "header-nav__list-item pr-4",
               children: /* @__PURE__ */ jsx("a", {
-                className: "header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider",
+                className: "header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider",
                 onClick: () => scrollToSection("education"),
                 role: "button",
                 "aria-label": "Scroll to education section",
@@ -2054,7 +2054,7 @@ const Header = () => {
             }), /* @__PURE__ */ jsx("li", {
               className: "header-nav__list-item",
               children: /* @__PURE__ */ jsx("a", {
-                className: "header-nav__list-item-link flex justify-center items-center h-16 font-light text-base tracking-wider",
+                className: "header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider",
                 onClick: () => scrollToSection("portfolio"),
                 role: "button",
                 "aria-label": "Scroll to projects section",
@@ -2065,7 +2065,7 @@ const Header = () => {
         })]
       })]
     }), /* @__PURE__ */ jsxs("div", {
-      className: `mobile-menu fixed inset-0 bg-gray-900 transition-all ${isMobileMenuOpen ? "opacity-100 z-10" : "opacity-0"}`,
+      className: `mobile-menu fixed inset-0 bg-gray-900 dark:bg-gray-900 transition-all ${isMobileMenuOpen ? "opacity-100 z-10" : "opacity-0"}`,
       children: [/* @__PURE__ */ jsxs("div", {
         className: "flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]",
         children: [/* @__PURE__ */ jsx("img", {
@@ -2148,7 +2148,7 @@ __astro_tag_component__(Header, "@astrojs/react");
 
 const Footer = () => {
   return /* @__PURE__ */ jsxs("footer", {
-    className: "border-t-1 border-solid border-gray-100",
+    className: "border-t-1 border-solid border-gray-50/[.10] dark:bg-gray-900",
     children: [/* @__PURE__ */ jsx("h2", {
       className: "hidden",
       children: "Footer"
@@ -2169,7 +2169,7 @@ const Footer = () => {
               target: "_blank",
               "aria-label": "Redirect to Github",
               children: /* @__PURE__ */ jsx(IoLogoGithub, {
-                className: "text-4xl md:text-2xl hover:text-gray-600 transition-all"
+                className: "text-4xl md:text-2xl dark:text-white hover:text-gray-600 transition-all"
               })
             })
           }), /* @__PURE__ */ jsx("li", {
@@ -2179,7 +2179,7 @@ const Footer = () => {
               target: "_blank",
               "aria-label": "Redirect to Linkedin",
               children: /* @__PURE__ */ jsx(IoLogoLinkedin, {
-                className: "text-4xl md:text-2xl hover:text-gray-600 transition-all"
+                className: "text-4xl md:text-2xl dark:text-white hover:text-gray-600 transition-all"
               })
             })
           }), /* @__PURE__ */ jsx("li", {
@@ -2189,7 +2189,7 @@ const Footer = () => {
               target: "_blank",
               "aria-label": "Redirect to Dribbble",
               children: /* @__PURE__ */ jsx(IoLogoDribbble, {
-                className: "text-4xl md:text-2xl hover:text-gray-600 transition-all"
+                className: "text-4xl md:text-2xl dark:text-white hover:text-gray-600 transition-all"
               })
             })
           }), /* @__PURE__ */ jsx("li", {
@@ -2199,7 +2199,7 @@ const Footer = () => {
               target: "_blank",
               "aria-label": "Redirect to Behance",
               children: /* @__PURE__ */ jsx(IoLogoBehance, {
-                className: "text-4xl md:text-2xl hover:text-gray-600 transition-all"
+                className: "text-4xl md:text-2xl dark:text-white hover:text-gray-600 transition-all"
               })
             })
           }), /* @__PURE__ */ jsx("li", {
@@ -2208,20 +2208,20 @@ const Footer = () => {
               href: "mailto: randyphalla@gmail.com",
               "aria-label": "Open email",
               children: /* @__PURE__ */ jsx(IoMail, {
-                className: "text-4xl md:text-2xl hover:text-gray-600 transition-all"
+                className: "text-4xl md:text-2xl dark:text-white hover:text-gray-600 transition-all"
               })
             })
           })]
         }), /* @__PURE__ */ jsxs("div", {
           className: "",
           children: [/* @__PURE__ */ jsxs("p", {
-            className: "text-sm md:text-base",
+            className: "text-sm md:text-base dark:text-white",
             children: ["Designed and Built by ", /* @__PURE__ */ jsx("span", {
               className: "font-bold",
               children: "Randy Phalla"
             })]
           }), /* @__PURE__ */ jsxs("p", {
-            className: "text-sm md:text-base",
+            className: "text-sm md:text-base dark:text-white",
             children: ["Built with ", /* @__PURE__ */ jsx("a", {
               className: "font-bold hover:text-gray-600",
               href: "https://astro.build/",
@@ -2246,7 +2246,7 @@ const Footer = () => {
       }), /* @__PURE__ */ jsx("div", {
         className: "mt-7 text-center md:text-left",
         children: /* @__PURE__ */ jsx("p", {
-          className: "text-sm md:text-base",
+          className: "text-sm md:text-base dark:text-white",
           children: "\xA92022 Randy Phalla"
         })
       })]
@@ -2279,10 +2279,19 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<!-- <meta name="google-site-verification" content="verification_token"> -->
-		<meta name="generator"`, ">\n		<title>Randy Phalla | ", '</title>\n		<!-- Google tag (gtag.js) -->\n		<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV18J6ZMNR"><\/script>\n		', "\n	", `</head>
+		<meta name="generator"`, ">\n		<title>Randy Phalla | ", `</title>
+		<!-- Google tag (gtag.js) -->
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-JV18J6ZMNR"><\/script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-JV18J6ZMNR');
+		<\/script> -->
+	`, `</head>
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>
-		`, '\n		<main>\n			<h2 class="hidden">Main Content</h2>\n			', "\n		</main>\n		", "\n	\n</body></html>"])), addAttribute(Astro2.generator, "content"), title, maybeRenderHead($$result), renderHead($$result), renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" }), renderSlot($$result, $$slots["default"]), renderComponent($$result, "Footer", Footer, {}));
+		`, '\n		<main>\n			<h2 class="hidden">Main Content</h2>\n			', "\n		</main>\n		", "\n	\n</body></html>"])), addAttribute(Astro2.generator, "content"), title, renderHead($$result), renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" }), renderSlot($$result, $$slots["default"]), renderComponent($$result, "Footer", Footer, {}));
 }, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro");
 
 const $$Astro$1 = createAstro("/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro", "https://randyphalla.github.io/", "file:///Users/randyphalla/Documents/GitHub/portfolio-v2/");
@@ -2290,13 +2299,13 @@ const $$Banner = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Banner;
   const { name, role } = Astro2.props;
-  return renderTemplate`${maybeRenderHead($$result)}<section class="py-10 md:py-36">
+  return renderTemplate`${maybeRenderHead($$result)}<section class="py-10 md:py-36 dark:bg-gray-900">
   <h3 class="hidden">Banner</h3>
   <div class="max-w-screen-xl mx-auto px-4 text-left">
-    <h4 class="text-gray-900 font-normal text-sm md:text-base">Hey, I'm</h4>
-    <h5 class="text-gray-900 font-bold text-6xl md:text-7xl"><span class="gradient-text">${name}</span></h5>
-    <h6 class="mt-2 text-gray-900 font-medium text-2xl md:text-3xl">${role}</h6>
-    <p class="mt-2 text-base md:text-lg">I specialize in accessibility, animations and UI/UX.</p>
+    <h4 class="text-gray-900 dark:text-white font-normal text-sm md:text-base">Hey, I'm</h4>
+    <h5 class="text-gray-900 dark:text-white font-bold text-6xl md:text-7xl"><span class="gradient-text">${name}</span></h5>
+    <h6 class="mt-2 text-gray-900 dark:text-gray-200 font-medium text-2xl md:text-3xl">${role}</h6>
+    <p class="mt-2 dark:text-gray-200 text-base md:text-lg">I specialize in accessibility, animations and UI/UX.</p>
   </div>
 </section>`;
 }, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro");
@@ -2339,7 +2348,7 @@ const PortfolioModal = (props) => {
             leaveFrom: "opacity-100 scale-100",
             leaveTo: "opacity-0 scale-95",
             children: /* @__PURE__ */ jsxs(Dialog.Panel, {
-              className: "flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white shadow-xl transition-all",
+              className: "flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white dark:dark:bg-gray-900 shadow-xl transition-all",
               children: [/* @__PURE__ */ jsx("img", {
                 className: "w-full md:max-w-sm h-full rounded-lg",
                 src: portfolio?.imgSrc,
@@ -2348,39 +2357,39 @@ const PortfolioModal = (props) => {
                 className: "w-full md:max-w-lg md:pl-6",
                 children: [/* @__PURE__ */ jsx(Dialog.Title, {
                   as: "h3",
-                  className: "mt-5 md:mt-0 font-bold text-2xl md:text-3xl",
+                  className: "mt-5 md:mt-0 dark:text-white font-bold text-2xl md:text-3xl",
                   children: portfolio?.title
                 }), /* @__PURE__ */ jsx("p", {
-                  className: "mt-4 text-lg md:text-xl	font-bold",
+                  className: "mt-4 dark:text-white text-lg md:text-xl	font-bold",
                   children: "Languges:"
                 }), /* @__PURE__ */ jsx(Dialog.Description, {
-                  className: "text-gray-600 text-base md:text-lg",
+                  className: "text-gray-600 dark:text-gray-400 text-sm md:text-base",
                   children: portfolio?.languages
                 }), portfolio?.siteLink && /* @__PURE__ */ jsxs(Fragment$1, {
                   children: [/* @__PURE__ */ jsx("p", {
-                    className: "mt-4 text-lg md:text-xl font-bold",
+                    className: "mt-4 dark:text-white text-lg md:text-xl font-bold",
                     children: "Site:"
                   }), /* @__PURE__ */ jsx("a", {
-                    className: "text-gray-600 text-sm md:text-base transition-all hover:text-gray-500",
+                    className: "text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all hover:text-gray-500",
                     href: portfolio?.siteLink,
                     target: "_blank",
                     children: portfolio?.siteLink
                   })]
                 }), portfolio?.repoLink && /* @__PURE__ */ jsxs(Fragment$1, {
                   children: [/* @__PURE__ */ jsx("p", {
-                    className: "mt-4 text-lg md:text-xl font-bold",
+                    className: "mt-4 dark:text-white text-lg md:text-xl font-bold",
                     children: "Repo:"
                   }), /* @__PURE__ */ jsx("a", {
-                    className: "text-gray-600 text-sm md:text-base transition-all hover:text-gray-500",
+                    className: "text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all hover:text-gray-500",
                     href: portfolio?.repoLink,
                     target: "_blank",
                     children: portfolio?.repoLink
                   })]
                 }), /* @__PURE__ */ jsx("p", {
-                  className: "mt-4 text-lg md:text-xl font-bold",
+                  className: "mt-4 dark:text-white text-lg md:text-xl font-bold",
                   children: "Project overview:"
                 }), /* @__PURE__ */ jsx(Dialog.Description, {
-                  className: "text-gray-600 text-base md:text-lg",
+                  className: "text-gray-600 dark:text-gray-400 text-sm md:text-base",
                   children: portfolio?.description
                 })]
               })]
@@ -2409,35 +2418,38 @@ const Portfolio = (props) => {
   return /* @__PURE__ */ jsxs(Fragment$1, {
     children: [/* @__PURE__ */ jsxs("section", {
       id: "portfolio",
-      className: "max-w-screen-xl mx-auto py-10 px-4 ",
+      className: "py-10 px-4 dark:bg-gray-900",
       children: [/* @__PURE__ */ jsx("h3", {
         className: "hidden",
         children: "Projects"
-      }), /* @__PURE__ */ jsx("h4", {
-        className: "title-gradient title-gradient--projects mb-5 font-bold text-3xl",
-        children: "Projects"
-      }), /* @__PURE__ */ jsx("div", {
-        className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4",
-        children: portfolios && portfolios.map((portfolio) => /* @__PURE__ */ jsxs("div", {
-          className: "",
-          children: [/* @__PURE__ */ jsxs("div", {
-            onClick: () => handlePortfolioModalOpen(portfolio),
-            className: "p-4 bg-gray-900 hover:bg-gray-700 border-1 border-solid border-gray-900 hover:border-gray-800 rounded-lg cursor-pointer transition-all",
-            role: "button",
-            "aria-label": "Open portfolio modal",
-            children: [/* @__PURE__ */ jsx("img", {
-              className: "w-full h-full",
-              src: portfolio.imgSrc,
-              alt: portfolio.imgSrcAlt
-            }), /* @__PURE__ */ jsx("h4", {
-              className: "mt-2 text-white font-bold text-base md:text-lg leading-7 md:leading-8",
-              children: portfolio.title
-            })]
-          }), portfolio.type && /* @__PURE__ */ jsx("p", {
-            className: "mt-2 text-gray-500 text-sm",
-            children: portfolio.type
-          })]
-        }, portfolio.id))
+      }), /* @__PURE__ */ jsxs("div", {
+        className: "max-w-screen-xl mx-auto",
+        children: [/* @__PURE__ */ jsx("h4", {
+          className: "title-gradient title-gradient--projects mb-5 dark:text-white font-bold text-3xl",
+          children: "Projects"
+        }), /* @__PURE__ */ jsx("div", {
+          className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4",
+          children: portfolios && portfolios.map((portfolio) => /* @__PURE__ */ jsx("div", {
+            className: "",
+            children: /* @__PURE__ */ jsxs("div", {
+              onClick: () => handlePortfolioModalOpen(portfolio),
+              className: "p-4 bg-gray-900 dark:bg-gray-800 hover:bg-gray-700 border-1 border-solid border-gray-900 dark:border-gray-800 hover:border-gray-800 hover:dark:border-gray-700 rounded-lg cursor-pointer transition-all",
+              role: "button",
+              "aria-label": "Open portfolio modal",
+              children: [/* @__PURE__ */ jsx("img", {
+                className: "w-full h-full",
+                src: portfolio.imgSrc,
+                alt: portfolio.imgSrcAlt
+              }), /* @__PURE__ */ jsx("h4", {
+                className: "mt-2 text-white dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8",
+                children: portfolio.title
+              }), portfolio.type && /* @__PURE__ */ jsx("p", {
+                className: "mt-2 text-gray-400 dark:text-gray-200 text-sm",
+                children: portfolio.type
+              })]
+            })
+          }, portfolio.id))
+        })]
       })]
     }), /* @__PURE__ */ jsx(PortfolioModal, {
       isOpen: isModalOpen,
@@ -2471,7 +2483,7 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const educations = [
     {
       role: "Interactive Media Specialist",
-      href: '"https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next',
+      href: "https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next",
       hrefLabel: "Redirect to Fanshawe College's site",
       company: "Fanshawe College",
       date: "Sept 2015 - Apr 2016"
@@ -2492,7 +2504,7 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
       title: "Starwars",
       type: "Web",
       description: `
-      This project is about fetching data from a server and a web application. The goal was to display a list of character and display the detail of that character.
+      This project is about fetching data from a server and build a web application. The goal was to display a list of character and display the detail of that character.
     `,
       siteLink: "https://roaring-liger-fcf8b7.netlify.app/",
       repoLink: "https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api",
@@ -2505,7 +2517,7 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
       title: "Marvel",
       type: "Web / Mobile",
       description: `
-      This project is about fetching data from a server and mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click.
+      This project is about fetching data from a server and build a mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click.
     `,
       siteLink: "https://serene-beijinho-2a498a.netlify.app/",
       repoLink: "https://github.com/randyphalla/marvel-expo-app",
@@ -2518,7 +2530,7 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
       title: "Pokemon",
       type: "Web / Mobile",
       description: `
-      This project is about fetching data from a server and mobile application. The goal was to display a list of Pok\xE9mon's and display the details of that Pok\xE9mon on click.
+      This project is about fetching data from a server and build a mobile application. The goal was to display a list of Pok\xE9mon's and display the details of that Pok\xE9mon on click.
     `,
       siteLink: "https://lucent-banoffee-173852.netlify.app/",
       repoLink: "https://github.com/randyphalla/pokemon-expo-app",
@@ -2537,47 +2549,52 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
       languages: "HTML5, CSS3, Bootstrap v5, PHP and MySQL"
     }
   ];
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Home" }, { "default": () => renderTemplate`${renderComponent($$result, "Banner", $$Banner, { "name": "Randy Phalla", "role": "Full Stack Developer" })}${maybeRenderHead($$result)}<section id="about" class="max-w-screen-xl mx-auto py-10 px-4">
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Home" }, { "default": () => renderTemplate`${renderComponent($$result, "Banner", $$Banner, { "name": "Randy Phalla", "role": "Full Stack Developer" })}${maybeRenderHead($$result)}<section id="about" class="py-10 px-4 dark:bg-gray-900">
 		<h3 class="hidden">About me</h3>
-		<h4 class="title-gradient title-gradient--about mb-5 font-bold text-3xl">About</h4>
-		<div class="flex justify-between items-start flex-col lg:flex-row">
-			<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="/me.jpeg" alt="Portrait of Randy Phalla">
-			<div class="lg:ml-8">
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.</p>
-
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role is taking artwork files such as Photoshop, Illustrator, XD, Sketch & Figma and build those designs in an web apps or mobile. I would lead front-end development, mentor junior developers, ability to create, take, or assign tasks, attend client meetings, colloaborating with designers, developers and clients.</p>
-
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media(s).</p>
-
-				<p class="mb-4 text-base md:text-lg leading-7 md:leading-8">Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities. </p>
+		<div class="max-w-screen-xl mx-auto">
+			<h4 class="title-gradient title-gradient--about mb-5 dark:text-white font-bold text-3xl">About</h4>
+			<div class="flex justify-between items-start flex-col lg:flex-row">
+				<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="/me.jpeg" alt="Portrait of Randy Phalla">
+				<div class="lg:ml-8">
+					<p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8">I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.</p>
+					<p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer. My role was to take artwork files such as Photoshop, Illustrator, XD, Sketch & Figma and build those designs in an web apps or mobile. Using modern frameworks / librares such as Angular, React, Material UI, Ionic and Tailwind. I would lead front-end development, take on assigned tasks / issues, mentor junior developers, working independently, attend client meetings, colloaborating with designers, developers and clients.</p>
+					<p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8">My previous role was at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="http://www.buzzpr.ca/" target="_blank" aria-label="Redirect to BuzzPR's site">BuzzPR</a> (2016), where I was working as a Graphic Design Intern in Toronto, Ontario. My role was to create Snapchat filters for events, brand guidelines, logos and create social media artwork for their social media.</p>
+					<p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8">Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities.</p>
+				</div>
 			</div>
 		</div>
-	</section><section id="skills" class="max-w-screen-xl mx-auto py-10 px-4">
+	</section><section id="skills" class="py-10 px-4 dark:bg-gray-900">
 		<h3 class="hidden">Skills</h3>
-		<h4 class="title-gradient title-gradient--skills mb-5 font-bold text-3xl">Skills</h4>
-		<div class="">
-			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Front-end development:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Astro, Gulp, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).</p>
-			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Back-end development:</span> Firebase, PHP and MySQL.</p>
-			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Project management:</span> Trello and JIRA.</p>
-			<p class="mb-4 text-gray-600 text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900">Tools:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Microsoft (Teams, Excel & Word), Github, Sourcetree, and Slack.</p>
+		<div class="max-w-screen-xl mx-auto">
+			<h4 class="title-gradient title-gradient--skills mb-5 dark:text-white font-bold text-3xl">Skills</h4>
+			<div class="">
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Front-end development:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Astro, Gulp, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).</p>
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Back-end development:</span> Firebase, PHP and MySQL.</p>
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Project management:</span> Trello and JIRA.</p>
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Tools:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Microsoft (Teams, Excel & Word), Github, Sourcetree, and Slack.</p>
+			</div>
 		</div>
-	</section><section id="work" class="max-w-screen-xl mx-auto py-10 px-4">
+	</section><section id="work" class="py-10 px-4 dark:bg-gray-900">
 		<h3 class="hidden">Work Experience</h3>
-		<h4 class="title-gradient title-gradient--work mb-5 font-bold text-3xl">Work experience</h4>
-		<div class="">
-			${works.map((work) => renderTemplate`<div class="mb-4">
-					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">${work.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(work.href, "href")} target="_blank"${addAttribute(work.hrefLabel, "aria-label")}>@${work.company}</a></h4>
-					<p class="text-gray-600 text-sm md:text-base leading-7">${work.date}</p>
-				</div>`)}
+		<div class="max-w-screen-xl mx-auto">
+			<h4 class="title-gradient title-gradient--work dark:text-white mb-5 font-bold text-3xl">Work experience</h4>
+			<div class="">
+				${works.map((work) => renderTemplate`<div class="mb-4">
+						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">${work.role} <a class="dark:text-white hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(work.href, "href")} target="_blank"${addAttribute(work.hrefLabel, "aria-label")}>@${work.company}</a></h4>
+						<p class="text-gray-600 dark:text-white text-sm md:text-base leading-7">${work.date}</p>
+					</div>`)}
+			</div>
 		</div>
-	</section><section id="education" class="max-w-screen-xl mx-auto py-10 px-4 ">
+	</section><section id="education" class="py-10 px-4 dark:bg-gray-900">
 		<h3 class="hidden">Education</h3>
-		<h3 class="title-gradient title-gradient--education mb-5 font-bold text-3xl">Education</h3>
-		<div class="">
-			${educations.map((education) => renderTemplate`<div class="mb-4">
-					<h4 class="text-gray-900 font-bold text-base md:text-lg leading-7 md:leading-8">${education.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(education.href, "href")} target="_blank"${addAttribute(education.hrefLabel, "aria-label")}>@${education.company}</a></h4>
-					<p class="text-gray-600 text-sm md:text-base leading-7">${education.date}</p>
-				</div>`)}
+		<div class="max-w-screen-xl mx-auto">
+			<h3 class="title-gradient title-gradient--education mb-5 dark:text-white font-bold text-3xl">Education</h3>
+			<div class="">
+				${educations.map((education) => renderTemplate`<div class="mb-4">
+						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">${education.role} <a class="dark:text-white hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(education.href, "href")} target="_blank"${addAttribute(education.hrefLabel, "aria-label")}>@${education.company}</a></h4>
+						<p class="text-gray-600 dark:text-white text-sm md:text-base leading-7">${education.date}</p>
+					</div>`)}
+			</div>
 		</div>
 	</section>${renderComponent($$result, "Portfolio", Portfolio, { "client:load": true, "portfolios": portfolioItems, "client:component-hydration": "load", "client:component-path": "@components/Portfolio", "client:component-export": "default" })}` })}`;
 }, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro");
@@ -2669,7 +2686,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.c5f644fb.css"],"scripts":[{"type":"inline","value":"window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a(\"js\",new Date);a(\"config\",\"G-JV18J6ZMNR\");\n"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false,"isExperimentalContentCollections":false,"contentDir":"file:///Users/randyphalla/Documents/GitHub/portfolio-v2/src/content/"},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@components/Portfolio":"Portfolio.38a28946.js","@components/Header":"Header.b7360e12.js","@astrojs/react/client.js":"client.091107ac.js","/astro/hoisted.js?q=0":"hoisted.2a20e3d6.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.c5f644fb.css","/Header.b7360e12.js","/Portfolio.38a28946.js","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.091107ac.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/me.jpeg","/randyphalla-icon.png","/site.webmanifest","/chunks/index.a18801a5.js","/chunks/index.f255b493.js","/chunks/jsx-runtime.5b11b7a3.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index.ffd5c69b.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}}],"site":"https://randyphalla.github.io/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false,"isExperimentalContentCollections":false,"contentDir":"file:///Users/randyphalla/Documents/GitHub/portfolio-v2/src/content/"},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@components/Portfolio":"Portfolio.63a3aa5f.js","@components/Header":"Header.8adb6f88.js","@astrojs/react/client.js":"client.091107ac.js","astro:scripts/before-hydration.js":""},"assets":["/assets/index.ffd5c69b.css","/Header.8adb6f88.js","/Portfolio.63a3aa5f.js","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/client.091107ac.js","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/me.jpeg","/randyphalla-icon.png","/site.webmanifest","/chunks/index.a18801a5.js","/chunks/index.f255b493.js","/chunks/jsx-runtime.5b11b7a3.js","/portfolio/marvel_thumbnail.png","/portfolio/musicbook_thumbnail.png","/portfolio/pokemon_thumbnail.png","/portfolio/starwars_thumbnail.png"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });

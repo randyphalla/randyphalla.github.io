@@ -38,41 +38,35 @@ const PortfolioModal = (props: PortfolioModalProps) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white shadow-xl transition-all">
+              <Dialog.Panel className="flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white dark:dark:bg-gray-900 shadow-xl transition-all">
                 <img
                   className="w-full md:max-w-sm h-full rounded-lg"
                   src={portfolio?.imgSrc}
                   alt={portfolio?.imgSrcAlt}
                 />
                 <div className="w-full md:max-w-lg md:pl-6">
-
                   <Dialog.Title
                     as="h3"
-                    className="mt-5 md:mt-0 font-bold text-2xl md:text-3xl"
+                    className="mt-5 md:mt-0 dark:text-white font-bold text-2xl md:text-3xl"
                   >
                     {portfolio?.title}
                   </Dialog.Title>
-
-                  <p className="mt-4 text-lg md:text-xl	font-bold">Languges:</p>
-                  <Dialog.Description className="text-gray-600 text-base md:text-lg">{portfolio?.languages}</Dialog.Description>
-
+                  <p className="mt-4 dark:text-white text-lg md:text-xl	font-bold">Languges:</p>
+                  <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{portfolio?.languages}</Dialog.Description>
                   {portfolio?.siteLink && (
                     <>
-                      <p className="mt-4 text-lg md:text-xl font-bold">Site:</p>
-                      <a className="text-gray-600 text-sm md:text-base transition-all hover:text-gray-500" href={portfolio?.siteLink} target="_blank">{portfolio?.siteLink}</a>
+                      <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Site:</p>
+                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all hover:text-gray-500" href={portfolio?.siteLink} target="_blank">{portfolio?.siteLink}</a>
                     </>
                   )}
-
                   {portfolio?.repoLink && (
                     <>
-                      <p className="mt-4 text-lg md:text-xl font-bold">Repo:</p>
-                      <a className="text-gray-600 text-sm md:text-base transition-all hover:text-gray-500" href={portfolio?.repoLink} target="_blank">{portfolio?.repoLink}</a>
+                      <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Repo:</p>
+                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all hover:text-gray-500" href={portfolio?.repoLink} target="_blank">{portfolio?.repoLink}</a>
                     </>
                   )}
-
-                  <p className="mt-4 text-lg md:text-xl font-bold">Project overview:</p>
-                  <Dialog.Description className="text-gray-600 text-base md:text-lg">{portfolio?.description}</Dialog.Description>
-
+                  <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Project overview:</p>
+                  <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{portfolio?.description}</Dialog.Description>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

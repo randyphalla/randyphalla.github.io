@@ -20,6 +20,7 @@
   background-color: black;
   opacity: 0;
   transition: opacity 0.5s;
+  @apply dark:bg-white;
 }
 
 .header-nav__list-item-link:hover::after { opacity: 1 }
