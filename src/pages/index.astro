@@ -122,10 +122,10 @@ const portfolioItems: PortfolioType[] = [
 		<div class="max-w-screen-xl mx-auto">
 			<h4 class="title-gradient title-gradient--skills mb-5 dark:text-white font-bold text-3xl">Skills</h4>
 			<div class="">
-				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Front-end development:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Astro, Gulp, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).</p>
-				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Back-end development:</span> Firebase, PHP and MySQL.</p>
-				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Project management:</span> Trello and JIRA.</p>
-				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold text-gray-900 dark:text-white">Tools:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Microsoft (Teams, Excel & Word), Github, Sourcetree, and Slack.</p>
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold">Front-end development:</span> HTML5, CSS3 (SCSS), Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React/React Native, Astro, Gulp, Storybook, Material UI, Storybook, Tailwind, and Bootstrap (3+).</p>
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold">Back-end development:</span> Firebase, PHP and MySQL.</p>
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold">Project management:</span> Trello and JIRA.</p>
+				<p class="mb-4 text-gray-900 dark:text-white text-base md:text-lg leading-7 md:leading-8"><span class="font-bold">Tools:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Microsoft (Teams, Excel & Word), Github, Sourcetree, and Slack.</p>
 			</div>
 		</div>
 	</section>
@@ -137,8 +137,8 @@ const portfolioItems: PortfolioType[] = [
 			<div class="">
 				{works.map((work) => (
 					<div class="mb-4">
-						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{work.role} <a class="dark:text-white hover:text-gray-600 hover:underline hover:underline-offset-2" href={work.href} target="_blank" aria-label={work.hrefLabel}>@{work.company}</a></h4>
-						<p class="text-gray-600 dark:text-white text-sm md:text-base leading-7">{work.date}</p>
+						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{work.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href={work.href} target="_blank" aria-label={work.hrefLabel}>@{work.company}</a></h4>
+						<p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-7">{work.date}</p>
 					</div>
 				))}
 			</div>
@@ -152,8 +152,8 @@ const portfolioItems: PortfolioType[] = [
 			<div class="">
 				{educations.map((education) => (
 					<div class="mb-4">
-						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{education.role} <a class="dark:text-white hover:text-gray-600 hover:underline hover:underline-offset-2" href={education.href} target="_blank" aria-label={education.hrefLabel}>@{education.company}</a></h4>
-						<p class="text-gray-600 dark:text-white text-sm md:text-base leading-7">{education.date}</p>
+						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{education.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href={education.href} target="_blank" aria-label={education.hrefLabel}>@{education.company}</a></h4>
+						<p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-7">{education.date}</p>
 					</div>
 				))}
 			</div>

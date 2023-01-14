@@ -2,7 +2,7 @@ import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } f
 
 const Footer = () => {
   return (
-    <footer className="border-t-1 border-solid border-gray-50/[.10] dark:bg-gray-900">
+    <footer className="border-t-1 border-solid border-gray-100 dark:border-gray-50/[.10] dark:bg-gray-900">
       <h2 className="hidden">Footer</h2>
       <div className="max-w-screen-xl mx-auto py-10 px-4">
         <div className="flex md:grid justify-center md:justify-between items-center flex-col md:flex-row md:grid-cols-3">

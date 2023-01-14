@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <>
-      <header id="header" className="header dark:bg-gray-900 border-b-1 border-solid border-gray-50/[.10] dark:border-gray-50/[.10]">
+      <header id="header" className="header dark:bg-gray-900 border-b-1 border-solid border-gray-100 dark:border-gray-50/[.10]">
         <h2 className="hidden">Header</h2>
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
           <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
