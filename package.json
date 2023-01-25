@@ -7,15 +7,14 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "start:node16": "nvm use 16 && astro dev"
+    "astro": "astro"
   },
   "devDependencies": {
     "@astrojs/react": "^2.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "astro": "^2.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@astrojs/netlify": "^1.3.0",
