@@ -109,7 +109,6 @@ const Header = () => {
             aria-label="Open menu"
             onClick={handleMobileMenu}
           >
-            {/* <IoMenu className="h-8 w-8 stroke-white" /> */}
             <IoClose className="h-8 w-8 stroke-white text-white" />
           </button>
         </div>
