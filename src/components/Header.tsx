@@ -38,10 +38,15 @@ const Header = () => {
       <header id="header" className="header dark:bg-gray-900 border-b-1 border-solid border-gray-100 dark:border-gray-50/[.10]">
         <h2 className="hidden">Header</h2>
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
-          <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
+          <img
+            className="w-10 md:w-16 transition-all"
+            src="/randyphalla-icon.png"
+            alt="Randy Phalla"
+          />
           <button
             className="header__menu-button p-1 md:hidden border-1 border-solid border-primary hover:bg-primary hover:border-primary"
             aria-label="Open menu"
+            role="button"
             onClick={handleMobileMenu}
           >
             <IoMenu className="h-8 w-8 stroke-primary" />
@@ -53,6 +58,7 @@ const Header = () => {
                   className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('header')}
                   role="button"
+                  tabIndex={0}
                   aria-label="Scroll to top of the page"
                 >Home</a>
               </li>
@@ -61,6 +67,7 @@ const Header = () => {
                   className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('about')}
                   role="button"
+                  tabIndex={0}
                   aria-label="Scroll to about section"
                 >About</a>
               </li>
@@ -69,6 +76,7 @@ const Header = () => {
                   className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('skills')}
                   role="button"
+                  tabIndex={0}
                   aria-label="Scroll to skills section"
                 >Skills</a>
               </li>
@@ -77,6 +85,7 @@ const Header = () => {
                   className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('work')}
                   role="button"
+                  tabIndex={0}
                   aria-label="Scroll to work Experiences section"
                 >Work Experiences</a>
               </li>
@@ -85,6 +94,7 @@ const Header = () => {
                   className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('education')}
                   role="button"
+                  tabIndex={0}
                   aria-label="Scroll to education section"
                 >Education</a>
               </li>
@@ -93,6 +103,7 @@ const Header = () => {
                   className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('portfolio')}
                   role="button"
+                  tabIndex={0}
                   aria-label="Scroll to projects section"
                 >Projects</a>
               </li>
@@ -103,10 +114,15 @@ const Header = () => {
 
       <div className={`mobile-menu fixed inset-0 bg-gray-900 dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
         <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
-          <img className="w-10 md:w-16 transition-all" src="/randyphalla-icon.png" alt="Randy Phalla" />
+          <img
+            className="w-10 md:w-16 transition-all"
+            src="/randyphalla-icon.png"
+            alt="Randy Phalla"
+          />
           <button
             className="mobile-menu-button p-1 md:hidden bg-primary border-1 border-solid border-primary hover:bg-transparent hover:border-white"
-            aria-label="Open menu"
+            role="button"
+            aria-label="Close menu"
             onClick={handleMobileMenu}
           >
             <IoClose className="h-8 w-8 stroke-white text-white" />
@@ -115,52 +131,56 @@ const Header = () => {
         <nav className="mobile-menu-nav flex justify-start justify-items-center p-8">
           <ul className="relative flex justify-center justify-items-center flex-col">
             <li className="py-2">
-              <a
+              <button
                 className="text-white text-2xl transition-all hover:text-primary"
                 onClick={() => scrollToSection('header')}
                 role="button"
+                tabIndex={0}
                 aria-label="Scroll to top of the page"
-              >Home</a>
+              >Home</button>
             </li>
             <li className="py-2">
-              <a
+              <button
                 className="text-white text-2xl transition-all hover:text-primary"
                 onClick={() => scrollToSection('about')}
                 role="button"
+                tabIndex={0}
                 aria-label="Scroll to about section"
-              >About</a>
+              >About</button>
             </li>
             <li className="py-2">
-              <a
+              <button
                 className="text-white text-2xl transition-all hover:text-primary"
                 onClick={() => scrollToSection('skills')}
                 role="button"
+                tabIndex={0}
                 aria-label="Scroll to skills section"
-              >Skills</a>
+              >Skills</button>
             </li>
             <li className="py-2">
-              <a
+              <button
                 className="text-white text-2xl transition-all hover:text-primary"
                 onClick={() => scrollToSection('work')}
                 role="button"
+                tabIndex={0}
                 aria-label="Scroll to work Experiences section"
-              >Work experience</a>
+              >Work experience</button>
             </li>
             <li className="py-2">
-              <a
+              <button
                 className="text-white text-2xl transition-all hover:text-primary"
                 onClick={() => scrollToSection('education')}
                 role="button"
                 aria-label="Scroll to education section"
-              >Education</a>
+              >Education</button>
             </li>
             <li className="py-2">
-              <a
+              <button
                 className="text-white text-2xl transition-all hover:text-primary"
                 onClick={() => scrollToSection('portfolio')}
                 role="button"
                 aria-label="Scroll to projects section"
-              >Projects</a>
+              >Projects</button>
             </li>
           </ul>
         </nav>
