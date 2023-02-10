@@ -184,9 +184,6 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-
-        {/* TODO: Make this as a backdrop */}
-        {/* <div className="" onClick={handleMobileMenu}></div> */}
       </div>
     </>
   )

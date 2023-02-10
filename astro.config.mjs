@@ -2,9 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import sitemap from '@astrojs/sitemap';
-// import netlify from '@astrojs/netlify/functions';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://randyphalla.github.io/',
   integrations: [react(), tailwind(), sitemap({
@@ -13,6 +11,4 @@ export default defineConfig({
   server: {
     port: 4200
   },
-  // output: "server",
-  // adapter: netlify(),
 });
