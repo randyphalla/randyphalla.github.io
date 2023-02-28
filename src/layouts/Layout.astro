@@ -27,14 +27,46 @@ const { title } = Astro.props as Props;
 		<!-- <meta name="google-site-verification" content="verification_token"> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>Randy Phalla | {title}</title>
-		<!-- Google tag (gtag.js) -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-JV18J6ZMNR"></script>
+		<!-- TODO: Add google analytics for testing on localhost -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-7STW1NQ3YR"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
+			// window.dataLayer = window.dataLayer || [];
+			// function gtag(){dataLayer.push(arguments);}
+			// gtag('js', new Date());
+			// gtag('config', 'G-7STW1NQ3YR');
+
+			declare global {
+				interface Window {
+					dataLayer: any;
+				}
+			}
+			let dataLayer = window.dataLayer || [];
+			function gtag(...args: any[]):void { dataLayer.push(arguments); }
 			gtag('js', new Date());
-			gtag('config', 'G-JV18J6ZMNR');
-		</script> -->
+			gtag('config', 'G-7STW1NQ3YR');
+			gtag('create', 'G-7STW1NQ3YR', {
+				'cookieDomain': 'none'
+			});
+		</script>
+
+		<!-- Staging -->
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-JR03QN772P"></script> -->
+		<script>
+			// window.dataLayer = window.dataLayer || [];
+			// function gtag(){dataLayer.push(arguments);}
+			// gtag('js', new Date());
+			// gtag('config', 'G-JR03QN772P');
+
+			// declare global {
+			// 	interface Window {
+			// 		dataLayer: any;
+			// 	}
+			// }
+			// let dataLayer = window.dataLayer || [];
+			// function gtag(...args: any[]):void { dataLayer.push(arguments); }
+			// gtag('js', new Date());
+			// gtag('config', 'G-JR03QN772P');
+		</script>
 	</head>
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>

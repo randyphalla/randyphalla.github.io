@@ -19,5 +19,6 @@
       "@pages/*": ["src/pages/*"],
       "@types/*": ["src/types/*"],
     },
+    "types": ["@types/gtag.js"],
   },
 }
