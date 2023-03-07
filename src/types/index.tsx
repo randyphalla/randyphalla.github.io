@@ -24,9 +24,14 @@ type HobbiesProps = {
 
 type ProjectsProps = {
   id: number;
+  imgSrc: string;
+  imgSrcAlt: string;
+  type: string;
   title: string;
+  siteLink?: string;
+  repoLink?: string;
   description: string;
-  poster: string;
+  languages: string;
 }
 
 type SoftwaresProps = {

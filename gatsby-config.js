@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Randy Phalla`,
-    description: `I’m a Front-end Developer and Designer based in London, Ontario Canada. I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript. I’m currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.`,
+    description: `I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.`,
     author: `randyphalla@gmail.com`,
     siteUrl: `http://randyphalla.github.io/`,
     twitterUrl: `https://twitter.com/devrandyp`,
@@ -40,7 +40,7 @@ module.exports = {
       options: {
         name: `Randy Phalla's Portfolio Website`,
         short_name: `RP Portfolio`,
-        description: `I’m a Front-end Developer and Designer based in London, Ontario Canada. I am passionate about creating aesthetically websites and designs. I can translate your artwork files (Photoshop, Illustrator, Sketch, Figma, etc.) and prototype them into web or mobile using HTML5, CSS3, and JavaScript. I’m currently working at Devlift Media as a Web Developer, building websites and mobile apps with the latest web technologies such as HTML5, CSS3 (SCSS), JavaScript (ES5/6), TypeScript, Angular, Ionic, ReactJS and React Native.`,
+        description: `I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.`,
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#FF001F`,
@@ -94,5 +94,8 @@ module.exports = {
         // allExtensions: true, // defaults to false
       }
     },
-  ]
+  ],
+  flags: {
+    DEV_SSR: false,
+  },
 }

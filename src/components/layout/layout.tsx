@@ -6,6 +6,7 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 import './layout.scss';
 import { Hidden } from '../../theme/global.style';
+const isBrowser = typeof window !== "undefined"
 
 type LayoutProps = {
   children?: ReactNode | string;
@@ -24,7 +25,9 @@ const Layout: FC<LayoutProps> = (props: LayoutProps) => (
     `}
     render={data => (
       <>
-        <Header />
+        {isBrowser && (
+          <Header />
+        )}
         <main className="main">
           <Hidden>Main Content</Hidden>
           <div className="main__contianer">

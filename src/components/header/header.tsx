@@ -6,15 +6,15 @@ import { FaBars } from 'react-icons/fa';
 import SideMenu from '../side-menu/side-menu';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';
-import { 
-  HeaderSection, 
-  HeaderContainer, 
-  HeaderLogo, 
-  HeaderLogoContainer, 
-  HeaderMobileMenu, 
-  HeaderMobileMenuButton, 
-  HeaderDesktopMenu, 
-  HeaderDesktopMenuItem, 
+import {
+  HeaderSection,
+  HeaderContainer,
+  HeaderLogo,
+  HeaderLogoContainer,
+  HeaderMobileMenu,
+  HeaderMobileMenuButton,
+  HeaderDesktopMenu,
+  HeaderDesktopMenuItem,
   HeaderDesktopMenuItems
 } from './header.style';
 
@@ -79,8 +79,6 @@ const Header = () => {
           </HeaderLogoContainer>
           <HeaderMobileMenu>
             <HeaderMobileMenuButton
-              // isToggle={toggle}
-              // className={(scrolling ? 'is-active' : '')}
               className={(scrolling ? 'is-active' : '') + (toggle ? ' is-toggle' : '')}
               onClick={() => toggleMenu(!toggle)}
               type="button"
@@ -95,7 +93,8 @@ const Header = () => {
                 return (
                   <HeaderDesktopMenuItem key={i}>
                     <Link
-                      className="gatsby-link"
+                      className={`gatsby-link ${window.location.pathname === link.link ? 'current-page' : ''}`}
+
                       to={link.link}
                       onClick={() => trackMenuDesktopLinks(link.link)}
                     >

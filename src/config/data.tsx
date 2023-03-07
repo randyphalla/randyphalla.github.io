@@ -1,5 +1,4 @@
 import {
-  SkillsProps,
   ExperiencesProps,
   EducationsProps,
   HobbiesProps,
@@ -8,91 +7,19 @@ import {
   HardwaresProps,
   OthersProps
 } from "../types";
+import StarWarsThumbnail from '../assets/images/portfolio/starwars_thumbnail.png';
+import MarvelThumbnail from '../assets/images/portfolio/marvel_thumbnail.png';
+import PokemonThumbnail from '../assets/images/portfolio/pokemon_thumbnail.png';
+import MusicbookThumbnail from '../assets/images/portfolio/musicbook_thumbnail.png';
 
-/**
- *
- * Front-end developent
- * HTML5, CSS3 (SCSS), Bootstrap (3/4), Tailwind CSS, MUI (Material UI), Responsive Web Design, JavaScript (ES5/6+), Typescript, jQuery, Angular (2-11+), Ionic, ReactJS (GatsbyJS),  React Native, Storybook, Firebase
- *
- *
- * Back-end development
- * PHP & MySQL
- *
- *
- * Software
- * Adobe (Photoshop, Illustrator and XD), Figma, Sketch, Git (Sourcetree & GitHub)
- */
-
-export const Skills: SkillsProps[] = [
-  {
-    name: 'HTML5',
-  },
-  {
-    name: 'CSS3 (SCSS)',
-  },
-  {
-    name: 'Bootstrap (3/4)',
-  },
-  {
-    name: 'Tailwind CSS',
-  },
-  {
-    name: 'MUI (Material UI)',
-  },
-  {
-    name: 'Responsive Web Design',
-  },
-  {
-    name: 'JavaScript (ES5/6+)',
-  },
-  {
-    name: 'Typescript',
-  },
-  {
-    name: 'jQuery',
-  },
-  {
-    name: 'Angular (2-11+)',
-  },
-  {
-    name: 'Ionic',
-  },
-  {
-    name: 'ReactJS (GatsbyJS)',
-  },
-  {
-    name: 'React Native',
-  },
-  {
-    name: 'Storybook',
-  },
-  {
-    name: 'Firebase',
-  },
-  {
-    name: 'PHP'
-  },
-  {
-    name: 'MySQL'
-  },
-  {
-    name: 'Git (Sourcetree & GitHub)',
-  },
-  {
-    name: 'Sketch',
-  },
-  {
-    name: 'Figma',
-  },
-  {
-    name: 'Adobe (Photoshop, Illustrator and XD)',
-  },
+export const Skills: string[] = [
+  'HTML5', 'CSS3 (SCSS)', 'JavaScript (ES5/6+)', 'Typescript', 'Angular (2+)', 'Ionic', 'React', 'React Native', 'Git (Sourcetree & GitHub)', 'Bootstrap (3+)', 'Tailwind', 'Material UI (React)', 'Storybook', 'Responsive Web Design', 'Accessibility', 'Astro', 'Gulp', 'PHP', 'MySQL', 'Firebase', 'Sketch', 'Figma', 'Adobe (Photoshop, Illustrator and XD)'
 ];
 
 export const Experiences: ExperiencesProps[] = [
   {
     title: 'Devlift Media',
-    role: 'Web Developer',
+    role: 'Full Stack Developer',
     startedDate: 'Dec 2016',
     endedDate: 'Present',
     url: 'https://www.devlift.com',
@@ -112,14 +39,12 @@ export const Educations: EducationsProps[] = [
     role: 'Interactive Media Specialist',
     startedDate: 'Sept 2015',
     endedDate: 'Apr 2016',
-    // url: 'https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next'
   },
   {
     title: 'Fanshawe College',
     role: 'Graphic Design',
     startedDate: 'Sept 2011',
     endedDate: 'Apr 2014',
-    // url: 'hhttps://www.fanshawec.ca/programs/grd1-graphic-design/next'
   }
 ];
 
@@ -143,67 +68,98 @@ export const Hobbies: HobbiesProps[] = [
 
 export const FeaturedProjects: ProjectsProps[] = [
   {
+    id: 0,
+    imgSrc: '/portfolio/starwars_thumbnail.png',
+    imgSrcAlt: 'Starwars',
+    title: 'Starwars',
+    type: "Web",
+    description: `
+      This project is about fetching data from a server and build a web application. The goal was to display a list of character and display the detail of that character.
+    `,
+    siteLink: 'https://roaring-liger-fcf8b7.netlify.app/',
+    repoLink: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
+    languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
+  },
+  {
     id: 1,
-    title: 'Smart Cart',
-    description: 'UI Design',
-    poster: ''
+    imgSrc: '/portfolio/marvel_thumbnail.png',
+    imgSrcAlt: 'Marvel',
+    title: 'Marvel',
+    type: "Web / Mobile",
+    description: `
+      This project is about fetching data from a server and build a mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click.
+    `,
+    siteLink: 'https://serene-beijinho-2a498a.netlify.app/',
+    repoLink: 'https://github.com/randyphalla/marvel-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
   },
   {
-    id: 3,
-    title: 'Ford Fusion - Car Dashboard',
-    description: 'UI Design',
-    poster: ''
-  },
-  {
-    id: 5,
-    title: 'Pokédex App',
-    description: 'Web App',
-    poster: ''
+    id: 2,
+    imgSrc: '/portfolio/pokemon_thumbnail.png',
+    imgSrcAlt: 'Pokemon',
+    title: 'Pokemon',
+    type: "Web / Mobile",
+    description: `
+      This project is about fetching data from a server and build a mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click.
+    `,
+    siteLink: 'https://lucent-banoffee-173852.netlify.app/',
+    repoLink: 'https://github.com/randyphalla/pokemon-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
   },
 ];
 
 export const Projects: ProjectsProps[] = [
   {
+    id: 0,
+    imgSrc: StarWarsThumbnail,
+    imgSrcAlt: 'Starwars',
+    title: 'Starwars',
+    type: "Web",
+    description: `
+      This project is about fetching data from a server and build a web application. The goal was to display a list of character and display the detail of that character.
+    `,
+    siteLink: 'https://roaring-liger-fcf8b7.netlify.app/',
+    repoLink: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
+    languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
+  },
+  {
     id: 1,
-    title: 'Smart Cart',
-    description: 'UI Design',
-    poster: ''
+    imgSrc: MarvelThumbnail,
+    imgSrcAlt: 'Marvel',
+    title: 'Marvel',
+    type: "Web / Mobile",
+    description: `
+      This project is about fetching data from a server and build a mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click.
+    `,
+    siteLink: 'https://serene-beijinho-2a498a.netlify.app/',
+    repoLink: 'https://github.com/randyphalla/marvel-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
   },
   {
     id: 2,
-    title: 'British Airways',
-    description: 'UI Design',
-    poster: ''
+    imgSrc: PokemonThumbnail,
+    imgSrcAlt: 'Pokemon',
+    title: 'Pokemon',
+    type: "Web / Mobile",
+    description: `
+      This project is about fetching data from a server and build a mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click.
+    `,
+    siteLink: 'https://lucent-banoffee-173852.netlify.app/',
+    repoLink: 'https://github.com/randyphalla/pokemon-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
   },
   {
     id: 3,
-    title: 'Ford Fusion - Car Dashboard',
-    description: 'UI Design',
-    poster: ''
-  },
-  {
-    id: 4,
-    title: 'Zane Barles',
-    description: 'Design',
-    poster: ''
-  },
-  {
-    id: 5,
-    title: 'Pokédex App',
-    description: 'Web App',
-    poster: ''
-  },
-  {
-    id: 6,
-    title: 'Marvel App',
-    description: 'Web App',
-    poster: ''
-  },
-  {
-    id: 7,
+    imgSrc: MusicbookThumbnail,
+    imgSrcAlt: 'Musicbook',
     title: 'Musicbook',
-    description: 'Web App',
-    poster: ''
+    type: "Web",
+    description: `
+      This project is about creating music app using PHP & MySQL. Users are able to create a user account and login with your new account, users have the ability to favorite/unfavorite their artists, albums, songs, playlist and users and able to create, update and delete their own playlist.
+    `,
+    // siteLink: '',
+    repoLink: 'https://github.com/randyphalla/musicbook-php-mysql',
+    languages: 'HTML5, CSS3, Bootstrap v5, PHP and MySQL',
   }
 ];
 

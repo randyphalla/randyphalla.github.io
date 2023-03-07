@@ -1,14 +1,14 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';
-import { 
-  SideMenuItem, 
-  SideMenuItems, 
+import {
+  SideMenuItem,
+  SideMenuItems,
   SideMenuLogo,
-  SideMenuLogoContainer, 
-  SideMenuSection, 
-  SideMenuBackdrop 
+  SideMenuLogoContainer,
+  SideMenuSection,
+  SideMenuBackdrop
 } from './side-menu.style';
 import Logo from '../../assets/images/logo.svg';
 
@@ -18,31 +18,27 @@ type SideMenuProps = {
 }
 
 const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
-  const [links, setLinks] = useState([]);
-  const trackGA = (cat: string, action: string, label: string, value: any) => trackCustomEvent({category: cat, action: action, label: label, value: value});
-  const trackMobileMenuLinks = (link: string) => trackGA('Mobile Menu - Links', 'Click', 'Mobile Menu', link);
-
-  useEffect(() => {
-    setLinks([
-      {
-        name: 'Home',
-        link: '/',
-      },
-      {
-        name: 'Uses',
-        link: '/uses/',
-      },
-    ]);
-    return () => {
-      setLinks([]);
-    };
-  }, []);
+  const { isToggle, onBackDropClick } = props;
+  const links = [
+    {
+      id: 0,
+      name: 'Home',
+      link: '/',
+    },
+    {
+      id: 1,
+      name: 'Uses',
+      link: '/uses/',
+    },
+  ];
+  const trackGA = (cat: string, action: string, label: string, value: number) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackMobileMenuLinks = (link: string, id: number) => trackGA('Mobile Menu - Links', 'Click', `${link}`, id);
 
   return (
     <>
       <SideMenuSection
-       active={props.isToggle} 
-       style={{boxShadow: props.isToggle ? '0 0 10px 5px rgba(0, 0, 0, 0.1)' : ''}}
+       active={isToggle}
+       style={{boxShadow: isToggle ? '0 0 10px 5px rgba(0, 0, 0, 0.1)' : ''}}
       >
         <Hidden>Side Menu</Hidden>
         <SideMenuLogoContainer>
@@ -51,10 +47,13 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
         <SideMenuItems>
           {links.map((link, i) => {
             return (
-              <SideMenuItem key={i} className={`${window.location.pathname === link.link ? 'active-link' : ' '}`}>
+              <SideMenuItem
+                key={i}
+                className={`${window.location.pathname === link.link ? 'active-link' : ' '}`}
+              >
                 <Link
                   to={link.link}
-                  onClick={() => trackMobileMenuLinks(link)}
+                  onClick={() => trackMobileMenuLinks(link.link, link.id)}
                 >
                   {link.name}
                 </Link>
@@ -63,11 +62,11 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
           })}
         </SideMenuItems>
       </SideMenuSection>
-      <SideMenuBackdrop 
-        onClick={props.onBackDropClick}
+      <SideMenuBackdrop
+        onClick={onBackDropClick}
         style={{
-          left: props.isToggle ? '0px' : '-100vw',
-          opacity: props.isToggle ? 1 : 0
+          left: isToggle ? '0px' : '-100vw',
+          opacity: isToggle ? 1 : 0
         }}
       ></SideMenuBackdrop>
     </>

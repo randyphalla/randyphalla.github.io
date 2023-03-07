@@ -12,7 +12,7 @@
   text-decoration: none;
 
   transition: all 0.3s;
-  
+
   &::after {
     position: absolute;
     left: 0;
@@ -28,7 +28,7 @@
     transition: all 0.3s;
   }
 
-  &--current-page {
+  &.current-page {
     &::after {
       opacity: 1;
     }

@@ -15,30 +15,26 @@ type ListItemProps = {
   url?: string;
   startedDate?: string;
   endedDate?: string;
-  isWorkExperience?: boolean;
-  onWorkExperience?: () => void;
-  onEducationExperience?: () => void;
+  onClick?: () => void;
 }
 
 const List: FC<ListProps> = (props: ListProps) => {
+  const { hiddenText, title, items } = props;
   const trackGA = (cat: string, action: string, label: string, value: any) => trackCustomEvent({category: cat, action: action, label: label, value: value});
-  const trackWorkExperiencesLink = (id: number) => trackGA('Work Experiences - Links', 'Click', 'Work Experience', id);
-  const trackEducationLink = (id: number) => trackGA('Educations - Links', 'Click', 'Education', id);
 
   return (
     <WorkEducationSection>
-      <Hidden>{props.hiddenText}</Hidden>
+      <Hidden>{hiddenText}</Hidden>
       <Container>
         <DefaultTitle>
-          <DefaultTitleSpan>{props.title}</DefaultTitleSpan>
+          <DefaultTitleSpan>{title}</DefaultTitleSpan>
         </DefaultTitle>
         <WorkEducationList>
-          {props.items && props.items.map((item, index) =>
+          {items && items.map((item, index) =>
             <ListItem
               key={index}
               {...item}
-              onWorkExperience={() => trackWorkExperiencesLink(index)}
-              onEducationExperience={() => trackEducationLink(index)}
+              onClick={() => trackGA('Home - Work Experiences', 'Click', `${item.url}`, index)}
             />
           )}
         </WorkEducationList>
@@ -48,35 +44,24 @@ const List: FC<ListProps> = (props: ListProps) => {
 };
 
 const ListItem: FC<ListItemProps> = (props: ListItemProps) => {
+  const { title, role, url, startedDate, endedDate, onClick } = props;
   return (
     <WorkEducationListItem>
       <WorkEducationCompanyName>
-        {props.title} -<WorkEducationDateStarted> {props.startedDate} - {props.endedDate}</WorkEducationDateStarted>
+        {title} -<WorkEducationDateStarted> {startedDate} - {endedDate}</WorkEducationDateStarted>
       </WorkEducationCompanyName>
-      <WorkEducationRole>{props.role}</WorkEducationRole>
-      {
-        props.isWorkExperience ? (
-          <WorkEducationLink
-            href={props.url}
-            aria-label={`Go to ${props.title}`}
-            title={`Go to ${props.title}`}
-            onClick={props.onWorkExperience}
-            rel="noopener"
-            >
-            {props.url}
-          </WorkEducationLink>
-        ) : (
-          <WorkEducationLink
-            href={props.url}
-            aria-label={`Go to ${props.title}`}
-            title={`Go to ${props.title}`}
-            onClick={props.onEducationExperience}
-            rel="noopener"
+      <WorkEducationRole>{role}</WorkEducationRole>
+      {url && (
+        <WorkEducationLink
+          href={url}
+          aria-label={`Go to ${title}`}
+          title={`Go to ${title}`}
+          onClick={onClick}
+          rel="noopener"
           >
-            {props.url}
-          </WorkEducationLink>
-        )
-      }
+          {url}
+        </WorkEducationLink>
+      )}
     </WorkEducationListItem>
   )
 };

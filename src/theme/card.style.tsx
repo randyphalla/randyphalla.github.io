@@ -1,38 +1,43 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
-  padding: 16px;
-  width: 100%;
+export const Cards = styled.div`
+  display: grid;
+  gap: 16px;
 
-  @media (min-width: 768px) {
-    width: calc((100% / 2) - 32px);
+  @media screen and (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 992px) {
-    width: calc((100% / 3) - 32px);
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: 1600px) {
-    width: calc((100% / 4) - 32px);
+  @media screen and (min-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
-export const CardAvatar = styled.div`
-  height: 280px;
+export const Card = styled.div`
+  width: 100%;
+  cursor: pointer;
+`;
+
+export const CardAvatar = styled.img`
+  height: auto;
   width: 100%;
 
-  background-color: var(--light-grey-color);
+  // background-color: var(--light-grey-color);
   border-radius: 8px;
-  transition: all 0.3s;
+  transition: all 0.3s linear;
 
   &:hover {
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.10);
   }
 `;
 
 export const CardTitle = styled.h4`
   margin: 0;
-  padding-top: 30px;
+  padding-top: 15px;
   padding-bottom: 10px;
 
   font-size: 20px;

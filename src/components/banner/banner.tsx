@@ -15,13 +15,15 @@ type BannerProps = {
 }
 
 const Banner: FC<BannerProps> = (props: BannerProps) => {
+  const { helloThere, name, description } = props;
+
   return (
     <BannerSection>
       <Hidden>Banner Section</Hidden>
       <BannerContainer>
-        <BannerHelloThere>{ props.helloThere }</BannerHelloThere>
-        <BannerTitle>{ props.name }</BannerTitle>
-        <BannerDescription>{ props.description }</BannerDescription>
+        <BannerHelloThere>{helloThere}</BannerHelloThere>
+        <BannerTitle>{name}</BannerTitle>
+        <BannerDescription>{description}</BannerDescription>
       </BannerContainer>
     </BannerSection>
   );

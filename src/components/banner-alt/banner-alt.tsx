@@ -15,15 +15,19 @@ type BannerAltProps = {
 }
 
 const BannerAlt: FC<BannerAltProps> = (props: BannerAltProps) => {
+  const { title, description } = props;
+
   return (
     <BannerAltWrapper>
       <Hidden>Banner Alt Section</Hidden>
       <BannerAltContainer>
         <BannerAltCont>
-          <BannerAltTitle>{props.title}</BannerAltTitle>
-          <BannerAltContLeftBorder>
-            <BannerAltDescription>{props.description}</BannerAltDescription>
-          </BannerAltContLeftBorder>
+          <BannerAltTitle>{title}</BannerAltTitle>
+          {description && (
+            <BannerAltContLeftBorder>
+              <BannerAltDescription>{description}</BannerAltDescription>
+            </BannerAltContLeftBorder>
+          )}
         </BannerAltCont>
       </BannerAltContainer>
     </BannerAltWrapper>

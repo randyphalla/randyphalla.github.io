@@ -9,110 +9,57 @@
 exports.createPages = async ({ actions: { createPage } }) => {
   const projects = [
     {
+      id: 0,
+      imgSrc: '/portfolio/starwars_thumbnail.png',
+      imgSrcAlt: 'Starwars',
+      title: 'Starwars',
+      type: "Web",
+      description: `
+        This project is about fetching data from a server and build a web application. The goal was to display a list of character and display the detail of that character.
+      `,
+      siteLink: 'https://roaring-liger-fcf8b7.netlify.app/',
+      repoLink: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
+      languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
+    },
+    {
       id: 1,
-      title: 'Smart Cart',
-      description: 'UI Design',
-      about: 'Stuff',
-      role: 'Designer and Developer',
-      items: [
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        }
-      ]
+      imgSrc: '/portfolio/marvel_thumbnail.png',
+      imgSrcAlt: 'Marvel',
+      title: 'Marvel',
+      type: "Web / Mobile",
+      description: `
+        This project is about fetching data from a server and build a mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click.
+      `,
+      siteLink: 'https://serene-beijinho-2a498a.netlify.app/',
+      repoLink: 'https://github.com/randyphalla/marvel-expo-app',
+      languages: 'React Native, Expo and CSS-in-JS',
     },
     {
       id: 2,
-      title: 'British Airways',
-      description: 'UI Design',
-      about: 'Stuff',
-      role: 'Designer and Developer',
-      items: [
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        }
-      ]
+      imgSrc: '/portfolio/pokemon_thumbnail.png',
+      imgSrcAlt: 'Pokemon',
+      title: 'Pokemon',
+      type: "Web / Mobile",
+      description: `
+        This project is about fetching data from a server and build a mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click.
+      `,
+      siteLink: 'https://lucent-banoffee-173852.netlify.app/',
+      repoLink: 'https://github.com/randyphalla/pokemon-expo-app',
+      languages: 'React Native, Expo and CSS-in-JS',
     },
     {
       id: 3,
-      title: 'Ford Fusion - Car Dashboard',
-      description: 'UI Design',
-      about: 'Stuff',
-      role: 'Designer and Developer',
-      items: [
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: 'Zane Barles',
-      description: 'Design',
-      about: 'Stuff',
-      role: 'Designer and Developer',
-      items: [
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: 'Pokédex',
-      description: 'Web app',
-      about: 'Stuff',
-      role: 'Designer and Developer',
-      items: [
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        }
-      ]
-    },
-    {
-      id: 6,
-      title: 'Marvel App',
-      description: 'Web app',
-      about: 'Stuff',
-      role: 'Designer and Developer',
-      items: [
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        }
-      ]
-    },
-    {
-      id: 7,
+      imgSrc: '/portfolio/musicbook_thumbnail.png',
+      imgSrcAlt: 'Musicbook',
       title: 'Musicbook',
-      description: 'Web app',
-      about: 'Stuff',
-      role: 'Designer and Developer',
-      items: [
-        {
-          thumbnail: '',
-          image: '',
-          title: '',
-          alt: '',
-        }
-      ]
-    }
+      type: "Web",
+      description: `
+        This project is about creating music app using PHP & MySQL. Users are able to create a user account and login with your new account, users have the ability to favorite/unfavorite their artists, albums, songs, playlist and users and able to create, update and delete their own playlist.
+      `,
+      // siteLink: '',
+      repoLink: 'https://github.com/randyphalla/musicbook-php-mysql',
+      languages: 'HTML5, CSS3, Bootstrap v5, PHP and MySQL',
+    },
   ];
 
   // // Create portfolio page

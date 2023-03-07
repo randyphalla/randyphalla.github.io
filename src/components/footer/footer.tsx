@@ -22,7 +22,8 @@ import LogoRed from '../../assets/images/logo-red.svg';
 import { Hidden } from '../../theme/global.style';
 
 const Footer = () => {
-  const trackGA = (cat, action, label, value) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+  const trackGA = (cat: string, action: string, label: string, value: number) => trackCustomEvent({category: cat, action: action, label: label, value: value});
+
   return (
     <FooterSection>
       <Hidden>Footer Section</Hidden>
@@ -42,7 +43,7 @@ const Footer = () => {
                   aria-label="Linkedin Link"
                   title="Linkedin"
                   rel="noopener"
-                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Linkedin')}
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Linkedin', 0)}
                 >
                   <FaLinkedinIn />
                 </SocialMediaListItemLink>
@@ -53,7 +54,7 @@ const Footer = () => {
                   aria-label="Github Link"
                   title="Github"
                   rel="noopener"
-                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Github')}
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Github', 1)}
                 >
                   <FaGithub />
                 </SocialMediaListItemLink>
@@ -64,7 +65,7 @@ const Footer = () => {
                   aria-label="Dribbble Link"
                   title="Dribbble"
                   rel="noopener"
-                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Dribbble')}
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Dribbble', 2)}
                 >
                   <FaDribbble />
                 </SocialMediaListItemLink>
@@ -75,7 +76,7 @@ const Footer = () => {
                   aria-label="Behance Link"
                   title="Behance"
                   rel="noopener"
-                  onClick={() => trackGA('Footer - Links', 'Click', 'Footer', 'Behance')}
+                  onClick={() => trackGA('Footer - Links', 'Click', 'Behance', 3)}
                 >
                   <FaBehance />
                 </SocialMediaListItemLink>
@@ -90,7 +91,7 @@ const Footer = () => {
               aria-label="My email"
               title="Email"
               rel="noopener"
-              onClick={() => trackGA('Footer - Links', 'Click', 'Lets Get In Touch', 'Email')}
+              onClick={() => trackGA('Footer - Links', 'Click', 'Email', 4)}
             >
               randyphalla@gmail.com
             </LetGetInTouchLink>

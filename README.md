@@ -30,12 +30,3 @@
 
 - npm
 `npm outdated` and `npm update`
-
-## TODO
-
-- Body copy
-- Get Portfolio items
-- Get Portfolio body copy
-
-## In future development
-- Add light and dark Theme

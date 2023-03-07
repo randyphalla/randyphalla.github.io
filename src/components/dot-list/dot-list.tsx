@@ -5,32 +5,24 @@ import { MySkillsSection, DefaultTitle, DefaultTitleSpan, MySkillsList, MySkilsL
 type DotListProps = {
   hiddenText?: string;
   title?: string;
-  items?: DotListItemProps[];
-}
-
-type DotListItemProps = {
-  name?: string;
+  items?: string[];
 }
 
 const DotList: FC<DotListProps> = (props: DotListProps) => {
+  const { hiddenText, title, items } = props;
+
   return (
     <MySkillsSection>
-      <Hidden>{props.hiddenText}</Hidden>
+      <Hidden>{hiddenText}</Hidden>
       <Container>
         <DefaultTitle dot>
-          <DefaultTitleSpan>{props.title}</DefaultTitleSpan>
+          <DefaultTitleSpan>{title}</DefaultTitleSpan>
         </DefaultTitle>
         <MySkillsList>
-          {props.items && props.items.map((item, index) => <DotListItem key={index} {...item} />)}
+          {items && items.map((item, index) => <MySkilsListItem key={index}>{item}</MySkilsListItem>)}
         </MySkillsList>
       </Container>
     </MySkillsSection>
-  )
-};
-
-const DotListItem: FC<DotListItemProps> = (props: DotListItemProps) => {
-  return (
-    <MySkilsListItem>{props.name}</MySkilsListItem>
   )
 };
 
@@ -39,9 +31,5 @@ DotList.defaultProps = {
   title: 'Dot List Title'
 }
 
-DotListItem.defaultProps = {
-  name: 'Dot List Item Name'
-}
-
-export { DotListItem, DotList };
+export { DotList };
 export default DotList;
