@@ -7,7 +7,7 @@
   "homepage": "https://randyphalla.github.io/",
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
-    "gatsby": "^3.14.0",
+    "gatsby": "^5.7.0",
     "gatsby-plugin-google-analytics": "^3.14.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.14.0",
