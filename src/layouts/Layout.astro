@@ -27,45 +27,25 @@ const { title } = Astro.props as Props;
 		<!-- <meta name="google-site-verification" content="verification_token"> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>Randy Phalla | {title}</title>
-		<!-- TODO: Add google analytics for testing on localhost -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-7STW1NQ3YR"></script>
-		<script>
-			// window.dataLayer = window.dataLayer || [];
-			// function gtag(){dataLayer.push(arguments);}
-			// gtag('js', new Date());
-			// gtag('config', 'G-7STW1NQ3YR');
-
-			declare global {
-				interface Window {
-					dataLayer: any;
-				}
-			}
-			let dataLayer = window.dataLayer || [];
-			function gtag(...args: any[]):void { dataLayer.push(arguments); }
+		<!-- Development (Google analytics) -->
+		<!-- <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-7STW1NQ3YR"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'G-7STW1NQ3YR');
 			gtag('create', 'G-7STW1NQ3YR', {
 				'cookieDomain': 'none'
 			});
-		</script>
+		</script> -->
 
-		<!-- Staging -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-JR03QN772P"></script> -->
-		<script>
-			// window.dataLayer = window.dataLayer || [];
-			// function gtag(){dataLayer.push(arguments);}
-			// gtag('js', new Date());
-			// gtag('config', 'G-JR03QN772P');
-
-			// declare global {
-			// 	interface Window {
-			// 		dataLayer: any;
-			// 	}
-			// }
-			// let dataLayer = window.dataLayer || [];
-			// function gtag(...args: any[]):void { dataLayer.push(arguments); }
-			// gtag('js', new Date());
-			// gtag('config', 'G-JR03QN772P');
+		<!-- Staging (Google analytics) -->
+		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-JR03QN772P"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-JR03QN772P');
 		</script>
 	</head>
 	<body>

@@ -18,6 +18,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@astrojs/partytown": "^1.1.1",
     "@astrojs/sitemap": "^1.0.0",
     "@headlessui/react": "^1.7.3",
     "@types/react": "^18.0.27",
