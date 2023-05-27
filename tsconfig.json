@@ -20,5 +20,6 @@
       "@types/*": ["src/types/*"],
     },
     "types": ["@types/gtag.js"],
+    "jsx": "react",
   },
 }

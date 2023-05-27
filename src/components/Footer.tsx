@@ -1,3 +1,4 @@
+import * as React from "react";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } from "react-icons/io5/index.js";
 
 const Footer = () => {

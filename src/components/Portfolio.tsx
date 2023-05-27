@@ -1,4 +1,5 @@
 import './Portfolio.style.css';
+import * as React from 'react';
 import { useState } from 'react';
 import PortfolioModal from './PortfolioModal';
 import type { PortfolioType } from '@types/Portfolio';

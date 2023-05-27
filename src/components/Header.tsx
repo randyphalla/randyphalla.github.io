@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import * as React from "react";
 import './Header.style.css';
 import { IoMenu, IoClose } from "react-icons/io5/index.js";
 
