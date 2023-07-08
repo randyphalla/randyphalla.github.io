@@ -11,3 +11,6 @@
 
 ## Hosting
 > Using [Github pages](https://pages.github.com/) and [Netlify](https://www.netlify.com/)
+
+## Update dependencies / packages / libraries
+- `yarn upgrade`
