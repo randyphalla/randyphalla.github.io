@@ -6,6 +6,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
+  compressHTML: true,
   site: 'https://randyphalla.github.io/',
   integrations: [react(), tailwind(), sitemap({
     customPages: ['https://randyphalla.github.io', 'https://symphonious-torte-5a2754.netlify.app/']
