@@ -1,4 +1,4 @@
-import { s as server_default } from './chunks/astro.1e9c38db.mjs';
+import { s as server_default } from './chunks/astro.ef9759fb.mjs';
 import React, { createElement } from 'react';
 import ReactDOM from 'react-dom/server';
 import 'html-escaper';
@@ -60,6 +60,10 @@ function incrementId(rendererContextResult) {
 	return id;
 }
 
+const opts = {
+						experimentalReactChildren: false
+					};
+
 const slotName = (str) => str.trim().replace(/[-_]([a-z])/g, (_, w) => w.toUpperCase());
 const reactTypeof = Symbol.for('react.element');
 
@@ -75,8 +79,7 @@ async function check(Component, props, children) {
 	// Note: there are packages that do some unholy things to create "components".
 	// Checking the $$typeof property catches most of these patterns.
 	if (typeof Component === 'object') {
-		const $$typeof = Component['$$typeof'];
-		return $$typeof && $$typeof.toString().slice('Symbol('.length).startsWith('react');
+		return Component['$$typeof'].toString().slice('Symbol('.length).startsWith('react');
 	}
 	if (typeof Component !== 'function') return false;
 
@@ -143,7 +146,10 @@ async function renderToStaticMarkup(Component, props, { default: children, ...sl
 		...slots,
 	};
 	const newChildren = children ?? props.children;
-	if (newChildren != null) {
+	if (children && opts.experimentalReactChildren) {
+		const convert = await import('./chunks/vnode-children.5a6df93a.mjs').then((mod) => mod.default);
+		newProps.children = convert(children);
+	} else if (newChildren != null) {
 		newProps.children = React.createElement(StaticHtml, {
 			hydrate: needsHydration(metadata),
 			value: newChildren,
@@ -154,7 +160,7 @@ async function renderToStaticMarkup(Component, props, { default: children, ...sl
 		identifierPrefix: prefix,
 	};
 	let html;
-	if (metadata && metadata.hydrate) {
+	if (metadata?.hydrate) {
 		if ('renderToReadableStream' in ReactDOM) {
 			html = await renderToReadableStreamAsync(vnode, renderOptions);
 		} else {
