@@ -150,7 +150,7 @@ const portfolioItems: PortfolioType[] = [
 			<div class="">
 				{works.map((work) => (
 					<div class="mb-4">
-						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{work.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href={work.href} target="_blank" aria-label={work.hrefLabel}>@{work.company}</a></h4>
+						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{work.role} <a class="ml-2 hover:text-gray-600 hover:underline hover:underline-offset-2" href={work.href} target="_blank" aria-label={work.hrefLabel}>@{work.company}</a></h4>
 						<p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-7">{work.date}</p>
 					</div>
 				))}
@@ -165,7 +165,7 @@ const portfolioItems: PortfolioType[] = [
 			<div class="">
 				{educations.map((education) => (
 					<div class="mb-4">
-						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{education.role} <a class="hover:text-gray-600 hover:underline hover:underline-offset-2" href={education.href} target="_blank" aria-label={education.hrefLabel}>@{education.company}</a></h4>
+						<h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">{education.role} <a class="ml-2 hover:text-gray-600 hover:underline hover:underline-offset-2" href={education.href} target="_blank" aria-label={education.hrefLabel}>@{education.company}</a></h4>
 						<p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-7">{education.date}</p>
 					</div>
 				))}

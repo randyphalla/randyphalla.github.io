@@ -113,7 +113,7 @@ const Header = () => {
         </div>
       </header>
 
-      <div className={`mobile-menu fixed inset-0 bg-gray-900 dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
+      <div className={`mobile-menu md:hidden fixed inset-0 bg-gray-900 dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
         <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
           <img
             className="w-10 md:w-16 transition-all"
@@ -133,7 +133,7 @@ const Header = () => {
           <ul className="relative flex justify-center justify-items-center flex-col">
             <li className="py-2">
               <button
-                className="text-white text-2xl transition-all hover:text-primary"
+                className="text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('header')}
                 role="button"
                 tabIndex={0}
@@ -142,7 +142,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl transition-all hover:text-primary"
+                className="text-white text-2xl text-lefttransition-all hover:text-primary"
                 onClick={() => scrollToSection('about')}
                 role="button"
                 tabIndex={0}
@@ -151,7 +151,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl transition-all hover:text-primary"
+                className="text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('skills')}
                 role="button"
                 tabIndex={0}
@@ -160,7 +160,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl transition-all hover:text-primary"
+                className="text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('work')}
                 role="button"
                 tabIndex={0}
@@ -169,7 +169,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl transition-all hover:text-primary"
+                className="text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('education')}
                 role="button"
                 aria-label="Scroll to education section"
@@ -177,7 +177,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl transition-all hover:text-primary"
+                className="text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('portfolio')}
                 role="button"
                 aria-label="Scroll to projects section"
