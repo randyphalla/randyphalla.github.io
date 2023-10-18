@@ -10,21 +10,22 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/react": "^2.0.0",
-    "@astrojs/tailwind": "^3.0.0",
+    "@astrojs/react": "^3.0.3",
+    "@astrojs/tailwind": "^5.0.2",
     "@types/gtag.js": "^0.0.12",
-    "astro": "^2.0.10",
+    "@types/react": "^18.2.29",
+    "@types/react-dom": "^18.2.14",
+    "astro": "^3.3.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
-    "@astrojs/netlify": "^2.5.2",
-    "@astrojs/partytown": "^1.1.1",
-    "@astrojs/sitemap": "^1.0.0",
-    "@headlessui/react": "^1.7.3",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@astrojs/netlify": "^2.6.0",
+    "@astrojs/partytown": "^1.2.3",
+    "@astrojs/sitemap": "^1.4.0",
+    "@headlessui/react": "^1.7.17",
     "react-icons": "^4.7.1",
-    "tailwindcss": "^3.2.4"
+    "typescript": "^5.2.2"
   }
 }

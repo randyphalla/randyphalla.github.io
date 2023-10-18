@@ -7,18 +7,21 @@ import netlify from '@astrojs/netlify/functions';
 
 // https://astro.build/config
 export default defineConfig({
-  compressHTML: true,
   site: 'https://randyphalla.github.io/',
-  integrations: [react(), tailwind(), sitemap({
-    customPages: ['https://randyphalla.github.io', 'https://symphonious-torte-5a2754.netlify.app/']
-  }), partytown({
-    config: {
-      forward: ["dataLayer.push"],
-    },
-  })],
-  server: {
-    port: 4200
-  },
+  integrations: [
+    react({
+      include: ['**/react/*']
+    }),
+    tailwind(),
+    sitemap({
+      customPages: ['https://randyphalla.github.io', 'https://symphonious-torte-5a2754.netlify.app/']
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    })
+  ],
   output: 'server',
   adapter: netlify(),
 });

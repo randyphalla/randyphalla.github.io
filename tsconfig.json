@@ -20,6 +20,9 @@
       "@types/*": ["src/types/*"],
     },
     "types": ["@types/gtag.js"],
-    "jsx": "react",
+    // "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "verbatimModuleSyntax": false
   },
 }
