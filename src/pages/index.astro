@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import Banner from '@components/Banner.astro';
 import Portfolio from '@components/Portfolio';
 import type { PortfolioType } from '@types/Portfolio';
+import { Image } from "astro:assets";
 
 const works = [
 	{
@@ -118,7 +119,16 @@ const portfolioItems: PortfolioType[] = [
 		<div class="max-w-screen-xl mx-auto">
 			<h4 class="title-gradient title-gradient--about mb-5 dark:text-white font-bold text-3xl">About</h4>
 			<div class="flex justify-between items-start flex-col lg:flex-row">
-				<img class="hidden lg:block w-full lg:w-80 rounded-lg" src="/me.jpeg" alt="Portrait of Randy Phalla" />
+				<!-- <img class="hidden lg:block w-full lg:w-80 rounded-lg" src="/me.jpeg" alt="Portrait of Randy Phalla" /> -->
+				<Image
+					class="hidden lg:block w-full lg:w-80 rounded-lg"
+					src="/me.jpeg"
+					alt="Portrait of Randy Phalla"
+					loading="lazy"
+					decoding="async"
+					width="320"
+					height="320"
+				/>
 				<div class="lg:ml-8">
 					<p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8">I'm a Front-end Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.</p>
 					<p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://www.dentsucreative.com/" target="_blank" aria-label="Redirect to Dentsu Creative's site">Dentsu Creative</a> as a Front-end Developer.</p>

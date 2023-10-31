@@ -1,13 +1,5 @@
-import { s as server_default } from './chunks/astro.c5c4d63d.mjs';
 import React, { createElement } from 'react';
 import ReactDOM from 'react-dom/server';
-import 'html-escaper';
-import 'cookie';
-import 'kleur/colors';
-import '@astrojs/internal-helpers/path';
-import 'path-to-regexp';
-import 'mime';
-import 'string-width';
 
 /**
  * Astro passes `children` as a string of HTML, so we need
@@ -147,7 +139,7 @@ async function renderToStaticMarkup(Component, props, { default: children, ...sl
 	};
 	const newChildren = children ?? props.children;
 	if (children && opts.experimentalReactChildren) {
-		const convert = await import('./chunks/vnode-children.5a6df93a.mjs').then((mod) => mod.default);
+		const convert = await import('./chunks/vnode-children_3769332a.mjs').then((mod) => mod.default);
 		newProps.children = convert(children);
 	} else if (newChildren != null) {
 		newProps.children = React.createElement(StaticHtml, {
@@ -254,12 +246,12 @@ async function renderToReadableStreamAsync(vnode, options) {
 	return await readResult(await ReactDOM.renderToReadableStream(vnode, options));
 }
 
-const _renderer1 = {
+const _renderer0 = {
 	check,
 	renderToStaticMarkup,
 	supportsAstroStaticSlot: true,
 };
 
-const renderers = [Object.assign({"name":"astro:jsx","serverEntrypoint":"astro/jsx/server.js","jsxImportSource":"astro"}, { ssr: server_default }),Object.assign({"name":"@astrojs/react","clientEntrypoint":"@astrojs/react/client.js","serverEntrypoint":"@astrojs/react/server.js","jsxImportSource":"react"}, { ssr: _renderer1 }),];
+const renderers = [Object.assign({"name":"@astrojs/react","clientEntrypoint":"@astrojs/react/client.js","serverEntrypoint":"@astrojs/react/server.js"}, { ssr: _renderer0 }),];
 
 export { renderers };
