@@ -13,39 +13,35 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        # node-version: ${{ matrix.node-version }}
         node-version: 18
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
-    - run: yarn
-    - run: yarn build
+    - name: 'Install Dependencies'
+      run: yarn
+    - name: 'Build Project'
+      run: yarn build
 
   deploy:
     name: Deploy to Netlify
     runs-on: ubuntu-latest
 
     steps:
-      - uses: jsmrcaga/action-netlify-deploy@v2.0.0
-        with:
-          node-version: 18
-          cache: 'npm'
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
-          NETLIFY_DEPLOY_TO_PROD: true
-          install_command: "echo Skipping installing the dependencies"
-          build_command: "echo Skipping building the web files"
-      - run: yarn
-      - run: yarn build
+    - uses: jsmrcaga/action-netlify-deploy@v2.0.0
+      with:
+        node-version: 18
+    - name: 'Install Dependencies'
+      run: yarn
+    - name: 'Build Project'
+      run: yarn build
+    - name: Netlify Config
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
+        NETLIFY_DEPLOY_TO_PROD: true
+        install_command: "echo Skipping installing the dependencies"
+        build_command: "echo Skipping building the web files"
