@@ -15,8 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use actions
+      uses: actions/checkout@v3
+
+    - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
@@ -28,16 +30,15 @@ jobs:
     - name: 'Build Project'
       run: yarn build
 
-  deploy:
-    name: 'Deploy'
-    runs-on: ubuntu-latest
+  # deploy:
+  #   name: 'Deploy'
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-      - uses: jsmrcaga/action-netlify-deploy@master
-        with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
-          NETLIFY_DEPLOY_TO_PROD: true
-
+  #   steps:z
+  #     - uses: actions/checkout@v3
+  #     - uses: jsmrcaga/action-netlify-deploy@master
+  #       with:
+  #         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+  #         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+  #         NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
+  #         NETLIFY_DEPLOY_TO_PROD: true
