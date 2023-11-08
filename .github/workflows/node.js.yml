@@ -39,9 +39,9 @@ jobs:
     - name: 'Build Project'
       run: yarn build
     - name: Netlify Config
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
-        NETLIFY_DEPLOY_TO_PROD: true
-        install_command: "echo Skipping installing the dependencies"
-        build_command: "echo Skipping building the web files"
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
+      NETLIFY_DEPLOY_TO_PROD: true
+      install_command: "echo Skipping installing the dependencies"
+      build_command: "echo Skipping building the web files"
