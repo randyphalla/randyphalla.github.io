@@ -3,7 +3,7 @@
 
 name: Node.js CI
 
-on:
+on:runs-on: ubuntu-latest
   push:
     branches: [ "main" ]
   pull_request:
@@ -11,14 +11,12 @@ on:
 
 jobs:
   build:
-
+    name: 'Build Astro project'
     runs-on: ubuntu-latest
-
     # strategy:
     #   matrix:
     #     node-version: [14.x, 16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -32,3 +30,18 @@ jobs:
     # - run: npm test
     - run: yarn
     - run: yarn build
+  deploy:
+    name: 'Deploy Astro project to Netlify'
+    runs-on: ubuntu-latest
+    steps:
+      # - uses: jsmrcaga/action-netlify-deploy@v2.0.0
+      # - uses: actions/checkout@v3
+      # - uses: jsmrcaga/action-netlify-deploy@master
+      uses: jsmrcaga/action-netlify-deploy@v2.0.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
+          NETLIFY_DEPLOY_TO_PROD: true
+          install_command: "echo Skipping installing the dependencies"
+          build_command: "echo Skipping building the web files"
