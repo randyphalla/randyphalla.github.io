@@ -34,9 +34,12 @@ jobs:
   #   name: 'Deploy'
   #   runs-on: ubuntu-latest
 
-  #   steps:z
-  #     - uses: actions/checkout@v3
-  #     - uses: jsmrcaga/action-netlify-deploy@master
+  #   steps:
+  #     - name: 'actions/checkout@v3'
+  #       uses: actions/checkout@v3
+
+  #     - name: 'Deploying to Netlify with creds'
+  #       uses: jsmrcaga/action-netlify-deploy@master
   #       with:
   #         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
   #         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
