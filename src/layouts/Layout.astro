@@ -1,6 +1,7 @@
 ---
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import { ViewTransitions, fade } from 'astro:transitions';
 
 export interface Props {
 	title: string;
@@ -10,7 +11,7 @@ const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" transition:animate="none">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,6 +28,8 @@ const { title } = Astro.props as Props;
 		<!-- <meta name="google-site-verification" content="verification_token"> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>Randy Phalla | {title}</title>
+		<ViewTransitions />
+
 		<!-- Development (Google analytics) -->
 		<!-- <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-7STW1NQ3YR"></script>
 		<script type="text/partytown">
@@ -51,7 +54,7 @@ const { title } = Astro.props as Props;
 	<body>
 		<h1 class="hidden">Randy Phalla's Portfolio</h1>
 		<Header client:load />
-		<main>
+		<main transition:animate={fade({ duration: '0.3s' })}>
 			<h2 class="hidden">Main Content</h2>
 			<slot />
 		</main>

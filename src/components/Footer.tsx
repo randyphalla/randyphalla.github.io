@@ -2,12 +2,32 @@ import * as React from "react";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } from "react-icons/io5/index.js";
 
 const Footer = () => {
+    const scrollToSection = (id: string) => {
+    const scrollElement = globalThis.document.getElementById(id);
+    scrollElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start"
+    });
+  };
+
   return (
     <footer className="border-t-1 border-solid border-gray-100 dark:border-gray-50/[.10] dark:bg-gray-900">
       <h2 className="hidden">Footer</h2>
       <div className="max-w-screen-xl mx-auto py-10 px-4">
         <div className="flex md:grid justify-center md:justify-between items-center flex-col md:flex-row md:grid-cols-3">
-          <img className="w-16" src="/randyphalla-icon.png" alt="Randy Phalla" />
+          <a
+            className="flex transition-opacity hover:opacity-50"
+            href="/"
+            onClick={() => scrollToSection('header')}
+            aria-label="Redirect to home"
+          >
+            <img
+              className="w-10 md:w-16 transition-all"
+              src="/randyphalla-icon.png"
+              alt="Randy Phalla"
+            />
+          </a>
           <ul className="mt-5 mb-5 md:mt-0 md:mb-0 flex justify-center md:justify-start items-center md:items-start flex-col md:flex-row">
             <li className="mt-2 mb-2 md:mt-0 md: ml-2 mr-2 w-fit">
               <a href="https://github.com/randyphalla" target="_blank" aria-label="Redirect to Github">

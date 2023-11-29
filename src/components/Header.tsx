@@ -39,11 +39,17 @@ const Header = () => {
       <header id="header" className="header dark:bg-gray-900 border-b-1 border-solid border-gray-100 dark:border-gray-50/[.10]">
         <h2 className="hidden">Header</h2>
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
-          <img
-            className="w-10 md:w-16 transition-all"
-            src="/randyphalla-icon.png"
-            alt="Randy Phalla"
-          />
+          <a
+            className="flex transition-opacity hover:opacity-50"
+            href="/"
+            aria-label="Redirect to home"
+          >
+            <img
+              className="w-10 md:w-16 transition-all"
+              src="/randyphalla-icon.png"
+              alt="Randy Phalla"
+            />
+          </a>
           <button
             className="header__menu-button p-1 md:hidden border-1 border-solid border-primary hover:bg-primary hover:border-primary"
             aria-label="Open menu"
@@ -58,6 +64,7 @@ const Header = () => {
                 <a
                   className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('header')}
+                  // href="/portfolio"
                   role="button"
                   tabIndex={0}
                   aria-label="Scroll to top of the page"
