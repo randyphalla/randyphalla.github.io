@@ -9,6 +9,8 @@ export type PortfolioType = {
   repoLink?: string;
   siteLink?: string;
   languages?: string;
+  client?: string;
+  sites?: SiteType[];
 };
 
 export type PortfolioImageType = {
@@ -16,4 +18,10 @@ export type PortfolioImageType = {
   imgSrc?: string;
   imgSrcAlt?: string;
   title: string;
+};
+
+export type SiteType = {
+  id: number;
+  name: string;
+  link: string;
 };
