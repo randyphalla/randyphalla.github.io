@@ -122,11 +122,17 @@ const Header = () => {
 
       <div className={`mobile-menu md:hidden fixed inset-0 bg-gray-900 dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
         <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
-          <img
-            className="w-10 md:w-16 transition-all"
-            src="/randyphalla-icon.png"
-            alt="Randy Phalla"
-          />
+          <a
+            className="flex transition-opacity hover:opacity-50"
+            href="/"
+            aria-label="Redirect to home"
+          >
+            <img
+              className="w-10 md:w-16 transition-all"
+              src="/randyphalla-icon.png"
+              alt="Randy Phalla"
+            />
+          </a>
           <button
             className="mobile-menu-button p-1 md:hidden bg-primary border-1 border-solid border-primary hover:bg-transparent hover:border-white"
             role="button"
