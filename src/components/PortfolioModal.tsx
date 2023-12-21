@@ -57,9 +57,19 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                   {portfolio?.siteLink && (
                     <>
                       <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Site:</p>
-                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all hover:text-gray-500" href={portfolio?.siteLink} target="_blank">{portfolio?.siteLink}</a>
+                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all underline hover:no-underline hover:text-gray-500" href={portfolio?.siteLink} target="_blank">{portfolio?.siteLink}</a>
                     </>
                   )}
+
+                  {portfolio?.sites && (
+                    <>
+                      <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Sites:</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
+                        Brands: <a className="transition-all underline hover:no-underline hover:text-gray-500" href={portfolio.sites[0].link} target="_blank">{portfolio.sites[0].name}</a>, <a className="transition-all underline hover:no-underline hover:text-gray-500" href={portfolio.sites[1].link} target="_blank">{portfolio.sites[1].name}</a>, <a className="transition-all underline hover:no-underline hover:text-gray-500" href={portfolio.sites[2].link} target="_blank">{portfolio.sites[2].name}</a>, <a className="transition-all underline hover:no-underline hover:text-gray-500" href={portfolio.sites[3].link} target="_blank">{portfolio.sites[3].name}</a>, <a className="transition-all underline hover:no-underline hover:text-gray-500" href={portfolio.sites[4].link} target="_blank">{portfolio.sites[4].name}</a> and, <a className="transition-all underline hover:no-underline hover:text-gray-500" href={portfolio.sites[5].link} target="_blank">{portfolio.sites[5].name}</a>.
+                      </p>
+                    </>
+                  )}
+
                   {portfolio?.repoLink && (
                     <>
                       <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Repo:</p>
