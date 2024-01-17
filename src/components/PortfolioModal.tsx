@@ -77,7 +77,7 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                     </>
                   )}
                   <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Project overview:</p>
-                  <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{portfolio?.description}</Dialog.Description>
+                  <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base text-pretty">{portfolio?.description}</Dialog.Description>
 
                   {portfolio.client && (
                     <>

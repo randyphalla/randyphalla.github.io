@@ -11,6 +11,8 @@ export type PortfolioType = {
   languages?: string;
   client?: string;
   sites?: SiteType[];
+  site?: string;
+  tools?: string;
 };
 
 export type PortfolioImageType = {

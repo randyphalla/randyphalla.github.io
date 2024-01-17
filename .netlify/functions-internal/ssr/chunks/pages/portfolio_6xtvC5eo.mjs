@@ -3,7 +3,7 @@ import { e as createAstro, f as createComponent, r as renderTemplate, i as rende
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
-import { $ as $$Layout } from './index_DIfmG0g9.mjs';
+import { $ as $$Layout } from './index_d2TePdb0.mjs';
 
 const $$Astro = createAstro("https://randyphalla.github.io/");
 const $$Portfolio = createComponent(async ($$result, $$props, $$slots) => {
