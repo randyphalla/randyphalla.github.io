@@ -1,7 +1,7 @@
 import { isRemotePath } from '@astrojs/internal-helpers/path';
 import mime from 'mime/lite.js';
-import { A as AstroError, c as InvalidImageService, d as ExpectedImageOptions, E as ExpectedImage, e as createAstro, f as createComponent, g as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, h as addAttribute, s as spreadAttributes } from '../astro_IqPD2NQ3.mjs';
-import { i as isESMImportedImage, a as isLocalService, b as isRemoteImage, D as DEFAULT_HASH_PROPS, c as isRemoteAllowed } from '../astro/assets-service_vd4qbMQX.mjs';
+import { A as AstroError, c as InvalidImageService, d as ExpectedImageOptions, E as ExpectedImage, e as createAstro, f as createComponent, g as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, h as addAttribute, s as spreadAttributes } from '../astro_o2LUuqrp.mjs';
+import { i as isESMImportedImage, a as isLocalService, b as isRemoteImage, D as DEFAULT_HASH_PROPS, c as isRemoteAllowed } from '../astro/assets-service_nIXFfFg9.mjs';
 import 'html-escaper';
 import 'clsx';
 
@@ -9,7 +9,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      '../astro/assets-service_vd4qbMQX.mjs'
+      '../astro/assets-service_nIXFfFg9.mjs'
     ).then(n => n.s).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -44,6 +44,7 @@ async function getImage$1(options, imageConfig) {
     ...options,
     src: typeof options.src === "object" && "then" in options.src ? (await options.src).default ?? await options.src : options.src
   };
+  const originalPath = isESMImportedImage(resolvedOptions.src) ? resolvedOptions.src.fsPath : resolvedOptions.src;
   const clonedSrc = isESMImportedImage(resolvedOptions.src) ? (
     // @ts-expect-error - clone is a private, hidden prop
     resolvedOptions.src.clone ?? resolvedOptions.src
@@ -62,10 +63,10 @@ async function getImage$1(options, imageConfig) {
   );
   if (isLocalService(service) && globalThis.astroAsset.addStaticImage && !(isRemoteImage(validatedOptions.src) && imageURL === validatedOptions.src)) {
     const propsToHash = service.propertiesToHash ?? DEFAULT_HASH_PROPS;
-    imageURL = globalThis.astroAsset.addStaticImage(validatedOptions, propsToHash);
+    imageURL = globalThis.astroAsset.addStaticImage(validatedOptions, propsToHash, originalPath);
     srcSets = srcSetTransforms.map((srcSet) => ({
       transform: srcSet.transform,
-      url: globalThis.astroAsset.addStaticImage(srcSet.transform, propsToHash),
+      url: globalThis.astroAsset.addStaticImage(srcSet.transform, propsToHash, originalPath),
       descriptor: srcSet.descriptor,
       attributes: srcSet.attributes
     }));

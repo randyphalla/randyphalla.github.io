@@ -1,6 +1,7 @@
 import 'kleur/colors';
 import { escape } from 'html-escaper';
 import { clsx } from 'clsx';
+import cssesc from 'cssesc';
 
 const MissingMediaQueryDirective = {
   name: "MissingMediaQueryDirective",
@@ -95,7 +96,7 @@ const LocalImageUsedWrongly = {
   name: "LocalImageUsedWrongly",
   title: "Local images must be imported.",
   message: (imageFilePath) => `\`Image\`'s and \`getImage\`'s \`src\` parameter must be an imported image or an URL, it cannot be a string filepath. Received \`${imageFilePath}\`.`,
-  hint: "If you want to use an image from your `src` folder, you need to either import it or if the image is coming from a content collection, use the [image() schema helper](https://docs.astro.build/en/guides/images/#images-in-content-collections) See https://docs.astro.build/en/guides/images/#src-required for more information on the `src` property."
+  hint: "If you want to use an image from your `src` folder, you need to either import it or if the image is coming from a content collection, use the [image() schema helper](https://docs.astro.build/en/guides/images/#images-in-content-collections). See https://docs.astro.build/en/guides/images/#src-required for more information on the `src` property."
 };
 const AstroGlobUsedOutside = {
   name: "AstroGlobUsedOutside",
@@ -106,7 +107,8 @@ const AstroGlobUsedOutside = {
 const AstroGlobNoMatch = {
   name: "AstroGlobNoMatch",
   title: "Astro.glob() did not match any files.",
-  message: (globStr) => `\`Astro.glob(${globStr})\` did not return any matching files. Check the pattern for typos.`
+  message: (globStr) => `\`Astro.glob(${globStr})\` did not return any matching files.`,
+  hint: "Check the pattern for typos."
 };
 const MissingSharp = {
   name: "MissingSharp",
@@ -224,7 +226,7 @@ function createComponent(arg1, moduleId, propagation) {
   }
 }
 
-const ASTRO_VERSION = "4.1.1";
+const ASTRO_VERSION = "4.2.6";
 
 function createAstroGlobFn() {
   const globHandler = (importMetaGlobResult) => {
@@ -618,7 +620,7 @@ const toIdent = (k) => k.trim().replace(/(?:(?!^)\b\w|\s+|[^\w]+)/g, (match, ind
 });
 const toAttributeString = (value, shouldEscape = true) => shouldEscape ? String(value).replace(/&/g, "&#38;").replace(/"/g, "&#34;") : value;
 const kebab = (k) => k.toLowerCase() === k ? k : k.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
-const toStyleString = (obj) => Object.entries(obj).filter(([k, v]) => typeof v === "string" && v.trim() || typeof v === "number").map(([k, v]) => {
+const toStyleString = (obj) => Object.entries(obj).filter(([_, v]) => typeof v === "string" && v.trim() || typeof v === "number").map(([k, v]) => {
   if (k[0] !== "-" && k[1] !== "-")
     return `${kebab(k)}:${v}`;
   return `${k}:${v}`;
@@ -1488,9 +1490,6 @@ function createTransitionScope(result, hash) {
   const num = incrementTransitionNumber(result);
   return `astro-${hash}-${num}`;
 }
-function toValidIdent(name) {
-  return name.replace(/[^a-zA-Z0-9\-\_]/g, "_").replace(/^\_+|\_+$/g, "");
-}
 const getAnimations = (name) => {
   if (name === "fade")
     return fade();
@@ -1510,7 +1509,7 @@ function renderTransition(result, hash, animationName, transitionName) {
   if (!animationName)
     animationName = "fade";
   const scope = createTransitionScope(result, hash);
-  const name = transitionName ? toValidIdent(transitionName) : scope;
+  const name = transitionName ? cssesc(transitionName, { isIdentifier: true }) : scope;
   const sheet = new ViewTransitionStyleSheet(scope, name);
   const animations = getAnimations(animationName);
   if (animations) {
