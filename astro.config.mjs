@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import sitemap from '@astrojs/sitemap';
 // import partytown from "@astrojs/partytown";
-// import netlify from '@astrojs/netlify/functions';
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,6 +22,6 @@ export default defineConfig({
     //   },
     // }),
   ],
-  // output: 'server',
-  // adapter: netlify(),
+  output: 'server',
+  adapter: netlify(),
 });

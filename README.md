@@ -24,3 +24,19 @@ Go to Dependency Management and change Node.js to 18.x and redeploy
 
 ## Update dependencies / packages / libraries
 - `yarn upgrade`
+
+## Problems
+
+### When building to Netlify, this error occur. Delete `.netlify/functions-internal` folder, to fix this issue
+> https://github.com/netlify/next-runtime/discussions/803
+```
+6:45:22 PM: ✘ [ERROR] Could not resolve "@astrojs/netlify/netlify-functions.js"
+6:45:22 PM:     .netlify/functions-internal/entry.mjs:1:25:
+6:45:22 PM:       1 │ import * as adapter from "@astrojs/netlify/netlify-functions.js";
+6:45:22 PM:         ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6:45:22 PM:   The path "./netlify-functions.js" is not exported by package "@astrojs/netlify":
+6:45:22 PM:     node_modules/@astrojs/netlify/package.json:20:13:
+6:45:22 PM:       20 │   "exports": {
+6:45:22 PM:          ╵              ^
+6:45:22 PM:   You can mark the path "@astrojs/netlify
+```
