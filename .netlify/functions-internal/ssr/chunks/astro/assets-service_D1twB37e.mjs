@@ -1,5 +1,5 @@
 import { isRemotePath, joinPaths } from '@astrojs/internal-helpers/path';
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, a as UnsupportedImageConversion, b as MissingSharp } from '../astro_o2LUuqrp.mjs';
+import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, a as UnsupportedImageConversion, b as MissingSharp } from '../astro_Bmr3RRHV.mjs';
 
 const VALID_SUPPORTED_FORMATS = [
   "jpeg",
@@ -339,4 +339,4 @@ const sharp$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   default: sharp_default
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { DEFAULT_HASH_PROPS as D, isLocalService as a, isRemoteImage as b, isRemoteAllowed as c, isESMImportedImage as i, sharp$1 as s };
+export { DEFAULT_HASH_PROPS as D, isESMImportedImage as a, isLocalService as b, isRemoteAllowed as c, isRemoteImage as i, sharp$1 as s };
