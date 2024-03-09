@@ -1,8 +1,8 @@
 /* empty css                          */
-import { e as createAstro, f as createComponent, r as renderTemplate, i as renderComponent, m as maybeRenderHead } from '../astro_Bmr3RRHV.mjs';
+import { e as createAstro, f as createComponent, r as renderTemplate, i as renderComponent, m as maybeRenderHead } from '../astro_DmpPCm6B.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout } from './index_HU92YZS5.mjs';
+import { $ as $$Layout } from './index_BjCdstKL.mjs';
 
 const $$Astro = createAstro("https://randyphalla.github.io/");
 const $$Portfolio = createComponent(async ($$result, $$props, $$slots) => {
