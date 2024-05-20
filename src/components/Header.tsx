@@ -36,22 +36,25 @@ const Header = () => {
 
   return (
     <>
+      {/* Desktop Menu */}
       <header id="header" className="header dark:bg-gray-900 border-b-1 border-solid border-gray-100 dark:border-gray-50/[.10]">
         <h2 className="hidden">Header</h2>
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 transition-all">
           <a
             className="flex transition-opacity hover:opacity-50"
             href="/"
-            aria-label="Redirect to home"
+            aria-label="Scroll to the top"
+            role="button"
           >
             <img
               className="w-10 md:w-16 transition-all"
               src="/randyphalla-icon.png"
               alt="Randy Phalla"
+              loading="lazy"
             />
           </a>
           <button
-            className="header__menu-button p-1 md:hidden border-1 border-solid border-primary hover:bg-primary hover:border-primary"
+            className="header__menu-button p-1 md:hidden border-1 border-solid border-primary hover:bg-red-400 hover:border-red-400 dark:hover:bg-primary dark:hover:border-primary transition-all"
             aria-label="Open menu"
             role="button"
             onClick={handleMobileMenu}
@@ -62,9 +65,8 @@ const Header = () => {
             <ul className="header-nav__list flex justify-between items-center">
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 text-black dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('header')}
-                  // href="/portfolio"
                   role="button"
                   tabIndex={0}
                   aria-label="Scroll to top of the page"
@@ -72,7 +74,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 text-black dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('about')}
                   role="button"
                   tabIndex={0}
@@ -81,7 +83,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 text-black dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('skills')}
                   role="button"
                   tabIndex={0}
@@ -90,7 +92,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 text-black dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('work')}
                   role="button"
                   tabIndex={0}
@@ -99,7 +101,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item pr-4">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 text-black dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('education')}
                   role="button"
                   tabIndex={0}
@@ -108,7 +110,7 @@ const Header = () => {
               </li>
               <li className="header-nav__list-item">
                 <a
-                  className="header-nav__list-item-link flex justify-center items-center h-16 dark:text-white font-light text-base tracking-wider"
+                  className="header-nav__list-item-link flex justify-center items-center h-16 text-black dark:text-white font-light text-base tracking-wider"
                   onClick={() => scrollToSection('portfolio')}
                   role="button"
                   tabIndex={0}
@@ -120,8 +122,9 @@ const Header = () => {
         </div>
       </header>
 
-      <div className={`mobile-menu md:hidden fixed inset-0 bg-gray-900 dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
-        <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-gray-50/[.10]">
+      {/* Mobile Menu */}
+      <div className={`mobile-menu md:hidden fixed inset-0 bg-white dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
+        <div className="flex justify-between items-center py-4 px-4 border-b-1 border-solid border-border-slate-900/[.10] dark:border-gray-50/[.10]">
           <a
             className="flex transition-opacity hover:opacity-50"
             href="/"
@@ -131,10 +134,12 @@ const Header = () => {
               className="w-10 md:w-16 transition-all"
               src="/randyphalla-icon.png"
               alt="Randy Phalla"
+              loading="lazy"
             />
           </a>
+          {/* dark:hover:bg-transparent dark:hover:border-white */}
           <button
-            className="mobile-menu-button p-1 md:hidden bg-primary border-1 border-solid border-primary hover:bg-transparent hover:border-white"
+            className="mobile-menu-button p-1 md:hidden bg-primary border-1 border-solid border-primary hover:bg-red-400 hover:border-red-400 dark:hover:bg-transparent dark:hover:border-white transition-all"
             role="button"
             aria-label="Close menu"
             onClick={handleMobileMenu}
@@ -146,7 +151,7 @@ const Header = () => {
           <ul className="relative flex justify-center justify-items-center flex-col">
             <li className="py-2">
               <button
-                className="text-white text-2xl text-left transition-all hover:text-primary"
+                className="text-black dark:text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('header')}
                 role="button"
                 tabIndex={0}
@@ -155,7 +160,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl text-lefttransition-all hover:text-primary"
+                className="text-black dark:text-white text-2xl text-lefttransition-all hover:text-primary"
                 onClick={() => scrollToSection('about')}
                 role="button"
                 tabIndex={0}
@@ -164,7 +169,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl text-left transition-all hover:text-primary"
+                className="text-black dark:text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('skills')}
                 role="button"
                 tabIndex={0}
@@ -173,7 +178,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl text-left transition-all hover:text-primary"
+                className="text-black dark:text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('work')}
                 role="button"
                 tabIndex={0}
@@ -182,7 +187,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl text-left transition-all hover:text-primary"
+                className="text-black dark:text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('education')}
                 role="button"
                 aria-label="Scroll to education section"
@@ -190,7 +195,7 @@ const Header = () => {
             </li>
             <li className="py-2">
               <button
-                className="text-white text-2xl text-left transition-all hover:text-primary"
+                className="text-black dark:text-white text-2xl text-left transition-all hover:text-primary"
                 onClick={() => scrollToSection('portfolio')}
                 role="button"
                 aria-label="Scroll to projects section"

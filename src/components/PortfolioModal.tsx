@@ -44,6 +44,7 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                   className="w-full md:max-w-sm h-full rounded-lg"
                   src={portfolio?.imgSrc}
                   alt={portfolio?.imgSrcAlt}
+                  loading="lazy"
                 />
                 <div className="w-full md:max-w-lg md:pl-6">
                   <Dialog.Title

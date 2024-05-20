@@ -20,12 +20,14 @@ const Footer = () => {
             className="flex transition-opacity hover:opacity-50"
             href="/"
             onClick={() => scrollToSection('header')}
-            aria-label="Redirect to home"
+            aria-label="Scroll to Header"
+            role="button"
           >
             <img
               className="w-10 md:w-16 transition-all"
               src="/randyphalla-icon.png"
               alt="Randy Phalla"
+              loading="lazy"
             />
           </a>
           <ul className="mt-5 mb-5 md:mt-0 md:mb-0 flex justify-center md:justify-start items-center md:items-start flex-col md:flex-row">

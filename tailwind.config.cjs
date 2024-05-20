@@ -34,4 +34,6 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [],
+	// https://tailwindcss.com/docs/dark-mode
+	// darkMode: 'selector',
 }

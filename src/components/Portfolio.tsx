@@ -21,7 +21,7 @@ const Portfolio = (props: PortfolioProps) => {
 
   return (
     <>
-      <section id="portfolio" className="py-10 px-4 dark:bg-gray-900">
+      <section id="portfolio" className="py-10 px-4 bg-white dark:bg-gray-900">
         <h3 className="hidden">Projects</h3>
         <div className="max-w-screen-xl mx-auto">
           <h4 className="title-gradient title-gradient--projects mb-5 dark:text-white font-bold text-3xl">Projects</h4>
@@ -36,7 +36,7 @@ const Portfolio = (props: PortfolioProps) => {
                 <div
                   className="p-4 bg-gray-900 dark:bg-gray-800 hover:bg-gray-700 border-1 border-solid border-gray-900 dark:border-gray-800 hover:border-gray-800 hover:dark:border-gray-700 rounded-lg cursor-pointer transition-all"
                 >
-                  <img className="w-full h-full" src={portfolio.imgSrc} alt={portfolio.imgSrcAlt} />
+                  <img className="w-full h-full" src={portfolio.imgSrc} alt={portfolio.imgSrcAlt} loading="lazy" />
                   <h4 className="mt-4 text-white dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8 text-left">{portfolio.title}</h4>
                   {portfolio.type && (<p className="text-gray-400 dark:text-gray-200 text-sm text-left">{portfolio.type}</p>)}
                 </div>
