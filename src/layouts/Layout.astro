@@ -71,7 +71,7 @@ const { title } = Astro.props as Props;
 	@layer base {
 		:root {
 			--color-primary: #FF2734;
-			/* rgb(255, 41, 55); */
+			--color-rgb-primary: '255, 41, 55';
 		}
 
 		.header__menu-button:hover svg {
@@ -81,7 +81,6 @@ const { title } = Astro.props as Props;
 		.mobile-menu-button:hover svg {
 			@apply text-white;
 		}
-
 	}
 	.title-gradient {
 		@apply relative;
