@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Build portfolio and deploy to Netlify
+name: Build portfolio
 
 on:
   push:
@@ -28,17 +28,3 @@ jobs:
       - name: 'Build Project'
         run: yarn build
 
-  deploy:
-    name: 'Deploy to netlify'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Netlify
-        uses: jsmrcaga/action-netlify-deploy@v2.0.0
-        with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
-          NETLIFY_DEPLOY_TO_PROD: true
-          install_command: "echo Skipping installing the dependencies"
-          build_command: "echo Skipping building the web files"
