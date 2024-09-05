@@ -8,13 +8,17 @@ import {
   AboutMeSection,
   AboutMeContainer,
   AboutMeProfileContainer,
-  AboueMeParagraphContainer,
-  AboueMeParagraph,
+  AboutMeParagraphContainer,
+  AboutMeParagraph,
   AboutMeParagraphLink,
   Container,
   DefaultTitle,
   DefaultTitleSpan,
   FeaturedProjectsSection,
+  MySkillsList,
+  MySkillsSection,
+  MySkilsListItem,
+  MySkillsTitle,
 } from '../theme/index.style';
 import {
   Cards,
@@ -24,16 +28,11 @@ import {
   CardDescription
 } from '../theme/card.style';
 import { Hidden } from '../theme/global.style';
-import { Skills, Experiences, Educations, Projects } from '../config/data';
+import { FrontEndSkills, BackendSkills, ToolsSkills, Experiences, Educations, Projects } from '../config/data';
 import { List } from '../components/list/list';
-import { DotList } from '../components/dot-list/dot-list';
 import PortfolioModal from '../components/portfolio-modal/portfolio-modal';
 
 const IndexPage = () => {
-  const [skills] = useState(Skills);
-  const [experiences] = useState(Experiences);
-  const [educations] = useState(Educations);
-  const [projects] = useState(Projects);
   const [isOpen, setOpen] = useState(false);
   const [selectedPortfolio, setSelectedPortfolio] = useState(Projects[0]);
 
@@ -58,12 +57,13 @@ const IndexPage = () => {
         <SEO title="Home" keywords={[]} />
 
         <Banner
-          helloThere="Hello there, my name is"
+          id="home"
+          helloThere="Hi! I'm"
           name="Randy Phalla"
-          description="I specialize in accessibility, animations and UI/UX."
+          description="I specialize in responsive design, accessibility, and UI/UX."
         />
 
-        <AboutMeSection>
+        <AboutMeSection id="about">
           <Hidden>About me Section</Hidden>
           <AboutMeContainer>
             <AboutMeProfileContainer>
@@ -77,49 +77,69 @@ const IndexPage = () => {
                 height={280}
               />
             </AboutMeProfileContainer>
-            <AboueMeParagraphContainer>
-              <AboueMeParagraph>
-                I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.
-              </AboueMeParagraph>
-              <AboueMeParagraph>
-                I'm currently working at <AboutMeParagraphLink href="https://www.devlift.com" target="_blank" title="Go to Devlift Media Website" rel="noopener">Devlift Media</AboutMeParagraphLink> as a Full Stack Developer. I lead front-end projects with a focus on web apps and mobile development. In addition, I manage projects, build components, structure layouts, theming, review and debug code, deploy products, develop client relationships, collaborate with designers, developers and clients, and mentor junior developers teaching best practices.
-              </AboueMeParagraph>
-              <AboueMeParagraph>
+            <AboutMeParagraphContainer>
+              <AboutMeParagraph>
+                I'm a Front-end Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in responsive design, accessibility, and UI/UX.
+              </AboutMeParagraph>
+              <AboutMeParagraph>
+                I'm currently working at <AboutMeParagraphLink href="https://www.dentsucreative.com/" target="_blank" title="Go to Dentsu Creative Website" rel="noopener">Dentsu Creative</AboutMeParagraphLink> as a Senior Front End Developer. I led the frontend team at GM Live. In addition, My responsibilities include building user interfaces, implementing theming, new features into the platform, excelling in debugging and problem-solving.
+              </AboutMeParagraph>
+              <AboutMeParagraph>
+                My previous role was at <AboutMeParagraphLink href="https://www.devlift.com" target="_blank" title="Go to Devlift Media Website" rel="noopener">Devlift Media</AboutMeParagraphLink> as a Full Stack Developer, I spearheaded both front-end and back-end projects, emphasizing web applications and mobile development. My responsibilities encompassed project management, component development, layout structuring, theming, code review, debugging, product deployment, client relationship development, and collaboration with designers, developers, and clients. Additionally, I took on a mentoring role, guiding junior developers in adopting best practices.
+              </AboutMeParagraph>
+              <AboutMeParagraph>
                 As a developer, it's important to keep up with the ever evolving tech industry. I am always eager to learn new skills and technologies to add to my skill set.
-              </AboueMeParagraph>
-              <AboueMeParagraph>
+              </AboutMeParagraph>
+              <AboutMeParagraph>
                 Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities.
-              </AboueMeParagraph>
-            </AboueMeParagraphContainer>
+              </AboutMeParagraph>
+            </AboutMeParagraphContainer>
           </AboutMeContainer>
         </AboutMeSection>
 
-        <DotList
-          hiddenText="My Skills Section"
-          title="Skills"
-          items={skills}
-        />
+        <MySkillsSection id="skills">
+          <Hidden>Skills</Hidden>
+          <Container>
+            <DefaultTitle dot>
+              <DefaultTitleSpan>Skills</DefaultTitleSpan>
+            </DefaultTitle>
+            <MySkillsTitle>Frontend</MySkillsTitle>
+            <MySkillsList>
+              {FrontEndSkills && FrontEndSkills.map((item, index) => <MySkilsListItem key={index}>{item}</MySkilsListItem>)}
+            </MySkillsList>
+            <MySkillsTitle>Backend</MySkillsTitle>
+            <MySkillsList>
+              {BackendSkills && BackendSkills.map((item, index) => <MySkilsListItem key={index}>{item}</MySkilsListItem>)}
+            </MySkillsList>
+            <MySkillsTitle>Tools</MySkillsTitle>
+            <MySkillsList>
+              {ToolsSkills && ToolsSkills.map((item, index) => <MySkilsListItem key={index}>{item}</MySkilsListItem>)}
+            </MySkillsList>
+          </Container>
+        </MySkillsSection>
 
         <List
+          id="work-experiences"
           hiddenText="My Work Experience Section"
           title="Work Experience"
-          items={experiences}
+          items={Experiences}
         />
 
         <List
+          id="education"
           hiddenText="My Education Section"
           title="Education"
-          items={educations}
+          items={Educations}
         />
 
-        <FeaturedProjectsSection>
+        <FeaturedProjectsSection id="projects">
           <Hidden>Featured Projects Section</Hidden>
           <Container>
             <DefaultTitle>
               <DefaultTitleSpan>Featured Projects</DefaultTitleSpan>
             </DefaultTitle>
             <Cards>
-              {projects && projects.map((project, i) => {
+              {Projects && Projects.map((project, i) => {
                 return (
                   <Card
                     key={i}
@@ -136,7 +156,7 @@ const IndexPage = () => {
                   </Card>
                 )
               })}
-              {projects && !projects.length && (
+              {Projects && !Projects.length && (
                 <div className="unavailable-project">
                   <p className="unavailable-project__text">There's currently no projects available at this moment</p>
                 </div>

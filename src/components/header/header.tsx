@@ -23,13 +23,40 @@ const Header = () => {
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [links] = useState([
     {
+      id: 0,
       name: 'Home',
-      link: '/',
+      scrollTo: 'home',
     },
     {
-      name: 'Uses',
-      link: '/uses/',
-    }
+      id: 1,
+      name: 'About',
+      scrollTo: 'about',
+    },
+    {
+      id: 2,
+      name: 'Skills',
+      scrollTo: 'skills',
+    },
+    {
+      id: 3,
+      name: 'Work Experiences',
+      scrollTo: 'work-experiences',
+    },
+    {
+      id: 4,
+      name: 'Education',
+      scrollTo: 'education',
+    },
+    {
+      id: 5,
+      name: 'Projects',
+      scrollTo: 'projects',
+    },
+    // {
+    //   id: 6,
+    //   name: 'Uses',
+    //   link: '/uses/',
+    // }
   ]);
 
   const trackGA = (cat: string, action: string, label: string, value: any) => trackCustomEvent({category: cat, action: action, label: label, value: value});
@@ -42,6 +69,15 @@ const Header = () => {
   const toggleBackDrop = (toggle: boolean) => {
     trackGA('Menu', 'Click', 'Mobile Menu Backdrop', toggle);
     setToggle(toggle);
+  };
+
+  const scrollToSection = (scrollTo: string) => {
+    const scrollElement = document.getElementById(scrollTo);
+    scrollElement && scrollElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start"
+    });
   };
 
   useEffect(() => {
@@ -89,7 +125,7 @@ const Header = () => {
           </HeaderMobileMenu>
           <HeaderDesktopMenu>
             <HeaderDesktopMenuItems>
-              {links.map((link, i) => {
+              {/* {links.map((link, i) => {
                 return (
                   <HeaderDesktopMenuItem key={i}>
                     <Link
@@ -100,6 +136,21 @@ const Header = () => {
                     >
                       {link.name}
                     </Link>
+                  </HeaderDesktopMenuItem>
+                );
+              })} */}
+              {links.map((link, i) => {
+                return (
+                  <HeaderDesktopMenuItem key={i}>
+                    <a
+                      className="gatsby-link"
+                      onClick={() => {
+                        trackMenuDesktopLinks(link.link);
+                        scrollToSection(link.scrollTo);
+                      }}
+                    >
+                      {link.name}
+                    </a>
                   </HeaderDesktopMenuItem>
                 );
               })}

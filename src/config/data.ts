@@ -12,20 +12,35 @@ import MarvelThumbnail from '../assets/images/portfolio/marvel_thumbnail.png';
 import PokemonThumbnail from '../assets/images/portfolio/pokemon_thumbnail.png';
 import MusicbookThumbnail from '../assets/images/portfolio/musicbook_thumbnail.png';
 
-export const Skills: string[] = [
-  'HTML5', 'CSS3 (SCSS)', 'JavaScript (ES5/6+)', 'Typescript', 'Angular (2+)', 'Ionic', 'React', 'React Native', 'Git (Sourcetree & GitHub)', 'Bootstrap (3+)', 'Tailwind', 'Material UI (React)', 'Storybook', 'Responsive Web Design', 'Accessibility', 'Astro', 'Gulp', 'PHP', 'MySQL', 'Firebase', 'Sketch', 'Figma', 'Adobe (Photoshop, Illustrator and XD)'
+export const FrontEndSkills: string[] = [
+  'HTML5', 'CSS3', 'SASS', 'CSS-in-JS', 'JavaScript', 'TypeScript', 'Angular', 'Ionic', 'React', 'React Native', 'Astro', 'Bootstrap', 'Tailwind CSS', 'Material UI (React)', 'Storybook', 'Responsive Web Design', 'Accessibility'
+];
+
+export const BackendSkills: string[] = [
+  'PHP', 'Firebase (Firestore & Functions)', 'MySQL', 'noSQL',
+];
+
+export const ToolsSkills: string[] = [
+  'Figma', 'Microsoft (Teams, Word and Excel)', 'Github Desktop', 'Sourcetree', 'Trello', 'Jira'
 ];
 
 export const Experiences: ExperiencesProps[] = [
   {
-    title: 'Devlift Media',
+    company: 'Denstu Creative',
+    role: 'Senior Front End Developer',
+    startedDate: 'April 2023',
+    endedDate: 'Present',
+    url: 'https://www.dentsucreative.com',
+  },
+  {
+    company: 'Devlift Media',
     role: 'Full Stack Developer',
     startedDate: 'Dec 2016',
-    endedDate: 'Present',
+    endedDate: 'April 2023',
     url: 'https://www.devlift.com',
   },
   {
-    title: 'BuzzPR',
+    company: 'BuzzPR',
     role: 'Graphic Design Intern',
     startedDate: 'Aug 2016',
     endedDate: 'Sept 2016',
@@ -35,13 +50,13 @@ export const Experiences: ExperiencesProps[] = [
 
 export const Educations: EducationsProps[] = [
   {
-    title: 'Fanshawe College',
+    company: 'Fanshawe College',
     role: 'Interactive Media Specialist',
     startedDate: 'Sept 2015',
     endedDate: 'Apr 2016',
   },
   {
-    title: 'Fanshawe College',
+    company: 'Fanshawe College',
     role: 'Graphic Design',
     startedDate: 'Sept 2011',
     endedDate: 'Apr 2014',
@@ -74,7 +89,7 @@ export const FeaturedProjects: ProjectsProps[] = [
     title: 'Starwars',
     type: "Web",
     description: `
-      This project is about fetching data from a server and build a web application. The goal was to display a list of character and display the detail of that character.
+      This project involves retrieving data from an API to construct a web application. The objective was to present a comprehensive list of characters and provide detailed information about each character.
     `,
     siteLink: 'https://roaring-liger-fcf8b7.netlify.app/',
     repoLink: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
@@ -87,7 +102,7 @@ export const FeaturedProjects: ProjectsProps[] = [
     title: 'Marvel',
     type: "Web / Mobile",
     description: `
-      This project is about fetching data from a server and build a mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click.
+      This project involves retrieving data from an API to develop a mobile application with the goal of showcasing a comprehensive list of superheroes. The primary objective is to enable users to view detailed information about each superhero by clicking on their respective profiles.
     `,
     siteLink: 'https://serene-beijinho-2a498a.netlify.app/',
     repoLink: 'https://github.com/randyphalla/marvel-expo-app',
@@ -100,7 +115,7 @@ export const FeaturedProjects: ProjectsProps[] = [
     title: 'Pokemon',
     type: "Web / Mobile",
     description: `
-      This project is about fetching data from a server and build a mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click.
+      This project revolves around fetching data from an API to construct a mobile application. The aim is to present a list of Pokémon and provide detailed information about each Pokémon upon user interaction.
     `,
     siteLink: 'https://lucent-banoffee-173852.netlify.app/',
     repoLink: 'https://github.com/randyphalla/pokemon-expo-app',
@@ -116,7 +131,7 @@ export const Projects: ProjectsProps[] = [
     title: 'Starwars',
     type: "Web",
     description: `
-      This project is about fetching data from a server and build a web application. The goal was to display a list of character and display the detail of that character.
+      This project involves retrieving data from an API to construct a web application. The objective was to present a comprehensive list of characters and provide detailed information about each character.
     `,
     siteLink: 'https://roaring-liger-fcf8b7.netlify.app/',
     repoLink: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
@@ -129,7 +144,7 @@ export const Projects: ProjectsProps[] = [
     title: 'Marvel',
     type: "Web / Mobile",
     description: `
-      This project is about fetching data from a server and build a mobile application. The goal was to display a list of superheroes and display the detail of that superhero on click.
+      This project involves retrieving data from an API to develop a mobile application with the goal of showcasing a comprehensive list of superheroes. The primary objective is to enable users to view detailed information about each superhero by clicking on their respective profiles.
     `,
     siteLink: 'https://serene-beijinho-2a498a.netlify.app/',
     repoLink: 'https://github.com/randyphalla/marvel-expo-app',
@@ -142,7 +157,7 @@ export const Projects: ProjectsProps[] = [
     title: 'Pokemon',
     type: "Web / Mobile",
     description: `
-      This project is about fetching data from a server and build a mobile application. The goal was to display a list of Pokémon's and display the details of that Pokémon on click.
+      This project revolves around fetching data from an API to construct a mobile application. The aim is to present a list of Pokémon and provide detailed information about each Pokémon upon user interaction.
     `,
     siteLink: 'https://lucent-banoffee-173852.netlify.app/',
     repoLink: 'https://github.com/randyphalla/pokemon-expo-app',
@@ -155,7 +170,7 @@ export const Projects: ProjectsProps[] = [
     title: 'Musicbook',
     type: "Web",
     description: `
-      This project is about creating music app using PHP & MySQL. Users are able to create a user account and login with your new account, users have the ability to favorite/unfavorite their artists, albums, songs, playlist and users and able to create, update and delete their own playlist.
+      This project entails the development of a music app using PHP and MySQL. Users can register and log in to their accounts, where they gain the ability to favorite or unfavorite artists, albums, songs, and playlists. Additionally, users can create, update, and delete their personalized playlists.
     `,
     // siteLink: '',
     repoLink: 'https://github.com/randyphalla/musicbook-php-mysql',

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { Hidden } from '../../theme/global.style';
 import {
@@ -23,29 +23,62 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
     {
       id: 0,
       name: 'Home',
-      link: '/',
+      scrollTo: 'home',
     },
     {
       id: 1,
-      name: 'Uses',
-      link: '/uses/',
+      name: 'About',
+      scrollTo: 'about',
     },
+    {
+      id: 2,
+      name: 'Skills',
+      scrollTo: 'skills',
+    },
+    {
+      id: 3,
+      name: 'Work Experiences',
+      scrollTo: 'work-experiences',
+    },
+    {
+      id: 4,
+      name: 'Education',
+      scrollTo: 'education',
+    },
+    {
+      id: 5,
+      name: 'Projects',
+      scrollTo: 'projects',
+    },
+    // {
+    //   id: 6,
+    //   name: 'Uses',
+    //   link: '/uses/',
+    // }
   ];
   const trackGA = (cat: string, action: string, label: string, value: number) => trackCustomEvent({category: cat, action: action, label: label, value: value});
   const trackMobileMenuLinks = (link: string, id: number) => trackGA('Mobile Menu - Links', 'Click', `${link}`, id);
+  const scrollToSection = (scrollTo: string) => {
+    const scrollElement = document.getElementById(scrollTo);
+    scrollElement && scrollElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start"
+    });
+  };
 
   return (
     <>
       <SideMenuSection
-       active={isToggle}
-       style={{boxShadow: isToggle ? '0 0 10px 5px rgba(0, 0, 0, 0.1)' : ''}}
+        active={isToggle}
+        style={{boxShadow: isToggle ? '0 0 10px 5px rgba(0, 0, 0, 0.1)' : ''}}
       >
         <Hidden>Side Menu</Hidden>
         <SideMenuLogoContainer>
           <SideMenuLogo src={Logo} alt="Randy Phalla's Logo" title="Randy Phalla's Logo" />
         </SideMenuLogoContainer>
         <SideMenuItems>
-          {links.map((link, i) => {
+          {/* {links.map((link, i) => {
             return (
               <SideMenuItem
                 key={i}
@@ -59,14 +92,32 @@ const SideMenu: FC<SideMenuProps> = (props: SideMenuProps) => {
                 </Link>
               </SideMenuItem>
             );
+          })} */}
+          {links.map((link, i) => {
+            return (
+              <SideMenuItem
+                key={i}
+              >
+                <a
+                  onClick={() => {
+                    trackMobileMenuLinks(link.scrollTo, link.id);
+                    scrollToSection(link.scrollTo);
+                  }}
+                >
+                  {link.name}
+                </a>
+              </SideMenuItem>
+            );
           })}
         </SideMenuItems>
       </SideMenuSection>
       <SideMenuBackdrop
         onClick={onBackDropClick}
         style={{
-          left: isToggle ? '0px' : '-100vw',
-          opacity: isToggle ? 1 : 0
+          // left: isToggle ? '0px' : '-100vw',
+          left: '0px',
+          opacity: isToggle ? 1 : 0,
+          visibility: isToggle ? 'visible' : 'hidden',
         }}
       ></SideMenuBackdrop>
     </>

@@ -4,7 +4,7 @@ export const SideMenuSection = styled.div`
   position: fixed;
   top: 0;
   left: ${props => props.active ? 0 : -220 }px;
-  z-index: 3;
+  z-index: 5;
 
   width: 220px;
   height: 100%;
@@ -70,6 +70,7 @@ export const SideMenuItem = styled.li`
     color: var(--white-color);
     font-size: 14px;
     text-decoration: none;
+    cursor: pointer;
   }
 `;
 
@@ -77,11 +78,11 @@ export const SideMenuBackdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
- 
+  z-index: 4;
+
   height: 100vh;
   width: 100vw;
-  
+
   background-color: rgba(0, 0, 0, 0.5);
   transition: all 0.3s;
   cursor: pointer;

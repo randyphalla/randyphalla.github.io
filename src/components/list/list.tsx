@@ -10,7 +10,7 @@ type ListProps = {
 }
 
 type ListItemProps = {
-  title?: string;
+  company?: string;
   role?: string;
   url?: string;
   startedDate?: string;
@@ -44,21 +44,22 @@ const List: FC<ListProps> = (props: ListProps) => {
 };
 
 const ListItem: FC<ListItemProps> = (props: ListItemProps) => {
-  const { title, role, url, startedDate, endedDate, onClick } = props;
+  const { company, role, url, startedDate, endedDate, onClick } = props;
   return (
     <WorkEducationListItem>
       <WorkEducationCompanyName>
-        {title} -<WorkEducationDateStarted> {startedDate} - {endedDate}</WorkEducationDateStarted>
+        {company} -<WorkEducationDateStarted> {startedDate} - {endedDate}</WorkEducationDateStarted>
       </WorkEducationCompanyName>
       <WorkEducationRole>{role}</WorkEducationRole>
       {url && (
         <WorkEducationLink
           href={url}
-          aria-label={`Go to ${title}`}
-          title={`Go to ${title}`}
+          aria-label={`Go to ${company}`}
+          title={`Go to ${company}`}
           onClick={onClick}
           rel="noopener"
-          >
+          target="_blank"
+        >
           {url}
         </WorkEducationLink>
       )}

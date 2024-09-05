@@ -3,7 +3,7 @@ type SkillsProps = {
 }
 
 type ExperiencesProps = {
-  title: string;
+  company: string;
   role: string;
   url?: string;
   startedDate: string;
@@ -11,7 +11,7 @@ type ExperiencesProps = {
 }
 
 type EducationsProps = {
-  title: string;
+  company: string;
   role: string;
   url?: string;
   startedDate: string;

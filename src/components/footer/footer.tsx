@@ -100,7 +100,7 @@ const Footer = () => {
       </BorderContainer>
 
       <FooterCopyright>
-        <FooterCopyrightTitle>&copy; 2022 Randy Phalla. All Rights Reserved.</FooterCopyrightTitle>
+        <FooterCopyrightTitle>&copy; 2024 Randy Phalla. All Rights Reserved.</FooterCopyrightTitle>
       </FooterCopyright>
     </FooterSection>
   );

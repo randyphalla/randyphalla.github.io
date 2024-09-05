@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const HeaderSection = styled.header`
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 4;
 
   width: 100%;
   display: flex;

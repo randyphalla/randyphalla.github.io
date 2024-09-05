@@ -37,13 +37,13 @@ export const AboutMeProfileContainer = styled.div`
   }
 `;
 
-export const AboueMeParagraphContainer = styled.div`
+export const AboutMeParagraphContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding: 16px;
   }
 `;
 
-export const AboueMeParagraph = styled.p`
+export const AboutMeParagraph = styled.p`
   margin: 0;
   margin-bottom: 16px;
 
@@ -78,6 +78,16 @@ export const MySkillsSection = styled.section`
 
 export const Container = styled.div`
   margin: 0 auto;
+`;
+
+export const MySkillsTitle = styled.h4`
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  color: var(--black-color-1);
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 `;
 
 export const MySkillsList = styled.ul`

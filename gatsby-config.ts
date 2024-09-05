@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Randy Phalla`,
-    description: `I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.`,
+    description: `I'm a Front-end Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in responsive design, accessibility, and UI/UX.`,
     author: `randyphalla@gmail.com`,
     siteUrl: `http://randyphalla.github.io/`,
     twitterUrl: `https://twitter.com/devrandyp`,
@@ -40,7 +40,7 @@ module.exports = {
       options: {
         name: `Randy Phalla's Portfolio Website`,
         short_name: `RP Portfolio`,
-        description: `I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in accessibility, animations and UI/UX.`,
+        description: `I'm a Full Stack Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in responsive design, accessibility, and UI/UX.`,
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#FF001F`,
@@ -89,9 +89,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
-        // isTSX: true, // defaults to false
-        // jsxPragma: `jsx`, // defaults to "React"
-        // allExtensions: true, // defaults to false
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
       }
     },
   ],
