@@ -7,7 +7,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			sans: ['Inter', ...defaultTheme.fontFamily.sans],
-			serif: ['Roboto Slab', ...defaultTheme.fontFamily.serif],
+			serif: [...defaultTheme.fontFamily.serif],
 		},
 		extend: {
 			borderWidth: {

@@ -21,7 +21,7 @@ const Portfolio = (props: PortfolioProps) => {
 
   return (
     <>
-      <section id="portfolio" className="py-10 px-4 bg-white dark:bg-gray-900">
+      <section id="portfolio" className="py-10 px-4 md:px-8 bg-white dark:bg-gray-900">
         <h3 className="hidden">Projects</h3>
         <div className="max-w-screen-xl mx-auto">
           <h4 className="title-gradient title-gradient--projects mb-5 dark:text-white font-bold text-3xl">Projects</h4>
