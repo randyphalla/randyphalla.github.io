@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } from "react-icons/io5/index.js";
+import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } from "react-icons/io5";
 
 const Footer = () => {
     const scrollToSection = (id: string) => {

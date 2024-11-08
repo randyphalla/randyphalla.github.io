@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 // import * as React from "react";
 import './Header.style.css';
-import { IoMenu, IoClose } from "react-icons/io5/index.js";
+import { IoMenu, IoClose } from "react-icons/io5";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -123,7 +123,7 @@ const Header = () => {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu md:hidden fixed inset-0 bg-white dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0'}`}>
+      <div className={`mobile-menu md:hidden fixed top-0 inset-x-0 bg-white dark:bg-gray-900 transition-all ${isMobileMenuOpen ? 'opacity-100 z-10': 'opacity-0 -z-10'}`}>
         <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 border-b-1 border-solid border-border-slate-900/[.10] dark:border-gray-50/[.10]">
           <a
             className="flex transition-opacity hover:opacity-50"
