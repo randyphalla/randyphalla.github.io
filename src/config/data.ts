@@ -11,6 +11,8 @@ import StarWarsThumbnail from '../assets/images/portfolio/starwars_thumbnail.png
 import MarvelThumbnail from '../assets/images/portfolio/marvel_thumbnail.png';
 import PokemonThumbnail from '../assets/images/portfolio/pokemon_thumbnail.png';
 import MusicbookThumbnail from '../assets/images/portfolio/musicbook_thumbnail.png';
+import GMLiveThumbnail from '../assets/images/portfolio/gmlive_thumbnail.png';
+import AnnexThumbnail from '../assets/images/portfolio/annex_thumbnail.png';
 
 export const FrontEndSkills: string[] = [
   'HTML5', 'CSS3', 'SASS', 'CSS-in-JS', 'JavaScript', 'TypeScript', 'Angular', 'Ionic', 'React', 'React Native', 'Astro', 'Bootstrap', 'Tailwind CSS', 'Material UI (React)', 'Storybook', 'Responsive Web Design', 'Accessibility'
@@ -81,48 +83,6 @@ export const Hobbies: HobbiesProps[] = [
   }
 ];
 
-export const FeaturedProjects: ProjectsProps[] = [
-  {
-    id: 0,
-    imgSrc: '/portfolio/starwars_thumbnail.png',
-    imgSrcAlt: 'Starwars',
-    title: 'Starwars',
-    type: "Web",
-    description: `
-      This project involves retrieving data from an API to construct a web application. The objective was to present a comprehensive list of characters and provide detailed information about each character.
-    `,
-    siteLink: 'https://roaring-liger-fcf8b7.netlify.app/',
-    repoLink: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
-    languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
-  },
-  {
-    id: 1,
-    imgSrc: '/portfolio/marvel_thumbnail.png',
-    imgSrcAlt: 'Marvel',
-    title: 'Marvel',
-    type: "Web / Mobile",
-    description: `
-      This project involves retrieving data from an API to develop a mobile application with the goal of showcasing a comprehensive list of superheroes. The primary objective is to enable users to view detailed information about each superhero by clicking on their respective profiles.
-    `,
-    siteLink: 'https://serene-beijinho-2a498a.netlify.app/',
-    repoLink: 'https://github.com/randyphalla/marvel-expo-app',
-    languages: 'React Native, Expo and CSS-in-JS',
-  },
-  {
-    id: 2,
-    imgSrc: '/portfolio/pokemon_thumbnail.png',
-    imgSrcAlt: 'Pokemon',
-    title: 'Pokemon',
-    type: "Web / Mobile",
-    description: `
-      This project revolves around fetching data from an API to construct a mobile application. The aim is to present a list of Pokémon and provide detailed information about each Pokémon upon user interaction.
-    `,
-    siteLink: 'https://lucent-banoffee-173852.netlify.app/',
-    repoLink: 'https://github.com/randyphalla/pokemon-expo-app',
-    languages: 'React Native, Expo and CSS-in-JS',
-  },
-];
-
 export const Projects: ProjectsProps[] = [
   {
     id: 0,
@@ -172,10 +132,33 @@ export const Projects: ProjectsProps[] = [
     description: `
       This project entails the development of a music app using PHP and MySQL. Users can register and log in to their accounts, where they gain the ability to favorite or unfavorite artists, albums, songs, and playlists. Additionally, users can create, update, and delete their personalized playlists.
     `,
-    // siteLink: '',
     repoLink: 'https://github.com/randyphalla/musicbook-php-mysql',
     languages: 'HTML5, CSS3, Bootstrap v5, PHP and MySQL',
-  }
+  },
+  {
+    id: 3,
+    imgSrc: GMLiveThumbnail,
+    imgSrcAlt: 'GM Live',
+    title: 'GM Live',
+    type: "Web / Mobile",
+    description: `
+    At Dentsu Creative, our team built a virtual experience that allows participants to interact one-on-one with EV specialists and learn everything about electric vehicles.
+    `,
+    siteLink: 'https://gmenergy.gm.com/for-home/energy-live',
+    languages: 'Material UI, JavaScript, TypeScript, React, React Native, Firebase (Firestore, Functions and Hosting), Vonage Video API (OpenTok) and Symbl.ai',
+  },
+  {
+    id: 4,
+    imgSrc: AnnexThumbnail,
+    imgSrcAlt: 'Annex Hotel',
+    title: 'Annex Hotel',
+    type: "Web",
+    description: `
+    I developed UI components and theming for the website, mentoring a junior developer in their use to build the site. My guidance covered best practices in layouts, animations, accessibility, and programming. Additionally, I deployed the website using Firebase Hosting.
+    `,
+    siteLink: 'https://theannex.com/',
+    languages: 'HTML5, CSS3, Bootstrap, TypeScript ReactJS, Storybook and Firebase (Firestore, Functions and Hosting)',
+  },
 ];
 
 export const Softwares: SoftwaresProps[] = [

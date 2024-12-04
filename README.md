@@ -4,7 +4,7 @@
 
 ### Install
 
-`yarn`
+install Node v16 and `yarn`
 
 ### Development
 
