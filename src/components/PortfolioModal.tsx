@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import * as React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import type { PortfolioType } from '@types/Portfolio';
 
