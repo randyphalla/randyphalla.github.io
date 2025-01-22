@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-7 text-center md:text-left">
-          <p className="text-sm md:text-base dark:text-white">&copy;2024 Randy Phalla</p>
+          <p className="text-sm md:text-base dark:text-white">&copy;2025 Randy Phalla</p>
         </div>
       </div>
     </footer>
