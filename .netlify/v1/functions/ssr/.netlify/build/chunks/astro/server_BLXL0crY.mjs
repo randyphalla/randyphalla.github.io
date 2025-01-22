@@ -1,11 +1,206 @@
-import 'kleur/colors';
-import { A as AstroError, I as InvalidComponentArgs, a as AstroGlobUsedOutside, b as AstroGlobNoMatch, M as MissingMediaQueryDirective, N as NoMatchingImport, c as NoMatchingRenderer, d as NoClientOnlyHint, e as NoClientEntrypoint } from './assets-service_YgDBzs7w.mjs';
-import { escape } from 'html-escaper';
-import { clsx } from 'clsx';
-import { decodeBase64, encodeHexUpperCase, encodeBase64 } from '@oslojs/encoding';
-import 'cssesc';
+const ASTRO_VERSION = "5.1.8";
+const NOOP_MIDDLEWARE_HEADER = "X-Astro-Noop";
 
-const ASTRO_VERSION = "4.16.7";
+const MissingMediaQueryDirective = {
+  name: "MissingMediaQueryDirective",
+  title: "Missing value for `client:media` directive.",
+  message: 'Media query not provided for `client:media` directive. A media query similar to `client:media="(max-width: 600px)"` must be provided'
+};
+const NoMatchingRenderer = {
+  name: "NoMatchingRenderer",
+  title: "No matching renderer found.",
+  message: (componentName, componentExtension, plural, validRenderersCount) => `Unable to render \`${componentName}\`.
+
+${validRenderersCount > 0 ? `There ${plural ? "are" : "is"} ${validRenderersCount} renderer${plural ? "s" : ""} configured in your \`astro.config.mjs\` file,
+but ${plural ? "none were" : "it was not"} able to server-side render \`${componentName}\`.` : `No valid renderer was found ${componentExtension ? `for the \`.${componentExtension}\` file extension.` : `for this file extension.`}`}`,
+  hint: (probableRenderers) => `Did you mean to enable the ${probableRenderers} integration?
+
+See https://docs.astro.build/en/guides/framework-components/ for more information on how to install and configure integrations.`
+};
+const NoClientOnlyHint = {
+  name: "NoClientOnlyHint",
+  title: "Missing hint on client:only directive.",
+  message: (componentName) => `Unable to render \`${componentName}\`. When using the \`client:only\` hydration strategy, Astro needs a hint to use the correct renderer.`,
+  hint: (probableRenderers) => `Did you mean to pass \`client:only="${probableRenderers}"\`? See https://docs.astro.build/en/reference/directives-reference/#clientonly for more information on client:only`
+};
+const NoMatchingImport = {
+  name: "NoMatchingImport",
+  title: "No import found for component.",
+  message: (componentName) => `Could not render \`${componentName}\`. No matching import has been found for \`${componentName}\`.`,
+  hint: "Please make sure the component is properly imported."
+};
+const InvalidComponentArgs = {
+  name: "InvalidComponentArgs",
+  title: "Invalid component arguments.",
+  message: (name) => `Invalid arguments passed to${name ? ` <${name}>` : ""} component.`,
+  hint: "Astro components cannot be rendered directly via function call, such as `Component()` or `{items.map(Component)}`."
+};
+const ImageMissingAlt = {
+  name: "ImageMissingAlt",
+  title: 'Image missing required "alt" property.',
+  message: 'Image missing "alt" property. "alt" text is required to describe important images on the page.',
+  hint: 'Use an empty string ("") for decorative images.'
+};
+const InvalidImageService = {
+  name: "InvalidImageService",
+  title: "Error while loading image service.",
+  message: "There was an error loading the configured image service. Please see the stack trace for more information."
+};
+const MissingImageDimension = {
+  name: "MissingImageDimension",
+  title: "Missing image dimensions",
+  message: (missingDimension, imageURL) => `Missing ${missingDimension === "both" ? "width and height attributes" : `${missingDimension} attribute`} for ${imageURL}. When using remote images, both dimensions are required in order to avoid CLS.`,
+  hint: "If your image is inside your `src` folder, you probably meant to import it instead. See [the Imports guide for more information](https://docs.astro.build/en/guides/imports/#other-assets). You can also use `inferSize={true}` for remote images to get the original dimensions."
+};
+const FailedToFetchRemoteImageDimensions = {
+  name: "FailedToFetchRemoteImageDimensions",
+  title: "Failed to retrieve remote image dimensions",
+  message: (imageURL) => `Failed to get the dimensions for ${imageURL}.`,
+  hint: "Verify your remote image URL is accurate, and that you are not using `inferSize` with a file located in your `public/` folder."
+};
+const UnsupportedImageFormat = {
+  name: "UnsupportedImageFormat",
+  title: "Unsupported image format",
+  message: (format, imagePath, supportedFormats) => `Received unsupported format \`${format}\` from \`${imagePath}\`. Currently only ${supportedFormats.join(
+    ", "
+  )} are supported by our image services.`,
+  hint: "Using an `img` tag directly instead of the `Image` component might be what you're looking for."
+};
+const UnsupportedImageConversion = {
+  name: "UnsupportedImageConversion",
+  title: "Unsupported image conversion",
+  message: "Converting between vector (such as SVGs) and raster (such as PNGs and JPEGs) images is not currently supported."
+};
+const ExpectedImage = {
+  name: "ExpectedImage",
+  title: "Expected src to be an image.",
+  message: (src, typeofOptions, fullOptions) => `Expected \`src\` property for \`getImage\` or \`<Image />\` to be either an ESM imported image or a string with the path of a remote image. Received \`${src}\` (type: \`${typeofOptions}\`).
+
+Full serialized options received: \`${fullOptions}\`.`,
+  hint: "This error can often happen because of a wrong path. Make sure the path to your image is correct. If you're passing an async function, make sure to call and await it."
+};
+const ExpectedImageOptions = {
+  name: "ExpectedImageOptions",
+  title: "Expected image options.",
+  message: (options) => `Expected getImage() parameter to be an object. Received \`${options}\`.`
+};
+const ExpectedNotESMImage = {
+  name: "ExpectedNotESMImage",
+  title: "Expected image options, not an ESM-imported image.",
+  message: "An ESM-imported image cannot be passed directly to `getImage()`. Instead, pass an object with the image in the `src` property.",
+  hint: "Try changing `getImage(myImage)` to `getImage({ src: myImage })`"
+};
+const IncompatibleDescriptorOptions = {
+  name: "IncompatibleDescriptorOptions",
+  title: "Cannot set both `densities` and `widths`",
+  message: "Only one of `densities` or `widths` can be specified. In most cases, you'll probably want to use only `widths` if you require specific widths.",
+  hint: "Those attributes are used to construct a `srcset` attribute, which cannot have both `x` and `w` descriptors."
+};
+const NoImageMetadata = {
+  name: "NoImageMetadata",
+  title: "Could not process image metadata.",
+  message: (imagePath) => `Could not process image metadata${imagePath ? ` for \`${imagePath}\`` : ""}.`,
+  hint: "This is often caused by a corrupted or malformed image. Re-exporting the image from your image editor may fix this issue."
+};
+const LocalImageUsedWrongly = {
+  name: "LocalImageUsedWrongly",
+  title: "Local images must be imported.",
+  message: (imageFilePath) => `\`Image\`'s and \`getImage\`'s \`src\` parameter must be an imported image or an URL, it cannot be a string filepath. Received \`${imageFilePath}\`.`,
+  hint: "If you want to use an image from your `src` folder, you need to either import it or if the image is coming from a content collection, use the [image() schema helper](https://docs.astro.build/en/guides/images/#images-in-content-collections). See https://docs.astro.build/en/guides/images/#src-required for more information on the `src` property."
+};
+const AstroGlobUsedOutside = {
+  name: "AstroGlobUsedOutside",
+  title: "Astro.glob() used outside of an Astro file.",
+  message: (globStr) => `\`Astro.glob(${globStr})\` can only be used in \`.astro\` files. \`import.meta.glob(${globStr})\` can be used instead to achieve a similar result.`,
+  hint: "See Vite's documentation on `import.meta.glob` for more information: https://vite.dev/guide/features.html#glob-import"
+};
+const AstroGlobNoMatch = {
+  name: "AstroGlobNoMatch",
+  title: "Astro.glob() did not match any files.",
+  message: (globStr) => `\`Astro.glob(${globStr})\` did not return any matching files.`,
+  hint: "Check the pattern for typos."
+};
+const MissingSharp = {
+  name: "MissingSharp",
+  title: "Could not find Sharp.",
+  message: "Could not find Sharp. Please install Sharp (`sharp`) manually into your project or migrate to another image service.",
+  hint: "See Sharp's installation instructions for more information: https://sharp.pixelplumbing.com/install. If you are not relying on `astro:assets` to optimize, transform, or process any images, you can configure a passthrough image service instead of installing Sharp. See https://docs.astro.build/en/reference/errors/missing-sharp for more information.\n\nSee https://docs.astro.build/en/guides/images/#default-image-service for more information on how to migrate to another image service."
+};
+
+function normalizeLF(code) {
+  return code.replace(/\r\n|\r(?!\n)|\n/g, "\n");
+}
+
+function codeFrame(src, loc) {
+  if (!loc || loc.line === undefined || loc.column === undefined) {
+    return "";
+  }
+  const lines = normalizeLF(src).split("\n").map((ln) => ln.replace(/\t/g, "  "));
+  const visibleLines = [];
+  for (let n = -2; n <= 2; n++) {
+    if (lines[loc.line + n]) visibleLines.push(loc.line + n);
+  }
+  let gutterWidth = 0;
+  for (const lineNo of visibleLines) {
+    let w = `> ${lineNo}`;
+    if (w.length > gutterWidth) gutterWidth = w.length;
+  }
+  let output = "";
+  for (const lineNo of visibleLines) {
+    const isFocusedLine = lineNo === loc.line - 1;
+    output += isFocusedLine ? "> " : "  ";
+    output += `${lineNo + 1} | ${lines[lineNo]}
+`;
+    if (isFocusedLine)
+      output += `${Array.from({ length: gutterWidth }).join(" ")}  | ${Array.from({
+        length: loc.column
+      }).join(" ")}^
+`;
+  }
+  return output;
+}
+
+class AstroError extends Error {
+  loc;
+  title;
+  hint;
+  frame;
+  type = "AstroError";
+  constructor(props, options) {
+    const { name, title, message, stack, location, hint, frame } = props;
+    super(message, options);
+    this.title = title;
+    this.name = name;
+    if (message) this.message = message;
+    this.stack = stack ? stack : this.stack;
+    this.loc = location;
+    this.hint = hint;
+    this.frame = frame;
+  }
+  setLocation(location) {
+    this.loc = location;
+  }
+  setName(name) {
+    this.name = name;
+  }
+  setMessage(message) {
+    this.message = message;
+  }
+  setHint(hint) {
+    this.hint = hint;
+  }
+  setFrame(source, location) {
+    this.frame = codeFrame(source, location);
+  }
+  static is(err) {
+    return err.type === "AstroError";
+  }
+}
+
+if (typeof process !== 'undefined') {
+	(process.env || {});
+	process.stdout && process.stdout.isTTY;
+}
 
 function validateArgs(args) {
   if (args.length !== 3) return false;
@@ -43,6 +238,8 @@ function createComponent(arg1, moduleId, propagation) {
 
 function createAstroGlobFn() {
   const globHandler = (importMetaGlobResult) => {
+    console.warn(`Astro.glob is deprecated and will be removed in a future major version of Astro.
+Use import.meta.glob instead: https://vitejs.dev/guide/features.html#glob-import`);
     if (typeof importMetaGlobResult === "string") {
       throw new AstroError({
         ...AstroGlobUsedOutside,
@@ -69,6 +266,49 @@ function createAstro(site) {
     glob: createAstroGlobFn()
   };
 }
+
+/**
+ * Copyright (C) 2017-present by Andrea Giammarchi - @WebReflection
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+const {replace} = '';
+const ca = /[&<>'"]/g;
+
+const esca = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  "'": '&#39;',
+  '"': '&quot;'
+};
+const pe = m => esca[m];
+
+/**
+ * Safely escape HTML entities such as `&`, `<`, `>`, `"`, and `'`.
+ * @param {string} es the input to safely escape
+ * @returns {string} the escaped input, and it **throws** an error if
+ *  the input type is unexpected, except for boolean and numbers,
+ *  converted as string.
+ */
+const escape = es => replace.call(es, ca, pe);
 
 function isPromise(value) {
   return !!value && typeof value === "object" && "then" in value && typeof value.then === "function";
@@ -102,6 +342,8 @@ function createRenderInstruction(instruction) {
 function isRenderInstruction(chunk) {
   return chunk && typeof chunk === "object" && chunk[RenderInstructionSymbol];
 }
+
+function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e)){var o=e.length;for(t=0;t<o;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f);}else for(f in e)e[f]&&(n&&(n+=" "),n+=f);return n}function clsx(){for(var e,t,f=0,n="",o=arguments.length;f<o;f++)(e=arguments[f])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}
 
 const PROP_TYPE = {
   Value: 0,
@@ -189,7 +431,7 @@ function convertToSerializedForm(value, metadata = {}, parents = /* @__PURE__ */
       if (value === -Infinity) {
         return [PROP_TYPE.Infinity, -1];
       }
-      if (value === void 0) {
+      if (value === undefined) {
         return [PROP_TYPE.Value];
       }
       return [PROP_TYPE.Value, value];
@@ -237,6 +479,8 @@ function extractDirectives(inputProps, clientDirectives) {
           extracted.hydration.componentExport.value = value;
           break;
         }
+        // This is a special prop added to prove that the client hydration method
+        // was added statically.
         case "client:component-hydration": {
           break;
         }
@@ -295,7 +539,9 @@ async function generateHydrateScript(scriptOptions, metadata) {
   island.props["component-url"] = await result.resolve(decodeURI(componentUrl));
   if (renderer.clientEntrypoint) {
     island.props["component-export"] = componentExport.value;
-    island.props["renderer-url"] = await result.resolve(decodeURI(renderer.clientEntrypoint));
+    island.props["renderer-url"] = await result.resolve(
+      decodeURI(renderer.clientEntrypoint.toString())
+    );
     island.props["props"] = escapeHTML(serializeProps(props, metadata));
   }
   island.props["ssr"] = "";
@@ -430,9 +676,7 @@ function getPrescripts(result, type, directive) {
 }
 
 const voidElementNames = /^(area|base|br|col|command|embed|hr|img|input|keygen|link|meta|param|source|track|wbr)$/i;
-const htmlBooleanAttributes = /^(?:allowfullscreen|async|autofocus|autoplay|controls|default|defer|disabled|disablepictureinpicture|disableremoteplayback|formnovalidate|hidden|loop|nomodule|novalidate|open|playsinline|readonly|required|reversed|scoped|seamless|selected|itemscope)$/i;
-const htmlEnumAttributes = /^(?:contenteditable|draggable|spellcheck|value)$/i;
-const svgEnumAttributes = /^(?:autoReverse|externalResourcesRequired|focusable|preserveAlpha)$/i;
+const htmlBooleanAttributes = /^(?:allowfullscreen|async|autofocus|autoplay|checked|controls|default|defer|disabled|disablepictureinpicture|disableremoteplayback|formnovalidate|hidden|inert|loop|nomodule|novalidate|open|playsinline|readonly|required|reversed|scoped|seamless|selected|itemscope)$/i;
 const AMPERSAND_REGEX = /&/g;
 const DOUBLE_QUOTE_REGEX = /"/g;
 const STATIC_DIRECTIVES = /* @__PURE__ */ new Set(["set:html", "set:text"]);
@@ -467,12 +711,6 @@ function addAttribute(value, key, shouldEscape = true) {
   if (value == null) {
     return "";
   }
-  if (value === false) {
-    if (htmlEnumAttributes.test(key) || svgEnumAttributes.test(key)) {
-      return markHTMLString(` ${key}="false"`);
-    }
-    return "";
-  }
   if (STATIC_DIRECTIVES.has(key)) {
     console.warn(`[astro] The "${key}" directive cannot be applied dynamically at runtime. It will not be rendered as an attribute.
 
@@ -502,11 +740,13 @@ Make sure to use the static attribute syntax (\`${key}={value}\`) instead of the
   if (typeof value === "string" && value.includes("&") && isHttpUrl(value)) {
     return markHTMLString(` ${key}="${toAttributeString(value, false)}"`);
   }
-  if (value === true && (key.startsWith("data-") || htmlBooleanAttributes.test(key))) {
-    return markHTMLString(` ${key}`);
-  } else {
-    return markHTMLString(` ${key}="${toAttributeString(value, shouldEscape)}"`);
+  if (htmlBooleanAttributes.test(key)) {
+    return markHTMLString(value ? ` ${key}` : "");
   }
+  if (value === "") {
+    return markHTMLString(` ${key}`);
+  }
+  return markHTMLString(` ${key}="${toAttributeString(value, shouldEscape)}"`);
 }
 function internalSpreadAttributes(values, shouldEscape = true) {
   let output = "";
@@ -610,7 +850,7 @@ class RenderTemplateResult {
   error;
   constructor(htmlParts, expressions) {
     this.htmlParts = htmlParts;
-    this.error = void 0;
+    this.error = undefined;
     this.expressions = expressions.map((expression) => {
       if (isPromise(expression)) {
         return Promise.resolve(expression).catch((err) => {
@@ -854,7 +1094,7 @@ class AstroComponentInstance {
     }
   }
   async init(result) {
-    if (this.returnValue !== void 0) return this.returnValue;
+    if (this.returnValue !== undefined) return this.returnValue;
     this.returnValue = this.factory(result, this.props, this.slotValues);
     if (isPromise(this.returnValue)) {
       this.returnValue.then((resolved) => {
@@ -916,6 +1156,182 @@ function getHTMLElementName(constructor) {
   return assignedName;
 }
 
+function encodeHexUpperCase(data) {
+    let result = "";
+    for (let i = 0; i < data.length; i++) {
+        result += alphabetUpperCase[data[i] >> 4];
+        result += alphabetUpperCase[data[i] & 0x0f];
+    }
+    return result;
+}
+const alphabetUpperCase = "0123456789ABCDEF";
+
+var EncodingPadding$1;
+(function (EncodingPadding) {
+    EncodingPadding[EncodingPadding["Include"] = 0] = "Include";
+    EncodingPadding[EncodingPadding["None"] = 1] = "None";
+})(EncodingPadding$1 || (EncodingPadding$1 = {}));
+var DecodingPadding$1;
+(function (DecodingPadding) {
+    DecodingPadding[DecodingPadding["Required"] = 0] = "Required";
+    DecodingPadding[DecodingPadding["Ignore"] = 1] = "Ignore";
+})(DecodingPadding$1 || (DecodingPadding$1 = {}));
+
+function encodeBase64(bytes) {
+    return encodeBase64_internal(bytes, base64Alphabet, EncodingPadding.Include);
+}
+function encodeBase64_internal(bytes, alphabet, padding) {
+    let result = "";
+    for (let i = 0; i < bytes.byteLength; i += 3) {
+        let buffer = 0;
+        let bufferBitSize = 0;
+        for (let j = 0; j < 3 && i + j < bytes.byteLength; j++) {
+            buffer = (buffer << 8) | bytes[i + j];
+            bufferBitSize += 8;
+        }
+        for (let j = 0; j < 4; j++) {
+            if (bufferBitSize >= 6) {
+                result += alphabet[(buffer >> (bufferBitSize - 6)) & 0x3f];
+                bufferBitSize -= 6;
+            }
+            else if (bufferBitSize > 0) {
+                result += alphabet[(buffer << (6 - bufferBitSize)) & 0x3f];
+                bufferBitSize = 0;
+            }
+            else if (padding === EncodingPadding.Include) {
+                result += "=";
+            }
+        }
+    }
+    return result;
+}
+const base64Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+function decodeBase64(encoded) {
+    return decodeBase64_internal(encoded, base64DecodeMap, DecodingPadding.Required);
+}
+function decodeBase64_internal(encoded, decodeMap, padding) {
+    const result = new Uint8Array(Math.ceil(encoded.length / 4) * 3);
+    let totalBytes = 0;
+    for (let i = 0; i < encoded.length; i += 4) {
+        let chunk = 0;
+        let bitsRead = 0;
+        for (let j = 0; j < 4; j++) {
+            if (padding === DecodingPadding.Required && encoded[i + j] === "=") {
+                continue;
+            }
+            if (padding === DecodingPadding.Ignore &&
+                (i + j >= encoded.length || encoded[i + j] === "=")) {
+                continue;
+            }
+            if (j > 0 && encoded[i + j - 1] === "=") {
+                throw new Error("Invalid padding");
+            }
+            if (!(encoded[i + j] in decodeMap)) {
+                throw new Error("Invalid character");
+            }
+            chunk |= decodeMap[encoded[i + j]] << ((3 - j) * 6);
+            bitsRead += 6;
+        }
+        if (bitsRead < 24) {
+            let unused;
+            if (bitsRead === 12) {
+                unused = chunk & 0xffff;
+            }
+            else if (bitsRead === 18) {
+                unused = chunk & 0xff;
+            }
+            else {
+                throw new Error("Invalid padding");
+            }
+            if (unused !== 0) {
+                throw new Error("Invalid padding");
+            }
+        }
+        const byteLength = Math.floor(bitsRead / 8);
+        for (let i = 0; i < byteLength; i++) {
+            result[totalBytes] = (chunk >> (16 - i * 8)) & 0xff;
+            totalBytes++;
+        }
+    }
+    return result.slice(0, totalBytes);
+}
+var EncodingPadding;
+(function (EncodingPadding) {
+    EncodingPadding[EncodingPadding["Include"] = 0] = "Include";
+    EncodingPadding[EncodingPadding["None"] = 1] = "None";
+})(EncodingPadding || (EncodingPadding = {}));
+var DecodingPadding;
+(function (DecodingPadding) {
+    DecodingPadding[DecodingPadding["Required"] = 0] = "Required";
+    DecodingPadding[DecodingPadding["Ignore"] = 1] = "Ignore";
+})(DecodingPadding || (DecodingPadding = {}));
+const base64DecodeMap = {
+    "0": 52,
+    "1": 53,
+    "2": 54,
+    "3": 55,
+    "4": 56,
+    "5": 57,
+    "6": 58,
+    "7": 59,
+    "8": 60,
+    "9": 61,
+    A: 0,
+    B: 1,
+    C: 2,
+    D: 3,
+    E: 4,
+    F: 5,
+    G: 6,
+    H: 7,
+    I: 8,
+    J: 9,
+    K: 10,
+    L: 11,
+    M: 12,
+    N: 13,
+    O: 14,
+    P: 15,
+    Q: 16,
+    R: 17,
+    S: 18,
+    T: 19,
+    U: 20,
+    V: 21,
+    W: 22,
+    X: 23,
+    Y: 24,
+    Z: 25,
+    a: 26,
+    b: 27,
+    c: 28,
+    d: 29,
+    e: 30,
+    f: 31,
+    g: 32,
+    h: 33,
+    i: 34,
+    j: 35,
+    k: 36,
+    l: 37,
+    m: 38,
+    n: 39,
+    o: 40,
+    p: 41,
+    q: 42,
+    r: 43,
+    s: 44,
+    t: 45,
+    u: 46,
+    v: 47,
+    w: 48,
+    x: 49,
+    y: 50,
+    z: 51,
+    "+": 62,
+    "/": 63
+};
+
 const ALGORITHM = "AES-GCM";
 async function decodeKey(encoded) {
   const bytes = decodeBase64(encoded);
@@ -950,6 +1366,18 @@ function containsServerDirective(props) {
 function safeJsonStringify(obj) {
   return JSON.stringify(obj).replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029").replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/\//g, "\\u002f");
 }
+function createSearchParams(componentExport, encryptedProps, slots) {
+  const params = new URLSearchParams();
+  params.set("e", componentExport);
+  params.set("p", encryptedProps);
+  params.set("s", slots);
+  return params;
+}
+function isWithinURLLimit(pathname, params) {
+  const url = pathname + "?" + params.toString();
+  const chars = url.length;
+  return chars < 2048;
+}
 function renderServerIsland(result, _displayName, props, slots) {
   return {
     async render(destination) {
@@ -975,16 +1403,33 @@ function renderServerIsland(result, _displayName, props, slots) {
         }
       }
       const key = await result.key;
-      const propsEncrypted = await encryptString(key, JSON.stringify(props));
+      const propsEncrypted = Object.keys(props).length === 0 ? "" : await encryptString(key, JSON.stringify(props));
       const hostId = crypto.randomUUID();
       const slash = result.base.endsWith("/") ? "" : "/";
-      const serverIslandUrl = `${result.base}${slash}_server-islands/${componentId}${result.trailingSlash === "always" ? "/" : ""}`;
+      let serverIslandUrl = `${result.base}${slash}_server-islands/${componentId}${result.trailingSlash === "always" ? "/" : ""}`;
+      const potentialSearchParams = createSearchParams(
+        componentExport,
+        propsEncrypted,
+        safeJsonStringify(renderedSlots)
+      );
+      const useGETRequest = isWithinURLLimit(serverIslandUrl, potentialSearchParams);
+      if (useGETRequest) {
+        serverIslandUrl += "?" + potentialSearchParams.toString();
+        destination.write(
+          `<link rel="preload" as="fetch" href="${serverIslandUrl}" crossorigin="anonymous">`
+        );
+      }
       destination.write(`<script async type="module" data-island-id="${hostId}">
-let componentId = ${safeJsonStringify(componentId)};
-let componentExport = ${safeJsonStringify(componentExport)};
 let script = document.querySelector('script[data-island-id="${hostId}"]');
-let data = {
-	componentExport,
+
+${useGETRequest ? (
+        // GET request
+        `let response = await fetch('${serverIslandUrl}');
+`
+      ) : (
+        // POST request
+        `let data = {
+	componentExport: ${safeJsonStringify(componentExport)},
 	encryptedProps: ${safeJsonStringify(propsEncrypted)},
 	slots: ${safeJsonStringify(renderedSlots)},
 };
@@ -993,29 +1438,35 @@ let response = await fetch('${serverIslandUrl}', {
 	method: 'POST',
 	body: JSON.stringify(data),
 });
-
-if(response.status === 200 && response.headers.get('content-type') === 'text/html') {
-	let html = await response.text();
-
-	// Swap!
-	while(script.previousSibling &&
-		script.previousSibling.nodeType !== 8 &&
-		script.previousSibling.data !== '[if astro]>server-island-start<![endif]') {
-		script.previousSibling.remove();
+`
+      )}
+if (script) {
+	if(
+		response.status === 200 
+		&& response.headers.has('content-type') 
+		&& response.headers.get('content-type').split(";")[0].trim() === 'text/html') {
+		let html = await response.text();
+	
+		// Swap!
+		while(script.previousSibling &&
+			script.previousSibling.nodeType !== 8 &&
+			script.previousSibling.data !== '[if astro]>server-island-start<![endif]') {
+			script.previousSibling.remove();
+		}
+		script.previousSibling?.remove();
+	
+		let frag = document.createRange().createContextualFragment(html);
+		script.before(frag);
 	}
-	script.previousSibling?.remove();
-
-	let frag = document.createRange().createContextualFragment(html);
-	script.before(frag);
+	script.remove();
 }
-script.remove();
 </script>`);
     }
   };
 }
 
 const rendererAliases = /* @__PURE__ */ new Map([["solid", "solid-js"]]);
-const clientOnlyValues = /* @__PURE__ */ new Set(["solid-js", "react", "preact", "vue", "svelte", "lit"]);
+const clientOnlyValues = /* @__PURE__ */ new Set(["solid-js", "react", "preact", "vue", "svelte"]);
 function guessRenderers(componentUrl) {
   const extname = componentUrl?.split(".").pop();
   switch (extname) {
@@ -1026,14 +1477,14 @@ function guessRenderers(componentUrl) {
     case "jsx":
     case "tsx":
       return ["@astrojs/react", "@astrojs/preact", "@astrojs/solid-js", "@astrojs/vue (jsx)"];
+    case undefined:
     default:
       return [
         "@astrojs/react",
         "@astrojs/preact",
         "@astrojs/solid-js",
         "@astrojs/vue",
-        "@astrojs/svelte",
-        "@astrojs/lit"
+        "@astrojs/svelte"
       ];
   }
 }
@@ -1066,7 +1517,7 @@ Did you forget to import the component or is it possible there is a typo?`
     clientDirectives
   );
   let html = "";
-  let attrs = void 0;
+  let attrs = undefined;
   if (hydration) {
     metadata.hydrate = hydration.directive;
     metadata.hydrateArgs = hydration.value;
@@ -1203,12 +1654,6 @@ If you're still stuck, please open an issue on GitHub or join us at https://astr
     }
   } else {
     if (metadata.hydrate === "only") {
-      const rendererName = rendererAliases.has(metadata.hydrateArgs) ? rendererAliases.get(metadata.hydrateArgs) : metadata.hydrateArgs;
-      if (!clientOnlyValues.has(rendererName)) {
-        console.warn(
-          `The client:only directive for ${metadata.displayName} is not recognized. The renderer ${renderer.name} will be used. If you intended to use a different renderer, please provide a valid client:only directive.`
-        );
-      }
       html = await renderSlotToString(result, slots?.fallback);
     } else {
       const componentRenderStartTime = performance.now();
@@ -1222,16 +1667,6 @@ If you're still stuck, please open an issue on GitHub or join us at https://astr
       if (process.env.NODE_ENV === "development")
         componentServerRenderEndTime = performance.now() - componentRenderStartTime;
     }
-  }
-  if (renderer && !renderer.clientEntrypoint && renderer.name !== "@astrojs/lit" && metadata.hydrate) {
-    throw new AstroError({
-      ...NoClientEntrypoint,
-      message: NoClientEntrypoint.message(
-        displayName,
-        metadata.hydrate,
-        renderer.name
-      )
-    });
   }
   if (!html && typeof Component === "string") {
     const Tag = sanitizeElementName(Component);
@@ -1388,7 +1823,7 @@ async function renderComponent(result, displayName, Component, props, slots = {}
   }
 }
 function normalizeProps(props) {
-  if (props["class:list"] !== void 0) {
+  if (props["class:list"] !== undefined) {
     const value = props["class:list"];
     delete props["class:list"];
     props["class"] = clsx(props["class"], value);
@@ -1398,6 +1833,141 @@ function normalizeProps(props) {
   }
   return props;
 }
+
+async function renderScript(result, id) {
+  if (result._metadata.renderedScripts.has(id)) return;
+  result._metadata.renderedScripts.add(id);
+  const inlined = result.inlinedScripts.get(id);
+  if (inlined != null) {
+    if (inlined) {
+      return markHTMLString(`<script type="module">${inlined}</script>`);
+    } else {
+      return "";
+    }
+  }
+  const resolved = await result.resolve(id);
+  return markHTMLString(`<script type="module" src="${resolved}"></script>`);
+}
+
+/*! https://mths.be/cssesc v3.0.0 by @mathias */
+
+var cssesc_1;
+var hasRequiredCssesc;
+
+function requireCssesc () {
+	if (hasRequiredCssesc) return cssesc_1;
+	hasRequiredCssesc = 1;
+
+	var object = {};
+	var hasOwnProperty = object.hasOwnProperty;
+	var merge = function merge(options, defaults) {
+		if (!options) {
+			return defaults;
+		}
+		var result = {};
+		for (var key in defaults) {
+			// `if (defaults.hasOwnProperty(key) { … }` is not needed here, since
+			// only recognized option names are used.
+			result[key] = hasOwnProperty.call(options, key) ? options[key] : defaults[key];
+		}
+		return result;
+	};
+
+	var regexAnySingleEscape = /[ -,\.\/:-@\[-\^`\{-~]/;
+	var regexSingleEscape = /[ -,\.\/:-@\[\]\^`\{-~]/;
+	var regexExcessiveSpaces = /(^|\\+)?(\\[A-F0-9]{1,6})\x20(?![a-fA-F0-9\x20])/g;
+
+	// https://mathiasbynens.be/notes/css-escapes#css
+	var cssesc = function cssesc(string, options) {
+		options = merge(options, cssesc.options);
+		if (options.quotes != 'single' && options.quotes != 'double') {
+			options.quotes = 'single';
+		}
+		var quote = options.quotes == 'double' ? '"' : '\'';
+		var isIdentifier = options.isIdentifier;
+
+		var firstChar = string.charAt(0);
+		var output = '';
+		var counter = 0;
+		var length = string.length;
+		while (counter < length) {
+			var character = string.charAt(counter++);
+			var codePoint = character.charCodeAt();
+			var value = undefined;
+			// If it’s not a printable ASCII character…
+			if (codePoint < 0x20 || codePoint > 0x7E) {
+				if (codePoint >= 0xD800 && codePoint <= 0xDBFF && counter < length) {
+					// It’s a high surrogate, and there is a next character.
+					var extra = string.charCodeAt(counter++);
+					if ((extra & 0xFC00) == 0xDC00) {
+						// next character is low surrogate
+						codePoint = ((codePoint & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000;
+					} else {
+						// It’s an unmatched surrogate; only append this code unit, in case
+						// the next code unit is the high surrogate of a surrogate pair.
+						counter--;
+					}
+				}
+				value = '\\' + codePoint.toString(16).toUpperCase() + ' ';
+			} else {
+				if (options.escapeEverything) {
+					if (regexAnySingleEscape.test(character)) {
+						value = '\\' + character;
+					} else {
+						value = '\\' + codePoint.toString(16).toUpperCase() + ' ';
+					}
+				} else if (/[\t\n\f\r\x0B]/.test(character)) {
+					value = '\\' + codePoint.toString(16).toUpperCase() + ' ';
+				} else if (character == '\\' || !isIdentifier && (character == '"' && quote == character || character == '\'' && quote == character) || isIdentifier && regexSingleEscape.test(character)) {
+					value = '\\' + character;
+				} else {
+					value = character;
+				}
+			}
+			output += value;
+		}
+
+		if (isIdentifier) {
+			if (/^-[-\d]/.test(output)) {
+				output = '\\-' + output.slice(1);
+			} else if (/\d/.test(firstChar)) {
+				output = '\\3' + firstChar + ' ' + output.slice(1);
+			}
+		}
+
+		// Remove spaces after `\HEX` escapes that are not followed by a hex digit,
+		// since they’re redundant. Note that this is only possible if the escape
+		// sequence isn’t preceded by an odd number of backslashes.
+		output = output.replace(regexExcessiveSpaces, function ($0, $1, $2) {
+			if ($1 && $1.length % 2) {
+				// It’s not safe to remove the space, so don’t.
+				return $0;
+			}
+			// Strip the space.
+			return ($1 || '') + $2;
+		});
+
+		if (!isIdentifier && options.wrap) {
+			return quote + output + quote;
+		}
+		return output;
+	};
+
+	// Expose default options (so they can be overridden globally).
+	cssesc.options = {
+		'escapeEverything': false,
+		'isIdentifier': false,
+		'quotes': 'single',
+		'wrap': false
+	};
+
+	cssesc.version = '3.0.0';
+
+	cssesc_1 = cssesc;
+	return cssesc_1;
+}
+
+requireCssesc();
 
 const EASE_IN_OUT_QUART = "cubic-bezier(0.76, 0, 0.24, 1)";
 function slide({
@@ -1424,7 +1994,7 @@ function slide({
           name: "astroFadeIn",
           duration: duration ?? "210ms",
           easing: EASE_IN_OUT_QUART,
-          delay: duration ? void 0 : "30ms",
+          delay: duration ? undefined : "30ms",
           fillMode: "both"
         },
         {
@@ -1632,4 +2202,4 @@ function spreadAttributes(values = {}, _name, { class: scopedClassName } = {}) {
   return markHTMLString(output);
 }
 
-export { createComponent as a, addAttribute as b, createAstro as c, renderTransition as d, renderComponent as e, renderHead as f, renderSlot as g, fade as h, decodeKey as i, maybeRenderHead as m, renderTemplate as r, spreadAttributes as s };
+export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, NoImageMetadata as N, UnsupportedImageFormat as U, createComponent as a, addAttribute as b, createAstro as c, renderScript as d, renderTransition as e, renderComponent as f, renderHead as g, renderSlot as h, fade as i, UnsupportedImageConversion as j, ExpectedImageOptions as k, ExpectedNotESMImage as l, maybeRenderHead as m, InvalidImageService as n, ImageMissingAlt as o, NOOP_MIDDLEWARE_HEADER as p, decodeKey as q, renderTemplate as r, spreadAttributes as s, toStyleString as t, MissingSharp as u };

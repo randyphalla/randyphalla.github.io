@@ -2,17 +2,17 @@
 > Built with [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/), and [React](https://react.dev/).
 
 ## Getting started
-> Need to use V18 of NodeJS
-- `npm install` | Installs dependencies
-- `npm run dev` | Starts local dev server at `localhost:3000`
+> Need v22 of Node and [yarn v4](https://yarnpkg.com/getting-started/install)
+- `yarn install` | Installs dependencies
+- `yarn run dev` | Starts local dev server at `localhost:3000`
 
 ## CLI
-- `npm run astro...` | Run CLI commands like `astro add`, `astro preview`
-- `npm run astro --help` | Get help using the Astro CLI
+- `yarn run astro...` | Run CLI commands like `astro add`, `astro preview`
+- `yarn run astro --help` | Get help using the Astro CLI
 
 ## Building
-- `npm run build` | Build your production site to `./dist/`
-- `npm run preview` | Preview your build locally, before deploying
+- `yarn run build` | Build your production site to `./dist/`
+- `yarn run preview` | Preview your build locally, before deploying
 
 ## Hosting
 > Using [Github pages](https://pages.github.com/) and [Netlify](https://www.netlify.com/)

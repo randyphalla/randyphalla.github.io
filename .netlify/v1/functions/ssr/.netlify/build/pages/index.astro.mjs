@@ -1,14 +1,10 @@
 /* empty css                                 */
-import { c as createAstro, a as createComponent, r as renderTemplate, b as addAttribute, d as renderTransition, e as renderComponent, f as renderHead, g as renderSlot, h as fade, m as maybeRenderHead } from '../chunks/astro/server_BukXR9ky.mjs';
-import 'kleur/colors';
-import 'html-escaper';
+import { c as createAstro, a as createComponent, r as renderTemplate, b as addAttribute, d as renderScript, e as renderTransition, f as renderComponent, g as renderHead, h as renderSlot, i as fade, m as maybeRenderHead } from '../chunks/astro/server_BLXL0crY.mjs';
 import { jsxs, Fragment, jsx } from 'react/jsx-runtime';
 import { useState, useEffect, Fragment as Fragment$1 } from 'react';
-import { IoMenu, IoClose, IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } from 'react-icons/io5/index.js';
-import 'clsx';
+import { IoMenu, IoClose, IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoLogoBehance, IoMail } from 'react-icons/io5';
 import { Transition, Dialog } from '@headlessui/react';
-import '@astrojs/internal-helpers/path';
-import { $ as $$Image } from '../chunks/_astro_assets_DoYY1ASL.mjs';
+import { $ as $$Image } from '../chunks/_astro_assets_wEhmnBYs.mjs';
 export { renderers } from '../renderers.mjs';
 
 const Header = () => {
@@ -138,7 +134,7 @@ const Header = () => {
         ] }) })
       ] })
     ] }),
-    /* @__PURE__ */ jsxs("div", { className: `mobile-menu md:hidden fixed inset-0 bg-white dark:bg-gray-900 transition-all ${isMobileMenuOpen ? "opacity-100 z-10" : "opacity-0"}`, children: [
+    /* @__PURE__ */ jsxs("div", { className: `mobile-menu md:hidden fixed top-0 inset-x-0 bg-white dark:bg-gray-900 transition-all ${isMobileMenuOpen ? "opacity-100 z-10" : "opacity-0 -z-10"}`, children: [
       /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center max-w-screen-xl mx-auto py-4 px-4 border-b-1 border-solid border-border-slate-900/[.10] dark:border-gray-50/[.10]", children: [
         /* @__PURE__ */ jsx(
           "a",
@@ -292,34 +288,34 @@ const Footer = () => {
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ jsx("div", { className: "mt-7 text-center md:text-left", children: /* @__PURE__ */ jsx("p", { className: "text-sm md:text-base dark:text-white", children: "©2024 Randy Phalla" }) })
+      /* @__PURE__ */ jsx("div", { className: "mt-7 text-center md:text-left", children: /* @__PURE__ */ jsx("p", { className: "text-sm md:text-base dark:text-white", children: "©2025 Randy Phalla" }) })
     ] })
   ] });
 };
 
-const $$Astro$3 = createAstro("https://randyphalla.github.io/");
-const $$ViewTransitions = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
-  Astro2.self = $$ViewTransitions;
-  const { fallback = "animate" } = Astro2.props;
-  return renderTemplate`<meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback"${addAttribute(fallback, "content")}>`;
-}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/node_modules/astro/components/ViewTransitions.astro", void 0);
-
 const $$Astro$2 = createAstro("https://randyphalla.github.io/");
-const $$Layout = createComponent(($$result, $$props, $$slots) => {
+const $$ClientRouter = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
-  Astro2.self = $$Layout;
-  const { title } = Astro2.props;
-  return renderTemplate`<html lang="en"${addAttribute(renderTransition($$result, "smooz4hq", "none"), "data-astro-transition-scope")}> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="I'm a Front End Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in responsive design, accessibility, and UI/UX."><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#FF2734"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>Randy Phalla | ${title}</title>${renderComponent($$result, "ViewTransitions", $$ViewTransitions, {})}${renderHead()}</head> <body> <h1 class="hidden">Randy Phalla's Portfolio</h1> ${renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" })} <main${addAttribute(renderTransition($$result, "gnss7xik", fade({ duration: "0.3s" })), "data-astro-transition-scope")}> <h2 class="hidden">Main Content</h2> ${renderSlot($$result, $$slots["default"])} </main> ${renderComponent($$result, "Footer", Footer, {})} </body></html>`;
-}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro", "self");
+  Astro2.self = $$ClientRouter;
+  const { fallback = "animate" } = Astro2.props;
+  return renderTemplate`<meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback"${addAttribute(fallback, "content")}>${renderScript($$result, "/Users/randyphalla/.yarn/berry/cache/astro-npm-5.1.8-421714eab6-10c0.zip/node_modules/astro/components/ClientRouter.astro?astro&type=script&index=0&lang.ts")}`;
+}, "/Users/randyphalla/.yarn/berry/cache/astro-npm-5.1.8-421714eab6-10c0.zip/node_modules/astro/components/ClientRouter.astro", undefined);
 
 const $$Astro$1 = createAstro("https://randyphalla.github.io/");
-const $$Banner = createComponent(($$result, $$props, $$slots) => {
+const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  Astro2.self = $$Layout;
+  const { title } = Astro2.props;
+  return renderTemplate`<html lang="en"${addAttribute(renderTransition($$result, "smooz4hq", "none"), "data-astro-transition-scope")}> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="I'm a Front End Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in responsive design, accessibility, and UI/UX."><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#FF2734"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>Randy Phalla | ${title}</title>${renderComponent($$result, "ViewTransitions", $$ClientRouter, {})}${renderHead()}</head> <body> <h1 class="hidden">Randy Phalla's Portfolio</h1> ${renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/Header", "client:component-export": "default" })} <main${addAttribute(renderTransition($$result, "gnss7xik", fade({ duration: "0.3s" })), "data-astro-transition-scope")}> <h2 class="hidden">Main Content</h2> ${renderSlot($$result, $$slots["default"])} </main> ${renderComponent($$result, "Footer", Footer, {})} </body></html>`;
+}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/layouts/Layout.astro", "self");
+
+const $$Astro = createAstro("https://randyphalla.github.io/");
+const $$Banner = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Banner;
   Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<section class="px-4 py-10 md:px-8 md:py-36 dark:bg-gray-900"> <h3 class="hidden">Banner</h3> <div class="max-w-screen-xl mx-auto text-left"> <h5 class="text-gray-900 dark:text-white font-bold text-4xl md:text-6xl"><span class="gradient-text">Randy Phalla</span></h5> <h6 class="mt-3 text-gray-900 dark:text-gray-200 font-medium text-lg md:text-xl">Senior Front End Developer</h6> <p class="mt-3 text-gray-900 dark:text-gray-400 font-light text-lg md:text-xl md:max-w-xl text-pretty">I specialize in responsive design, accessibility, and user experience.</p> </div> </section>`;
-}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro", void 0);
+  return renderTemplate`${maybeRenderHead()}<section class="px-4 py-10 md:px-8 md:py-36 dark:bg-gray-900"> <h3 class="hidden">Banner</h3> <div class="max-w-screen-xl mx-auto text-left"> <h5 class="text-gray-900 dark:text-white font-bold text-4xl md:text-6xl"><span class="gradient-text">Randy Phalla</span></h5> <h6 class="mt-3 text-gray-900 dark:text-gray-200 font-medium text-lg md:text-xl">Front End Developer</h6> <p class="mt-3 text-gray-900 dark:text-gray-400 font-light text-lg md:text-xl md:max-w-xl text-pretty">I specialize in responsive design, accessibility, and user experience.</p> </div> </section>`;
+}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/components/Banner.astro", undefined);
 
 const PortfolioModal = (props) => {
   const { isOpen, onClose, portfolio } = props;
@@ -458,10 +454,7 @@ const Portfolio = (props) => {
   ] });
 };
 
-const $$Astro = createAstro("https://randyphalla.github.io/");
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
-  Astro2.self = $$Index;
   const works = [
     {
       id: 0,
@@ -469,7 +462,7 @@ const $$Index = createComponent(($$result, $$props, $$slots) => {
       href: "https://www.dentsucreative.com/",
       hrefLabel: "Redirect to Dentsu Creative's site",
       company: "Dentsu Creative",
-      date: "April 2023 - Present"
+      date: "Apr 2023 - Dec 2024"
     },
     {
       id: 1,
@@ -477,7 +470,7 @@ const $$Index = createComponent(($$result, $$props, $$slots) => {
       href: "https://devlift.com/",
       hrefLabel: "Redirect to Devlift Media's site",
       company: "Devlift Media",
-      date: "Dec 2016 - April 2023"
+      date: "Dec 2016 - Apr 2023"
     },
     {
       id: 2,
@@ -495,7 +488,8 @@ const $$Index = createComponent(($$result, $$props, $$slots) => {
       href: "https://www.fanshawec.ca/programs/ims1-interactive-media-specialist/next",
       hrefLabel: "Redirect to Fanshawe College's site",
       company: "Fanshawe College",
-      date: "Sept 2015 - Apr 2016"
+      date: "Sept 2015 - Apr 2016",
+      degree: "Graduate Certificate"
     },
     {
       id: 1,
@@ -503,7 +497,8 @@ const $$Index = createComponent(($$result, $$props, $$slots) => {
       href: "https://www.fanshawec.ca/programs/grd1-graphic-design/next",
       hrefLabel: "Redirect to Fanshawe College's site",
       company: "Fanshawe College",
-      date: "Sept 2011 - Apr 2014"
+      date: "Sept 2011 - Apr 2014",
+      degree: "Advanced Diploma"
     }
   ];
   const portfolioItems = [
@@ -584,8 +579,8 @@ const $$Index = createComponent(($$result, $$props, $$slots) => {
       siteLink: "https://theannex.com/"
     }
   ];
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Home" }, { "default": ($$result2) => renderTemplate`  ${renderComponent($$result2, "Banner", $$Banner, {})}  ${maybeRenderHead()}<section id="about" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900 "> <h3 class="hidden">About me</h3> <div class="max-w-screen-xl mx-auto"> <h4 class="title-gradient title-gradient--about mb-5 dark:text-white font-bold text-3xl">About</h4> <div class="flex justify-between items-start flex-col lg:flex-row"> ${renderComponent($$result2, "Image", $$Image, { "class": "hidden lg:block w-full lg:w-80 rounded-lg", "src": "/me.jpeg", "alt": "Portrait of Randy Phalla", "loading": "lazy", "decoding": "async", "width": "320", "height": "320" })} <div class="lg:ml-8"> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">I'm a Front End Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in responsive design, accessibility, and user experience.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">I'm currently working at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://www.dentsucreative.com/" target="_blank" aria-label="Redirect to Dentsu Creative's site">Dentsu Creative</a> as a Senior Front End Developer. I led the frontend team at GM Live. In addition, My responsibilities include building user interfaces, implementing theming, new features into the platform, debugging and problem-solving.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">In my previous role at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer, I lead both front-end and back-end projects, emphasizing web applications and mobile development. My responsibilities encompassed project management, component development, layout structuring, theming, code review, debugging, product deployment, mentoring junior developers, and collaboration with designers, developers, and clients.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">As a developer, it's important to keep up with the ever evolving tech industry. I am always eager to learn new skills and technologies to add to my skill set.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities.</p> <!-- TODO: A resume --> <!-- <p>Resume - <a href="#" target="_blank">PDF</a></p> --> </div> </div> </div> </section>  <section id="skills" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900"> <h3 class="hidden">Skills</h3> <div class="max-w-screen-xl mx-auto"> <h4 class="title-gradient title-gradient--skills mb-5 dark:text-white font-bold text-3xl">Skills</h4> <div class=""> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 md:leading-8"><span class="text-gray-900 dark:text-white font-bold">Front-end development:</span> HTML5, CSS3 (SCSS), CSS-in-JS, Responsive Web Design, Accessibility, JavaScript (ES6+), TypeScript, Angular (2+), Ionic, React, React Native, Astro, Gulp, Storybook, Material UI, Tailwind, and Bootstrap (3+).</p> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 mexcellingd:leading-8"><span class="text-gray-900 dark:text-white font-bold">Back-end development:</span> Firebase (Firestore & Functions), PHP, MySQL and noSQL.</p> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 md:leading-8"><span class="text-gray-900 dark:text-white font-bold">Project management:</span> Trello and JIRA.</p> <!-- <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 md:leading-8"><span class="text-gray-900 dark:text-white font-bold">Tools:</span> Adobe (Photoshop, Illustrator & XD), Figma, Sketch, Microsoft (Teams, Excel & Word), GitHub, Sourcetree, and Slack.</p> --> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 md:leading-8"><span class="text-gray-900 dark:text-white font-bold">Tools:</span> Git (GitHub Desktop & Sourcetree), Figma, and Microsoft (Teams, Excel & Word)</p> </div> </div> </section>  <section id="work" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900"> <h3 class="hidden">Work Experience</h3> <div class="max-w-screen-xl mx-auto"> <h4 class="title-gradient title-gradient--work dark:text-white mb-5 font-bold text-3xl">Work experience</h4> <div class=""> ${works.map((work) => renderTemplate`<div class="mb-4"> <h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">${work.role} <a class="ml-1 hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(work.href, "href")} target="_blank"${addAttribute(work.hrefLabel, "aria-label")}>@${work.company}</a></h4> <p class="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-7">${work.date}</p> </div>`)} </div> </div> </section>  <section id="education" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900"> <h3 class="hidden">Education</h3> <div class="max-w-screen-xl mx-auto"> <h3 class="title-gradient title-gradient--education mb-5 dark:text-white font-bold text-3xl">Education</h3> <div class=""> ${educations.map((education) => renderTemplate`<div class="mb-4"> <h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">${education.role} <a class="ml-1 hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(education.href, "href")} target="_blank"${addAttribute(education.hrefLabel, "aria-label")}>@${education.company}</a></h4> <p class="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-7">${education.date}</p> </div>`)} </div> </div> </section>  ${renderComponent($$result2, "Portfolio", Portfolio, { "client:load": true, "portfolios": portfolioItems, "client:component-hydration": "load", "client:component-path": "@components/Portfolio", "client:component-export": "default" })} ` })}`;
-}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro", void 0);
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Home" }, { "default": ($$result2) => renderTemplate`  ${renderComponent($$result2, "Banner", $$Banner, {})}  ${maybeRenderHead()}<section id="about" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900 "> <h3 class="hidden">About me</h3> <div class="max-w-screen-xl mx-auto"> <h4 class="title-gradient title-gradient--about mb-5 dark:text-white font-bold text-3xl">About</h4> <div class="flex justify-between items-start flex-col lg:flex-row"> ${renderComponent($$result2, "Image", $$Image, { "class": "hidden lg:block w-full lg:w-80 rounded-lg", "src": "/me.jpeg", "alt": "Portrait of Randy Phalla", "loading": "lazy", "decoding": "async", "width": "320", "height": "320" })} <div class="lg:ml-8"> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">I'm a Front End Developer based in London, Ontario. I graduated from Fanshawe college with an advanced diploma in Graphic Design and a certificate in Interactive Media Specialist. I specialize in responsive design, accessibility, and user experience.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">I recently worked at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://www.dentsucreative.com/" target="_blank" aria-label="Redirect to Dentsu Creative's site">Dentsu Creative</a> as a Senior Front End Developer. I led the frontend team at GM Live. In addition, My responsibilities include building user interfaces, implementing theming, new features into the platform, debugging and problem-solving.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">In my previous role at <a class="font-bold hover:text-gray-600 underline underline-offset-2" href="https://devlift.com/" target="_blank" aria-label="Redirect to Devlift Media's site">Devlift Media</a> as a Full Stack Developer, I lead both front-end and back-end projects, emphasizing web applications and mobile development. My responsibilities encompassed project management, component development, layout structuring, theming, code review, debugging, product deployment, mentoring junior developers, and collaboration with designers, developers, and clients.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">As a developer, it's important to keep up with the ever evolving tech industry. I am always eager to learn new skills and technologies to add to my skill set.</p> <p class="mb-4 dark:text-white text-base md:text-lg leading-7 md:leading-8 text-pretty">Outside of work, I enjoy interactive media, consuming culture through TV and film, and outdoor physical activities.</p> <!-- TODO: A resume --> <!-- <p>Resume - <a href="#" target="_blank">PDF</a></p> --> </div> </div> </div> </section>  <section id="skills" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900"> <h3 class="hidden">Skills</h3> <div class="max-w-screen-xl mx-auto"> <h4 class="title-gradient title-gradient--skills mb-5 dark:text-white font-bold text-3xl">Skills</h4> <div class=""> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 md:leading-8"><span class="text-gray-900 dark:text-white font-bold">Programming Languages</span> JavaScript, TypeScript, HTML, CSS, PHP</p> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 mexcellingd:leading-8"><span class="text-gray-900 dark:text-white font-bold">Technologies:</span> React, Angular, React Native, Ionic, Redux, Firebase, Node.js, Express, Sass/SCSS, Material UI, Tailwind CSS, Bootstrap, Storybook, Cypress, Playwright, Git</p> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 mexcellingd:leading-8"><span class="text-gray-900 dark:text-white font-bold">Databases:</span> NoSQL, MongoDB, MySQL</p> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 md:leading-8"><span class="text-gray-900 dark:text-white font-bold">API Integration:</span> REST API, Fetch API, Axios</p> <p class="mb-4 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-7 md:leading-8"><span class="text-gray-900 dark:text-white font-bold">CI/CD:</span> Jenkins, CircleCI, Bitbucket Pipelines, GitHub Actions</p> </div> </div> </section>  <section id="work" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900"> <h3 class="hidden">Work Experience</h3> <div class="max-w-screen-xl mx-auto"> <h4 class="title-gradient title-gradient--work dark:text-white mb-5 font-bold text-3xl">Work experience</h4> <div class=""> ${works.map((work) => renderTemplate`<div class="mb-4"> <h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">${work.role} @<a class="ml-1 hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(work.href, "href")} target="_blank"${addAttribute(work.hrefLabel, "aria-label")}>${work.company}</a></h4> <p class="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-7">${work.date}</p> </div>`)} </div> </div> </section>  <section id="education" class="py-10 px-4 md:px-8 bg-white dark:bg-gray-900"> <h3 class="hidden">Education</h3> <div class="max-w-screen-xl mx-auto"> <h3 class="title-gradient title-gradient--education mb-5 dark:text-white font-bold text-3xl">Education</h3> <div class=""> ${educations.map((education) => renderTemplate`<div class="mb-4"> <h4 class="text-gray-900 dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8">${education.role} <a class="ml-1 hover:text-gray-600 hover:underline hover:underline-offset-2"${addAttribute(education.href, "href")} target="_blank"${addAttribute(education.hrefLabel, "aria-label")}>@${education.company}</a></h4> <p class="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-7">${education.date}</p> </div>`)} </div> </div> </section>  ${renderComponent($$result2, "Portfolio", Portfolio, { "client:load": true, "portfolios": portfolioItems, "client:component-hydration": "load", "client:component-path": "@components/Portfolio", "client:component-export": "default" })} ` })}`;
+}, "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro", undefined);
 
 const $$file = "/Users/randyphalla/Documents/GitHub/portfolio-v2/src/pages/index.astro";
 const $$url = "";
