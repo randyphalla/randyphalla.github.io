@@ -36,6 +36,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:19.0.7"],\
           ["@types/react-dom", "virtual:a457ca1aa2a328b9984654118dc7202b2a3b57e5a01583290ef0462a1f4ba90a29eeebadd59e33da725c7fc896125a6b86e682913a3c79a24aeaae17f1ef7d42#npm:19.0.3"],\
           ["astro", "npm:5.1.8"],\
+          ["corepack", "npm:0.31.0"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:a457ca1aa2a328b9984654118dc7202b2a3b57e5a01583290ef0462a1f4ba90a29eeebadd59e33da725c7fc896125a6b86e682913a3c79a24aeaae17f1ef7d42#npm:19.0.0"],\
           ["react-icons", "virtual:a457ca1aa2a328b9984654118dc7202b2a3b57e5a01583290ef0462a1f4ba90a29eeebadd59e33da725c7fc896125a6b86e682913a3c79a24aeaae17f1ef7d42#npm:5.4.0"],\
@@ -2600,6 +2601,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["corepack", [\
+      ["npm:0.31.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/corepack-npm-0.31.0-4500fd9286-10c0.zip/node_modules/corepack/",\
+        "packageDependencies": [\
+          ["corepack", "npm:0.31.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["cross-spawn", [\
       ["npm:7.0.6", {\
         "packageLocation": "../../../.yarn/berry/cache/cross-spawn-npm-7.0.6-264bddf921-10c0.zip/node_modules/cross-spawn/",\
@@ -4977,6 +4987,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:19.0.7"],\
           ["@types/react-dom", "virtual:a457ca1aa2a328b9984654118dc7202b2a3b57e5a01583290ef0462a1f4ba90a29eeebadd59e33da725c7fc896125a6b86e682913a3c79a24aeaae17f1ef7d42#npm:19.0.3"],\
           ["astro", "npm:5.1.8"],\
+          ["corepack", "npm:0.31.0"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:a457ca1aa2a328b9984654118dc7202b2a3b57e5a01583290ef0462a1f4ba90a29eeebadd59e33da725c7fc896125a6b86e682913a3c79a24aeaae17f1ef7d42#npm:19.0.0"],\
           ["react-icons", "virtual:a457ca1aa2a328b9984654118dc7202b2a3b57e5a01583290ef0462a1f4ba90a29eeebadd59e33da725c7fc896125a6b86e682913a3c79a24aeaae17f1ef7d42#npm:5.4.0"],\

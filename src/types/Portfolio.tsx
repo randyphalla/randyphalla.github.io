@@ -13,6 +13,7 @@ export type PortfolioType = {
   sites?: SiteType[];
   site?: string;
   tools?: string;
+  projectType?: 'Work' | 'School',
 };
 
 export type PortfolioImageType = {

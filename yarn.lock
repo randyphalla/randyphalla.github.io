@@ -2023,6 +2023,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"corepack@npm:^0.31.0":
+  version: 0.31.0
+  resolution: "corepack@npm:0.31.0"
+  bin:
+    corepack: ./dist/corepack.js
+    pnpm: ./dist/pnpm.js
+    pnpx: ./dist/pnpx.js
+    yarn: ./dist/yarn.js
+    yarnpkg: ./dist/yarnpkg.js
+  checksum: 10c0/d9736d7806923b058aab4aa68f2e4a0a0c49374931e91fb6547d8717d086c5743d15a6d1dc070c83d7f9d3413a48110a35befd4263e9634d5adad55bd99410a5
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.0":
   version: 7.0.6
   resolution: "cross-spawn@npm:7.0.6"
@@ -4192,6 +4205,7 @@ __metadata:
     "@types/react": "npm:^19.0.7"
     "@types/react-dom": "npm:^19.0.3"
     astro: "npm:^5.1.8"
+    corepack: "npm:^0.31.0"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     react-icons: "npm:^5.4.0"
