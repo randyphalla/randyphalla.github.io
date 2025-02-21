@@ -17,6 +17,9 @@ export default defineConfig({
       customPages: ['https://randyphalla.github.io', 'https://symphonious-torte-5a2754.netlify.app/']
     }),
   ],
-  output: 'server',
+  output: 'static',
   adapter: netlify(),
+  build: {
+    out: 'dist',
+  },
 });
