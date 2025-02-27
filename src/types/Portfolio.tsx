@@ -6,14 +6,13 @@ export type PortfolioType = {
   description?: string;
   images?: PortfolioImageType[];
   type?: string;
-  repoLink?: string;
-  siteLink?: string;
+  repoURL?: string;
+  siteURL?: string;
   languages?: string;
   client?: string;
   sites?: SiteType[];
-  site?: string;
   tools?: string;
-  projectType?: 'Work' | 'School',
+  projectType?: 'Work' | 'School Project' | 'Side Project',
 };
 
 export type PortfolioImageType = {

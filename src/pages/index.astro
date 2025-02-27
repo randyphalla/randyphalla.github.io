@@ -81,63 +81,8 @@ const educations: EducationType[] = [
 ];
 
 const portfolioItems: PortfolioType[] = [
-  {
-    id: 0,
-    imgSrc: '/portfolio/starwars_thumbnail.png',
-    imgSrcAlt: 'Starwars',
-    title: 'Starwars',
-    type: "Web",
-		projectType: "School",
-    description: `
-			This project involves retrieving data from an API to construct a web application. The objective was to present a comprehensive list of characters and provide detailed information about each character.
-    `,
-		siteLink: 'https://roaring-liger-fcf8b7.netlify.app/',
-    repoLink: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
-    languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
-  },
-  {
-    id: 1,
-    imgSrc: '/portfolio/marvel_thumbnail.png',
-    imgSrcAlt: 'Marvel',
-    title: 'Marvel',
-    type: "Web / Mobile",
-		projectType: "School",
-    description: `
-			This project involves retrieving data from an API to develop a mobile application with the goal of showcasing a comprehensive list of superheroes. The primary objective is to enable users to view detailed information about each superhero by clicking on their respective profiles.
-    `,
-		siteLink: 'https://serene-beijinho-2a498a.netlify.app/',
-    repoLink: 'https://github.com/randyphalla/marvel-expo-app',
-    languages: 'React Native, Expo and CSS-in-JS',
-  },
-  {
-    id: 2,
-    imgSrc: '/portfolio/pokemon_thumbnail.png',
-    imgSrcAlt: 'Pokemon',
-    title: 'Pokemon',
-    type: "Web / Mobile",
-		projectType: "School",
-    description: `
-			This project revolves around fetching data from an API to construct a mobile application. The aim is to present a list of Pokémon and provide detailed information about each Pokémon upon user interaction.
-    `,
-		siteLink: 'https://lucent-banoffee-173852.netlify.app/',
-    repoLink: 'https://github.com/randyphalla/pokemon-expo-app',
-    languages: 'React Native, Expo and CSS-in-JS',
-  },
-  {
-    id: 3,
-    imgSrc: '/portfolio/musicbook_thumbnail.png',
-    imgSrcAlt: 'Musicbook',
-    title: 'Musicbook',
-		projectType: "School",
-    type: "Web",
-    description: `
-			This project entails the development of a music app using PHP and MySQL. Users can register and log in to their accounts, where they gain the ability to favorite or unfavorite artists, albums, songs, and playlists. Additionally, users can create, update, and delete their personalized playlists.
-    `,
-    repoLink: 'https://github.com/randyphalla/musicbook-php-mysql',
-    languages: 'HTML5, CSS3, Bootstrap v5, PHP and MySQL',
-  },
-	{
-		id: 4,
+{
+		id: 1,
     imgSrc: '/portfolio/gmlive_thumbnail.png',
     imgSrcAlt: 'GM Live',
     title: 'GM Live',
@@ -147,22 +92,81 @@ const portfolioItems: PortfolioType[] = [
 			At Dentsu Creative, our team built a virtual experience that allows participants to interact one-on-one with EV specialists and learn everything about electric vehicles.
 		`,
 		client: 'GM (General Motors)',
-		siteLink: 'https://gmenergy.gm.com/for-home/energy-live',
+		siteURL: 'https://gmenergy.gm.com/for-home/energy-live',
     languages: 'Material UI, JavaScript, TypeScript, React, React Native, Firebase (Firestore, Functions and Hosting), Vonage Video API (OpenTok) and Symbl.ai',
 	},
 	{
-		id: 5,
+		id: 2,
 		imgSrc: '/portfolio/annex_thumbnail.png',
 		imgSrcAlt: 'The Annex',
 		title: 'The Annex',
 		type: 'Web',
 		projectType: "Work",
-		description: 'I developed UI components and theming for the website, mentoring a junior developer in their use to build the site. My guidance covered best practices in layouts, animations, accessibility, and programming. Additionally, I deployed the website using Firebase Hosting.',
+		description: 'At Devlift Media, I designed and developed UI components and implemented theming for the website, while mentoring a junior developer on their usage to build the site effectively. I provided guidance on best practices for layouts, animations, accessibility, and programming to ensure a high-quality user experience. Additionally, I handled the website deployment using Firebase Hosting, ensuring a smooth and efficient launch.',
 		client: 'The Annex Hotel',
-		site: 'https://theannex.com/',
 		languages: 'HTML5, CSS3, Bootstrap, TypeScript ReactJS, Storybook and Firebase (Firestore, Functions and Hosting)',
-		siteLink: 'https://theannex.com/',
-	}
+		siteURL: 'https://theannex.com/',
+	},
+	{
+		id: 3,
+		imgSrc: '/portfolio/spotify_thumbnail.png',
+		imgSrcAlt: 'Spotify',
+		title: 'Spotify',
+		type: 'Web',
+		projectType: "Side Project",
+		description: 'I built a React application using Vite with TypeScript and Tailwind CSS to ensure fast development and modern styling. The app features a responsive UI powered by Tailwind CSS and integrates the Spotify API to authenticate users and retrieve their profile details, top artists, playlists, tracks, and recent activity. For seamless navigation, I implemented React Router. React Query was used to optimize data fetching, caching, and state management, providing a smoother and more responsive user experience.',
+		languages: 'HTML, CSS, JavaScript/TypeScript, React, Tailwind CSS, React Query and Vite',
+		siteURL: 'https://candid-bombolone-fedd08.netlify.app/',
+		repoURL: 'https://github.com/randyphalla/spotify-react-app',
+	},
+  {
+    id: 4,
+    imgSrc: '/portfolio/starwars_thumbnail.png',
+    imgSrcAlt: 'Starwars',
+    title: 'Starwars',
+    type: "Web",
+		projectType: "School Project",
+    description: `This project focuses on fetching data from an API to develop a web application that showcases a comprehensive list of characters. Users can browse the list and access detailed information about each character, creating an informative and interactive experience. `,
+		siteURL: 'https://roaring-liger-fcf8b7.netlify.app/',
+    repoURL: 'https://github.com/randyphalla/swapi-ajax/tree/development/fetch-api',
+    languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
+  },
+  {
+    id: 5,
+    imgSrc: '/portfolio/marvel_thumbnail.png',
+    imgSrcAlt: 'Marvel',
+    title: 'Marvel',
+    type: "Web / Mobile",
+		projectType: "School Project",
+    description: `This project focuses on fetching data from an API to develop a mobile application that presents a comprehensive list of superheroes. Users can explore the list and access detailed information about each superhero by selecting their profile, creating an engaging and interactive experience. `,
+		siteURL: 'https://serene-beijinho-2a498a.netlify.app/',
+    repoURL: 'https://github.com/randyphalla/marvel-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
+  },
+  {
+    id: 6,
+    imgSrc: '/portfolio/pokemon_thumbnail.png',
+    imgSrcAlt: 'Pokemon',
+    title: 'Pokemon',
+    type: "Web / Mobile",
+		projectType: "School Project",
+    description: `This project focuses on retrieving data from an API to build a mobile application that displays a list of Pokémon. Users can browse the list and tap on a Pokémon to view detailed information, enhancing their experience with interactive and dynamic content.`,
+		siteURL: 'https://lucent-banoffee-173852.netlify.app/',
+    repoURL: 'https://github.com/randyphalla/pokemon-expo-app',
+    languages: 'React Native, Expo and CSS-in-JS',
+  },
+  {
+    id: 7,
+    imgSrc: '/portfolio/musicbook_thumbnail.png',
+    imgSrcAlt: 'Musicbook',
+    title: 'Musicbook',
+		projectType: "School Project",
+    type: "Web",
+    description: `
+		This project involves developing a music app using PHP and MySQL, allowing users to register and log in to their accounts. Once logged in, users can favorite or unfavorite artists, albums, songs, and playlists. They also have full control over their personalized playlists, with the ability to create, update, and delete them seamlessly.`,
+    repoURL: 'https://github.com/randyphalla/musicbook-php-mysql',
+    languages: 'HTML5, CSS3, Bootstrap v5, PHP and MySQL',
+  },
 ];
 ---
 

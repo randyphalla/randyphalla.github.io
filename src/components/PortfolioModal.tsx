@@ -52,12 +52,23 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                   >
                     {portfolio?.title}
                   </Dialog.Title>
+
+                  <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Project overview:</p>
+                  <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base text-pretty">{portfolio?.description}</Dialog.Description>
+
+                  {portfolio.client && (
+                    <>
+                    <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Client:</p>
+                    <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{portfolio?.client}</Dialog.Description>
+                    </>
+                  )}
+
                   <p className="mt-4 dark:text-white text-lg md:text-xl	font-bold">Languges:</p>
                   <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{portfolio?.languages}</Dialog.Description>
-                  {portfolio?.siteLink && (
+                  {portfolio?.siteURL && (
                     <>
                       <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Site:</p>
-                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all underline hover:no-underline hover:text-gray-500" href={portfolio?.siteLink} target="_blank">{portfolio?.siteLink}</a>
+                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all underline hover:no-underline hover:text-gray-500" href={portfolio?.siteURL} target="_blank">{portfolio?.siteURL}</a>
                     </>
                   )}
 
@@ -71,19 +82,10 @@ const PortfolioModal = (props: PortfolioModalProps) => {
                     </>
                   )}
 
-                  {portfolio?.repoLink && (
+                  {portfolio?.repoURL && (
                     <>
                       <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Repo:</p>
-                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all underline hover:no-underline hover:text-gray-500" href={portfolio?.repoLink} target="_blank">{portfolio?.repoLink}</a>
-                    </>
-                  )}
-                  <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Project overview:</p>
-                  <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base text-pretty">{portfolio?.description}</Dialog.Description>
-
-                  {portfolio.client && (
-                    <>
-                    <p className="mt-4 dark:text-white text-lg md:text-xl font-bold">Client</p>
-                    <Dialog.Description className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{portfolio?.client}</Dialog.Description>
+                      <a className="text-gray-600 dark:text-gray-400 text-sm md:text-base transition-all underline hover:no-underline hover:text-gray-500" href={portfolio?.repoURL} target="_blank">{portfolio?.repoURL}</a>
                     </>
                   )}
                 </div>
