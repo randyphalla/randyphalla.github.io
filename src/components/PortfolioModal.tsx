@@ -38,7 +38,7 @@ const PortfolioModal = (props: PortfolioModalProps) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="flex justify-center items-center flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white dark:dark:bg-gray-900 shadow-xl transition-all">
+              <Dialog.Panel className="flex justify-center items-start flex-col md:flex-row w-full max-w-4xl	transform overflow-hidden p-6 rounded-lg bg-white dark:dark:bg-gray-900 shadow-xl transition-all">
                 <img
                   className="w-full md:max-w-sm h-full rounded-lg"
                   src={portfolio?.imgSrc}

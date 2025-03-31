@@ -45,7 +45,7 @@ const works: WorkType[] = [
 		company: 'Devlift Media',
 		date: 'Dec 2016 - Apr 2023',
 		description: 'Develop, style, and deliver high-quality websites, design systems, theme systems, mobile applications, and cross-platform digital experiences for a diverse range of clients. Designed and implemented a theme-based design system for a hospital learning platform using React, Tailwind CSS, and Storybook, creating reusable UI components. Led a small team to redesign a hotel website, increasing direct bookings by 50%, and ensuring a seamless user experience. Mentor junior developers by offering guidance on best practices, development workflows, and providing technical support. Ensured accessibility by following A11y and WCAG guidelines, sharing knowledge with peers, and implementing automated end-to-end testing with Cypress to improve QA efficiency',
-		languagesUsed: ['Bootstrap', 'Material UI', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'React', 'React Native', 'Angular', 'Ionic', 'Storybook', 'Redux', 'Firebase','PHP', 'Node.js', 'Express', 'MySQL', 'NoSQL'],
+		languagesUsed: ['Bootstrap', 'Material UI', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'React', 'React Native', 'Angular', 'Ionic', 'Storybook', 'Redux', 'Firebase','PHP', 'Node.js', 'Express', 'MySQL', 'NoSQL', 'WordPress', 'Shopify'],
 	},
 	{
 		id: 2,
@@ -84,7 +84,7 @@ const portfolioItems: PortfolioType[] = [
 {
 		id: 1,
     imgSrc: '/portfolio/gmlive_thumbnail.png',
-    imgSrcAlt: 'GM Live',
+    imgSrcAlt: "GM announces a $1 billion investment in a new electric vehicle battery plant to boost sustainable energy production.",
     title: 'GM Live',
     type: "Web",
 		projectType: "Work",
@@ -98,7 +98,7 @@ const portfolioItems: PortfolioType[] = [
 	{
 		id: 2,
 		imgSrc: '/portfolio/annex_thumbnail.png',
-		imgSrcAlt: 'The Annex',
+		imgSrcAlt: "Minimalist black and white logo showcasing the letter 'O' with a sleek, contemporary look.",
 		title: 'The Annex',
 		type: 'Web',
 		projectType: "Work",
@@ -110,7 +110,7 @@ const portfolioItems: PortfolioType[] = [
 	{
 		id: 3,
 		imgSrc: '/portfolio/spotify_thumbnail.png',
-		imgSrcAlt: 'Spotify',
+		imgSrcAlt: "Image of a music app, emphasizing its design and usability for music enthusiasts.",
 		title: 'Spotify',
 		type: 'Web',
 		projectType: "Side Project",
@@ -119,10 +119,22 @@ const portfolioItems: PortfolioType[] = [
 		siteURL: 'https://candid-bombolone-fedd08.netlify.app/',
 		repoURL: 'https://github.com/randyphalla/spotify-react-app',
 	},
-  {
+	{
     id: 4,
+    imgSrc: '/portfolio/greatfrontend_thumbnail.png',
+    imgSrcAlt: 'Screenshot of displaying a Storybook list of design components for greatfrontend marketing',
+    title: 'Greatfrontend - Marketing (Work in progress)',
+    type: "Web",
+		projectType: "Side Project",
+    description: `A side project focused on tackling development challenges by building individual components for a marketing site.`,
+		siteURL: 'https://greatfrontend-marketing.vercel.app/',
+    repoURL: 'https://github.com/randyphalla/greatfrontend-marketing',
+    languages: 'React, TypeScript, Tailwind CSS, Storybook and Vite',
+  },
+  {
+    id: 5,
     imgSrc: '/portfolio/starwars_thumbnail.png',
-    imgSrcAlt: 'Starwars',
+    imgSrcAlt: "Luke Skywalker featured among a list of Star Wars characters from 'Return of the Jedi' movie.",
     title: 'Starwars',
     type: "Web",
 		projectType: "School Project",
@@ -132,9 +144,9 @@ const portfolioItems: PortfolioType[] = [
     languages: 'HTML5, CSS3, Foundation 6, JavaScript and Gulp',
   },
   {
-    id: 5,
+    id: 6,
     imgSrc: '/portfolio/marvel_thumbnail.png',
-    imgSrcAlt: 'Marvel',
+    imgSrcAlt: "An app interface showcasing different types of books, highlighting a list of Marvel characters for users to explore.",
     title: 'Marvel',
     type: "Web / Mobile",
 		projectType: "School Project",
@@ -144,9 +156,9 @@ const portfolioItems: PortfolioType[] = [
     languages: 'React Native, Expo and CSS-in-JS',
   },
   {
-    id: 6,
+    id: 7,
     imgSrc: '/portfolio/pokemon_thumbnail.png',
-    imgSrcAlt: 'Pokemon',
+    imgSrcAlt: "A colorful list of various Pokémon from the game Pokémon Go, showcasing their unique designs and types.",
     title: 'Pokemon',
     type: "Web / Mobile",
 		projectType: "School Project",
@@ -156,9 +168,9 @@ const portfolioItems: PortfolioType[] = [
     languages: 'React Native, Expo and CSS-in-JS',
   },
   {
-    id: 7,
+    id: 8,
     imgSrc: '/portfolio/musicbook_thumbnail.png',
-    imgSrcAlt: 'Musicbook',
+    imgSrcAlt: "A music app showing a list of artists, with a music book featured on the website for easy access.",
     title: 'Musicbook',
 		projectType: "School Project",
     type: "Web",
@@ -188,7 +200,7 @@ const portfolioItems: PortfolioType[] = [
 				<Image
 					class="hidden lg:block w-full lg:w-80 rounded-lg"
 					src="/me.jpeg"
-					alt="Portrait of Randy Phalla"
+					alt="A man with a shaved head dressed in a black hoodie, looking directly at the camera."
 					loading="lazy"
 					decoding="async"
 					width="320"

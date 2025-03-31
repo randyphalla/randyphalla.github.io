@@ -36,7 +36,9 @@ const Portfolio = (props: PortfolioProps) => {
                 <div
                   className="p-4 bg-gray-900 dark:bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer transition-all"
                 >
-                  <img className="w-full h-full" src={portfolio.imgSrc} alt={portfolio.imgSrcAlt} loading="lazy" />
+                  {(portfolio.imgSrc && portfolio.imgSrcAlt)
+                    ? <img className="w-full h-full" src={portfolio.imgSrc} alt={portfolio.imgSrcAlt} loading="lazy" />
+                    : <div className="w-full h-full bg-white" />}
                   <h4 className="mt-4 text-white dark:text-white font-bold text-base md:text-lg leading-7 md:leading-8 text-left">{portfolio.title}</h4>
                   {/* {portfolio.type && (<p className="text-gray-400 dark:text-gray-200 text-sm text-left">{portfolio.type}</p>)} */}
                   {portfolio.projectType && (<p className="text-gray-400 dark:text-gray-200 text-sm text-left">{portfolio.projectType}</p>)}
